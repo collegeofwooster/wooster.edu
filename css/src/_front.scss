@@ -195,6 +195,22 @@
 				background-size: cover;
 			}
 
+			&.areas:before {
+				background-image: url(../img/accent-tartan-vert-sky.webp);
+			}
+
+			&.independent:before {
+				background-image: url(../img/accent-tartan-vert-blue.webp);
+			}
+
+			&.experiential:before {
+				background-image: url(../img/accent-tartan-vert-foam.webp);
+			}
+
+			&.pathway:before {
+				background-image: url(../img/accent-tartan-vert-rose.webp);
+			}
+
 			@include respond-to( $bp-m ) {
 				float: left;
 				width: 50%;
