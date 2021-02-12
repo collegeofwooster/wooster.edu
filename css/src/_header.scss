@@ -59,6 +59,11 @@ header {
 			right: 350px;
 		}
 
+		@include respond-to( $bp-xxl ) {
+			left: 590px;
+			right: 375px;
+		}
+
 		ul {
 			display: flex;
 

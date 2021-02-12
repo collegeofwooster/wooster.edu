@@ -350,6 +350,10 @@ header {
       header .header-buttons {
         left: 500px;
         right: 350px; } }
+    @media only screen and (min-width: 1440px) {
+      header .header-buttons {
+        left: 590px;
+        right: 375px; } }
     header .header-buttons ul {
       display: flex; }
       header .header-buttons ul li {
