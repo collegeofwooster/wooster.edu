@@ -79,7 +79,7 @@ get_header();
 				</div>
 
 				<div class="result-bar profiles">
-					<img src="<?php bloginfo('template_url') ?>/img/photo-square.webp" />
+					<img src="<?php bloginfo('template_url') ?>/img/photo-square-gold.webp" />
 					<div class="result-bar-inner">
 						<h3>Profiles</h3>
 						<ul>
