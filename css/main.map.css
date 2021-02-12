@@ -348,8 +348,8 @@ header {
         display: block; } }
     @media only screen and (min-width: 1220px) {
       header .header-buttons {
-        left: 480px;
-        right: 320px; } }
+        left: 500px;
+        right: 350px; } }
     header .header-buttons ul {
       display: flex; }
       header .header-buttons ul li {

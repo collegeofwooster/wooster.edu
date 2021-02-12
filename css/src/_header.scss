@@ -55,8 +55,8 @@ header {
 		}
 
 		@include respond-to( $bp-xl ) {
-			left: 480px;
-			right: 320px;
+			left: 500px;
+			right: 350px;
 		}
 
 		ul {
