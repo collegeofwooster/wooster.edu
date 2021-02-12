@@ -151,6 +151,8 @@
 			}
 
 			.connected-learning-search {
+				flex-basis: 50%;
+
 				h2 {
 					color: $black;
 				}
@@ -165,6 +167,16 @@
 
 				label {
 					display: none;
+				}
+
+				input[type=text] {
+					display: inline-block;
+					width: 50%;
+					font-size: 1.1em;
+				}
+
+				input[type=submit] {
+					background: $blue;
 				}
 			}
 		}

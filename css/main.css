@@ -771,17 +771,25 @@ header {
         display: flex; }
         .connected-learning .connected-learning-header .connected-learning-logo {
           flex-basis: 50%; }
-        .connected-learning .connected-learning-header .connected-learning-search h2 {
-          color: #000000; } }
-  @media only screen and (min-width: 768px) and (min-width: 768px) {
-    .connected-learning .connected-learning-header .connected-learning-search {
-      padding-top: 15px; } }
-  @media only screen and (min-width: 768px) and (min-width: 1024px) {
-    .connected-learning .connected-learning-header .connected-learning-search {
-      padding-top: 35px; } }
+        .connected-learning .connected-learning-header .connected-learning-search {
+          flex-basis: 50%; }
+          .connected-learning .connected-learning-header .connected-learning-search h2 {
+            color: #000000; } }
+    @media only screen and (min-width: 768px) and (min-width: 768px) {
+      .connected-learning .connected-learning-header .connected-learning-search {
+        padding-top: 15px; } }
+    @media only screen and (min-width: 768px) and (min-width: 1024px) {
+      .connected-learning .connected-learning-header .connected-learning-search {
+        padding-top: 35px; } }
     @media only screen and (min-width: 768px) {
-        .connected-learning .connected-learning-header .connected-learning-search label {
-          display: none; } }
+          .connected-learning .connected-learning-header .connected-learning-search label {
+            display: none; }
+          .connected-learning .connected-learning-header .connected-learning-search input[type=text] {
+            display: inline-block;
+            width: 50%;
+            font-size: 1.1em; }
+          .connected-learning .connected-learning-header .connected-learning-search input[type=submit] {
+            background: #215C80; } }
   .connected-learning .connected-learning-results .result-box {
     background: url(../img/photo-large.webp) center center no-repeat;
     background-size: cover;
