@@ -5,6 +5,25 @@
 define( 'PURE', true );
 
 
+// set cmb_prefix
+define( 'CMB_PREFIX', '_p_' );
+
+
+// colors array, for use in metaboxes
+global $colors;
+$colors = array(
+	'red' => 'Red',
+	'gold' => 'Gold',
+	'rose' => 'Rose',
+	'sky' => 'Sky',
+	'blue' => 'Blue',
+	'foam' => 'Seafoam',
+	'tan' => 'Tan',
+	'grey-dark' => 'Grey (Dark)',
+	'grey-light' => 'Grey (Light)',
+);
+
+
 // require multiple - a little helper function to require multiple files from the library directory in a one 
 function require_multi( $files ) {
     $files = func_get_args();
@@ -14,7 +33,7 @@ function require_multi( $files ) {
 
 
 // include utility functions
-require_multi( 'core', 'admin', 'metabox', 'images', 'paginate', 'metabox', 'showcase', 'featured-article', 'button' );
+require_multi( 'core', 'admin', 'metabox', 'emergency', 'images', 'paginate', 'metabox', 'showcase', 'featured-article', 'button' );
 
 
 // require composer autoload

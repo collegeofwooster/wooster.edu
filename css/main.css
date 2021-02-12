@@ -1282,6 +1282,66 @@ footer {
       display: block;
       padding: 6px 0; }
 
+.emergency-bar-container {
+  background: #666666;
+  padding: 14px 20px;
+  color: white;
+  zoom: 1;
+  display: none;
+  position: relative;
+  z-index: 200;
+  text-align: center;
+  font-size: 1.1em; }
+  .emergency-bar-container:before, .emergency-bar-container:after {
+    content: "";
+    display: table; }
+  .emergency-bar-container, .emergency-bar-container:before, .emergency-bar-container:after {
+    clear: both; }
+  .emergency-bar-container a {
+    color: white;
+    text-decoration: none; }
+    .emergency-bar-container a:hover {
+      text-decoration: none; }
+  .emergency-bar-container.show {
+    display: block; }
+  .emergency-bar-container .close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    transform: scale(1.4, 1); }
+  .emergency-bar-container.red {
+    background: #AF0000;
+    color: white; }
+    .emergency-bar-container.red a {
+      color: white; }
+  .emergency-bar-container.gold {
+    background: #FFC712;
+    color: #000000; }
+    .emergency-bar-container.gold a {
+      color: #000000; }
+  .emergency-bar-container.sky {
+    background: #B2CEDD;
+    color: black; }
+    .emergency-bar-container.sky a {
+      color: black; }
+  .emergency-bar-container.blue {
+    background: #215C80;
+    color: white; }
+    .emergency-bar-container.blue a {
+      color: white; }
+  .emergency-bar-container.foam {
+    background: #369896;
+    color: white; }
+    .emergency-bar-container.foam a {
+      color: white; }
+  .emergency-bar-container.tan {
+    background: #E6E0D9;
+    color: #000000; }
+    .emergency-bar-container.tan a {
+      color: #000000; }
+
 .mfp-bg {
   top: 0;
   left: 0;
