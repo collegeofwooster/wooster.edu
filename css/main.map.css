@@ -371,11 +371,7 @@ header {
             color: #000000; }
           @media only screen and (min-width: 1024px) {
             header .header-buttons ul li a {
-              font-size: 17px;
-              padding: 15px 20px; } }
-          @media only screen and (min-width: 1220px) {
-            header .header-buttons ul li a {
-              padding: 15px 20px; } }
+              font-size: 17px; } }
   header .language {
     display: none; }
     @media only screen and (min-width: 1220px) {
