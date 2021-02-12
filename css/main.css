@@ -800,14 +800,25 @@ header {
       width: 25px;
       background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
       background-size: cover; }
-    .connected-learning .connected-learning-results .result-box.areas:before {
-      background-image: url(../img/accent-tartan-vert-sky.webp); }
-    .connected-learning .connected-learning-results .result-box.independent:before {
-      background-image: url(../img/accent-tartan-vert-blue.webp); }
-    .connected-learning .connected-learning-results .result-box.experiential:before {
-      background-image: url(../img/accent-tartan-vert-foam.webp); }
-    .connected-learning .connected-learning-results .result-box.pathway:before {
-      background-image: url(../img/accent-tartan-vert-rose.webp); }
+    .connected-learning .connected-learning-results .result-box.areas {
+      background: url(../img/photo-large.webp) center center no-repeat; }
+      .connected-learning .connected-learning-results .result-box.areas:before {
+        background-image: url(../img/accent-tartan-vert-sky.webp); }
+    .connected-learning .connected-learning-results .result-box.independent {
+      background: url(../img/photo-large-independent.webp) center center no-repeat;
+      background-size: cover; }
+      .connected-learning .connected-learning-results .result-box.independent:before {
+        background-image: url(../img/accent-tartan-vert-blue.webp); }
+    .connected-learning .connected-learning-results .result-box.experiential {
+      background: url(../img/photo-large-experiential.webp) center center no-repeat;
+      background-size: cover; }
+      .connected-learning .connected-learning-results .result-box.experiential:before {
+        background-image: url(../img/accent-tartan-vert-foam.webp); }
+    .connected-learning .connected-learning-results .result-box.pathway {
+      background: url(../img/photo-large-pathway.webp) center center no-repeat;
+      background-size: cover; }
+      .connected-learning .connected-learning-results .result-box.pathway:before {
+        background-image: url(../img/accent-tartan-vert-rose.webp); }
     @media only screen and (min-width: 768px) {
       .connected-learning .connected-learning-results .result-box {
         float: left;

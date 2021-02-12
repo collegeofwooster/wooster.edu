@@ -195,20 +195,39 @@
 				background-size: cover;
 			}
 
-			&.areas:before {
-				background-image: url(../img/accent-tartan-vert-sky.webp);
+			&.areas {
+				background: url(../img/photo-large.webp) center center no-repeat;
+
+				&:before {
+					background-image: url(../img/accent-tartan-vert-sky.webp);
+				}
 			}
 
-			&.independent:before {
-				background-image: url(../img/accent-tartan-vert-blue.webp);
+			&.independent {
+				background: url(../img/photo-large-independent.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-blue.webp);
+				}
 			}
 
-			&.experiential:before {
-				background-image: url(../img/accent-tartan-vert-foam.webp);
+			&.experiential {
+				background: url(../img/photo-large-experiential.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-foam.webp);
+				}
 			}
 
-			&.pathway:before {
-				background-image: url(../img/accent-tartan-vert-rose.webp);
+			&.pathway {
+				background: url(../img/photo-large-pathway.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-rose.webp);
+				}
 			}
 
 			@include respond-to( $bp-m ) {
