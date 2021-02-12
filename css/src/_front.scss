@@ -1,0 +1,760 @@
+
+.front-showcase-overlay {
+	@include respond-to( 500px ) {
+		margin: -100px 50px 20px;
+	}
+
+	@include respond-to( $bp-l ) {
+		margin: -440px 0 0 0;
+		float: right;
+		position: relative;
+		max-width: 33%;
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin-top: -500px;
+	}
+}
+
+
+.featured-article {
+	position: relative;
+	background: white;
+	display: flex;
+	box-shadow: 0 0 25px rgba( black, .2 );
+
+	@include respond-to( $bp-m ) {
+		margin-bottom: 20px;
+	}
+
+	@include respond-to( $bp-l ) {
+		background: rgba( white, .8 );
+		margin-bottom: 30px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin-bottom: 50px;
+	}
+
+	.featured-article-image {
+		position: relative;
+		width: 35%;
+		padding: 20px;
+
+		@include respond-to( 500px ) {
+			width: 140px;
+		}
+
+		@include respond-to( $bp-l ) {
+			width: 25%;
+			padding-right: 0;
+
+			img {
+				margin-left: -40px;
+			}
+		}
+	}
+
+	.featured-article-content {
+		width: 65%;
+		padding: 20px 20px 20px 0;
+
+		@include respond-to( $bp-l ) {
+			margin-left: -20px;
+		}
+	}
+
+	h4 {
+		@include font;
+		font-size: .85em;
+		line-height: 1.4em;
+		text-transform: uppercase;
+		letter-spacing: .5px;
+	}
+
+	h3 {
+		font-size: 1.2em;
+		line-height: 1.4em;
+
+		@include respond-to( $bp-xl ) {
+			font-size: 1.4em;
+			padding: 5px 0;
+		}
+
+		a  {
+			color: $black;
+		}
+	}
+
+	.btn {
+		font-size: 1em;
+		padding: 6px 9px;
+		margin: 5px 0;
+	}
+}
+
+
+
+.front-notice {
+	background: $gold;
+	color: black;
+	padding: 20px;
+	font-size: 1.2em;
+
+	@include respond-to( $bp-m ) {
+		box-shadow: 0 0 25px rgba( black, .2 );
+	}
+
+	@include respond-to( $bp-l ) {
+		box-shadow: none;
+		background: url(../img/bg-front-alert.webp) top left no-repeat;
+		padding: 30px 40px;
+	}
+
+	p {
+		@include font-bold;
+		padding: 5px 0;
+	}
+}
+
+
+
+.connected-learning {
+	@include clearfix;
+	background: $tan;
+	padding: 20px;
+	margin: 0 auto;
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	.connected-learning-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+	}
+
+	.connected-learning-header {
+		margin-bottom: 20px;
+		vertical-align: baseline;
+
+		@include respond-to( $bp-m ) {
+			margin-bottom: 40px;
+			display: flex;
+
+			.connected-learning-logo {
+				flex-basis: 50%;
+			}
+
+			.connected-learning-search {
+				h2 {
+					color: $black;
+				}
+
+				@include respond-to( $bp-m ) {
+					padding-top: 15px;
+				}
+
+				@include respond-to( $bp-l ) {
+					padding-top: 35px;
+				}
+
+				label {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.connected-learning-results {
+
+		.result-box {
+			background: url(../img/photo-large.webp) center center no-repeat;
+			background-size: cover;
+			position: relative;
+
+			&:after {
+				content: "";
+				display: block;
+				padding-bottom: 100%;
+				background: rgba( black, .3 );
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 25px;
+				background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+				background-size: cover;
+			}
+
+			@include respond-to( $bp-m ) {
+				float: left;
+				width: 50%;
+			}
+
+			@include respond-to( $bp-l ) {
+				width: 30%;
+				margin-right: 5%;
+				margin-bottom: 40px;
+
+				&:nth-child(3) {
+					margin-right: 0;
+				}
+			}
+
+			@include respond-to( $bp-xl ) {
+				margin-bottom: 50px;
+			}
+
+			h3 {
+				position: absolute;
+				top: 40px;
+				left: 0;
+				right: 0;
+				background: rgba( white, .4 );
+				color: $black;
+				padding: 10px 30px;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 1.1em;
+			}
+
+			ul {
+				position: absolute;
+				top: 140px;
+				left: 50px;
+				right: 50px;
+
+				li {
+					text-align: center;
+
+					a {
+						@include font-bold;
+						color: white;
+						line-height: 1.5em;
+					}
+				}
+			}
+		}
+
+		.result-bar {
+			background: $black;
+			position: relative;
+
+			img {
+				float: right;
+				display: block;
+				margin-left: 20px;
+
+				@include respond-to( $bp-m ) {
+					width: 20%;
+				}
+			}
+
+			@include respond-to( 500px ) {
+				padding-top: 0;
+			}
+
+			@include respond-to( $bp-l ) {
+				float: left;
+				width: 65%;
+				margin-bottom: 45px;
+			}
+
+			&.profiles {
+				background: $gold;
+
+				a {
+					color: $black;
+				}
+			}
+
+			h3 {
+				background: rgba( white, .9 );
+				color: $black;
+				padding: 8px 20px;
+				text-transform: uppercase;
+
+				@include respond-to( 500px ) {
+					float: left;
+					width: 30%;
+					margin-top: 30px;
+					text-align: center;
+				}
+
+				@include respond-to( $bp-xl ) {
+					margin-top: 43px;
+				}
+			}
+
+			ul {
+				@include respond-to( 500px ) {
+					float: left;
+					width: 40%;
+					margin-top: 10px;
+					margin-left: 20px;
+				}
+
+				@include respond-to( $bp-xl ) {
+					margin-top: 25px;
+				}
+
+				li {
+					padding: 20px;
+
+					a {
+						@include font-bold;
+						color: white;
+						line-height: 1.5em;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.front-comms {
+	padding: 20px;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.front-comms-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+	}
+
+	.front-news {
+		@include respond-to( $bp-m ) {
+			flex-basis: 35%;
+		}
+
+		.article {
+			@include clearfix;
+			background: white;
+			box-shadow: 0 0 30px rgba( $black, .2 );
+			padding: 10px;
+			margin-bottom: 10px;
+
+			img {
+				float: left;
+				max-width: 90px;
+				margin-right: 20px;
+			}
+
+			h4 {
+				font-size: 1.2em;
+				line-height: 1.2em;
+				margin-bottom: 10px;
+
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+
+	.front-events {
+		@include respond-to( $bp-m ) {
+			flex-basis: 60%;
+			margin-left: 5%;
+		}
+
+		.events-tabs {
+			@include clearfix;
+
+			li {
+				float: left;
+
+				&.active h2 {
+					display: inline-block;
+					background: white;
+					padding: 10px 40px;
+					font-size: 50px;
+					line-height: 50px;
+					margin-top: 0;
+					color: $black;
+				}
+
+				h2 {
+					display: inline-block;
+					background: $tan;
+					padding: 10px 40px;
+					color: rgba( $black, .4 );
+					font-size: 30px;
+					line-height: 40px;
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.front-events-inner {
+			box-shadow: 0 0 30px rgba( $black, .2 );
+			padding: 20px;
+			background: white;
+
+			@include respond-to( $bp-l ) {
+				padding: 50px 30px 39px 30px;
+			}
+		}
+
+		.front-events-list {
+			@include respond-to( $bp-l ) {
+				display: flex;
+			}
+		}
+
+		.event {
+			display: flex;
+			padding: 10px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 48%;
+				margin-right: 4%;
+
+				&:nth-child(1) {
+					margin-right: 0;
+				}
+			}
+
+			.date {
+				color: $rose;
+				@include font-title;
+				font-size: 2em;
+				line-height: .9em;
+				text-align: center;
+				margin-right: 10px;
+
+				span {
+					display: block;
+					@include font-title-bold;
+					font-size: 2.75em;
+					line-height: .7em;
+					margin-top: -8px;
+				}
+			}
+
+			.info {
+				h4 {
+					line-height: 1.3em;
+					padding: 0;
+				}
+
+				.time {
+					text-transform: uppercase;
+					color: $grey-light;
+					padding: 0;
+				}
+			}
+
+		}
+	}
+
+	.events-nav {
+		margin-top: 30px;
+		border-top: 3px solid $tan;
+		padding-top: 40px;
+
+		a {
+			display: inline-block;
+			border: 3px solid $tan;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 50px;
+			color: rgba( $black, .4 );
+			cursor: pointer;
+			margin-right: 10px;
+			transition: all 400ms ease-in-out;
+
+			&.next {
+				border-color: $black;
+				color: $black;
+			}
+
+			&:hover {
+				text-decoration: none;
+				color: $black;
+				border-color: $black;
+			}
+		}
+	}
+}
+
+
+.faculty-showcase {
+	padding: 20px;
+	background: $tan;
+	position: relative;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-sky.webp) center right no-repeat;
+		background-size: cover;
+		width: 60%;
+		height: 40px;
+		left: -100px;
+		top: -20px;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.faculty-showcase-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+		display: flex;
+
+		.faculty-slider {
+			flex-basis: 50%;
+			text-align: center;
+
+			.faculty-slider-header {
+				color: $black;
+
+				p {
+					padding: 0;
+					text-transform: uppercase;
+				}
+
+				h2 {
+					line-height: 1.2em;
+					padding: 0 0 20px 0;
+				}
+			}
+
+			.faculty-slide {
+				color: $black;
+
+				img {
+					max-width: 120px;
+				}
+
+				.title {
+					font-size: .8em;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.faculty-link {
+			flex-basis: 50%;
+			text-align: center;
+
+			& > img {
+				max-width: 350px;
+			}
+
+			.btn {
+				position: relative;
+				top: -70px;
+
+				@include respond-to( $bp-l ) {
+					left: -60px;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+.front-admissions {
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-rose.webp) center left no-repeat;
+		background-size: cover;
+		width: 60%;
+		height: 40px;
+		right: -100px;
+		bottom: 0;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-vert-tan.webp) center right no-repeat;
+		background-size: cover;
+		width: 40px;
+		height: 100%;
+		right: 80px;
+		top: 0;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.front-admissions-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+		display: flex;
+
+		.front-admissions-events {
+			flex-basis: 50%;
+
+			@include respond-to( $bp-m ) {
+				padding-right: 20px;
+			}
+
+
+			@include respond-to( $bp-l ) {
+				padding-right: 30px;
+			}
+
+			.event {
+				border-top: 3px solid $tan;
+				padding: 20px 0;
+
+				&.first {
+					border-top: none;
+				}
+
+				p {
+					padding: 0;
+				}
+
+				.btn {
+					float: right;
+				}
+			}
+		}
+
+		.front-admissions-tour {
+			flex-basis: 50%;
+			background: $gold;
+			padding: 20px;
+
+			@include respond-to( $bp-l ) {
+				background: url(../img/bg-front-alert.webp) top left no-repeat;
+				padding: 30px;
+			}
+		}
+	}
+}
+
+
+.front-statistics {
+	background: url(../img/bg-statistics.webp) center center no-repeat;
+	background-size: cover;
+	color: white;
+	padding: 20px;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 100px 10%;
+	}
+
+	.front-statistics-inner {
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+		.stat {
+			text-align: center;
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
+			}
+
+			img {
+				max-width: 100px;
+			}
+
+			h4 {
+				@include font-title-bold;
+				font-size: 4em;
+				line-height: 1.2em;
+				text-shadow: 0 0 20px rgba( $black, .4 );
+			}
+
+			p {
+				padding: 0;
+				text-transform: uppercase;
+				text-shadow: 0 0 20px rgba( $black, .4 );
+			}
+		}
+	}
+}
+
+
+.front-mosaic {
+	background: $black;
+	
+}
+
+

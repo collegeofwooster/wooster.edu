@@ -1,0 +1,6 @@
+[submodule "js/lib/magnific"]
+	path = js/lib/magnific
+	url = https://github.com/dimsemenov/Magnific-Popup.git
+[submodule "js/lib/fitvids"]
+	path = js/lib/fitvids
+	url = https://github.com/davatron5000/FitVids.js.git

@@ -1,0 +1,102 @@
+
+
+header {
+	position: relative;
+
+	.logo {
+		max-width: 350px;
+		margin-right: 70px;
+
+		@include respond-to( $bp-m ) {
+			max-width: 35%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			max-width: 380px;
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	.menu-toggle {
+		position: absolute;
+		right: 20px;
+		bottom: 50%;
+		width: 36px;
+		height: 36px;
+		margin-bottom: -18px;
+		border: 0;
+		padding: 0;
+		background: white;
+		color: transparent;
+		background: url(../img/icon-menu.webp) center center no-repeat;
+		background-size: contain;
+		overflow: hidden;
+
+		@include respond-to( $bp-xl ) {
+			right: 50px;
+		}
+	}
+
+	.header-buttons {
+		display: none;
+		position: absolute;
+		left: 37%;
+		right: 80px;
+		top: 50%;
+		margin-top: -25px;
+		text-align: center;
+
+		//background: rgba( black, .2 );
+
+		@include respond-to( $bp-m ) {
+			display: block;
+		}
+
+		@include respond-to( $bp-xl ) {
+			left: 400px;
+			right: 100px;
+		}
+
+		ul {
+			li {
+				display: inline-block;
+
+				a {
+					display: block;
+					padding: 15px 5px;
+					font-size: 14px;
+					line-height: 20px;
+					color: $grey;
+					text-decoration: none;
+					text-transform: uppercase;
+					width: 100%;
+					transition: 400ms color ease-in-out;
+					background-color: transparent;
+					text-align: center;
+					cursor: pointer;
+
+					&:hover {
+						color: $black;
+					}
+
+					@include respond-to( $bp-l ) {
+						font-size: 17px;
+						padding: 15px 20px;
+					}
+
+					@include respond-to( $bp-xl ) {
+						padding: 15px 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.menu-overlay {
+	display: none;
+}
