@@ -48,7 +48,6 @@ header {
 		top: 50%;
 		margin-top: -25px;
 		text-align: center;
-
 		//background: rgba( black, .2 );
 
 		@include respond-to( $bp-m ) {
@@ -57,12 +56,14 @@ header {
 
 		@include respond-to( $bp-xl ) {
 			left: 400px;
-			right: 100px;
+			right: 320px;
 		}
 
 		ul {
+			display: flex;
+
 			li {
-				display: inline-block;
+				flex: auto;
 
 				a {
 					display: block;
@@ -88,10 +89,27 @@ header {
 					}
 
 					@include respond-to( $bp-xl ) {
-						padding: 15px 40px;
+						padding: 15px 20px;
 					}
 				}
 			}
+		}
+	}
+
+	.language {
+		display: none;
+
+		@include respond-to( $bp-xl ) {
+			display: block;
+			position: absolute;
+			right: 110px;
+			top: 50%;
+			padding: 10px 20px;
+			border: 1px solid $grey;
+			color: $grey;
+			text-transform: uppercase;
+			border-radius: 30px;
+			margin-top: -19px;
 		}
 	}
 }

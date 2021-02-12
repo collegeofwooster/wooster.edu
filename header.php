@@ -40,6 +40,8 @@
 	<nav class="header-buttons">
 		<?php wp_nav_menu( array( 'theme_location' => 'header-buttons' ) ); ?>
 	</nav>
+
+	<a href="#" class="language">Select Language</a>
 	
 </header>
 

@@ -349,31 +349,47 @@ header {
     @media only screen and (min-width: 1220px) {
       header .header-buttons {
         left: 400px;
-        right: 100px; } }
-    header .header-buttons ul li {
-      display: inline-block; }
-      header .header-buttons ul li a {
+        right: 320px; } }
+    header .header-buttons ul {
+      display: flex; }
+      header .header-buttons ul li {
+        flex: auto; }
+        header .header-buttons ul li a {
+          display: block;
+          padding: 15px 5px;
+          font-size: 14px;
+          line-height: 20px;
+          color: #666666;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: 100%;
+          transition: 400ms color ease-in-out;
+          background-color: transparent;
+          text-align: center;
+          cursor: pointer; }
+          header .header-buttons ul li a:hover {
+            color: #000000; }
+          @media only screen and (min-width: 1024px) {
+            header .header-buttons ul li a {
+              font-size: 17px;
+              padding: 15px 20px; } }
+          @media only screen and (min-width: 1220px) {
+            header .header-buttons ul li a {
+              padding: 15px 20px; } }
+  header .language {
+    display: none; }
+    @media only screen and (min-width: 1220px) {
+      header .language {
         display: block;
-        padding: 15px 5px;
-        font-size: 14px;
-        line-height: 20px;
+        position: absolute;
+        right: 110px;
+        top: 50%;
+        padding: 10px 20px;
+        border: 1px solid #666666;
         color: #666666;
-        text-decoration: none;
         text-transform: uppercase;
-        width: 100%;
-        transition: 400ms color ease-in-out;
-        background-color: transparent;
-        text-align: center;
-        cursor: pointer; }
-        header .header-buttons ul li a:hover {
-          color: #000000; }
-        @media only screen and (min-width: 1024px) {
-          header .header-buttons ul li a {
-            font-size: 17px;
-            padding: 15px 20px; } }
-        @media only screen and (min-width: 1220px) {
-          header .header-buttons ul li a {
-            padding: 15px 40px; } }
+        border-radius: 30px;
+        margin-top: -19px; } }
 
 .menu-overlay {
   display: none; }
