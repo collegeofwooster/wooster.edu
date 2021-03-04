@@ -36,6 +36,9 @@ function require_multi( $files ) {
 require_multi( 'core', 'admin', 'metabox', 'emergency', 'images', 'paginate', 'metabox', 'showcase', 'featured-article', 'button' );
 
 
+require_multi( 'post-type/faculty', 'post-type/area' );
+
+
 // require composer autoload
 require_once 'vendor/autoload.php';
 
