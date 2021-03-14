@@ -127,8 +127,7 @@ p {
 
 h1 {
   font-size: 2.6em;
-  line-height: 1.4em;
-  color: #215C80; }
+  line-height: 1.4em; }
   h1 span {
     opacity: .7; }
 
@@ -1365,6 +1364,105 @@ footer {
     color: #000000; }
     .emergency-bar-container.tan a {
       color: #000000; }
+
+.person-info {
+  background: #999999;
+  margin: -20px -20px -21px -20px; }
+  @media only screen and (min-width: 768px) {
+    .person-info {
+      margin: -30px -10px 0 -25px; } }
+  @media only screen and (min-width: 1024px) {
+    .person-info {
+      padding: 20px;
+      margin: -20px 0; } }
+  .person-info .person-info-inner {
+    padding: 20px; }
+    @media only screen and (min-width: 1024px) {
+      .person-info .person-info-inner {
+        padding: 0; } }
+  .person-info h4 {
+    padding-top: 0; }
+  .person-info p {
+    padding: 6px 0; }
+  .person-info .btn, .person-info button, .person-info input[type=submit], .person-info .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer .person-info input[type=submit], .person-info .gform_wrapper .gform_footer input[type=button], .gform_wrapper .gform_footer .person-info input[type=button], .person-info .gform_wrapper .gform_footer input[type=reset], .gform_wrapper .gform_footer .person-info input[type=reset], .person-info .gform_wrapper .gform_footer button, .gform_wrapper .gform_footer .person-info button {
+    margin-top: 20px;
+    padding: 10px 20px; }
+
+.people {
+  padding: 20px 0; }
+
+.single-person .right-column {
+  padding-top: 0; }
+  @media only screen and (min-width: 768px) {
+    .single-person .right-column {
+      padding-top: 40px; } }
+
+.people-search {
+  padding: 10px;
+  border: 3px solid #999999;
+  margin-bottom: 20px; }
+  .people-search input[type=text] {
+    font-family: "Zilla Slab", sans-serif;
+    font-weight: 300;
+    display: block;
+    width: 100%;
+    padding: 0 0 0 40px;
+    border: 0;
+    background: url(../img/icon-search.webp) left center no-repeat;
+    background-size: contain;
+    font-size: 1.1em; }
+    .people-search input[type=text]:focus {
+      outline: 0; }
+
+@media only screen and (min-width: 500px) {
+  .people-listing {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -2%; } }
+
+@media only screen and (min-width: 900px) {
+  .people-listing {
+    margin-right: -1.333%; } }
+
+@media only screen and (min-width: 1220px) {
+  .people-listing {
+    margin-right: -2%; } }
+
+.people-listing .person-entry {
+  display: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+  .people-listing .person-entry.visible {
+    display: block; }
+  .people-listing .person-entry img {
+    width: 100%; }
+  .people-listing .person-entry .info {
+    padding: 10px 20px 20px; }
+    .people-listing .person-entry .info h4 {
+      padding-bottom: 0; }
+    .people-listing .person-entry .info .person-title {
+      padding: 3px 0; }
+    .people-listing .person-entry .info .person-email {
+      padding: 0;
+      font-size: .9em;
+      text-transform: lowercase; }
+  @media only screen and (min-width: 500px) {
+    .people-listing .person-entry {
+      flex: 1;
+      flex-basis: 48%;
+      flex-grow: 0;
+      margin: 0 2% 20px 0; } }
+  @media only screen and (min-width: 900px) {
+    .people-listing .person-entry {
+      flex-basis: 32%;
+      margin-right: 1.3333%; } }
+  @media only screen and (min-width: 1220px) {
+    .people-listing .person-entry {
+      flex-basis: 23%;
+      margin-right: 2%; } }
+  @media only screen and (min-width: 1440px) {
+    .people-listing .person-entry {
+      flex-basis: 18%;
+      margin-right: 2%; } }
 
 .mfp-bg {
   top: 0;

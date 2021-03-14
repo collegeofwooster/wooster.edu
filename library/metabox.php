@@ -3,7 +3,7 @@
 
 // get CMB value
 function get_cmb_value( $field ) {
-    return get_post_meta( get_the_ID(), $field, 1 );
+    return get_post_meta( get_the_ID(), CMB_PREFIX . $field, 1 );
 }
 
 
@@ -21,7 +21,7 @@ function show_cmb_value( $field ) {
 
 
 // get CMB value
-function show_cmb_wysiwyg_value( $field ) {
+function show_cmb_wysiwyg_value( $field, $post=0 ) {
     print apply_filters( 'the_content', get_cmb_value( $field ) );
 }
 
