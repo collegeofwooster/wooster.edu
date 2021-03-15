@@ -14,6 +14,7 @@ $courses = get_cmb_value( "person_courses" );
 		<?php 
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post(); 
+				global $post;
 				?>
 		<div class="sidebar">
 			<?php the_post_thumbnail() ?>
@@ -24,7 +25,7 @@ $courses = get_cmb_value( "person_courses" );
 				<?php print get_cmb_value( "person_phone" ); ?></p>
 				<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
 				<?php if ( has_cmb_value( "person_website" ) ) { ?><p><a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Website</a></p><?php } ?>
-				<p class="cv-link"><a href="/faculty/ask" class="btn red-dark">Ask a Question</a></p>
+				<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>" class="btn red-dark">Ask a Question</a></p>
 			</div>
 		</div>
 		<div class="right-column">
