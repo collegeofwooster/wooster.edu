@@ -53,7 +53,7 @@ function featured_article_metabox( $meta_boxes ) {
 
     $featured_article_metabox->add_field( array(
         'name' => 'Featured Article',
-        'id'   => 'featured_article',
+        'id'   => CMB_PREFIX . 'featured_article',
         'type' => 'select',
         'options' => $post_list
     ) );
