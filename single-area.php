@@ -54,58 +54,31 @@ $courses = get_cmb_value( "person_courses" );
 			<!--<button class="back-to-areas">Back to All Areas</button>-->
 			<div class="sidebar tab-nav">
 				<ul>
-					<li class="area-overview active">Overview</li>
-					<li class="area-faculty">Faculty</li>
-					<?php do_area_tab_nav( "Requirements", "requirements" ) ?>
-					<?php do_area_tab_nav( "Career Tracks", "tracks" ) ?>
-					<?php do_area_tab_nav( "Unique Opportunities", "opportunities" ) ?>
-					<?php do_area_tab_nav( "Ensembles", "ensembles" ) ?>
-					<?php do_area_tab_nav( "Events Schedule", "events" ) ?>
-					<?php do_area_tab_nav( "Past Productions", "productions" ) ?>
-					<?php do_area_tab_nav( "Alumni Profiles", "alumni" ) ?>
-					<?php do_area_tab_nav( "Graduate Success", "success" ) ?>
-					<?php do_area_tab_nav( "Clinical Supervisors", "supervisors" ) ?>
-					<?php do_area_tab_nav( "Be a Teacher", "teacher" ) ?>
-					<?php do_area_tabs_nav(); ?>
-					<li class="area-advising">Advising</li>
-					<li class="area-offcampus">Off-Campus</li>
+					<?php do_area_tab_nav( "Major", "major" ) ?>
+					<?php do_area_tab_nav( "Minor", "minor" ) ?>
+					<?php do_area_tab_nav( "Independent Study", "independent_study" ) ?>
+					<?php do_area_tab_nav( "Certifications", "certifications" ) ?>
+					<?php do_area_tab_nav( "Licensure", "licensure" ) ?>
+					<?php do_area_tab_nav( "Alumni", "alumni" ) ?>
+					<?php do_area_tab_nav( "Student Organizations", "student_organizations" ) ?>
+					<?php do_area_tab_nav( "Prizes & Scholarships", "scholarships" ) ?>
+					<?php do_area_tab_nav( "Lectures", "lectures" ) ?>
+					<?php do_area_tab_nav( "Seminar Series", "seminar_series" ) ?>
+					<?php do_area_tab_nav( "Lab Facilities", "lab_facilities" ) ?>
+					<?php do_area_tab_nav( "Clinics", "clinics" ) ?>
+					<?php do_area_tab_nav( "Fern Valley Field Station", "fern_valley" ) ?>
 				</ul>
 			</div>
 			
 			<div class="right-column">
-
-				<!--
-				<?php
-				if ( has_cmb_value( 'area_facebook' ) ) {
-					?><a href="<?php show_cmb_value( 'area_facebook' ); ?>" class="btn sample-schedule">View Sample<br> Course Schedule</a><?php
-				}
-				?>
-				
-				<h1 class="area-title"><?php the_title(); ?></h1>
-				<h3 class="area-subtitle"><?php 
-				$terms = wp_get_post_terms( get_the_ID(), 'area_cat' );
-				$terms_array = array();
-				foreach ( $terms as $term ) {
-					$terms_array[] = str_replace( 'Minors', 'Minor', str_replace( 'Majors', 'Major', $term->name ) );
-				}
-				// print_r( $terms_array );
-				print implode( ', ', $terms_array );
-				?></h3>
-				-->
 
 				<div class="tab-content active area-overview">
 					<h2>Overview</h2>
 					<?php the_content(); ?>
 
 					<hr />
-					
-					<!--
-					<?php if ( !empty( $sidebar_video_url ) ) print apply_filters( 'the_content', $sidebar_video_url ); ?>
-					<hr />
-					-->
 
 					<?php if ( !empty( get_cmb_value( 'area_post_tag' ) ) ) { ?>
-					<hr>
 					<div class="area-news">
 						<h2>Latest News</h2>						  
 						<?php
@@ -186,27 +159,19 @@ $courses = get_cmb_value( "person_courses" );
 
 				</div>
 
-				<div class="tab-content area-advising">
-					<h2>Advising</h2>
-					<?php print do_shortcode( '[snippet slug="areas-advising" /]' ); ?>
-				</div>
-
-				<div class="tab-content area-offcampus">
-					<h2>Off-Campus Study</h2>
-					<?php print do_shortcode( '[snippet slug="areas-off-campus" /]' ); ?>
-				</div>
-
-				<?php do_area_tab_content( "Requirements", "requirements" ) ?>
-				<?php do_area_tab_content( "Career Tracks", "tracks" ) ?>
-				<?php do_area_tab_content( "Unique Opportunities", "opportunities" ) ?>
-				<?php do_area_tab_content( "Ensembles", "ensembles" ) ?>
-				<?php do_area_tab_content( "Events Schedule", "events" ) ?>
-				<?php do_area_tab_content( "Past Productions", "productions" ) ?>
-				<?php do_area_tab_content( "Alumni Profiles", "alumni" ) ?>
-				<?php do_area_tab_content( "Graduate Success", "success" ) ?>
-				<?php do_area_tab_content( "Clinical Supervisors", "supervisors" ) ?>
-				<?php do_area_tab_content( "Be a Teacher", "teacher" ) ?>
-				<?php do_area_tabs_content(); ?>
+				<?php do_area_tab_content( "Major", "major" ) ?>
+				<?php do_area_tab_content( "Minor", "minor" ) ?>
+				<?php do_area_tab_content( "Independent Study", "independent_study" ) ?>
+				<?php do_area_tab_content( "Certifications", "certifications" ) ?>
+				<?php do_area_tab_content( "Licensure", "licensure" ) ?>
+				<?php do_area_tab_content( "Alumni", "alumni" ) ?>
+				<?php do_area_tab_content( "Student Organizations", "student_organizations" ) ?>
+				<?php do_area_tab_content( "Prizes & Scholarships", "scholarships" ) ?>
+				<?php do_area_tab_content( "Lectures", "lectures" ) ?>
+				<?php do_area_tab_content( "Seminar Series", "seminar_series" ) ?>
+				<?php do_area_tab_content( "Lab Facilities", "lab_facilities" ) ?>
+				<?php do_area_tab_content( "Clinics", "clinics" ) ?>
+				<?php do_area_tab_content( "Fern Valley Field Station", "fern_valley" ) ?>
 			<?php
 			endwhile;
 		endif;

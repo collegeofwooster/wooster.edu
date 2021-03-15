@@ -236,38 +236,9 @@ function do_area_tab_nav( $title, $key ) {
 	$content = get_cmb_value( "area_" . $key );
 	if ( !empty( $content ) ) { 
 	?>
-					<li class="area-<?php print $key; ?>"><?php print $title ?></li>
+			<li class="area-<?php print $key; ?>"><?php print $title ?></li>
 	<?php
 	} 
-}
-
-
-
-function do_area_tabs_nav() {
-	$tabs = get_cmb_value( "tab" );
-	if ( !empty( $tabs ) ) {
-		foreach ( $tabs as $a_tab ) {
-			?>
-			<li class="area-<?php print sanitize_title( $a_tab['title'] ); ?>"><?php print $a_tab['title'] ?></li>
-			<?php
-		}
-	}
-}
-
-
-
-function do_area_tabs_content() {
-	$tabs = get_cmb_value( "tab" );
-	if ( !empty( $tabs ) ) {
-		foreach ( $tabs as $a_tab ) {
-			?>
-				<div class="tab-content area-<?php print sanitize_title( $a_tab['title'] ); ?>">
-					<h2><?php print $a_tab['title'] ?></h2>
-					<?php print wpautop( do_shortcode( $a_tab['content'] ) ); ?>
-				</div>
-			<?php
-		}	
-	}
 }
 
 
