@@ -215,6 +215,12 @@ function person_metaboxes() {
         'desc' => 'Include the Full URL (including "http(s)") to this People members website.'
     ) );
     $person_box->add_field( array(
+        'name' => 'CV/Resume',
+        'id' => $prefix . 'person_cv',
+        'type' => 'file',
+        'desc' => 'Upload a CV/Resume file.'
+    ) );
+    $person_box->add_field( array(
         'name' => 'Areas of Interest',
         'id' => $prefix . 'person_interests',
         'type' => 'wysiwyg',
