@@ -30,13 +30,13 @@ $courses = get_cmb_value( "person_courses" );
 		<div class="right-column">
 			<?php the_content(); ?>
 
-			<?php if ( get_cmb_value( 'person_publications' ) ) do_accordion( 'Publications', get_cmb_value( 'person_publications' ), 'grey-light' ); ?>
-			<?php if ( get_cmb_value( 'person_interests' ) ) do_accordion( 'Areas of Interest', get_cmb_value( 'person_interests' ), 'foam' ); ?>
-			<?php if ( get_cmb_value( 'person_presentations' ) ) do_accordion( 'Presentations', get_cmb_value( 'person_presentations' ), 'sky' ); ?>
+			<?php if ( get_cmb_value( 'person_publications' ) ) do_accordion( 'Publications', get_cmb_value( 'person_publications' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_interests' ) ) do_accordion( 'Areas of Interest', get_cmb_value( 'person_interests' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_presentations' ) ) do_accordion( 'Presentations', get_cmb_value( 'person_presentations' ), 'blue' ); ?>
 			<?php if ( get_cmb_value( 'person_experience' ) ) do_accordion( 'Professional Experience', get_cmb_value( 'person_experience' ), 'blue' ); ?>
-			<?php if ( get_cmb_value( 'person_affiliations' ) ) do_accordion( 'Professional Affiliations', get_cmb_value( 'person_affiliations' ), 'tan' ); ?>
-			<?php if ( get_cmb_value( 'person_awards' ) ) do_accordion( 'Awards', get_cmb_value( 'person_awards' ), 'rose' ); ?>
-			<?php if ( get_cmb_value( 'person_production_credits' ) ) do_accordion( 'Production Credits', get_cmb_value( 'person_production_credits' ), 'gold' ); ?>
+			<?php if ( get_cmb_value( 'person_affiliations' ) ) do_accordion( 'Professional Affiliations', get_cmb_value( 'person_affiliations' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_awards' ) ) do_accordion( 'Awards', get_cmb_value( 'person_awards' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_production_credits' ) ) do_accordion( 'Production Credits', get_cmb_value( 'person_production_credits' ), 'blue' ); ?>
 		</div>
 			<?php
 			endwhile;

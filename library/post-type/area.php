@@ -35,7 +35,7 @@ function area_post_type() {
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => 'dashicons-welcome-learn-more', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 
+			'rewrite'	=> array(
 				'slug' => 'area', 
 				'with_front' => false 
 			), /* you can specify its url slug */
