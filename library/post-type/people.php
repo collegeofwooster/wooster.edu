@@ -42,7 +42,7 @@ function People_post_type() {
 				'slug' => 'bio'
 			),
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'revisions')
+			'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions')
 		) /* end of options */
 	); /* end of register post type */
 	
