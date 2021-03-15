@@ -214,12 +214,7 @@ function person_metaboxes() {
         'type' => 'text',
         'desc' => 'Include the Full URL (including "http(s)") to this People members website.'
     ) );
-    $person_box->add_field( array(
-        'name' => 'CV/Resume',
-        'id' => $prefix . 'person_office',
-        'type' => 'text_medium'
-    ) );
-    $person_box->add_field( array(
+=    $person_box->add_field( array(
 	    'name' => 'Publications',
 	    'id' => $prefix . 'person_publications',
 	    'type' => 'wysiwyg',
