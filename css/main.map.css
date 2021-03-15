@@ -712,19 +712,19 @@ header {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0; }
 
-.content-style ol, .content-wide ol, .area .tab-content ol, .content-style ul, .content-wide ul, .area .tab-content ul {
+.content-style ol, .content-wide ol, .accordion .accordion-content ol, .area .tab-content ol, .content-style ul, .content-wide ul, .accordion .accordion-content ul, .area .tab-content ul {
   padding: 5px 0 5px 35px; }
-  .content-style ol li, .content-wide ol li, .area .tab-content ol li, .content-style ul li, .content-wide ul li, .area .tab-content ul li {
+  .content-style ol li, .content-wide ol li, .accordion .accordion-content ol li, .area .tab-content ol li, .content-style ul li, .content-wide ul li, .accordion .accordion-content ul li, .area .tab-content ul li {
     padding: 3px 0;
     line-height: 1.5em; }
 
-.content-style ul, .content-wide ul, .area .tab-content ul {
+.content-style ul, .content-wide ul, .accordion .accordion-content ul, .area .tab-content ul {
   list-style-type: disc; }
 
-.content-style ol, .content-wide ol, .area .tab-content ol {
+.content-style ol, .content-wide ol, .accordion .accordion-content ol, .area .tab-content ol {
   list-style-type: decimal; }
 
-.content-style blockquote, .content-wide blockquote, .area .tab-content blockquote {
+.content-style blockquote, .content-wide blockquote, .accordion .accordion-content blockquote, .area .tab-content blockquote {
   padding: 0 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -735,32 +735,32 @@ header {
   border-left: 3px solid #e6e5e5;
   margin: 10px 0 10px 20px; }
 
-.content-style hr, .content-wide hr, .area .tab-content hr {
+.content-style hr, .content-wide hr, .accordion .accordion-content hr, .area .tab-content hr {
   border: 0;
   border-bottom: 3px solid #e6e5e5;
   padding: 0;
   margin: 10px 0; }
   @media only screen and (min-width: 600px) {
-    .content-style hr, .content-wide hr, .area .tab-content hr {
+    .content-style hr, .content-wide hr, .accordion .accordion-content hr, .area .tab-content hr {
       margin: 20px 0; } }
   @media only screen and (min-width: 1024px) {
-    .content-style hr, .content-wide hr, .area .tab-content hr {
+    .content-style hr, .content-wide hr, .accordion .accordion-content hr, .area .tab-content hr {
       margin: 30px 0; } }
 
-.content-style .postmeta, .content-wide .postmeta, .area .tab-content .postmeta {
+.content-style .postmeta, .content-wide .postmeta, .accordion .accordion-content .postmeta, .area .tab-content .postmeta {
   margin-top: 15px;
   padding: 15px 0;
   border-top: 1px solid #ccc; }
 
-.content-style .quiet, .content-wide .quiet, .area .tab-content .quiet {
+.content-style .quiet, .content-wide .quiet, .accordion .accordion-content .quiet, .area .tab-content .quiet {
   color: #999;
   font-style: italic; }
-  .content-style .quiet a, .content-wide .quiet a, .area .tab-content .quiet a {
+  .content-style .quiet a, .content-wide .quiet a, .accordion .accordion-content .quiet a, .area .tab-content .quiet a {
     color: #777; }
 
-.content-style table, .content-wide table, .area .tab-content table {
+.content-style table, .content-wide table, .accordion .accordion-content table, .area .tab-content table {
   width: 100%; }
-  .content-style table tr td, .content-wide table tr td, .area .tab-content table tr td {
+  .content-style table tr td, .content-wide table tr td, .accordion .accordion-content table tr td, .area .tab-content table tr td {
     vertical-align: top;
     padding: 6px 10px; }
 

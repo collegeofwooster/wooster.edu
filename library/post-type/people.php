@@ -332,7 +332,9 @@ function people_shortcode( $atts ) {
 
 	endif;
 
-	$people_content .='</div></section>';
+	$people_content .='</div>';
+
+	$people_content .='</section>';
 
 	wp_reset_postdata();
 

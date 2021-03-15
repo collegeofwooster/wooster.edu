@@ -287,7 +287,7 @@ function area_metaboxes() {
         'show_names' => true, // Show field names on the left
     ) );
     $area_box->add_field( array(
-        'name' => 'Paople to List',
+        'name' => 'People to List',
         'desc' => 'Which category of people to display as the faculty list for the faculty list for this area.',
         'id' => $prefix . 'area_faculty_list',
         'type' => 'select',
