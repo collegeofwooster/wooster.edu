@@ -53,6 +53,7 @@ $courses = get_cmb_value( "person_courses" );
 			?>
 		<div class="sidebar tab-nav">
 			<ul>
+				<li class="area-overview">Overview</li>
 				<?php do_area_tab_nav( "Major", "major" ) ?>
 				<?php do_area_tab_nav( "Minor", "minor" ) ?>
 				<?php do_area_tab_nav( "Independent Study", "independent_study" ) ?>
