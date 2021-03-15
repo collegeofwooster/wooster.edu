@@ -215,14 +215,6 @@ function person_metaboxes() {
         'desc' => 'Include the Full URL (including "http(s)") to this People members website.'
     ) );
     $person_box->add_field( array(
-	    'name' => 'Publications',
-	    'id' => $prefix . 'person_publications',
-	    'type' => 'wysiwyg',
-	    'options' => array (
-	        'textarea_rows' => 6
-	    )
-	) );
-    $person_box->add_field( array(
         'name' => 'Areas of Interest',
         'id' => $prefix . 'person_interests',
         'type' => 'wysiwyg',
@@ -230,6 +222,14 @@ function person_metaboxes() {
             'textarea_rows' => 6
         )
     ) );
+    $person_box->add_field( array(
+	    'name' => 'Publications',
+	    'id' => $prefix . 'person_publications',
+	    'type' => 'wysiwyg',
+	    'options' => array (
+	        'textarea_rows' => 6
+	    )
+	) );
     $person_box->add_field( array(
         'name' => 'Presentations',
         'id' => $prefix . 'person_presentations',
