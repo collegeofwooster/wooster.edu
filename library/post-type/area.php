@@ -295,17 +295,16 @@ function area_metaboxes() {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_p_';
 
-
-    $args = array( 'post_type' => 'people', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
-    $loop = new WP_Query( $args );
-    $faculty = array();
-    while ( $loop->have_posts() ) : $loop->the_post();
-        $faculty[get_the_ID()] = get_the_title();
-    endwhile;
-    wp_reset_query();
-
-
-    $categories = get_categories();
+	$args = array(
+		'taxonomy' => 'people_cat',
+		'orderby' => 'name',
+		'order'   => 'ASC'
+	);
+	$cats = get_categories($args);
+	$people_cats[''] = '- none -';
+    foreach ( $cats as $cat ) {
+        $people_cats[$cat->slug] = $cat->name;
+    }
 
     // area of interest information
     $area_box = new_cmb2_box( array(
@@ -317,11 +316,11 @@ function area_metaboxes() {
         'show_names' => true, // Show field names on the left
     ) );
     $area_box->add_field( array(
-        'name' => 'Faculty',
-        'desc' => 'Select the faculty related to this area of interest.',
+        'name' => 'Paople to List',
+        'desc' => 'Which category of people to display as the faculty list for the faculty list for this area.',
         'id' => $prefix . 'area_faculty_list',
-        'type' => 'multicheck_inline',
-        'options' => $faculty,
+        'type' => 'select',
+        'options' => $people_cats,
     ) );
 
     $all_tags = get_tags();
