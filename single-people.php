@@ -28,7 +28,9 @@ $courses = get_cmb_value( "person_courses" );
 			</div>
 		</div>
 		<div class="right-column">
-			<?php the_content(); ?>
+			<div class="bio-content">
+				<?php the_content(); ?>
+			</div>
 
 			<?php if ( get_cmb_value( 'person_publications' ) ) do_accordion( 'Publications', get_cmb_value( 'person_publications' ), 'blue' ); ?>
 			<?php if ( get_cmb_value( 'person_interests' ) ) do_accordion( 'Areas of Interest', get_cmb_value( 'person_interests' ), 'blue' ); ?>
