@@ -296,7 +296,7 @@ function area_metaboxes() {
 	$prefix = '_p_';
 
 
-    $args = array( 'post_type' => 'faculty', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
+    $args = array( 'post_type' => 'people', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
     $loop = new WP_Query( $args );
     $faculty = array();
     while ( $loop->have_posts() ) : $loop->the_post();
@@ -351,6 +351,14 @@ function area_metaboxes() {
     $area_box->add_field( array(
         'name' => 'Minor',
         'id' => $prefix . 'area_minor',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+    $area_box->add_field( array(
+        'name' => 'Independent Study',
+        'id' => $prefix . 'area_independent_study',
         'type' => 'wysiwyg',
         'options' => array (
         	'textarea_rows' => 6
