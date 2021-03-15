@@ -25,7 +25,7 @@ $courses = get_cmb_value( "person_courses" );
 				<p>Phone: <?php print get_cmb_value( "person_phone" ); ?></p>
 				<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
 				<?php if ( has_cmb_value( "person_website" ) ) { ?><p>Website: <a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Visit Website</a></p><?php } ?>
-				<?php if ( has_cmb_value( "person_cv" ) ) { ?><p>CV/Resume: <a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Download</a></p><?php } ?>
+				<?php if ( has_cmb_value( "person_cv" ) ) { ?><p>CV/Resume: <a href='<?php show_cmb_value( "person_cv" ) ?>' target='_blank'>Download</a></p><?php } ?>
 				<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>" class="btn red-dark">Ask a Question</a></p>
 			</div>
 		</div>
