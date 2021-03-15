@@ -9,40 +9,34 @@ $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
 ?>
-	<div class="page-header" style="background-image: url(<?php bloginfo(); ?>/img/)">
-		<div class="page-header-overlay"></div>
-		<div class="breadcrumbs">
-			<div class="crumbs">
-				<a href="/faculty">Faculty &amp; Staff</a> &raquo; 
-			</div>
-			<h1 class="page-title"><?php the_title(); ?></h1>
-		</div>
-	</div>
-
-	<div class="two-column faculty">
+	<div class="two-column bio">
 
 		<?php 
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post(); 
 				?>
 		<div class="sidebar">
+			<?php the_post_thumbnail() ?>
 			<div class="person-info">
-				<?php the_post_thumbnail() ?>
-				<div class="person-info-inner">
-					<h2><?php the_title(); ?></h2>
-					<h4 class="person-title"><?php print get_cmb_value( "person_title" ); ?></h4>
-					<p><a href="mailto:<?php print get_cmb_value( "person_email" ); ?>"><?php print get_cmb_value( "person_email" ); ?></a><br>
-					<?php print get_cmb_value( "person_phone" ); ?></p>
-					<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
-					<?php if ( has_cmb_value( "person_website" ) ) { ?><p><a href='" . get_cmb_value( "person_website" ) . "' target='_blank'>Website</a></p><?php } ?>
-					<p class="cv-link"><a href="<?php show_cmb_value( "person_cv" ); ?>" class="btn red-dark">View CV/Resume</a></p>
-				</div>
+				<h3><?php the_title(); ?></h3>
+				<h5 class="person-title"><?php print get_cmb_value( "person_title" ); ?></h5>
+				<p><a href="mailto:<?php print get_cmb_value( "person_email" ); ?>"><?php print get_cmb_value( "person_email" ); ?></a><br>
+				<?php print get_cmb_value( "person_phone" ); ?></p>
+				<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
+				<?php if ( has_cmb_value( "person_website" ) ) { ?><p><a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Website</a></p><?php } ?>
+				<p class="cv-link"><a href="<?php show_cmb_value( "person_cv" ); ?>" class="btn red-dark">View CV/Resume</a></p>
 			</div>
 		</div>
 		<div class="right-column">
-			<div class="faculty-content">
-				<?php the_content(); ?>
-			</div>
+			<?php the_content(); ?>
+
+			<?php if ( get_cmb_value( 'person_publications' ) ) do_accordion( 'Publications', get_cmb_value( 'person_publications' ), 'grey-light' ); ?>
+			<?php if ( get_cmb_value( 'person_interests' ) ) do_accordion( 'Areas of Interest', get_cmb_value( 'person_interests' ), 'foam' ); ?>
+			<?php if ( get_cmb_value( 'person_presentations' ) ) do_accordion( 'Presentations', get_cmb_value( 'person_presentations' ), 'sky' ); ?>
+			<?php if ( get_cmb_value( 'person_experience' ) ) do_accordion( 'Professional Experience', get_cmb_value( 'person_experience' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_affiliations' ) ) do_accordion( 'Professional Affiliations', get_cmb_value( 'person_affiliations' ), 'tan' ); ?>
+			<?php if ( get_cmb_value( 'person_awards' ) ) do_accordion( 'Awards', get_cmb_value( 'person_awards' ), 'rose' ); ?>
+			<?php if ( get_cmb_value( 'person_production_credits' ) ) do_accordion( 'Production Credits', get_cmb_value( 'person_production_credits' ), 'gold' ); ?>
 		</div>
 			<?php
 			endwhile;

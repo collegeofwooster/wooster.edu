@@ -304,8 +304,88 @@ pre {
   background-color: #215C80;
   color: white; }
 
-header {
+.content {
   position: relative; }
+
+.two-column {
+  position: relative; }
+  .two-column .sidebar {
+    border-bottom: 1px solid rgba(102, 102, 102, 0.2);
+    padding: 20px; }
+    @media only screen and (min-width: 768px) {
+      .two-column .sidebar {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 28%;
+        border-bottom: 0;
+        padding: 0; } }
+    @media only screen and (min-width: 1024px) {
+      .two-column .sidebar {
+        left: 30px;
+        top: 30px; } }
+    @media only screen and (min-width: 1440px) {
+      .two-column .sidebar {
+        left: 40px;
+        top: 40px;
+        width: 20%; } }
+    @media only screen and (min-width: 768px) {
+      .two-column .sidebar .toggle-sidebar-menu {
+        display: none; } }
+    .two-column .sidebar .menu-title {
+      display: none;
+      font-size: 22px;
+      padding: 10px 0; }
+      @media only screen and (min-width: 768px) {
+        .two-column .sidebar .menu-title {
+          padding: 10px; } }
+    .two-column .sidebar.scrolled {
+      position: fixed;
+      z-index: 400; }
+    .two-column .sidebar .nav-menu {
+      border-top: 2px solid #999999;
+      border-bottom: 2px solid #999999; }
+      .two-column .sidebar .nav-menu li a {
+        display: block;
+        color: #666666;
+        font-size: 14px;
+        line-height: 18px;
+        text-decoration: none;
+        padding: 5px 20px;
+        border-bottom: 1px solid #999999;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400; }
+        @media only screen and (min-width: 768px) {
+          .two-column .sidebar .nav-menu li a {
+            padding: 10px 12px; } }
+        .two-column .sidebar .nav-menu li a:hover {
+          color: #215C80; }
+      .two-column .sidebar .nav-menu li .sub-menu {
+        display: none; }
+        .two-column .sidebar .nav-menu li .sub-menu.open {
+          display: block;
+          padding-left: 20px; }
+          .two-column .sidebar .nav-menu li .sub-menu.open li a {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400; }
+  .two-column .right-column {
+    padding: 20px; }
+    @media only screen and (min-width: 768px) {
+      .two-column .right-column {
+        padding: 10px 20px 50px 34%; } }
+    @media only screen and (min-width: 1024px) {
+      .two-column .right-column {
+        padding: 20px 40px 50px 34%; } }
+    @media only screen and (min-width: 1220px) {
+      .two-column .right-column {
+        padding: 40px 40px 70px 25%; } }
+
+.two-column {
+  min-height: 900px; }
+
+header {
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
   header .logo {
     max-width: 350px;
     margin-right: 70px; }
@@ -1365,37 +1445,8 @@ footer {
     .emergency-bar-container.tan a {
       color: #000000; }
 
-.person-info {
-  background: #999999;
-  margin: -20px -20px -21px -20px; }
-  @media only screen and (min-width: 768px) {
-    .person-info {
-      margin: -30px -10px 0 -25px; } }
-  @media only screen and (min-width: 1024px) {
-    .person-info {
-      padding: 20px;
-      margin: -20px 0; } }
-  .person-info .person-info-inner {
-    padding: 20px; }
-    @media only screen and (min-width: 1024px) {
-      .person-info .person-info-inner {
-        padding: 0; } }
-  .person-info h4 {
-    padding-top: 0; }
-  .person-info p {
-    padding: 6px 0; }
-  .person-info .btn, .person-info button, .person-info input[type=submit], .person-info .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer .person-info input[type=submit], .person-info .gform_wrapper .gform_footer input[type=button], .gform_wrapper .gform_footer .person-info input[type=button], .person-info .gform_wrapper .gform_footer input[type=reset], .gform_wrapper .gform_footer .person-info input[type=reset], .person-info .gform_wrapper .gform_footer button, .gform_wrapper .gform_footer .person-info button {
-    margin-top: 20px;
-    padding: 10px 20px; }
-
 .people {
   padding: 20px 0; }
-
-.single-person .right-column {
-  padding-top: 0; }
-  @media only screen and (min-width: 768px) {
-    .single-person .right-column {
-      padding-top: 40px; } }
 
 .people-search {
   padding: 10px;
@@ -1463,6 +1514,85 @@ footer {
     .people-listing .person-entry {
       flex-basis: 18%;
       margin-right: 2%; } }
+
+.bio .sidebar {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+  .bio .sidebar img {
+    display: block; }
+  @media only screen and (min-width: 1024px) {
+    .bio .sidebar .person-info {
+      padding: 20px; } }
+  .bio .sidebar .person-info h5 {
+    padding-bottom: 3px; }
+  .bio .sidebar .person-info p {
+    padding: 3px 0;
+    color: #999999; }
+  .bio .sidebar .person-info .btn, .bio .sidebar .person-info button, .bio .sidebar .person-info input[type=submit], .bio .sidebar .person-info .gform_wrapper .gform_footer input[type=button], .gform_wrapper .gform_footer .bio .sidebar .person-info input[type=button], .bio .sidebar .person-info .gform_wrapper .gform_footer input[type=reset], .gform_wrapper .gform_footer .bio .sidebar .person-info input[type=reset], .bio .sidebar .person-info .gform_wrapper .gform_footer button, .gform_wrapper .gform_footer .bio .sidebar .person-info button {
+    margin-top: 20px;
+    padding: 10px 20px; }
+
+.accordion {
+  margin: 6px 0; }
+  @media only screen and (min-width: 768px) {
+    .accordion {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); } }
+  @media only screen and (min-width: 1220px) {
+    .accordion {
+      margin: 20px 0; } }
+  .accordion .accordion-handle {
+    background: #999999;
+    padding: 20px 20px 20px 40px;
+    position: relative;
+    font-family: "Zilla Slab", sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer; }
+    .accordion .accordion-handle:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 25px;
+      background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+      background-size: cover; }
+    .accordion .accordion-handle.rose {
+      background: #E5665C; }
+      .accordion .accordion-handle.rose:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+    .accordion .accordion-handle.red {
+      background: #AF0000; }
+      .accordion .accordion-handle.red:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+    .accordion .accordion-handle.tan {
+      background: #E6E0D9;
+      color: #000000; }
+      .accordion .accordion-handle.tan:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+    .accordion .accordion-handle.foam {
+      background: #369896; }
+      .accordion .accordion-handle.foam:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+    .accordion .accordion-handle.blue {
+      background: #215C80; }
+      .accordion .accordion-handle.blue:before {
+        background-image: url(../img/accent-tartan-vert-tan.webp); }
+    .accordion .accordion-handle.gold {
+      background: #FFC712;
+      color: #000000; }
+      .accordion .accordion-handle.gold:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+    .accordion .accordion-handle.sky {
+      background: #B2CEDD;
+      color: #000000; }
+      .accordion .accordion-handle.sky:before {
+        background-image: url(../img/accent-tartan-vert-black.webp); }
+  .accordion .accordion-content {
+    padding: 10px 10px 10px 40px;
+    display: none; }
+  .accordion.open .accordion-content {
+    display: block; }
 
 .mfp-bg {
   top: 0;

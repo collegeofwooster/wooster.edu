@@ -25,11 +25,11 @@ $bp-xxl: 1440px;
 
 
 // import all the things
-@import "mixins", "fonts", "reset", "button", "base", "grid", "form";
+@import "mixins", "fonts", "reset", "button", "base", "grid", "form", "columns";
 
 
 // import layout components
-@import "header", "showcase", "content", "front", "sidebar", "footer", "emergency", "people";
+@import "header", "showcase", "content", "front", "sidebar", "footer", "emergency", "people", "accordion";
 
 
 // import lightbox styles

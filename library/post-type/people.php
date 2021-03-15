@@ -315,7 +315,8 @@ function people_shortcode( $atts ) {
 		while ( $p->have_posts() ) : $p->the_post();
 			$post = get_the_ID();
 
-			$people_content .='<div class="person-entry visible">' . get_the_post_thumbnail() .
+			$people_content .='<div class="person-entry visible">' . 
+				'<a href="' . get_the_permalink() . '">' . get_the_post_thumbnail() . '</a>' .
 				'<div class="info">
 					<h4><a href="' . get_the_permalink() . '">' . get_cmb_value( "person_lname", $post ) . ', ' . get_cmb_value( "person_fname" ) . '</a></h4>
 					<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>
@@ -338,6 +339,5 @@ function people_shortcode( $atts ) {
 	return $people_content;
 }
 add_shortcode( 'people', 'people_shortcode' );
-
 
 

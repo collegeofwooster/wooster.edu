@@ -1,0 +1,116 @@
+
+
+.content {
+	position: relative;
+}
+
+
+.two-column {
+	position: relative;
+
+	.sidebar {
+		border-bottom: 1px solid rgba( $grey, .2 );
+		padding: 20px;
+
+		@include respond-to( $bp-m ) {
+			position: absolute;
+			left: 20px;
+			top: 20px;
+			width: 28%;
+			border-bottom: 0;
+			padding: 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			left: 30px;
+			top: 30px;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			left: 40px;
+			top: 40px;
+			width: 20%;
+		}
+
+		.toggle-sidebar-menu {
+			@include respond-to( $bp-m ) {
+				display: none;
+			}
+		}
+
+		.menu-title {
+			display: none;
+			font-size: 22px;
+			padding: 10px 0;
+
+			@include respond-to( $bp-m ) {
+				padding: 10px;
+			}
+		}
+
+		&.scrolled {
+			position: fixed;
+			z-index: 400;
+		}
+
+		.nav-menu {
+			border-top: 2px solid $grey-light;
+			border-bottom: 2px solid $grey-light;
+
+			li {
+				a {
+					display: block;
+					color: $grey;
+					font-size: 14px;
+					line-height: 18px;
+					text-decoration: none;
+					padding: 5px 20px;
+					border-bottom: 1px solid $grey-light;
+					@include font;
+
+					@include respond-to( $bp-m ) {
+						padding: 10px 12px;
+					}
+
+					&:hover {
+						color: $blue;
+					}
+				}
+
+				.sub-menu {
+					display: none;
+
+					&.open {
+						display: block;
+						padding-left: 20px;
+
+						li a {
+							@include font;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.right-column {
+		padding: 20px;
+
+		@include respond-to( $bp-m ) {
+			padding: 10px 20px 50px 34%;
+		}
+
+		@include respond-to( $bp-l ) {
+			padding: 20px 40px 50px 34%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			padding: 40px 40px 70px 25%;
+		}
+	}
+}
+
+
+.two-column {
+	min-height: 900px;
+}
