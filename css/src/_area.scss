@@ -190,6 +190,7 @@
 
 	@include respond-to( $bp-s ) {
 		display: flex;
+		flex-wrap: wrap;
 		margin: 0 -2.5%;
 
 		.area {

@@ -1766,6 +1766,7 @@ footer {
 @media only screen and (min-width: 600px) {
   .area-listing {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -2.5%; }
     .area-listing .area {
       flex: 1;
