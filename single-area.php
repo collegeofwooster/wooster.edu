@@ -12,7 +12,7 @@ $courses = get_cmb_value( "person_courses" );
 	<div class="page-header area-header"<?php print ( !empty( $featured_image_url ) ? ' style="background-image: url(' . $featured_image_url . ')"' : '' ); ?>>
 		<div class="page-header-overlay"></div>
 		<div class="breadcrumbs">
-			<div class="crumbs"><a href="/academics">Academics</a> &raquo; <a href="/areas-of-study">Areas of Study</a> &raquo;</div>
+			<div class="crumbs"><a href="/academics">Academics</a> &raquo; <a href="/areas">Areas of Study</a> &raquo;</div>
 			<div class="page-title"><?php the_title(); ?></div>
 			<div class="area-categories">
 			<?php
