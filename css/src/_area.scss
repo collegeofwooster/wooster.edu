@@ -210,20 +210,11 @@
 		}
 	}
 
-	@include respond-to( $bp-l ) {
-		margin: 0 -1%;
-
-		.area {
-			flex-basis: 23%;
-			margin: 0 1% 20px;
-		}
-	}
-
 	@include respond-to( $bp-xl ) {
 		margin: 0 -1%;
 
 		.area {
-			flex-basis: 18%;
+			flex-basis: 23%;
 			margin: 0 1% 20px;
 		}
 	}
