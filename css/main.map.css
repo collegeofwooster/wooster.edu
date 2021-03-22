@@ -140,6 +140,11 @@ h3 {
 h4 {
   font-size: 1.4em; }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 20px 0; }
+
 p {
   padding: 8px 0; }
   @media only screen and (min-width: 768px) {
@@ -389,6 +394,15 @@ pre {
 .two-column {
   min-height: 900px; }
 
+.one-column {
+  padding: 20px; }
+  @media only screen and (min-width: 768px) {
+    .one-column {
+      padding: 30px; } }
+  @media only screen and (min-width: 1220px) {
+    .one-column {
+      padding: 30px 50px; } }
+
 header {
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
@@ -484,9 +498,6 @@ header {
   background-size: cover;
   min-height: 250px;
   position: relative; }
-  @media only screen and (min-width: 1220px) {
-    .page-header {
-      min-height: 350px; } }
   .page-header .page-header-overlay {
     position: absolute;
     top: 0;
@@ -501,7 +512,12 @@ header {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     color: white;
     font-size: .85em;
+    text-transform: uppercase;
     text-align: left; }
+    @media only screen and (min-width: 1220px) {
+      .page-header .breadcrumbs {
+        left: 50px;
+        bottom: 40px; } }
     .page-header .breadcrumbs a {
       color: white;
       text-decoration: none;
@@ -512,16 +528,14 @@ header {
       font-family: "Zilla Slab", sans-serif;
       font-weight: 600;
       font-size: 2em;
-      line-height: 1.4em; }
+      line-height: 1.4em;
+      text-transform: initial; }
       @media only screen and (min-width: 1024px) {
         .page-header .breadcrumbs .page-title {
           font-size: 2.4em; } }
-    @media only screen and (min-width: 1220px) {
-      .page-header .breadcrumbs {
-        left: 50px;
-        bottom: 40px; }
+      @media only screen and (min-width: 1220px) {
         .page-header .breadcrumbs .page-title {
-          font-size: 2.4em; } }
+          font-size: 3.2em; } }
 
 .showcase {
   zoom: 1;
@@ -1364,35 +1378,6 @@ header {
 .front-mosaic {
   background: #000000; }
 
-@media only screen and (min-width: 768px) {
-  .quarter.sidebar {
-    padding-top: 20px;
-    margin-right: 3%;
-    width: 21%; } }
-
-.quarter.sidebar .widget-title {
-  font-size: 1em;
-  line-height: 1em;
-  padding: 3px;
-  border-bottom: 3px solid #ddd; }
-
-.quarter.sidebar .widget_nav_menu {
-  padding-bottom: 25px; }
-  .quarter.sidebar .widget_nav_menu ul {
-    list-style: none;
-    padding: 0; }
-    .quarter.sidebar .widget_nav_menu ul li {
-      padding: 0; }
-      .quarter.sidebar .widget_nav_menu ul li a {
-        display: block;
-        padding: 4px;
-        border-bottom: 3px solid #eee;
-        color: #666;
-        transition: color 400ms ease-in-out; }
-        .quarter.sidebar .widget_nav_menu ul li a:hover {
-          text-decoration: none;
-          color: #215C80; }
-
 footer {
   zoom: 1;
   background: #000000;
@@ -1757,6 +1742,57 @@ footer {
     @media only screen and (min-width: 768px) {
       .area .area-buttons .btn, .area .area-buttons button, .area .area-buttons input[type=submit], .area .area-buttons .gform_wrapper .gform_footer input[type=button], .gform_wrapper .gform_footer .area .area-buttons input[type=button], .area .area-buttons .gform_wrapper .gform_footer input[type=reset], .gform_wrapper .gform_footer .area .area-buttons input[type=reset], .area .area-buttons .gform_wrapper .gform_footer button, .gform_wrapper .gform_footer .area .area-buttons button {
         margin: 0 30px; } }
+
+.area-listing .area {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px; }
+  .area-listing .area a {
+    display: block;
+    color: black;
+    margin-bottom: 7px; }
+    .area-listing .area a:hover {
+      text-decoration: none; }
+    .area-listing .area a h3 {
+      line-height: 1em; }
+  .area-listing .area span {
+    display: inline-block;
+    background: #d9d9d9;
+    color: #666666;
+    padding: 4px 7px;
+    font-size: .9em;
+    margin-top: 4px;
+    white-space: nowrap; }
+
+@media only screen and (min-width: 600px) {
+  .area-listing {
+    display: flex;
+    margin: 0 -2.5%; }
+    .area-listing .area {
+      flex: 1;
+      flex-grow: 0;
+      flex-basis: 45%;
+      margin: 0 2.5% 20px; } }
+
+@media only screen and (min-width: 768px) {
+  .area-listing {
+    margin: 0 -1.6666%; }
+    .area-listing .area {
+      flex-basis: 30%;
+      margin: 0 1.6666% 20px; } }
+
+@media only screen and (min-width: 1024px) {
+  .area-listing {
+    margin: 0 -1%; }
+    .area-listing .area {
+      flex-basis: 23%;
+      margin: 0 1% 20px; } }
+
+@media only screen and (min-width: 1220px) {
+  .area-listing {
+    margin: 0 -1%; }
+    .area-listing .area {
+      flex-basis: 18%;
+      margin: 0 1% 20px; } }
 
 .mfp-bg {
   top: 0;

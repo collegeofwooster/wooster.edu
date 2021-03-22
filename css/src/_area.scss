@@ -157,3 +157,75 @@
 	}
 }
 
+
+.area-listing {
+	.area {
+		box-shadow: 0 0 20px rgba( black, .2 );
+		padding: 20px;
+
+		a {
+			display: block;
+			color: black;
+			margin-bottom: 7px;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			h3 {
+				line-height: 1em;
+			}
+		}
+
+		span {
+			display: inline-block;
+			background: lighten( $grey-light, 25% );
+			color: $grey;
+			padding: 4px 7px;
+			font-size: .9em;
+			margin-top: 4px;
+			white-space: nowrap;
+		}
+	}
+
+	@include respond-to( $bp-s ) {
+		display: flex;
+		margin: 0 -2.5%;
+
+		.area {
+			flex: 1;
+			flex-grow: 0;
+			flex-basis: 45%;
+			margin: 0 2.5% 20px;
+		}
+	}
+
+	@include respond-to( $bp-m ) {
+		margin: 0 -1.6666%;
+
+		.area {
+			flex-basis: 30%;
+			margin: 0 1.6666% 20px;
+		}
+	}
+
+	@include respond-to( $bp-l ) {
+		margin: 0 -1%;
+
+		.area {
+			flex-basis: 23%;
+			margin: 0 1% 20px;
+		}
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin: 0 -1%;
+
+		.area {
+			flex-basis: 18%;
+			margin: 0 1% 20px;
+		}
+	}
+}
+
+

@@ -6,10 +6,6 @@
 	min-height: 250px;
 	position: relative;
 
-	@include respond-to( 1220px ) {
-		min-height: 350px;
-	}
-
 	.page-header-overlay {
 		position: absolute;
 		top: 0;
@@ -26,7 +22,13 @@
 		text-shadow: 0 0 10px rgba( black, .6 );
 		color: white;
 		font-size: .85em;
+		text-transform: uppercase;
 		text-align: left;
+
+		@include respond-to( 1220px ) {
+			left: 50px;
+			bottom: 40px;
+		}
 
 		a {
 			color: white;
@@ -42,20 +44,17 @@
 			@include font-title-bold;
 			font-size: 2em;
 			line-height: 1.4em;
+			text-transform: initial;
 
 			@include respond-to( 1024px ) {
 				font-size: 2.4em;
 			}
-		}
 
-		@include respond-to( 1220px ) {
-			left: 50px;
-			bottom: 40px;
-
-			.page-title {
-				font-size: 2.4em;
+			@include respond-to( 1220px ) {
+				font-size: 3.2em;
 			}
 		}
+
 	}
 }
 

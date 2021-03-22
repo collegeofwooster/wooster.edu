@@ -146,46 +146,38 @@ function list_area_category() {
 	$num = 1;
 	foreach ( $areas as $area ) {
 		$categories = wp_get_object_terms( $area->ID, 'area_cat' );
-		if ( $num == 1 || $num == $quarter+1 || $num == ( $quarter * 2 )+1 || $num == ( $quarter * 3 )+1 ) {
-			?>
-	<ul class="column<?php print ( $num == 1 ? ' one' : '' ); print ( $num == $quarter+1 ? ' two' : '' ); print ( $num == ($quarter*2)+1 ? ' three' : '' ); print ( $num == ($quarter*3)+1 ? ' four' : '' ); ?>">
-			<?php
-		}
 		?>
-		<li><a href="/area/<?php print $area->post_name ?>"><?php print $area->post_title; ?></a> <?php
-		if ( !empty( $categories ) ) {
-			?><?php
-			$cats = array();
-			foreach ( $categories as $cat ) {
-	 			switch ( $cat->slug ) {
-	 				case "major":
-	 					$cats[] = '<span class="ma">MA</span>';
-	 				break;
-	 				case "minor":
-	 					$cats[] = '<span class="mi">MI</span>';
-	 				break;
-	 				case "pre-professional-advising":
-	 					$cats[] = '<span class="pa">PA</span>';
-	 				break;
-	 				case "teaching-certification":
-	 					$cats[] = '<span class="tc">TC</span>';
-	 				break;
-	 				case "dual-degree":
-	 					$cats[] = '<span class="dd">DD</span>';
-	 				break;
-	 			}
-			}
-			print implode( ' ', $cats );
-			?><?php
-		}
-		?></li>
-		<?php 
-		if ( $num == $quarter || $num == ( $quarter * 2 ) || $num == ( $quarter * 3 ) || $num == $area_count ) {
-			?>
-	</ul>
+		<div class="area">
+			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a> 
 			<?php
-		}
-		$num++;
+			if ( !empty( $categories ) ) {
+				?><?php
+				$cats = array();
+				foreach ( $categories as $cat ) {
+		 			switch ( $cat->slug ) {
+		 				case "major":
+		 					$cats[] = '<span class="ma">Major</span>';
+		 				break;
+		 				case "minor":
+		 					$cats[] = '<span class="mi">Minor</span>';
+		 				break;
+		 				case "pre-professional-advising":
+		 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
+		 				break;
+		 				case "teaching-licensure":
+		 					$cats[] = '<span class="tl">Teaching Licensure</span>';
+		 				break;
+		 				case "pathways":
+		 					$cats[] = '<span class="path">Pathway</span>';
+		 				break;
+		 			}
+				}
+				print implode( ' ', $cats );
+				?><?php
+			}
+			?>
+		</div>
+		<?php
 	}
 	?>
 	<?php

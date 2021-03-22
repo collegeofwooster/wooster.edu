@@ -2,6 +2,8 @@
 
 get_header();
 
+the_page_header();
+
 the_showcase();
 
 ?>

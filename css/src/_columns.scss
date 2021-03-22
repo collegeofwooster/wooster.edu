@@ -122,3 +122,16 @@
 .two-column {
 	min-height: 900px;
 }
+
+
+.one-column {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 30px 50px;
+	}
+}

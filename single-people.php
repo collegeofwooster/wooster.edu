@@ -8,7 +8,10 @@ get_header();
 $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
+the_page_header();
+
 ?>
+
 	<div class="two-column bio">
 
 		<?php 
