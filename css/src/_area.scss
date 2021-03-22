@@ -185,6 +185,31 @@
 			font-size: .9em;
 			margin-top: 4px;
 			white-space: nowrap;
+
+			&.ma {
+				background: $sky;
+				color: $black;
+			}
+
+			&.mi {
+				background: $blue;
+				color: white;
+			}
+
+			&.path {
+				background: $rose;
+				color: white;
+			}
+
+			&.pa {
+				background: $tan;
+				color: $black;
+			}
+
+			&.tl {
+				background: $foam;
+				color: white;
+			}
 		}
 	}
 

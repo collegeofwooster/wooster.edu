@@ -167,7 +167,7 @@ function list_area_category() {
 		 				case "teaching-licensure":
 		 					$cats[] = '<span class="tl">Teaching Licensure</span>';
 		 				break;
-		 				case "pathways":
+		 				case "pathway":
 		 					$cats[] = '<span class="path">Pathway</span>';
 		 				break;
 		 			}

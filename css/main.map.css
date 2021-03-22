@@ -1762,6 +1762,21 @@ footer {
     font-size: .9em;
     margin-top: 4px;
     white-space: nowrap; }
+    .area-listing .area span.ma {
+      background: #B2CEDD;
+      color: #000000; }
+    .area-listing .area span.mi {
+      background: #215C80;
+      color: white; }
+    .area-listing .area span.path {
+      background: #E5665C;
+      color: white; }
+    .area-listing .area span.pa {
+      background: #E6E0D9;
+      color: #000000; }
+    .area-listing .area span.tl {
+      background: #369896;
+      color: white; }
 
 @media only screen and (min-width: 600px) {
   .area-listing {
