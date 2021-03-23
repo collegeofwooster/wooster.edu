@@ -176,6 +176,10 @@
 			}
 		}
 
+		p {
+			font-size: .9em;
+		}
+
 		span {
 			display: inline-block;
 			background: lighten( $grey-light, 25% );
