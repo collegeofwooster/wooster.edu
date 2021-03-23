@@ -19,7 +19,7 @@ get_header();
 		<div class="wrap group two-column academics">
 		
 			<div class="area-filter">
-				<select><option value="all">-- All Areas --</option><option value="ma">Major</option><option value="mi">Minor</option><option value="pa">Pre-Professional Advising</option><option value="tl">Teaching Licensure</option><option value="path">Pathway</option></select>
+				<select><option value="all">-- All Areas --</option><option value="ma">Major</option><option value="mi">Minor</option><option value="ppa">Pre-Professional Advising</option><option value="tl">Teaching Licensure</option><option value="path">Pathway</option></select>
 			</div>
 			<hr />
 			<div class="group area-listing">

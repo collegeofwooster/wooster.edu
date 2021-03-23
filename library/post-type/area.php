@@ -161,7 +161,7 @@ function list_area_category() {
 	 				break;
 	 				case "pre-professional-advising":
 	 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
-	 					$classes[] = 'pa';
+	 					$classes[] = 'ppa';
 	 				break;
 	 				case "teaching-licensure":
 	 					$cats[] = '<span class="tl">Teaching Licensure</span>';

@@ -109,14 +109,14 @@ jQuery(document).ready(function($){
 			// get the filter value
 			var filter_value = $(this).val();
 
-			console.log( filter_value );
-
 			// if they choose all.
 			if ( $(this).val() != 'all' ) {
 
+				area_list.find( '.area' ).hide();
+
 				// loop through and hide all items that don't fit the filter
-				area_list.find( '.area:not(.'+filter_value+')' ).each(function(){
-					$(this).hide();
+				area_list.find( '.area.'+filter_value ).each(function(){
+					$(this).show();
 				});
 			}
 
