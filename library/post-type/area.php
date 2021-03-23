@@ -149,6 +149,7 @@ function list_area_category() {
 		if ( !empty( $categories ) ) {
 			?><?php
 			$cats = array();
+			$classes = array();
 			foreach ( $categories as $cat ) {
 	 			switch ( $cat->slug ) {
 	 				case "major":
@@ -161,7 +162,7 @@ function list_area_category() {
 	 				break;
 	 				case "pre-professional-advising":
 	 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
-	 					$classes[] = 'ppa';
+	 					$classes[] = 'pa';
 	 				break;
 	 				case "teaching-licensure":
 	 					$cats[] = '<span class="tl">Teaching Licensure</span>';
