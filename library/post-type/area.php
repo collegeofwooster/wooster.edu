@@ -146,37 +146,40 @@ function list_area_category() {
 	$num = 1;
 	foreach ( $areas as $area ) {
 		$categories = wp_get_object_terms( $area->ID, 'area_cat' );
+		if ( !empty( $categories ) ) {
+			?><?php
+			$cats = array();
+			foreach ( $categories as $cat ) {
+	 			switch ( $cat->slug ) {
+	 				case "major":
+	 					$cats[] = '<span class="ma">Major</span>';
+	 					$classes[] = 'ma';
+	 				break;
+	 				case "minor":
+	 					$cats[] = '<span class="mi">Minor</span>';
+	 					$classes[] = 'mi';
+	 				break;
+	 				case "pre-professional-advising":
+	 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
+	 					$classes[] = 'pa';
+	 				break;
+	 				case "teaching-licensure":
+	 					$cats[] = '<span class="tl">Teaching Licensure</span>';
+	 					$classes[] = 'tl';
+	 				break;
+	 				case "pathway":
+	 					$cats[] = '<span class="path">Pathway</span>';
+	 					$classes[] = 'path';
+	 				break;
+	 			}
+			}
+			?><?php
+		}
 		?>
-		<div class="area">
+		<div class="area <?php print implode( ' ', $classes ); ?>">
 			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a>
 			<p><?php print $area->post_excerpt; ?></p>
-			<?php
-			if ( !empty( $categories ) ) {
-				?><?php
-				$cats = array();
-				foreach ( $categories as $cat ) {
-		 			switch ( $cat->slug ) {
-		 				case "major":
-		 					$cats[] = '<span class="ma">Major</span>';
-		 				break;
-		 				case "minor":
-		 					$cats[] = '<span class="mi">Minor</span>';
-		 				break;
-		 				case "pre-professional-advising":
-		 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
-		 				break;
-		 				case "teaching-licensure":
-		 					$cats[] = '<span class="tl">Teaching Licensure</span>';
-		 				break;
-		 				case "pathway":
-		 					$cats[] = '<span class="path">Pathway</span>';
-		 				break;
-		 			}
-				}
-				print implode( ' ', $cats );
-				?><?php
-			}
-			?>
+			<?php print implode( ' ', $cats ); ?>
 		</div>
 		<?php
 	}

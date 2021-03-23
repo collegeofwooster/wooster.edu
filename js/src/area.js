@@ -94,11 +94,10 @@ jQuery(document).ready(function($){
 		// store some sections of the page
 		var area_list = $('.area-listing');
 		var area_filter = $('.area-filter select');
-		var area_legend = $('.area-legend');
 
 		// function to reset the list if they choose 'all'
 		var reset_list = function(){
-			area_list.find('li').show();
+			area_list.find('.area').show();
 		}
 
 		// area filter select list change
@@ -110,26 +109,15 @@ jQuery(document).ready(function($){
 			// get the filter value
 			var filter_value = $(this).val();
 
+			console.log( filter_value );
 
 			// if they choose all.
-			if ( $(this).val() == 'all' ) {
-				// reset the mini legend and term visibility to initial settings
-				area_legend.find('.mini-legend').show();
-				area_legend.find('.term').hide();
-			} else {
+			if ( $(this).val() != 'all' ) {
+
 				// loop through and hide all items that don't fit the filter
-				area_list.find( 'li:not(.'+filter_value+')' ).each(function(){
+				area_list.find( '.area:not(.'+filter_value+')' ).each(function(){
 					$(this).hide();
 				});
-
-				// hide all terms that aren't the one they chose.
-				area_legend.find( '.term:not(.'+filter_value+')' ).hide();
-
-				// show the legend item for the area category they chose
-				area_legend.find( '.term.'+filter_value+'' ).css('display','flex');
-
-				// hide the legend
-				area_legend.find( '.mini-legend' ).hide();
 			}
 
 		});
