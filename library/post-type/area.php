@@ -43,7 +43,7 @@ function area_post_type() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions')
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions' )
 		) /* end of options */
 	); /* end of register post type */
 	
@@ -148,7 +148,8 @@ function list_area_category() {
 		$categories = wp_get_object_terms( $area->ID, 'area_cat' );
 		?>
 		<div class="area">
-			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a> 
+			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a>
+			<p><?php print $area->post_excerpt; ?></p>
 			<?php
 			if ( !empty( $categories ) ) {
 				?><?php
@@ -272,7 +273,7 @@ function area_metaboxes() {
     // area of interest information
     $area_box = new_cmb2_box( array(
         'id' => 'area_info',
-        'title' => 'Area of Interest Details',
+        'title' => 'Area Details',
         'object_types' => array( 'area' ), // post type
         'context' => 'normal',
         'priority' => 'high',

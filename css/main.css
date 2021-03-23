@@ -1748,8 +1748,7 @@ footer {
   padding: 20px; }
   .area-listing .area a {
     display: block;
-    color: black;
-    margin-bottom: 7px; }
+    color: black; }
     .area-listing .area a:hover {
       text-decoration: none; }
     .area-listing .area a h3 {
