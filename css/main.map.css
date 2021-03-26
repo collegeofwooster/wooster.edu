@@ -949,132 +949,139 @@ header {
             font-size: 1.1em; }
           .connected-learning .connected-learning-header .connected-learning-search input[type=submit] {
             background: #215C80; } }
-  .connected-learning .connected-learning-results .result-box {
-    background: url(../img/photo-large.webp) center center no-repeat;
-    background-size: cover;
-    position: relative; }
-    .connected-learning .connected-learning-results .result-box:after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-      background: rgba(0, 0, 0, 0.3); }
-    .connected-learning .connected-learning-results .result-box:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 25px;
-      background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
-      background-size: cover; }
-    .connected-learning .connected-learning-results .result-box.areas {
-      background: url(../img/photo-large.webp) center center no-repeat; }
-      .connected-learning .connected-learning-results .result-box.areas:before {
-        background-image: url(../img/accent-tartan-vert-sky.webp); }
-    .connected-learning .connected-learning-results .result-box.independent {
-      background: url(../img/photo-large-independent.webp) center center no-repeat;
-      background-size: cover; }
-      .connected-learning .connected-learning-results .result-box.independent:before {
-        background-image: url(../img/accent-tartan-vert-blue.webp); }
-    .connected-learning .connected-learning-results .result-box.experiential {
-      background: url(../img/photo-large-experiential.webp) center center no-repeat;
-      background-size: cover; }
-      .connected-learning .connected-learning-results .result-box.experiential:before {
-        background-image: url(../img/accent-tartan-vert-foam.webp); }
-    .connected-learning .connected-learning-results .result-box.pathway {
-      background: url(../img/photo-large-pathway.webp) center center no-repeat;
-      background-size: cover; }
-      .connected-learning .connected-learning-results .result-box.pathway:before {
-        background-image: url(../img/accent-tartan-vert-rose.webp); }
-    @media only screen and (min-width: 768px) {
-      .connected-learning .connected-learning-results .result-box {
-        float: left;
-        width: 50%; } }
-    @media only screen and (min-width: 1024px) {
-      .connected-learning .connected-learning-results .result-box {
-        width: 30%;
-        margin-right: 5%;
-        margin-bottom: 40px; }
-        .connected-learning .connected-learning-results .result-box:nth-child(3) {
-          margin-right: 0; } }
-    @media only screen and (min-width: 1220px) {
-      .connected-learning .connected-learning-results .result-box {
-        margin-bottom: 50px; } }
-    .connected-learning .connected-learning-results .result-box h3 {
-      position: absolute;
-      top: 40px;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.4);
-      color: #000000;
-      padding: 10px 30px;
-      text-align: center;
-      text-transform: uppercase;
-      line-height: 1.1em; }
-    .connected-learning .connected-learning-results .result-box ul {
-      position: absolute;
-      top: 140px;
-      left: 50px;
-      right: 50px; }
-      .connected-learning .connected-learning-results .result-box ul li {
-        text-align: center; }
-        .connected-learning .connected-learning-results .result-box ul li a {
+  .connected-learning .connected-learning-results {
+    display: none; }
+    .connected-learning .connected-learning-results .result-box {
+      background: url(../img/photo-large.webp) center center no-repeat;
+      background-size: cover;
+      position: relative; }
+      .connected-learning .connected-learning-results .result-box:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        background: rgba(0, 0, 0, 0.3); }
+      .connected-learning .connected-learning-results .result-box:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 25px;
+        background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+        background-size: cover; }
+      .connected-learning .connected-learning-results .result-box.areas {
+        background: url(../img/photo-large.webp) center center no-repeat;
+        background-size: cover; }
+        .connected-learning .connected-learning-results .result-box.areas:before {
+          background-image: url(../img/accent-tartan-vert-sky.webp); }
+      .connected-learning .connected-learning-results .result-box.independent {
+        background: url(../img/photo-large-independent.webp) center center no-repeat;
+        background-size: cover; }
+        .connected-learning .connected-learning-results .result-box.independent:before {
+          background-image: url(../img/accent-tartan-vert-blue.webp); }
+      .connected-learning .connected-learning-results .result-box.experiential {
+        background: url(../img/photo-large-experiential.webp) center center no-repeat;
+        background-size: cover; }
+        .connected-learning .connected-learning-results .result-box.experiential:before {
+          background-image: url(../img/accent-tartan-vert-foam.webp); }
+      .connected-learning .connected-learning-results .result-box.pathways {
+        background: url(../img/photo-large-pathway.webp) center center no-repeat;
+        background-size: cover; }
+        .connected-learning .connected-learning-results .result-box.pathways:before {
+          background-image: url(../img/accent-tartan-vert-rose.webp); }
+      @media only screen and (min-width: 768px) {
+        .connected-learning .connected-learning-results .result-box {
+          float: left;
+          width: 50%; } }
+      @media only screen and (min-width: 1024px) {
+        .connected-learning .connected-learning-results .result-box {
+          width: 30%;
+          margin-right: 5%;
+          margin-bottom: 40px; }
+          .connected-learning .connected-learning-results .result-box:nth-child(3) {
+            margin-right: 0; } }
+      @media only screen and (min-width: 1220px) {
+        .connected-learning .connected-learning-results .result-box {
+          margin-bottom: 50px; } }
+      .connected-learning .connected-learning-results .result-box h3 {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.4);
+        color: #000000;
+        padding: 10px 30px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.1em; }
+      .connected-learning .connected-learning-results .result-box ul {
+        position: absolute;
+        top: 140px;
+        left: 50px;
+        right: 50px; }
+        .connected-learning .connected-learning-results .result-box ul li {
+          text-align: center; }
+          .connected-learning .connected-learning-results .result-box ul li a {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            color: white;
+            line-height: 1.5em; }
+    .connected-learning .connected-learning-results .result-bar {
+      background: #000000;
+      position: relative; }
+      .connected-learning .connected-learning-results .result-bar img {
+        float: right;
+        display: block;
+        margin-left: 20px; }
+        @media only screen and (min-width: 768px) {
+          .connected-learning .connected-learning-results .result-bar img {
+            width: 20%; } }
+      @media only screen and (min-width: 500px) {
+        .connected-learning .connected-learning-results .result-bar {
+          padding-top: 0; } }
+      @media only screen and (min-width: 768px) {
+        .connected-learning .connected-learning-results .result-bar {
+          clear: left; } }
+      @media only screen and (min-width: 1024px) {
+        .connected-learning .connected-learning-results .result-bar {
+          float: left;
+          width: 65%;
+          margin-bottom: 45px;
+          clear: none; } }
+      .connected-learning .connected-learning-results .result-bar.profile {
+        background: #FFC712; }
+        .connected-learning .connected-learning-results .result-bar.profile a {
+          color: #000000; }
+      .connected-learning .connected-learning-results .result-bar h3 {
+        background: rgba(255, 255, 255, 0.9);
+        color: #000000;
+        padding: 8px 20px;
+        text-transform: uppercase; }
+        @media only screen and (min-width: 500px) {
+          .connected-learning .connected-learning-results .result-bar h3 {
+            float: left;
+            width: 30%;
+            margin-top: 30px;
+            text-align: center; } }
+        @media only screen and (min-width: 1220px) {
+          .connected-learning .connected-learning-results .result-bar h3 {
+            margin-top: 43px; } }
+      @media only screen and (min-width: 500px) {
+        .connected-learning .connected-learning-results .result-bar ul {
+          float: left;
+          width: 40%;
+          margin-top: 10px;
+          margin-left: 20px; } }
+      @media only screen and (min-width: 1220px) {
+        .connected-learning .connected-learning-results .result-bar ul {
+          margin-top: 25px; } }
+      .connected-learning .connected-learning-results .result-bar ul li {
+        padding: 20px; }
+        .connected-learning .connected-learning-results .result-bar ul li a {
           font-family: "Roboto", sans-serif;
           font-weight: 700;
           color: white;
           line-height: 1.5em; }
-  .connected-learning .connected-learning-results .result-bar {
-    background: #000000;
-    position: relative; }
-    .connected-learning .connected-learning-results .result-bar img {
-      float: right;
-      display: block;
-      margin-left: 20px; }
-      @media only screen and (min-width: 768px) {
-        .connected-learning .connected-learning-results .result-bar img {
-          width: 20%; } }
-    @media only screen and (min-width: 500px) {
-      .connected-learning .connected-learning-results .result-bar {
-        padding-top: 0; } }
-    @media only screen and (min-width: 1024px) {
-      .connected-learning .connected-learning-results .result-bar {
-        float: left;
-        width: 65%;
-        margin-bottom: 45px; } }
-    .connected-learning .connected-learning-results .result-bar.profiles {
-      background: #FFC712; }
-      .connected-learning .connected-learning-results .result-bar.profiles a {
-        color: #000000; }
-    .connected-learning .connected-learning-results .result-bar h3 {
-      background: rgba(255, 255, 255, 0.9);
-      color: #000000;
-      padding: 8px 20px;
-      text-transform: uppercase; }
-      @media only screen and (min-width: 500px) {
-        .connected-learning .connected-learning-results .result-bar h3 {
-          float: left;
-          width: 30%;
-          margin-top: 30px;
-          text-align: center; } }
-      @media only screen and (min-width: 1220px) {
-        .connected-learning .connected-learning-results .result-bar h3 {
-          margin-top: 43px; } }
-    @media only screen and (min-width: 500px) {
-      .connected-learning .connected-learning-results .result-bar ul {
-        float: left;
-        width: 40%;
-        margin-top: 10px;
-        margin-left: 20px; } }
-    @media only screen and (min-width: 1220px) {
-      .connected-learning .connected-learning-results .result-bar ul {
-        margin-top: 25px; } }
-    .connected-learning .connected-learning-results .result-bar ul li {
-      padding: 20px; }
-      .connected-learning .connected-learning-results .result-bar ul li a {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        color: white;
-        line-height: 1.5em; }
 
 .front-comms {
   padding: 20px; }

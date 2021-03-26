@@ -31,7 +31,10 @@ get_header();
 				</div>
 				<div class="connected-learning-search">
 					<h2>What can I do at Woo?</h2>
-					<?php print get_search_form(); ?>
+					<form class="connected-learning-search-form">
+						<input type="text" value="" name="s" class="connected-learning-search-term" placeholder="Search" title="Search your interest.">
+						<input type="submit" class="connected-learning-search-submit" value="Search">
+					</form>
 				</div>
 			</div>
 
@@ -41,7 +44,7 @@ get_header();
 					<ul>
 						<li><a href="#">Biology</a></li>
 						<li><a href="#">Biochemistry & Molecular Biology</a></li>
-						<li><a href="#">All Areas of Study</a></li>
+						<li class="all"><a href="/areas">All Areas of Study</a></li>
 					</ul>
 				</div>
 
@@ -59,11 +62,11 @@ get_header();
 					</ul>
 				</div>
 
-				<div class="result-box pathway">
+				<div class="result-box pathways">
 					<h3>Featured<br> Pathway</h3>
 					<ul>
 						<li><a href="#">Public Health Pathway</a></li>
-						<li><a href="#">View All Pathways</a></li>
+						<li class="all"><a href="#">View All Pathways</a></li>
 					</ul>
 				</div>
 
@@ -78,7 +81,7 @@ get_header();
 					<div class="group"></div>
 				</div>
 
-				<div class="result-bar profiles">
+				<div class="result-bar profile">
 					<img src="<?php bloginfo('template_url') ?>/img/photo-square-gold.webp" />
 					<div class="result-bar-inner">
 						<h3>Profiles</h3>

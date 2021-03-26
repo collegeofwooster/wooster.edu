@@ -183,6 +183,7 @@
 	}
 
 	.connected-learning-results {
+		display: none;
 
 		.result-box {
 			background: url(../img/photo-large.webp) center center no-repeat;
@@ -209,6 +210,7 @@
 
 			&.areas {
 				background: url(../img/photo-large.webp) center center no-repeat;
+				background-size: cover;
 
 				&:before {
 					background-image: url(../img/accent-tartan-vert-sky.webp);
@@ -233,7 +235,7 @@
 				}
 			}
 
-			&.pathway {
+			&.pathways {
 				background: url(../img/photo-large-pathway.webp) center center no-repeat;
 				background-size: cover;
 				
@@ -310,13 +312,18 @@
 				padding-top: 0;
 			}
 
+			@include respond-to( 768px ) {
+				clear: left;
+			}
+
 			@include respond-to( $bp-l ) {
 				float: left;
 				width: 65%;
 				margin-bottom: 45px;
+				clear: none;
 			}
 
-			&.profiles {
+			&.profile {
 				background: $gold;
 
 				a {
