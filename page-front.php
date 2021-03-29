@@ -15,8 +15,7 @@ get_header();
 		<?php the_featured_article(); ?>
 
 		<div class="front-notice">
-			<p>Applications are due August 1.</p>
-			<p><?php print do_shortcode( '[button url="/apply" class="red"]Apply Today[/button]') ?></p>
+			<?php print do_shortcode( '[snippet slug="home-announce" /]') ?>
 		</div>
 
 	</div>
