@@ -189,6 +189,11 @@ function person_metaboxes() {
         'type' => 'text_medium'
     ) );
     $person_box->add_field( array(
+        'name' => 'Pronouns',
+        'id' => $prefix . 'person_pronouns',
+        'type' => 'text_medium'
+    ) );
+    $person_box->add_field( array(
         'name' => 'Title',
         'id' => $prefix . 'person_title',
         'type' => 'text'
@@ -221,6 +226,14 @@ function person_metaboxes() {
         'desc' => 'Upload a CV/Resume file.'
     ) );
     $person_box->add_field( array(
+        'name' => 'Courses Taught',
+        'id' => $prefix . 'person_courses',
+        'type' => 'wysiwyg',
+        'options' => array (
+            'textarea_rows' => 6
+        )
+    ) );
+    $person_box->add_field( array(
         'name' => 'Areas of Interest',
         'id' => $prefix . 'person_interests',
         'type' => 'wysiwyg',
@@ -228,6 +241,14 @@ function person_metaboxes() {
             'textarea_rows' => 6
         )
     ) );
+    $person_box->add_field( array(
+	    'name' => 'Independent Study Advising',
+	    'id' => $prefix . 'person_independent',
+	    'type' => 'wysiwyg',
+	    'options' => array (
+	        'textarea_rows' => 6
+	    )
+	) );
     $person_box->add_field( array(
 	    'name' => 'Publications',
 	    'id' => $prefix . 'person_publications',

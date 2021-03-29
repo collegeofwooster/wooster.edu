@@ -23,6 +23,7 @@ the_page_header();
 			<?php the_post_thumbnail() ?>
 			<div class="person-info">
 				<h3><?php the_title(); ?></h3>
+				<p class="pronouns">Pronouns: <?php print get_cmb_value( "person_pronouns" ); ?></p>
 				<h5 class="person-title"><?php print get_cmb_value( "person_title" ); ?></h5>
 				<p><a href="mailto:<?php print get_cmb_value( "person_email" ); ?>"><?php print get_cmb_value( "person_email" ); ?></a></p>
 				<p>Phone: <?php print get_cmb_value( "person_phone" ); ?></p>
@@ -38,6 +39,8 @@ the_page_header();
 			</div>
 
 			<?php if ( get_cmb_value( 'person_interests' ) ) do_accordion( 'Areas of Interest', get_cmb_value( 'person_interests' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_courses' ) ) do_accordion( 'Courses Taught', get_cmb_value( 'person_courses' ), 'blue' ); ?>
+			<?php if ( get_cmb_value( 'person_independent' ) ) do_accordion( 'Independent Study Advising', get_cmb_value( 'person_independent' ), 'blue' ); ?>
 			<?php if ( get_cmb_value( 'person_publications' ) ) do_accordion( 'Publications', get_cmb_value( 'person_publications' ), 'blue' ); ?>
 			<?php if ( get_cmb_value( 'person_presentations' ) ) do_accordion( 'Presentations', get_cmb_value( 'person_presentations' ), 'blue' ); ?>
 			<?php if ( get_cmb_value( 'person_experience' ) ) do_accordion( 'Professional Experience', get_cmb_value( 'person_experience' ), 'blue' ); ?>
