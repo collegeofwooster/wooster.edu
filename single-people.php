@@ -8,7 +8,7 @@ get_header();
 $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
-the_page_header();
+the_page_header( null, get_bloginfo('template_url') . '/img/page-header-faculty.webp' );
 
 ?>
 
@@ -23,7 +23,7 @@ the_page_header();
 			<?php the_post_thumbnail() ?>
 			<div class="person-info">
 				<h3><?php the_title(); ?></h3>
-				<p class="pronouns">Pronouns: <?php print get_cmb_value( "person_pronouns" ); ?></p>
+				<?php if ( has_cmb_value( "person_pronouns" ) ) { ?><p class="pronouns">Pronouns: <?php print get_cmb_value( "person_pronouns" ); ?></p><?php } ?>
 				<h5 class="person-title"><?php print get_cmb_value( "person_title" ); ?></h5>
 				<p><a href="mailto:<?php print get_cmb_value( "person_email" ); ?>"><?php print get_cmb_value( "person_email" ); ?></a></p>
 				<p>Phone: <?php print get_cmb_value( "person_phone" ); ?></p>

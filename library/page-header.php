@@ -2,12 +2,16 @@
 
 
 // the output function to display the header on-page.
-function the_page_header( $title_override = '' ) {
+function the_page_header( $title_override = '', $background_override = '' ) {
 	global $post;
 	
 	// get featured image.
 	$featured_image_url = ( has_cmb_value( 'page_header_background' ) ? get_cmb_value( 'page_header_background' ) : get_the_post_thumbnail_url( null, 'full' ) );
  	
+	if ( !empty( $background_override ) ) {
+		$featured_image_url = $background_override;
+	}
+
 	// get page ancestors
 	$ancestors = get_post_ancestors( get_the_ID() );
 
