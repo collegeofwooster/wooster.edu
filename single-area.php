@@ -90,7 +90,9 @@ $courses = get_cmb_value( "person_courses" );
 
 				<?php if ( !empty( get_cmb_value( 'area_post_tag' ) ) ) { ?>
 				<div class="area-news">
-					<h2>Latest News</h2>						  
+					<h2>Latest News</h2>
+
+					<div class="article-cards">						  
 					<?php
 					$args = array(
 					    'tag' => get_cmb_value( 'area_post_tag' ),
@@ -107,8 +109,10 @@ $courses = get_cmb_value( "person_courses" );
 					        $query->the_post(); ?>
 					        <div class="entry">
 					        	<?php the_post_thumbnail(); ?>
-					        	<h3><?php the_title(); ?></h3>
-					        	<?php the_excerpt(); ?>
+					        	<div class="entry-inner">
+						        	<h4><?php the_title(); ?></h4>
+						        	<?php the_excerpt(); ?>
+						        </div>
 					        </div>
 					  		<?php
 					    }
@@ -119,6 +123,7 @@ $courses = get_cmb_value( "person_courses" );
 					wp_reset_postdata();
 					  
 					?>
+					</div>
 				</div>
 				<?php } ?>
 

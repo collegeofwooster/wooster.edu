@@ -130,21 +130,6 @@
 		}
 	}
 
-	.area-news {
-		.entry {
-			@include clearfix;
-			padding: 20px 0;
-			border-top: 1px dotted rgba( $grey, .2 );
-
-			.wp-post-image {
-				float: left;
-				margin: 0 15px 0 0;
-				width: 25%;
-				max-width: 140px;
-			}
-		}
-	}
-
 	.area-buttons {
 		padding: 20px;
 		text-align: center;

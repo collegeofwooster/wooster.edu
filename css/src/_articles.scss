@@ -1,0 +1,25 @@
+
+
+.article-cards {
+	padding-top: 20px;
+
+	@include respond-to( 1024px ) {
+		display: flex;
+	}
+
+	.entry {
+		box-shadow: 0 0 20px rgba( black, .2 );
+		margin-bottom: 20px;
+
+		.entry-inner {
+			padding: 20px;
+		}
+
+		@include respond-to( 1024px ) {
+			flex: 1;
+			margin: 0 3% 0 0;
+			width: 30.3333%;
+		}
+	}	
+}
+

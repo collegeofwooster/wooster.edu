@@ -1564,7 +1564,9 @@ footer {
   @media only screen and (min-width: 1440px) {
     .people-listing .person-entry {
       flex-basis: 18%;
-      margin-right: 2%; } }
+      margin-right: 2%; }
+      .right-column .people-listing .person-entry {
+        flex-basis: 23%; } }
 
 .bio .sidebar {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
@@ -1646,6 +1648,22 @@ footer {
     display: none; }
   .accordion.open .accordion-content {
     display: block; }
+
+.article-cards {
+  padding-top: 20px; }
+  @media only screen and (min-width: 1024px) {
+    .article-cards {
+      display: flex; } }
+  .article-cards .entry {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; }
+    .article-cards .entry .entry-inner {
+      padding: 20px; }
+    @media only screen and (min-width: 1024px) {
+      .article-cards .entry {
+        flex: 1;
+        margin: 0 3% 0 0;
+        width: 30.3333%; } }
 
 .area {
   position: relative; }
@@ -1739,20 +1757,6 @@ footer {
           font-size: .9em;
           color: #666666;
           padding: 3px 0; }
-  .area .area-news .entry {
-    zoom: 1;
-    padding: 20px 0;
-    border-top: 1px dotted rgba(102, 102, 102, 0.2); }
-    .area .area-news .entry:before, .area .area-news .entry:after {
-      content: "";
-      display: table; }
-    .area .area-news .entry, .area .area-news .entry:before, .area .area-news .entry:after {
-      clear: both; }
-    .area .area-news .entry .wp-post-image {
-      float: left;
-      margin: 0 15px 0 0;
-      width: 25%;
-      max-width: 140px; }
   .area .area-buttons {
     padding: 20px;
     text-align: center; }

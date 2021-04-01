@@ -92,6 +92,10 @@
 		@include respond-to( 1440px ) {
 			flex-basis: 18%;
 			margin-right: 2%;
+
+			.right-column & {
+				flex-basis: 23%;
+			}
 		}
 	}
 }
