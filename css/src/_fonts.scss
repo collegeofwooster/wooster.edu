@@ -27,22 +27,26 @@
 @mixin font-title {
 	font-family: "Zilla Slab", sans-serif;
 	font-weight: 300;
+	font-kerning: normal;
 }
 
 @mixin font-title-italic {
 	font-family: "Zilla Slab", sans-serif;
 	font-weight: 300;
 	font-style: italic;
+	font-kerning: normal;
 }
 
 @mixin font-title-bold {
 	font-family: "Zilla Slab", sans-serif;
 	font-weight: 600;
+	font-kerning: normal;
 }
 
 @mixin font-title-bold-italic {
 	font-family: "Zilla Slab", sans-serif;
 	font-weight: 600;
 	font-style: italic;
+	font-kerning: normal;
 }
 
