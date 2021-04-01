@@ -7,6 +7,10 @@
 @include respond-to( $bp-m ) {
 	.quarter, .third, .half, .two-third, .three-quarter, .twenty, .forty, .thirty {
 		float: left;
+
+		&.right {
+			float: right;
+		}
 	}
 
 	.quarter {

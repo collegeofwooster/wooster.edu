@@ -36,7 +36,7 @@ function require_multi( $files ) {
 require_multi( 'core', 'api', 'metabox', 'emergency', 'page-header', 'images', 'paginate', 'metabox', 'showcase', 'featured-article', 'button', 'accordion' );
 
 
-require_multi( 'post-type/people', 'post-type/area' );
+require_multi( 'post-type/people', 'post-type/area', 'post-type/event' );
 
 
 // require composer autoload

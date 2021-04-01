@@ -45,6 +45,7 @@ $courses = get_cmb_value( "person_courses" );
 			</div>
 		</div>
 	</div>
+
 	<div class="two-column area group" role="main">
 
 	<?php 
