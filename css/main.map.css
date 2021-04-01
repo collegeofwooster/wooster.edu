@@ -118,7 +118,7 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   font-family: "Zilla Slab", sans-serif;
   font-weight: 600;
-  font-kerning: normal;
+  font-kerning: none;
   line-height: 1.5em; }
 
 p {
@@ -530,7 +530,7 @@ header {
     .page-header .breadcrumbs .page-title {
       font-family: "Zilla Slab", sans-serif;
       font-weight: 600;
-      font-kerning: normal;
+      font-kerning: none;
       font-size: 2em;
       line-height: 1.4em;
       text-transform: initial; }
@@ -663,7 +663,7 @@ header {
       .showcase .slide .slide-content h1 {
         font-family: "Zilla Slab", sans-serif;
         font-weight: 600;
-        font-kerning: normal;
+        font-kerning: none;
         color: white;
         text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         padding: 0;
@@ -1185,7 +1185,7 @@ header {
       color: #E5665C;
       font-family: "Zilla Slab", sans-serif;
       font-weight: 300;
-      font-kerning: normal;
+      font-kerning: none;
       font-size: 2em;
       line-height: .9em;
       text-align: center;
@@ -1194,7 +1194,7 @@ header {
         display: block;
         font-family: "Zilla Slab", sans-serif;
         font-weight: 600;
-        font-kerning: normal;
+        font-kerning: none;
         font-size: 2.75em;
         line-height: .7em;
         margin-top: -8px; }
@@ -1381,7 +1381,7 @@ header {
     .front-statistics .front-statistics-inner .stat h4 {
       font-family: "Zilla Slab", sans-serif;
       font-weight: 600;
-      font-kerning: normal;
+      font-kerning: none;
       font-size: 4em;
       line-height: 1.2em;
       text-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
@@ -1505,7 +1505,7 @@ footer {
   .people-search input[type=text] {
     font-family: "Zilla Slab", sans-serif;
     font-weight: 300;
-    font-kerning: normal;
+    font-kerning: none;
     display: block;
     width: 100%;
     padding: 0 0 0 40px;
@@ -1597,7 +1597,7 @@ footer {
     position: relative;
     font-family: "Zilla Slab", sans-serif;
     font-weight: 600;
-    font-kerning: normal;
+    font-kerning: none;
     font-size: 1.5em;
     color: white;
     cursor: pointer; }
