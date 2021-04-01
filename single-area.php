@@ -9,7 +9,7 @@ $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
 ?>
-	<div class="page-header area-header"<?php print ( !empty( $featured_image_url ) ? ' style="background-image: url(' . $featured_image_url . ')"' : '' ); ?>>
+	<div class="page-header area-header"<?php print ( has_cmb_value( 'page_header_background' ) ? ' style="background-image: url(' . get_cmb_value( 'page_header_background' ) . ')"' : ( !empty( $featured_image_url ) ? ' style="background-image: url(' . $featured_image_url . ')"' : '' ) ); ?>>
 		<div class="page-header-overlay"></div>
 		<div class="breadcrumbs">
 			<div class="crumbs"><a href="/academics">Academics</a> &raquo; <a href="/areas">Areas of Study</a> &raquo;</div>
