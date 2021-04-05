@@ -32,6 +32,7 @@ $bp-xxl: 1440px;
 @import "header", "page-header", "showcase", "content", "front", "footer", "emergency", "people", "accordion", "articles";
 
 
+// include styles for custom post types
 @import "area", "event";
 
 

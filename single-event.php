@@ -9,14 +9,12 @@ get_header();
 		while ( have_posts() ) : the_post(); 
 			?>
 
-		<div class="event" role="main">
-			<div class="event-header">
-				<?php $event_thumbnail_url = get_the_post_thumbnail_url(); ?>
-				<div class="event-thumbnail" style="background-image: url(<?php print $event_thumbnail_url; ?>);">
-					&nbsp;
+		<div class="event group" role="main">
+			<div class="event-header third right">
+				<div class="event-thumbnail">
+					<?php the_post_thumbnail(); ?>
 				</div>
 				<div class="event-info">
-					<h2><?php the_title(); ?></h2>
 					<?php 
 					// display credit union name
 					if ( has_cmb_value( 'event_start' ) && has_cmb_value( 'event_end' ) ) {
@@ -40,7 +38,8 @@ get_header();
 					?>
 				</div>
 			</div>
-			<div class="content-wide">
+			<div class="two-third right">
+				<h2><?php the_title(); ?></h2>
 				<?php the_content(); ?>
 			</div>
 		</div>

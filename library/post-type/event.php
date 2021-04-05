@@ -759,3 +759,5 @@ function rss_event_sort( $query ) {
 add_filter( 'pre_get_posts', 'rss_event_sort' );
 
 
+
+

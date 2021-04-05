@@ -54,7 +54,7 @@ function wooster_api_connections( $data ) {
 	$return->profile = get_posts(array(
 		'post_type' => 'post',
 		's' => $request['filter_term'],
-	    'tag__in' => array( 388 ),
+	    'cat__in' => array( 44 ),
 		'posts_per_page' => 1
 	));
 	$return->profile[0]->permalink = get_permalink( $return->profile[0]->ID );
