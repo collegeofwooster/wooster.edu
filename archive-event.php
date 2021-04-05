@@ -13,7 +13,7 @@ if ( isset( $_REQUEST['event_category'] ) && $_REQUEST['event_category']!=0 ) {
 }
 
 ?>
-	<?php page_header( $page_title ); ?>
+	<?php the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-header.webp" ); ?>
 	
 	<div id="content" class="wrap content-wide" role="main">
 		<div class="events-content">
