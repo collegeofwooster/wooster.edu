@@ -61,13 +61,7 @@ get_header();
 					</ul>
 				</div>
 
-				<div class="result-box pathways">
-					<h3>Featured<br> Pathway</h3>
-					<ul>
-						<li><a href="#">Public Health Pathway</a></li>
-						<li class="all"><a href="#">View All Pathways</a></li>
-					</ul>
-				</div>
+				<?php print do_shortcode( '[snippet slug="connected-learning-pathways" /]' ); ?>
 
 				<div class="result-bar news">
 					<img src="<?php bloginfo('template_url') ?>/img/photo-square.webp" />

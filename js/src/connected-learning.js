@@ -11,8 +11,6 @@ jQuery(document).ready(function($){
 			var term = $( ".connected-learning-search-term" ).val();
 
 			$.ajax( "/wp-json/wooster/v1/connections/?filter_term=" + encodeURIComponent( term ) ).done(function( data ) {
-				console.log( data.pathways );
-
 				// set areas results
 				$( ".result-box.areas li:not(.all)" ).remove();
 				var areas_results = '';
@@ -22,13 +20,14 @@ jQuery(document).ready(function($){
 				$( ".result-box.areas ul" ).prepend( areas_results );
 
 				// set areas results
+				/*
 				$( ".result-box.pathways li:not(.all)" ).remove();
 				var pathways_results = '';
 				$.each( data.pathways , function( pathway_key, pathway_val ){
 					pathways_results += '<li><a href="'+ pathway_val['permalink'] + '">' + pathway_val['post_title'] + '</a>"';
 				});
-				console.log( pathways_results );
 				$( ".result-box.pathways ul" ).prepend( pathways_results );
+				*/
 
 				// set experiential learning result
 				$( ".result-box.experiential li a" ).html( data.experiential[0]['post_title'] ).attr( 'href', data.experiential[0]['permalink'] );
