@@ -21,7 +21,7 @@ function wooster_api_connections( $data ) {
 	$return->areas = get_posts(array(
 		'post_type' => 'area',
 		's' => $request['filter_term'],
-		'posts_per_page' => 3
+		'posts_per_page' => 2
 	));
 	foreach ( $return->areas as $area_key=>$area ) {
 		$return->areas[$area_key]->permalink = get_permalink( $area->ID );
@@ -31,9 +31,16 @@ function wooster_api_connections( $data ) {
 	// get the profiles from posts
 	$return->pathways = get_posts(array(
 		'post_type' => 'area',
-		's' => $request['filter_term'],
-	    'cat__in' => array( 'pathway' ),
-		'posts_per_page' => 3
+		'posts_per_page' => 1,
+		'order' => 'ASC',
+		'orderby' => 'rand',
+		'tax_query' => array(
+			array (
+				'taxonomy' => 'area_cat',
+				'field' => 'term_id', // this is default value, so can be ommited
+				'terms' => 715,
+			)
+		)
 	));
 	foreach ( $return->pathways as $pathway_key=>$pathway ) {
 		$return->pathways[$pathway_key]->permalink = get_permalink( $pathway->ID );
