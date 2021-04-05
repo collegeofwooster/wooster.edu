@@ -51,7 +51,7 @@ function wooster_api_connections( $data ) {
 	$return->experiential = get_posts(array(
 		'post_type' => 'post',
 		's' => $request['filter_term'],
-	    'cat__in' => array( 792 ),
+	    'category' => 792,
 		'posts_per_page' => 1
 	));
 	$return->experiential[0]->permalink = get_permalink( $return->experiential[0]->ID );
@@ -61,7 +61,7 @@ function wooster_api_connections( $data ) {
 	$return->profile = get_posts(array(
 		'post_type' => 'post',
 		's' => $request['filter_term'],
-	    'cat__in' => array( 44 ),
+	    'category' => 44,
 		'posts_per_page' => 1
 	));
 	$return->profile[0]->permalink = get_permalink( $return->profile[0]->ID );
@@ -71,7 +71,7 @@ function wooster_api_connections( $data ) {
 	$return->independent = get_posts(array(
 		'post_type' => 'post',
 		's' => $request['filter_term'],
-	    'cat__in' => array( 793 ),
+	    'category' => 793,
 		'posts_per_page' => 1
 	));
 	$return->independent[0]->permalink = get_permalink( $return->independent[0]->ID );
@@ -81,7 +81,7 @@ function wooster_api_connections( $data ) {
 	$return->news = get_posts(array(
 		'post_type' => 'post',
 		's' => $request['filter_term'],
-		'cat__in' => array( 794 ),
+		'category' => 794,
 		'posts_per_page' => 1
 	));
 	$return->news[0]->permalink = get_permalink( $return->news[0]->ID );
