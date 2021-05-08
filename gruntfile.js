@@ -1,5 +1,5 @@
 
-const sass = require('node-sass');
+// const sass = require('node-sass');
 
 module.exports = function(grunt) {
 
@@ -40,7 +40,21 @@ module.exports = function(grunt) {
         },
 
 
+        // dictate where our sass files will compile to.
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'css/main.css': 'css/src/main.scss',
+                }
+            }
+        },
+
+
         // we use the Sass
+        /*
         sass: {
             options: {
                 implementation: sass
@@ -59,6 +73,7 @@ module.exports = function(grunt) {
                 }
             },        
         }
+        */
         
     });
 

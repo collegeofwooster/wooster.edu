@@ -118,8 +118,29 @@ jQuery(document).ready(function($){
 
 	});
 
+
+	// 
 	$('.slide').on('click', function(){
-		console.log( 'clicked' );
+
+		if ( $(this).data('href') ) {
+			var link = $(this).data('href');
+			console.log( link );
+
+			if ( link.match( /youtube.com/g ) || link.match( /youtu.be/g ) || link.match( /vimeo.com/g ) ) {
+				$.magnificPopup.open({
+					items: {
+						src: link
+					},
+					type: 'iframe'
+
+					// You may add options here, they're exactly the same as for $.fn.magnificPopup call
+					// Note that some settings that rely on click event (like disableOn or midClick) will not work here
+				}, 0);
+			} else {
+				location.href = $(this).data('href');
+			}
+		}
+
 	});
 
 });

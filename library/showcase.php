@@ -22,7 +22,7 @@ function the_showcase() {
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
 
 				?>
-			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>" style="background-image: url(<?php print $slide["image"]; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="location.href=\'' . $link . '\'"' : '' ) ?>>
+			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>" style="background-image: url(<?php print $slide["image"]; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
 				
 				<?php if ( !empty( $content ) ) { ?>
 				<div class="showcase-overlay"></div>
@@ -59,6 +59,18 @@ function the_showcase() {
 		</div>
 		<?php
 	}
+}
+
+
+
+// simple boolean function to check if a url is for a video
+function is_video_link( $link ) {
+	if ( !empty( $link ) ) {
+		if ( stristr( $link, 'youtube.com' ) || stristr( $link, 'youtu.be' ) || stristr( $link, 'vimeo.com' ) ) {
+			return true;
+		}
+	}
+	return false;
 }
 
 

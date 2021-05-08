@@ -4,10 +4,9 @@
     "devDependencies": {
         "grunt": "latest",
         "grunt-autoprefixer": "*",
+        "grunt-contrib-sass": "*",
         "grunt-contrib-uglify": "*",
         "grunt-contrib-watch": "*",
-        "grunt-sass": "*",
-        "matchdep": "*",
-        "node-sass": "*"
+        "matchdep": "*"
     }
 }
