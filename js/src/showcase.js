@@ -118,5 +118,9 @@ jQuery(document).ready(function($){
 
 	});
 
+	$('.slide').on('click', function(){
+		console.log( 'clicked' );
+	});
+
 });
 

@@ -6,47 +6,53 @@ function articles_shortcode( $atts ) {
 	$a = shortcode_atts( array(
 		'style' => "card",
 		'tags' => '',
-		'cats' => ''
+		'cats' => '',
+		'posts_per_page' => 4
 	), $atts );
 
 	$args = array(
-	    'posts_per_page' => 3
+		'posts_per_page' => $a['posts_per_page']
 	);
 
-	$tags = explode( ',', $a['tags'] );
-	$cats = explode( ',', $a['cats'] );
-
-	if ( !empty($tags) ) {
-		$args['tags__in'] = $tags;
+	if ( !empty( $a['tag'] ) ) {
+		$args['tag'] = $a['tag'];
 	}
 
-	if ( !empty($cats) ) {
+	if ( !empty( $a['tags'] ) ) {
+		$tags = explode( ',', $a['tags'] );
+		$args['tag__in'] = $tags;
+	}
+
+	if ( !empty($a['cats']) ) {
+		$cats = explode( ',', $a['cats'] );
 		$args['category__in'] = $cats;
 	}
 
 	$query = new WP_Query( $args );
 
-	$return = '<div class="article-cards">';
-
 	// Check that we have query results.
 	if ( $query->have_posts() ) {
+
+		$return = '<div class="article-cards">';
 	  
 	    // Start looping over the query results.
 	    while ( $query->have_posts() ) {
 	        $query->the_post();
-	        $return .='<div class="entry">';
-	        $return .= get_the_post_thumbnail();
+	        $return .= '<div class="entry">';
+	        $return .= '<div class="entry-thumbnail"><a href="' . get_the_permalink() . '">';
+	        $return .= get_the_post_thumbnail( null, 'post-thumbnail' );
+	        $return .= '</a></div>';
 	        $return .= '<div class="entry-inner">';
-		    $return .= '<h4>' . get_the_title() . '</h4>';
-		    $return .= get_the_excerpt();
+		    $return .= '<h4><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h4>';
+		    $return .= wpautop( get_the_excerpt() );
 		    $return .= '</div></div>';
 	    }
+
+		$return .= '</div>';
 	  
 	} else {
 		return '';
 	}
-
-	$return .= '</div>';
 	  
 	// Restore original post data.
 	wp_reset_postdata();

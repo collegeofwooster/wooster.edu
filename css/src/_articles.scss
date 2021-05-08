@@ -3,23 +3,44 @@
 .article-cards {
 	padding-top: 20px;
 
-	@include respond-to( 1024px ) {
+	@include respond-to( 650px ) {
 		display: flex;
+		margin-right: -2%;
+		flex-wrap: wrap;
 	}
 
 	.entry {
 		box-shadow: 0 0 20px rgba( black, .2 );
 		margin-bottom: 20px;
 
+		img {
+			width: 100%;
+			display: block;
+		}
+
 		.entry-inner {
 			padding: 20px;
+
+			a {
+				color: $grey;
+
+				&:hover {
+					opacity: .8;
+				}
+			}
+		}
+
+		@include respond-to( 650px ) {
+			flex: 1;
+			flex-grow: 0;
+			margin: 0 2% 2% 0;
+			flex-basis: 48%;
 		}
 
 		@include respond-to( 1024px ) {
-			flex: 1;
-			margin: 0 3% 0 0;
-			width: 30.3333%;
+			margin: 0 2% 2% 0;
+			flex-basis: 23%;
 		}
-	}	
+	}
 }
 

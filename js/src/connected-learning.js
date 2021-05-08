@@ -31,12 +31,21 @@ jQuery(document).ready(function($){
 
 				// set experiential learning result
 				$( ".result-box.experiential li a" ).html( data.experiential[0]['post_title'] ).attr( 'href', data.experiential[0]['permalink'] );
-				
+				console.log( data.experiential );
+				if ( data.experiential[0]['thumbnail'] != 'false' ) {
+					$( ".result-box.experiential" ).css( 'background-image', 'url('+data.experiential[0]['thumbnail']+')' );
+				}
+
 				// set independent study result
 				$( ".result-box.independent li a" ).html( data.independent[0]['post_title'] ).attr( 'href', data.independent[0]['permalink'] );
+				if ( data.independent[0]['thumbnail'] != 'false' ) {
+					$( ".result-box.independent" ).css( 'background-image', 'url('+data.independent[0]['thumbnail']+')' );
+				}
 				
 				// set news result
-				$( ".result-bar.news li a" ).html( data.news[0]['post_title'] ).attr( 'href', data.news[0]['permalink'] );
+				if ( data.news[0] ) {
+					$( ".result-bar.news li a" ).html( data.news[0]['post_title'] ).attr( 'href', data.news[0]['permalink'] );
+				}
 				
 				// set profile result
 				$( ".result-bar.profile li a" ).html( data.profile[0]['post_title'] ).attr( 'href', data.profile[0]['permalink'] );
