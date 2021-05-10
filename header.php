@@ -35,7 +35,7 @@
 
 	</div>
 
-	<button class="menu-toggle">Show/hide Menu</button>
+	<button class="menu-show">Show Menu</button>
 
 	<nav class="header-buttons">
 		<?php wp_nav_menu( array( 'theme_location' => 'header-buttons' ) ); ?>
@@ -46,9 +46,30 @@
 </header>
 
 <div class="menu-overlay">
-	<nav>
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-	</nav>
+	<a class="close">X</a>
+
+	<div class="columns">
+		<div class="column">
+			<nav class="main-menu">
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+			</nav>
+		</div>
+		<div class="column">
+			<div class="search-form">
+				<h3>What can we help you find?</h3>
+				<?php include( 'searchform-advanced.php' ); ?>
+			</div>
+
+			<div class="my-wooster">
+				<a href="#">My Wooster</a>
+			</div>
+
+			<div class="quick-links">
+				<h4>Helpful Links</h4>
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-quick-links' ) ); ?>
+			</div>
+		</div>
+	</div>
 </div>
 
 <section class="content">
