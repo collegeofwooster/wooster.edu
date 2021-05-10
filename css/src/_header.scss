@@ -347,7 +347,11 @@ header {
 
 .admin-bar {
 	header {
-		top: 32px;
+		top: 46px;
+
+		@include respond-to( $bp-l ) {
+			top: 32px;
+		}
 	}
 
 	.menu-overlay {

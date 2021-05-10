@@ -199,20 +199,34 @@
 	}
 
 	.showcase-nav {
-		display: none;
+		position: absolute;
+		bottom: 40px;
+		left: 80px;
+		right: 80px;
+		z-index: 101;
+		text-align: center;
+
+		@include respond-to( $bp-l ) {
+			right: 35%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			bottom: 50px;
+			left: 130px;
+			right: auto;
+		}
 
 		a {
-			position: absolute;
-			top: 50%;
-			margin-top: -40px;
+			display: inline-block;
 			cursor: pointer;
 			width: 50px;
-			height: 80px;
+			height: 50px;
 			text-indent: -300px;
 			overflow: hidden;
 			opacity: .7;
 			color: black;
 			z-index: 1001;
+			margin: 0 20px;
 
 			&:hover {
 				opacity: 1;
@@ -221,15 +235,13 @@
 			&.previous {
 				left: 0;
 				background: transparent url(../img/slider-arrow-left.webp) right center no-repeat;
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
+				background-size: contain;
 			}
 
 			&.next {
 				right: 0;
 				background: transparent url(../img/slider-arrow-right.webp) left center no-repeat;
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
+				background-size: contain;
 			}
 		}
 	}

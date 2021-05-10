@@ -1,8 +1,10 @@
 
 .front-showcase-overlay {
+	/*
 	@include respond-to( 500px ) {
 		margin: -100px 50px 20px;
 	}
+	*/
 
 	@include respond-to( $bp-l ) {
 		margin: -440px 0 0 0;
