@@ -5,5 +5,6 @@
 		<label><input type="checkbox" name="post_type[]" value="page"<?php print ( isset( $_REQUEST['post_type'] ) ? ( in_array( 'page', $_REQUEST['post_type'] ) ? ' checked="yes"' : '' ) : '' ) ?> /> Pages</label>
 		<label><input type="checkbox" name="post_type[]" value="post"<?php print ( isset( $_REQUEST['post_type'] ) ? ( in_array( 'post', $_REQUEST['post_type'] ) ? ' checked="yes"' : '' ) : '' ) ?> /> Articles</label>
 		<label><input type="checkbox" name="post_type[]" value="people"<?php print ( isset( $_REQUEST['post_type'] ) ? ( in_array( 'people', $_REQUEST['post_type'] ) ? ' checked="yes"' : '' ) : '' ) ?> /> People</label>
+		<label><input type="checkbox" name="post_type[]" value="event"<?php print ( isset( $_REQUEST['post_type'] ) ? ( in_array( 'event', $_REQUEST['post_type'] ) ? ' checked="yes"' : '' ) : '' ) ?> /> Events</label>
 	</div>
 </form>
