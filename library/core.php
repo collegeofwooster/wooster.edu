@@ -37,3 +37,30 @@ function webp_upload_mimes($existing_mimes) {
     return $existing_mimes;
 }
 add_filter('mime_types', 'webp_upload_mimes');
+
+
+
+// pagination
+function pagination( $prev = '&laquo;', $next = '&raquo;' ) {
+    global $wp_query, $wp_rewrite;
+
+    $posts_per_page = ( isset( $wp_query->query_vars['posts_per_page'] ) ? $wp_query->query_vars['posts_per_page'] : 14 );
+
+    $total = ceil( $wp_query->found_posts / $posts_per_page );
+
+    $current = ( isset( $_REQUEST['paged'] ) ? $_REQUEST['paged'] : 1 );
+
+    $pagination = array(
+        'base' => @add_query_arg('paged','%#%'),
+        'format' => '',
+        'total' => $total,
+        'current' => $current,
+        'prev_text' => __($prev),
+        'next_text' => __($next),
+        'type' => 'plain'
+    );
+
+    if ( !empty($wp_query->query_vars['s']) ) $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+    echo paginate_links( $pagination );
+}
