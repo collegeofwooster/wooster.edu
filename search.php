@@ -9,6 +9,7 @@ get_header();
 $query_args['post_type'] = ( isset( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] : array( 'post', 'page', 'event', 'job' ) );
 $query_args['posts_per_page'] = 40;
 $query_args['s'] = $_REQUEST['s'];
+$query_args['paged'] = $_REQUEST['paged'];
 query_posts( $query_args );
 
 if ( $paged > 0 ) {
