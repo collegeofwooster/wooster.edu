@@ -79,12 +79,6 @@ register_taxonomy( 'event_cat',
 		'query_var' => true,
 		'rewrite' => array( 
 			'slug' => 'events'
-		),
-		'capabilities' => array(
-			'manage_terms' => 'manage_event_cat',
-			'edit_terms' => 'edit_event_cat',
-			'delete_terms' => 'delete_event_cat',
-			'assign_terms' => 'assign_event_cat',
 		)
 	)
 );
