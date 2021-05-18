@@ -175,6 +175,17 @@
 				flex-basis: 30%;
 				padding-top: 50px;
 			}
+
+			.menu {
+				border-top: 1px solid rgba( black, .2 );
+
+				li a {
+					display: block;
+					color: $grey;
+					padding: 10px 0;
+					border-bottom: 1px solid rgba( black, .2 );
+				}
+			}
 		}
 	}
 }
