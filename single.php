@@ -5,18 +5,72 @@
 
 get_header();
 
-the_showcase();
-
 ?>
 
-	<div class="content-wide" role="main">
-		<?php 
-		if ( have_posts() ) :
-			while ( have_posts() ) : the_post(); 
-				?>
-				<h1><?php the_title(); ?></h1>
+	<?php 
+	if ( have_posts() ) :
+		while ( have_posts() ) : the_post(); 
+			?>
+	<div class="post-columns" role="main">
+		<h1><?php the_title(); ?></h1>
+		<div class="post-columns-inner">
+			<div class="main-content">
+				<?php the_post_thumbnail( 'full' ); ?>
 				<?php the_content(); ?>
-				<p class="quiet">Posted by <?php print get_the_author_link() ?> in <?php print get_the_category_list( ', ' ) ?>.</p>
+				<p class="quiet">Posted in <?php print get_the_category_list( ', ' ) ?>.</p>
+			</div>
+			<div class="aside">
+				<?php
+				$cat_list = wp_get_post_categories( $post->ID );
+				$related_posts = get_posts( array(
+					'post_type' => 'post',
+					'cat__in' => $cat_list
+				) );
+				if ( !empty( $cat_list ) ) {
+					?>
+					<h3>Related Posts</h3>
+					<div class="articles list">
+					<?php
+					foreach ( $related_posts as $rpost ) {
+						?>
+						<div class="entry"><a href="<?php print get_the_permalink( $rpost->ID ) ?>"><?php print $rpost->post_title ?></a></div>
+						<?php
+					}
+					?>
+					</div>
+					<?php
+				}
+
+				$tags = wp_get_post_tags( $post->ID );
+				$tag_array = array();
+				foreach ( $tags as $t ) {
+					$tag_array[] = str_replace( '-2', '', $t->slug );
+				}
+
+				if ( !empty( $tag_array ) ) {
+					$areas = get_posts( array(
+						'post_type' => 'area',
+						'post_name__in' => $tag_array
+					) );
+					?>
+					<br>
+					<h3>Related Areas of Study</h3>
+					<div class="areas list">
+					<?php
+					foreach ( $areas as $a ) {
+						?>
+						<div class="entry">
+							<a href="/area/<?php print $a->post_name ?>/"><?php print $a->post_title ?></a>
+							<?php print get_the_excerpt( $a->ID ); ?>
+						</div>
+						<?php
+					}
+					print "</ul>";
+				}
+					
+				?>
+			</div>
+		</div>
 				<?php
 			endwhile;
 		endif;

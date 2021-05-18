@@ -44,3 +44,19 @@
 	}
 }
 
+
+.articles.list {
+	.entry {
+		padding: 20px;
+		box-shadow: 0 0 10px rgba( black, .3 );
+		margin-bottom: 10px;
+
+		a {
+			@include font-title;
+			color: black;
+			font-size: 1.1em;
+			line-height: 1.4em;
+		}
+	}
+}
+
