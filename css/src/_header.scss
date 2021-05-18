@@ -295,6 +295,44 @@ header {
 		}
 	}
 
+	.guides {
+		padding-top: 30px;
+
+		h4 {
+			@include font;
+			text-transform: uppercase;
+			font-size: .8em;
+			margin-bottom: 10px;
+		}
+
+
+		.guides-inner {
+			@include respond-to( $bp-m ) {
+				display: flex;
+				margin-right: -3%;
+			}
+
+			.guide {
+				padding: 120px 20px 20px 20px;
+				background: url(../bg-header.webp) center center no-repeat;
+				background-size: cover;
+				color: white;
+				text-shadow: 0 0 10px rgba( black, .4 );
+
+				@include respond-to( $bp-m ) {
+					flex: 1;
+					flex-basis: 47%;
+					margin-right: 3%;
+					padding: 140px 20px 20px 20px;
+				}
+
+				@include respond-to( $bp-xl ) {
+					padding: 200px 30px 30px 30px;
+				}
+			}
+		}
+	}
+
 	&:before {
 		position: absolute;
 		content: '';
@@ -341,7 +379,6 @@ header {
 			height: 45px;
 		}
 	}
-
 }
 
 

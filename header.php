@@ -68,6 +68,13 @@
 				<h4>Helpful Links</h4>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-quick-links' ) ); ?>
 			</div>
+
+			<div class="guides">
+				<h4>Guides</h4>
+				<div class="guides-inner">
+					<?php print do_shortcode( '[snippet slug="menu-guides" content_filter=0 /]' ); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
