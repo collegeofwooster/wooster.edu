@@ -60,8 +60,8 @@ get_header();
 					foreach ( $areas as $a ) {
 						?>
 						<div class="entry">
-							<a href="/area/<?php print $a->post_name ?>/"><?php print $a->post_title ?></a>
-							<?php print get_the_excerpt( $a->ID ); ?>
+							<a href="/area/<?php print $a->post_name ?>/"><h4><?php print $a->post_title ?></h4></a>
+							<p><?php print get_the_excerpt( $a->ID ); ?></p>
 						</div>
 						<?php
 					}
