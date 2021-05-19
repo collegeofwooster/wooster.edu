@@ -15,7 +15,7 @@
 		@include respond-to( $bp-m ) {
 			position: absolute;
 			left: 20px;
-			top: 20px;
+			top: 100px;
 			width: 28%;
 			border-bottom: 0;
 			padding: 0;
@@ -23,7 +23,7 @@
 
 		@include respond-to( $bp-l ) {
 			left: 30px;
-			top: 30px;
+			top: 100px;
 		}
 
 		@include respond-to( $bp-xl ) {
@@ -32,7 +32,7 @@
 
 		@include respond-to( $bp-xxl ) {
 			left: 40px;
-			top: 40px;
+			top: 100px;
 			width: 22%;
 		}
 
@@ -52,10 +52,12 @@
 			}
 		}
 
+		/*
 		&.scrolled {
 			position: fixed;
 			z-index: 400;
 		}
+		*/
 
 		.nav-menu {
 			border-top: 2px solid $grey-light;

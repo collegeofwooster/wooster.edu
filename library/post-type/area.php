@@ -308,6 +308,11 @@ function area_metaboxes() {
     ));
 
     $area_box->add_field( array(
+        'name' => 'Overview Video',
+        'id' => $prefix . 'area_video',
+        'type' => 'text',
+    ) );
+    $area_box->add_field( array(
         'name' => 'Major',
         'id' => $prefix . 'area_major',
         'type' => 'wysiwyg',

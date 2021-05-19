@@ -140,6 +140,27 @@
 			}
 		}
 	}
+
+	h2 {
+		border-bottom: 3px solid #e6e6e6;
+	}
+
+	.area-columns {
+		padding: 20px 0;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+			margin-right: -30px;
+		}
+
+		.column {
+			@include respond-to( $bp-m ) {
+				flex: 1;
+				flex-basis: 50%;
+				padding-right: 30px;
+			}
+		}
+	}
 }
 
 
