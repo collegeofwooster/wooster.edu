@@ -242,9 +242,7 @@ get_header();
 
 
 	<div class="front-mosaic">
-		<div class="front-mosaic-inner">
-			<img src="<?php bloginfo( 'template_url' ); ?>/img/mosaic.webp" />
-		</div>
+		<?php the_phototiles(); ?>
 	</div>
 
 <?php

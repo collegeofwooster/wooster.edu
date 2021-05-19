@@ -246,7 +246,7 @@ function do_area_tab_content( $title, $key ) {
 	?>
 			<div class="tab-content area-<?php print $key; ?>">
 				<h2><?php print $title ?></h2>
-				<?php print wpautop( do_shortcode( $content ) ); ?>
+				<?php print apply_filters( 'the_content', $content ); ?>
 			</div>
 	<?php
 	} 
