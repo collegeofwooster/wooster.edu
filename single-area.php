@@ -76,16 +76,12 @@ $courses = get_cmb_value( "person_courses" );
 			<div class="tab-content active area-overview">
 				<h2>Overview</h2>
 
-				<div class="area-columns">
-					<div class="column">
-						<?php the_content(); ?>
-					</div>
-					<?php if ( has_cmb_value( 'area_video' ) ) { ?>
-					<div class="column">
-						<?php print apply_filters( 'the_content', get_cmb_value( 'area_video' ) ); ?>
-					</div>
-					<?php } ?>
+				<?php if ( has_cmb_value( 'area_video' ) ) { ?>
+				<div class="area-video">
+					<?php print apply_filters( 'the_content', get_cmb_value( 'area_video' ) ); ?>
 				</div>
+				<?php } ?>
+				<?php the_content(); ?>
 				<hr />
 
 				<?php if ( has_cmb_value( 'area_faculty_list' ) ) { ?>

@@ -143,6 +143,7 @@
 
 	h2 {
 		border-bottom: 3px solid #e6e6e6;
+		margin-bottom: 20px;
 	}
 
 	.area-columns {
@@ -159,6 +160,14 @@
 				flex-basis: 50%;
 				padding-right: 30px;
 			}
+		}
+	}
+
+	.area-video {
+		@include respond-to( 768px ) {
+			float: right;
+			width: 50%;
+			margin: 0 0 15px 15px;
 		}
 	}
 }
