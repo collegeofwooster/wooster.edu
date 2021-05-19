@@ -21,7 +21,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="container">
-<?php the_emergency_bar(); ?>
+<?php //the_emergency_bar(); ?>
 
 <header>
 
@@ -79,5 +79,9 @@
 	</div>
 </div>
 
+<?php do_action( 'after_header' ); ?>
+
 <section class="content">
 	<a name="content"></a>
+
+	<?php do_action( 'before_content' ); ?>

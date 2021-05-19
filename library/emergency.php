@@ -18,21 +18,21 @@ function emergency_metabox( $meta_boxes ) {
 
     $emergency_metabox->add_field( array(
         'name' => 'Emergency Text',
-        'id'   => 'emergency_text',
+        'id'   => CMB_PREFIX . 'emergency_text',
         'type' => 'text',
     ) );
 
     $emergency_metabox->add_field( array(
         'name' => 'Link',
         'desc' => 'Where should the emergency bar link to.',
-        'id'   => 'emergency_link',
+        'id'   => CMB_PREFIX . 'emergency_link',
         'type' => 'text',
     ) );
 
     $emergency_metabox->add_field( array(
         'name' => 'Color',
         'desc' => 'What color should the emergency bar be?',
-        'id'   => 'emergency_color',
+        'id'   => CMB_PREFIX . 'emergency_color',
         'type' => 'select',
         'options' => $colors
     ) );
@@ -42,7 +42,7 @@ add_filter( 'cmb2_init', 'emergency_metabox' );
 
 
 // emergency bar output function
-add_action ( 'after_header' , 'the_emergency_bar', 20 );
+add_action ( 'before_content' , 'the_emergency_bar', 20 );
 function the_emergency_bar() {
 
 	// narrow content
