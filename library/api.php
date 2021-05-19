@@ -35,7 +35,9 @@ function wooster_api_connections( $data ) {
 		//'s' => $request['filter_term'],
 		//'search_prod_title' => $request['filter_term'],
 		'posts_per_page' => 2,
-		'tag' => $request['filter_term']
+		'tag' => $request['filter_term'],
+		'orderby' => 'title',
+		'order' => 'ASC',
 	));
 	foreach ( $return->areas as $area_key=>$area ) {
 		$return->areas[$area_key]->permalink = get_permalink( $area->ID );
