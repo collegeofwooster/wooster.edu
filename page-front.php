@@ -205,9 +205,7 @@ get_header();
 			</div>
 
 			<div class="front-admissions-tour">
-				<h2>Virtual Campus Tour</h2>
-				<p>We'd love to have you visit us in person — and hope you will — but if you can’t make it to campus just yet, this tour will give you a good sense of the place.</p>
-				<img src="<?php bloginfo('template_url') ?>/img/tour.webp" />
+				<?php print get_snippet( 'home-tour', 0 ); ?>
 			</div>
 
 		</div>
