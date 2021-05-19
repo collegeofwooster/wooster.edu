@@ -32,8 +32,8 @@ function wooster_api_connections( $data ) {
 	// get the area of study info
 	$return->areas = get_posts(array(
 		'post_type' => 'area',
-		's' => $request['filter_term'],
-		'search_prod_title' => $request['filter_term'],
+		//'s' => $request['filter_term'],
+		//'search_prod_title' => $request['filter_term'],
 		'posts_per_page' => 2,
 		'tag' => $request['filter_term']
 	));

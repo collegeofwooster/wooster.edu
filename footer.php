@@ -13,6 +13,8 @@ $admin_email = get_option( 'admin_email' );
 	
 	</section>
 	
+	<?php do_action( 'before_footer' ); ?>
+
 	<footer class="footer">
 		<div class="footer-inner">
 
