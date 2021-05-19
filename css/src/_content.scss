@@ -1,7 +1,11 @@
 
 
 section.content {
-	margin-top: 100px;
+	margin-top: 77px;
+
+	@include respond-to( $bp-m ) {
+		margin-top: 100px;
+	}
 }
 
 

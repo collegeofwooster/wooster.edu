@@ -124,7 +124,7 @@
 .connected-learning {
 	@include clearfix;
 	background: $tan;
-	padding: 20px;
+	padding: 40px 20px;
 	margin: 0 auto;
 
 	@include respond-to( $bp-l ) {
@@ -379,7 +379,7 @@
 
 
 .front-comms {
-	padding: 20px;
+	padding: 40px 20px;
 
 	@include respond-to( $bp-m ) {
 		padding: 30px;
@@ -406,10 +406,11 @@
 		@include respond-to( $bp-m ) {
 			display: flex;
 		}
-
 	}
 
 	.front-news {
+		padding-bottom: 40px;
+
 		@include respond-to( $bp-m ) {
 			flex-basis: 35%;
 		}
@@ -444,6 +445,11 @@
 			flex-basis: 60%;
 			margin-left: 5%;
 		}
+		/*
+		@include respond-to( $bp-m ) {
+			flex-basis: 60%;
+			margin-left: 5%;
+		}
 
 		.events-tabs {
 			@include clearfix;
@@ -462,7 +468,7 @@
 				}
 
 				h2 {
-					display: inline-block;
+					display: none;
 					background: $tan;
 					padding: 10px 40px;
 					color: rgba( $black, .4 );
@@ -472,6 +478,7 @@
 				}
 			}
 		}
+		*/
 
 		.front-events-inner {
 			box-shadow: 0 0 30px rgba( $black, .2 );
@@ -605,11 +612,18 @@
 	.faculty-showcase-inner {
 		max-width: 1220px;
 		margin: 0 auto;
-		display: flex;
+
+		@include respond-to( $bp-l ) {
+			display: flex;
+		}
 
 		.faculty-slider {
-			flex-basis: 50%;
 			text-align: center;
+			padding: 50px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 50%;
+			}
 
 			.faculty-slider-header {
 				color: $black;
@@ -640,18 +654,27 @@
 		}
 
 		.faculty-link {
-			flex-basis: 50%;
 			text-align: center;
+			padding: 50px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 50%;
+			}
 
 			& > img {
-				max-width: 350px;
+				display: block;
+				margin: 0 auto;
+				
+				@include respond-to( 400px ) {
+					max-width: 350px;
+				}
 			}
 
 			.btn {
 				position: relative;
 				top: -70px;
 
-				@include respond-to( $bp-l ) {
+				@include respond-to( 500px ) {
 					left: -60px;
 				}
 			}
@@ -688,6 +711,7 @@
 		height: 40px;
 		right: -100px;
 		bottom: 0;
+		z-index: 1;
 	}
 
 	&:after {
@@ -699,6 +723,7 @@
 		height: 100%;
 		right: 80px;
 		top: 0;
+		z-index: 1;
 	}
 
 	h2 {
@@ -710,12 +735,17 @@
 	.front-admissions-inner {
 		max-width: 1220px;
 		margin: 0 auto;
-		display: flex;
+		position: relative;
+		z-index: 100;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
 
 		.front-admissions-events {
-			flex-basis: 50%;
 
 			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
 				padding-right: 20px;
 			}
 
@@ -743,9 +773,12 @@
 		}
 
 		.front-admissions-tour {
-			flex-basis: 50%;
 			background: $gold;
 			padding: 20px;
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
+			}
 
 			@include respond-to( $bp-l ) {
 				background: url(../img/bg-front-alert.webp) top left no-repeat;

@@ -3,7 +3,7 @@
 header {
 	box-shadow: 0 0 20px rgba( $black, .2 );
 	position: fixed;
-	height: 92px;
+	height: 75px;
 	top: 0;
 	right: 0;
 	left: 0;
@@ -33,7 +33,7 @@ header {
 
 	.menu-show {
 		position: absolute;
-		right: 30px;
+		right: 22px;
 		bottom: 50%;
 		width: 36px;
 		height: 36px;
@@ -146,9 +146,9 @@ header {
 	.close {
 		position: absolute;
 		right: 0;
-		top: -92px;
-		height: 92px;
-		width: 92px;
+		top: -77px;
+		height: 77px;
+		width: 77px;
 		text-align: center;
 		color: transparent;
 		background: $tan url(../img/icon-menu-close.png) center center no-repeat;
@@ -163,6 +163,7 @@ header {
 
 	.columns {
 		padding: 40px 20px 20px 40px;
+		overflow: auto;
 
 		@include respond-to( $bp-m ) {
 			display: flex;

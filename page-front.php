@@ -114,10 +114,13 @@ get_header();
 			</div>
 
 			<div class="front-events">
+				<h2>Events</h2>
+				<!--
 				<ul class="events-tabs">
-					<li class="active"><h2>Events</h2></li>
+					<li class="active"></li>
 					<li><h2>Academic Calendar</h2></li>
 				</ul>
+				-->
 				<div class="front-events-inner">
 					<div class="front-events-list">
 						<div class="event">
