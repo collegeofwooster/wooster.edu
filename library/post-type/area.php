@@ -416,6 +416,31 @@ function area_metaboxes() {
         	'textarea_rows' => 6
         )
     ) );
+    $area_box->add_field( array(
+        'name' => 'Requirements',
+        'id' => $prefix . 'area_requirements',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+    $area_box->add_field( array(
+        'name' => 'Title II',
+        'id' => $prefix . 'area_title_ii',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+    $area_box->add_field( array(
+        'name' => 'State Performance Report',
+        'id' => $prefix . 'area_state_performance',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+
 
 }
 
