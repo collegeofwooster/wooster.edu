@@ -425,8 +425,16 @@ function area_metaboxes() {
         )
     ) );
     $area_box->add_field( array(
-        'name' => 'Title II and State Performance Report',
+        'name' => 'Title II',
         'id' => $prefix . 'area_title_ii',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+    $area_box->add_field( array(
+        'name' => 'State Performance Report',
+        'id' => $prefix . 'area_state_performance',
         'type' => 'wysiwyg',
         'options' => array (
         	'textarea_rows' => 6

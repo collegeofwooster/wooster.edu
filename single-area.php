@@ -69,7 +69,8 @@ $courses = get_cmb_value( "person_courses" );
 				<?php do_area_tab_nav( "Clinics", "clinics" ) ?>
 				<?php do_area_tab_nav( "Fern Valley Field Station", "fern_valley" ) ?>
 				<?php do_area_tab_nav( "Requirements", "requirements" ) ?>
-				<?php do_area_tab_nav( "Title II and State Performance Report", "title_ii" ) ?>
+				<?php do_area_tab_nav( "Title II", "title_ii" ) ?>
+				<?php do_area_tab_nav( "State Performance Report", "state_performane" ) ?>
 			</ul>
 		</div>
 		
@@ -150,7 +151,8 @@ $courses = get_cmb_value( "person_courses" );
 			<?php do_area_tab_content( "Clinics", "clinics" ); ?>
 			<?php do_area_tab_content( "Fern Valley Field Station", "fern_valley" ); ?>
 			<?php do_area_tab_content( "Requirements", "requirements" ) ?>
-			<?php do_area_tab_content( "Title II and State Performance Report", "title_ii" ) ?>
+			<?php do_area_tab_content( "Title II", "title_ii" ) ?>
+			<?php do_area_tab_content( "State Performance Report", "state_performane" ) ?>
 
 		<?php
 		endwhile;
