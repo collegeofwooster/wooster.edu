@@ -35,7 +35,7 @@ get_header();
 		endif;
 		?>
 		
-		<?php paginate(); ?>
+		<?php pagination(); ?>
 
 	</div><!-- #primary -->
 
