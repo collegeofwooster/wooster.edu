@@ -95,21 +95,20 @@ get_header();
 
 			<div class="front-news">
 				<h2>News</h2>
+				<?php
+				$post_query = new WP_Query( array( 'posts_per_page' => 3, 'post_type' => 'post' ) );
+				while ( $post_query->have_posts() ) {
+					$post_query->the_post();
+					?>
 				<div class="article">
-					<img src="<?php bloginfo('template_url') ?>/img/photo-large.webp" />
-					<h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</a></h4>
-	 				<a href="/news">Read more &raquo;</a>
+					<?php the_post_thumbnail( 'thumbnail' ); ?>
+					<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+	 				<a href="<?php the_permalink() ?>">Read more &raquo;</a>
 				</div>
-				<div class="article">
-					<img src="<?php bloginfo('template_url') ?>/img/photo-large.webp" />
-					<h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</a></h4>
-	 				<a href="/news">Read more &raquo;</a>
-				</div>
-				<div class="article">
-					<img src="<?php bloginfo('template_url') ?>/img/photo-large.webp" />
-					<h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</a></h4>
-	 				<a href="/news">Read more &raquo;</a>
-				</div>
+					<?php
+				}
+				wp_reset_query();
+				?>
 				<a href="/news">See more news &raquo;</a>
 			</div>
 
