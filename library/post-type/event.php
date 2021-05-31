@@ -715,7 +715,6 @@ add_shortcode( 'event-list', 'event_shortcode' );
 
 
 // enable sortable columns for event post type
-add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
 function edit_event_sort($columns) {
 	$custom = array(
 		'start' 	=> '_p_event_start',
@@ -724,6 +723,7 @@ function edit_event_sort($columns) {
 	);
 	return wp_parse_args($custom, $columns);
 }
+add_filter( "manage_edit-event_sortable_columns", 'edit_event_sort' );
 
 
 

@@ -8,18 +8,6 @@ function add_query_vars_filter( $vars ){
 add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
-
-function wp_query_title_filter( $where, &$wp_query ) {
-    global $wpdb;
-    // 2. pull the custom query in here:
-    if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
-        $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( like_escape( $search_term ) ) . '%\'';
-    }
-    return $where;
-}
-add_filter( 'posts_where', 'wp_query_title_filter', 10, 2 );
-
-
 function wooster_api_connections( $data ) {
 
 	// dump the request parameters

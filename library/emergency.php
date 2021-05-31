@@ -37,7 +37,7 @@ function emergency_metabox( $meta_boxes ) {
         'options' => $colors
     ) );
 }
-add_filter( 'cmb2_init', 'emergency_metabox' );
+add_filter( 'cmb2_admin_init', 'emergency_metabox' );
 
 
 

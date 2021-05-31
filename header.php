@@ -21,6 +21,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="container">
+
 <?php //the_emergency_bar(); ?>
 
 <header>

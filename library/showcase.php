@@ -125,6 +125,6 @@ function showcase_metabox( $meta_boxes ) {
     ) );
 
 }
-add_filter( 'cmb2_init', 'showcase_metabox' );
+add_filter( 'cmb2_admin_init', 'showcase_metabox' );
 
 
