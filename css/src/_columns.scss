@@ -209,3 +209,12 @@
 		padding: 30px 50px;
 	}
 }
+
+
+.quarter.sidebar-right {
+	@extend .content-style;
+	
+	@include respond-to( $bp-m ) {
+		padding-top: 20px;
+	}
+}

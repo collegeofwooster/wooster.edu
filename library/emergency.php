@@ -1,6 +1,33 @@
 <?php
 
 
+
+// emergency bar output function
+add_action ( 'before_content' , 'the_emergency_bar', 20 );
+function the_emergency_bar() {
+
+    // narrow content
+    $emergency_text = get_cmb_value( "emergency_text" );
+    $emergency_link = get_cmb_value( "emergency_link" );
+    $emergency_color = get_cmb_value( "emergency_color" );
+
+    if ( !empty( $emergency_text ) ) {
+        ?>
+    <div class="emergency-bar-container <?php print $emergency_color; ?> <?php print md5( $emergency_text ); ?>">
+        <a class="close">X</a>
+        <?php if ( !empty( $emergency_link ) ) { ?><a href="<?php print $emergency_link ?>"><?php } ?>
+        <div class="emergency-bar-text">
+            <?php print do_shortcode( $emergency_text ) ?>
+        </div>
+        <?php if ( !empty( $emergency_link ) ) { ?></a><?php } ?>
+    </div>
+        <?php
+    }
+
+}
+
+
+
 // add metabox(es)
 function emergency_metabox( $meta_boxes ) {
 
@@ -38,32 +65,6 @@ function emergency_metabox( $meta_boxes ) {
     ) );
 }
 add_filter( 'cmb2_admin_init', 'emergency_metabox' );
-
-
-
-// emergency bar output function
-add_action ( 'before_content' , 'the_emergency_bar', 20 );
-function the_emergency_bar() {
-
-	// narrow content
-    $emergency_text = get_cmb_value( "emergency_text" );
-    $emergency_link = get_cmb_value( "emergency_link" );
-    $emergency_color = get_cmb_value( "emergency_color" );
-
-	if ( !empty( $emergency_text ) ) {
-		?>
-	<div class="emergency-bar-container <?php print $emergency_color; ?> <?php print md5( $emergency_text ); ?>">
-		<a class="close">X</a>
-		<?php if ( !empty( $emergency_link ) ) { ?><a href="<?php print $emergency_link ?>"><?php } ?>
-		<div class="emergency-bar-text">
-			<?php print do_shortcode( $emergency_text ) ?>
-		</div>
-		<?php if ( !empty( $emergency_link ) ) { ?></a><?php } ?>
-	</div>
-		<?php
-	}
-
-}
 
 
 

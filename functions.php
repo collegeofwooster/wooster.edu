@@ -33,7 +33,7 @@ function require_multi( $files ) {
 
 
 // include utility functions
-require_multi( 'core', 'api', 'metabox', 'emergency', 'page-header', 'images', 'metabox', 'showcase', 'featured-article', 'photo-tiles', 'button', 'accordion' );
+require_multi( 'core', 'api', 'metabox', 'emergency', 'page-header', 'images', 'metabox', 'showcase', 'featured-article', 'sidebar-right', 'photo-tiles', 'button', 'accordion' );
 
 
 require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year' );

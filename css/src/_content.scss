@@ -98,19 +98,20 @@ section.content {
 		padding-bottom: 60px;
 	}
 
-	.quarter, .three-quarter {
-		padding: 0;
-	}
-
 	@include respond-to( $bp-m ) {
 		.quarter {
 			width: 23%;
 			margin: 0 2% 0 0;
+			padding-top: 20px;
 		}
 
 		.three-quarter {
 			width: 75%;
 			margin: 0;
+		}
+
+		.sidebar-right {
+			padding-top: 20px;
 		}
 	}
 }

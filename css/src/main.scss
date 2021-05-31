@@ -26,11 +26,11 @@ $bp-xxxl: 1680px;
 
 
 // import all the things
-@import "mixins", "fonts", "reset", "button", "base", "grid", "form", "columns";
+@import "mixins", "fonts", "reset", "button", "base", "grid", "form";
 
 
 // import layout components
-@import "header", "page-header", "showcase", "content", "front", "photo-tiles", "footer", "emergency", "people", "accordion", "articles", "search";
+@import "header", "page-header", "showcase", "content", "columns", "front", "photo-tiles", "footer", "emergency", "people", "accordion", "articles", "search";
 
 
 // include styles for custom post types

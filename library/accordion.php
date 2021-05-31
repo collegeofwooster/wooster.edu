@@ -14,4 +14,3 @@ function do_accordion( $title, $content, $color = 'grey-light', $open = 0 ) {
 	<?php
 }
 
-
