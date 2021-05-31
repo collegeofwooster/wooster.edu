@@ -20,11 +20,8 @@ $admin_email = get_option( 'admin_email' );
 
 			<div class="column first">
 				<img src="<?php bloginfo( 'template_url' ); ?>/img/logo-dark.webp" />
-				<p class="copyright">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mattis lacus nibh, sed tempor quam congue a. Integer quis neque eleifend, ultricies augue ut, gravida mi. Praesent sit amet ante turpis.</p>
-				<div class="social-icons">
-					<h4>Follow Us</h4>
-					<img src="<?php bloginfo( 'template_url' ); ?>/img/icons-social.webp">
-				</div>
+
+				<?php print get_snippet( 'footer-left' ); ?>
 			</div>
 
 			<div class="column">
