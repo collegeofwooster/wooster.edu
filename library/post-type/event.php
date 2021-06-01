@@ -315,9 +315,10 @@ function get_month_events( $m, $y, $category='' ) {
 
 
 
-function get_upcoming_events( $limit, $category=0 ) {
+// function to get X upcoming events from optional category
+function get_upcoming_events( $limit = 5, $category=0 ) {
 
-
+	// set a start date
 	$timestamp_start = mktime( 0, 0, 0 );
 
 	$args = array(
@@ -366,26 +367,37 @@ function get_upcoming_events( $limit, $category=0 ) {
 		);
 	}
 
-	$event_query = new WP_Query( $args );
-	$events = $event_query->get_posts();
+	// run the event query
+	$events = get_posts( $args );
 
+	// loop through the events
 	foreach ( $events as $key => $event ) {
-		$event_info = array();
+
+		// get the event info
 		$event_info = get_post_custom( $event->ID );
 
+		// loop through the event custom fields
 		foreach ( $event_info as $info_key => $info_item ) {		
+
+			// set meta value to the first in the array
+			// (we don't have any multi-value custom fields in events)
 			$events[$key]->$info_key = $info_item[0];
+
 		}
+
 	}
 
+	// reset the query
 	wp_reset_query();
-	
+		
+	// return the upcoming event array
 	return $events;
 
 }
 
 
 
+// get the previous month based on month+year
 function get_previous_month( $month, $year ) {
 	if ( $month == 1 ) {
 		return array( 'month' => 12, 'year' => $year-1 );
@@ -396,6 +408,7 @@ function get_previous_month( $month, $year ) {
 
 
 
+// get the next month based on month+year
 function get_next_month( $month, $year ) {
 	if ( $month == 12 ) {
 		return array( 'month' => 1, 'year' => $year+1 );

@@ -122,20 +122,28 @@ get_header();
 				-->
 				<div class="front-events-inner">
 					<div class="front-events-list">
+						<?php 
+						// get the upcoming events
+						$upcoming = get_upcoming_events( 2 );
+
+						// if we have upcoming events
+						if ( !empty( $upcoming ) ) {
+
+							// loop through them
+							foreach ( $upcoming as $event ) {
+								?>
 						<div class="event">
-							<div class="date">Feb <span>20</span> 2020</div>
+							<div class="date"><?php print date( 'M', $event->_p_event_start ); ?> <span><?php print date( 'j', $event->_p_event_start ); ?></span> <?php print date( 'Y', $event->_p_event_start ); ?></div>
 							<div class="info">
-								<h4>The College of Wooster: The Art of Networking</h4>
-								<p class="time">12:30 pm EST</p>
+								<h4><?php print $event->post_title ?></h4>
+								<p class="time"><?php print date( 'g:i a e', $event->_p_event_start ); ?></p>
 							</div>
 						</div>
-						<div class="event">
-							<div class="date">Feb <span>24</span> 2020</div>
-							<div class="info">
-								<h4>The College of Wooster: The Art of Networking</h4>
-								<p class="time">12:30 pm EST</p>
-							</div>
-						</div>
+								<?php
+							}
+							
+						}
+						?>
 					</div>
 					<div class="events-nav">
 						<a class="prev">&larr;</a>
