@@ -47,7 +47,7 @@ header {
 		background-size: contain;
 		overflow: hidden;
 
-		@include respond-to( $bp-xl ) {
+		@include respond-to( $bp-m ) {
 			right: 30px;
 		}
 	}
@@ -397,6 +397,10 @@ header {
 		top: 117px;
 
 		@include respond-to( $bp-m ) {
+			top: 146px;
+		}
+
+		@include respond-to( 783px ) {
 			top: 132px;
 		}
 	}

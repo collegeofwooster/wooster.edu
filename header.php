@@ -25,15 +25,11 @@
 <?php //the_emergency_bar(); ?>
 
 <header>
-
-	<div class="wrap">
 	
-		<div class="logo">
-			<a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img src="<?php bloginfo( "template_url" ) ?>/img/logo.webp" alt="<?php bloginfo( 'name' ); ?>">
-			</a>
-		</div>
-
+	<div class="logo">
+		<a href="/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img src="<?php bloginfo( "template_url" ) ?>/img/logo.webp" alt="<?php bloginfo( 'name' ); ?>">
+		</a>
 	</div>
 
 	<button class="menu-show">Show Menu</button>
