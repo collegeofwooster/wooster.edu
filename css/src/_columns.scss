@@ -154,6 +154,18 @@
 				flex-basis: 65%;
 				margin-right: 5%;
 			}
+
+			.wp-post-image:nth-child(1) {
+				border: 1px solid $grey;
+				box-shadow: 0 0 20px rgba( black, .2 );
+				margin: 10px 0;
+				
+				@include respond-to( $bp-m ) {
+					max-width: 50%;
+					float: right;
+					margin: 20px 0 20px 20px;
+				}
+			}
 		}
 
 		.ead-document {
@@ -180,7 +192,7 @@
 			@include respond-to( $bp-m ) {
 				flex: 1;
 				flex-basis: 30%;
-				padding-top: 50px;
+				padding-top: 0;
 			}
 
 			.menu {

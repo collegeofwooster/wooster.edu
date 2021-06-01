@@ -15,12 +15,14 @@ get_header();
 		<h1><?php the_title(); ?></h1>
 		<div class="post-columns-inner">
 			<div class="main-content">
-				<?php the_content(); ?>
+				<?php 
+				the_post_thumbnail( 'full' );
+				the_content();
+				?>
 				<p class="quiet">Posted in <?php print get_the_category_list( ', ' ) ?>.</p>
 			</div>
 			<div class="aside">
 			<?php
-			the_post_thumbnail( 'full' );
 			
 			$cat_list = wp_get_post_categories( $post->ID );
 			$related_posts = get_posts( array(

@@ -17,7 +17,7 @@ if ( !empty( $events ) ) {
 	foreach ( $events as $event ) {
 
 		// uncomment to dump first result and die for testing
-		// print_r( $event ); die;
+		print_r( $event ); die;
 
 	    // get a previous post if it exists.
 	    $previous_post = $wpdb->get_results( "SELECT * FROM `woo_postmeta` WHERE `meta_key`='_p_event_external_id' AND `meta_value`='" . $event->eventID . "' LIMIT 1;" );
