@@ -19,7 +19,7 @@ elseif ( is_year() ) :
 
 elseif ( is_category() ) :
 	$category = get_queried_object();
-	$page_title = $category->name;
+	$page_title = "Category:" . $category->name;
 	$page_subtitle = ( !empty( $category->category_description ) ? $category->category_description : '&nbsp;' );
 
 else :

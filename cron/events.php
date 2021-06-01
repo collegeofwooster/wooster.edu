@@ -8,7 +8,7 @@ include( '../../../../wp-load.php' );
 global $wpdb;
 
 // pull events feed
-$events = json_decode( file_get_contents( 'https://25livepub.collegenet.com/calendars/college-of-wooster-template-all-campus-events-2621.json' ) );
+$events = json_decode( file_get_contents( 'https://25livepub.collegenet.com/calendars/web-calendar-of-events.json' ) );
 
 // if we have events
 if ( !empty( $events ) ) {
