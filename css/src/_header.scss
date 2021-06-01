@@ -75,7 +75,7 @@ header {
 		}
 
 		@include respond-to( $bp-xxl ) {
-			left: 590px;
+			left: 460px;
 			right: 375px;
 		}
 
@@ -125,6 +125,10 @@ header {
 			text-transform: uppercase;
 			border-radius: 30px;
 			margin-top: -19px;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			right: 140px;
 		}
 	}
 }
