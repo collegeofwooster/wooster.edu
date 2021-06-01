@@ -64,3 +64,11 @@ function pagination( $prev = '&laquo;', $next = '&raquo;' ) {
 
     echo paginate_links( $pagination );
 }
+
+
+
+// small boolean function to check if we're in cli or fpm
+function is_cli() {
+    if ( php_sapi_name() == "cli" ) return true;
+    return false;
+}

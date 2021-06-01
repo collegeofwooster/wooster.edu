@@ -116,9 +116,39 @@ function event_metaboxes( $meta_boxes ) {
     ) );
 
     $event_metabox->add_field( array(
+        'name' => 'Organization',
+        'id'   => CMB_PREFIX . 'event_organization',
+        'type' => 'text',
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Open to Public?',
+        'id'   => CMB_PREFIX . 'event_open',
+        'type' => 'checkbox',
+    ) );
+
+    $event_metabox->add_field( array(
         'name' => 'Event Website',
         'id'   => CMB_PREFIX . 'event_website',
         'desc' => 'If populated, links from the calendar/listings will go directly to this URL instead of the event page on this website.',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Permalink URL',
+        'id'   => CMB_PREFIX . 'event_url_permalink',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Action URL',
+        'id'   => CMB_PREFIX . 'event_url_action',
+        'type' => 'text'
+    ) );
+
+    $event_metabox->add_field( array(
+        'name' => 'Sign-up URL',
+        'id'   => CMB_PREFIX . 'event_url_signup',
         'type' => 'text'
     ) );
 
@@ -751,7 +781,5 @@ function rss_event_sort( $query ) {
 	return $query;
 }
 add_filter( 'pre_get_posts', 'rss_event_sort' );
-
-
 
 
