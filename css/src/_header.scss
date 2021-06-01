@@ -139,6 +139,7 @@ header {
 	bottom: 0;
 	z-index: 1001;
 	display: none;
+	min-width: 350px;
 
 	@include respond-to( $bp-m ) {
 		top: 100px;
@@ -386,9 +387,11 @@ header {
 
 .admin-bar {
 	header {
+		position: absolute;
 		top: 46px;
 
 		@include respond-to( 783px ) {
+			position: fixed;
 			top: 32px;
 		}
 	}
