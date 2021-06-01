@@ -65,7 +65,7 @@ if ( $current_yr > 0 ) {
 
 
 function show_alum_category_image( $category ) {
-	print '<img src="' . get_bloginfo( 'template_url' ) . '/img/alum-' . $category . '.png">';
+	print '<img src="' . get_bloginfo( 'template_url' ) . '/img/alum-' . $category . '.webp">';
 }
 
 
@@ -273,9 +273,6 @@ if ( $query_yr || $query_cat || $query_search ) {
 
 				endwhile;
 				?>
-				<div class="group pagination">
-					<?php echo paginate_links(); ?>
-				</div>
 				<?php
 			else : ?>
 				<p>No results for that criteria. Try selecting fewer filters or changing your search term.</p>
@@ -283,6 +280,10 @@ if ( $query_yr || $query_cat || $query_search ) {
 
 			endif;
 			?>
+			</div>
+
+			<div class="group pagination">
+				<?php echo paginate_links(); ?>
 			</div>
 
 		</div>
