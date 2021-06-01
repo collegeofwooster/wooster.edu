@@ -3,20 +3,21 @@
 header {
 	box-shadow: 0 0 20px rgba( $black, .2 );
 	position: fixed;
-	height: 75px;
+	height: 71px;
 	top: 0;
 	right: 0;
 	left: 0;
 	z-index: 1000;
 	background: white;
+	overflow: hidden;
+	min-width: 350px;
 
 	@include respond-to( $bp-m ) {
 		height: 100px;
 	}
 
 	.logo {
-		max-width: 350px;
-		margin-right: 70px;
+		max-width: 279px;
 
 		@include respond-to( $bp-m ) {
 			max-width: 380px;
@@ -33,7 +34,7 @@ header {
 
 	.menu-show {
 		position: absolute;
-		right: 22px;
+		right: 17px;
 		bottom: 50%;
 		width: 36px;
 		height: 36px;
@@ -132,7 +133,7 @@ header {
 .menu-overlay {
 	background: $tan;
 	position: fixed;
-	top: 92px;
+	top: 71px;
 	right: 0;
 	left: 0;
 	bottom: 0;
@@ -146,9 +147,9 @@ header {
 	.close {
 		position: absolute;
 		right: 0;
-		top: -77px;
-		height: 77px;
-		width: 77px;
+		top: -71px;
+		height: 71px;
+		width: 71px;
 		text-align: center;
 		color: transparent;
 		background: $tan url(../img/icon-menu-close.png) center center no-repeat;
@@ -387,13 +388,13 @@ header {
 	header {
 		top: 46px;
 
-		@include respond-to( $bp-l ) {
+		@include respond-to( 783px ) {
 			top: 32px;
 		}
 	}
 
 	.menu-overlay {
-		top: 124px;
+		top: 117px;
 
 		@include respond-to( $bp-m ) {
 			top: 132px;
