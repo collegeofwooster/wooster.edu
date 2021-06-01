@@ -69,8 +69,8 @@ header {
 
 		@include respond-to( $bp-xl ) {
 			display: block;
-			left: 500px;
-			right: 350px;
+			left: 400px;
+			right: 330px;
 		}
 
 		@include respond-to( $bp-xxl ) {
