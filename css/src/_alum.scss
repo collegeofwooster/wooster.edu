@@ -107,14 +107,6 @@
 		border-bottom: 1px solid #eee;
 		margin-bottom: 10px;
 	}
-
-	h5 {
-		@include respond-to( 500px ) {
-			float: left;
-			width: 60%;
-			padding: 22px 0 15px 5px;
-		}
-	}
 	
 	@include respond-to( 500px ) {
 		.details-photo {
@@ -127,60 +119,19 @@
 	.alum-year {
 		float: left;
 		width: 60%;
-		padding-left: 20px;
-		position: relative;
 		margin: 5px 0;
-
-		@include respond-to( 500px ) {
-			margin: 10px 0;
-			padding-left: 30px;
-		}
-
-		&:before {
-			position: absolute;
-			color: $blue;
-			left: 0;
-
-			@include respond-to( 500px ) {
-				left: 5px;
-			}
-		}
 	}
 
 	.alum-location {
 		float: left;
 		width: 60%;
-		padding-left: 20px;
-		position: relative;
 		margin: 5px 0;
-
-		@include respond-to( 500px ) {
-			margin: 10px 0;
-			padding-left: 30px;
-		}
-
-		&:before {
-			position: absolute;
-			color: $blue;
-			left: 4px;
-
-			@include respond-to( 500px ) {
-				left: 9px;
-			}
-		}
 	}
 
 	.alum-category {
 		float: left;
 		width: 60%;
-		padding-left: 20px;
-		position: relative;
 		margin: 5px 0;
-
-		@include respond-to( 500px ) {
-			margin: 10px 0;
-			padding-left: 30px;
-		}
 	}
 
 	.details-content {
@@ -342,15 +293,10 @@
 	.class-memory-book {
 		float: left;
 		width: 90%;
-		padding-left: 40px;
 		position: relative;
 		margin: 15px 0;
 		text-transform: uppercase;
 		font-weight: 700;
-
-		@include respond-to( $bp-m ) {
-			margin: 25px 0;
-		}
 
 		a {
 			color: $blue;
@@ -362,21 +308,12 @@
 			color: lighten( $grey, 10% );
 			font-size: .8em;
 			line-height: 1em;
-		}
-
-		&:before {
-			position: absolute;
-			color: $blue;
-			top: 9px;
-			left: 2px;
-			font-size: 30px;
 		}
 	}
 
 	.class-green-list {
 		float: left;
 		width: 90%;
-		padding-left: 40px;
 		position: relative;
 		margin: 15px 0;
 		text-transform: uppercase;
@@ -396,14 +333,6 @@
 			color: lighten( $grey, 10% );
 			font-size: .8em;
 			line-height: 1em;
-		}
-
-		&:before {
-			position: absolute;
-			color: $blue;
-			top: 9px;
-			left: 2px;
-			font-size: 30px;
 		}
 	}
 }

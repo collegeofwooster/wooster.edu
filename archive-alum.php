@@ -248,7 +248,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 					<div class="alum-category alum-category-<?php show_cmb_value( 'alum_category' ) ?>"><?php print ucwords( str_replace( '-', ' ', get_cmb_value( 'alum_category' ) ) ); ?></div>
 				</div>
 				<div class="alum-details mfp-hide" id="alum-<?php the_ID(); ?>">
-					<h3><?php the_title(); ?></h3>
+					<h3><?php show_cmb_value( 'alum_name_first' ); ?> <?php show_cmb_value( 'alum_name_last' ) ?></h3>
 					<div class="details">
 						<div class="details-photo">
 							<?php 
@@ -259,7 +259,6 @@ if ( $query_yr || $query_cat || $query_search ) {
 							}
 							?>
 						</div>
-						<h5><?php show_cmb_value( 'alum_name_first' ); ?> <?php show_cmb_value( 'alum_name_last' ) ?></h5>
 						<div class="alum-year"><strong>Class of <?php show_cmb_value( 'alum_year' ) ?></strong></div>
 						<div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div>
 						<div class="alum-category alum-category-<?php show_cmb_value( 'alum_category' ) ?>"><?php print ucwords( str_replace( '-', ' ', get_cmb_value( 'alum_category' ) ) ); ?></div>
