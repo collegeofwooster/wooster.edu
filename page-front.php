@@ -190,24 +190,7 @@ get_header();
 		<div class="front-admissions-inner">
 
 			<div class="front-admissions-events">
-				<h2>Coming Up</h2>
-				<div class="event first">
-					<?php print do_shortcode( '[button url="#" class="blue"]Register[/button]') ?>
-					<h4>Admissions Event 1</h4>
-					<p>October 8, 2021  | 9AM - 5PM</p>
-				</div>
-
-				<div class="event">
-					<?php print do_shortcode( '[button url="#" class="blue"]Register[/button]') ?>
-					<h4>Admissions Event 1</h4>
-					<p>November 28, 2021  | 9AM - 5PM</p>
-				</div>
-
-				<div class="event">
-					<?php print do_shortcode( '[button url="#" class="blue"]Register[/button]') ?>
-					<h4>Admissions Event 1</h4>
-					<p>December 12, 2021  | 9AM - 5PM</p>
-				</div>
+				<?php print get_snippet( 'home-admissions-events', 1 ); ?>
 			</div>
 
 			<div class="front-admissions-tour">
