@@ -26,7 +26,9 @@ function articles_shortcode( $atts ) {
 	}
 
 	// 'cat' takes slug
-	
+	if ( !empty($a['cat']) ) {
+		$args['category_name'] = $a['cat'];
+	}
 
 	// 'cats' takes id
 	if ( !empty($a['cats']) ) {
