@@ -61,10 +61,12 @@ get_header();
 				<div class="areas list">
 				<?php
 				foreach ( $areas as $a ) {
+					$cats = get_area_cats( $a->ID );
 					?>
-					<div class="entry">
+					<div class="entry area">
 						<a href="/area/<?php print $a->post_name ?>/"><h4><?php print $a->post_title ?></h4></a>
 						<p><?php print get_the_excerpt( $a->ID ); ?></p>
+						<?php print implode( ' ', $cats ); ?>
 					</div>
 					<?php
 				}

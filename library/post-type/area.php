@@ -174,7 +174,6 @@ function list_area_category() {
 	 				break;
 	 			}
 			}
-			?><?php
 		}
 		?>
 		<div class="area <?php print implode( ' ', $classes ); ?>">
@@ -190,6 +189,37 @@ function list_area_category() {
 	// reset the post data
 	wp_reset_postdata();
 
+}
+
+
+
+function get_area_cats( $area_id ) {
+	$categories = wp_get_object_terms( $area_id, 'area_cat' );
+	if ( !empty( $categories ) ) {
+		?><?php
+		$cats = array();
+		$classes = array();
+		foreach ( $categories as $cat ) {
+ 			switch ( $cat->slug ) {
+ 				case "major":
+ 					$cats[] = '<span class="ma">Major</span>';
+ 				break;
+ 				case "minor":
+ 					$cats[] = '<span class="mi">Minor</span>';
+ 				break;
+ 				case "pre-professional-advising":
+ 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
+ 				break;
+ 				case "teaching-licensure":
+ 					$cats[] = '<span class="tl">Teaching Licensure</span>';
+ 				break;
+ 				case "pathway":
+ 					$cats[] = '<span class="path">Pathway</span>';
+ 				break;
+ 			}
+		}
+	}
+	return $cats;
 }
 
 

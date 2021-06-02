@@ -173,64 +173,64 @@
 }
 
 
-.area-listing {
-	.area {
-		box-shadow: 0 0 20px rgba( black, .2 );
-		padding: 20px;
+.area {
+	box-shadow: 0 0 20px rgba( black, .2 );
+	padding: 20px;
 
-		a {
-			display: block;
-			color: black;
+	a {
+		display: block;
+		color: black;
 
-			&:hover {
-				text-decoration: none;
-			}
-
-			h3 {
-				line-height: 1em;
-			}
+		&:hover {
+			text-decoration: none;
 		}
 
-		p {
-			font-size: .9em;
-		}
-
-		span {
-			display: inline-block;
-			background: lighten( $grey-light, 25% );
-			color: $grey;
-			padding: 4px 7px;
-			font-size: .9em;
-			margin-top: 4px;
-			white-space: nowrap;
-
-			&.ma {
-				background: $sky;
-				color: $black;
-			}
-
-			&.mi {
-				background: $blue;
-				color: white;
-			}
-
-			&.path {
-				background: $rose;
-				color: white;
-			}
-
-			&.pa {
-				background: $tan;
-				color: $black;
-			}
-
-			&.tl {
-				background: $foam;
-				color: white;
-			}
+		h3 {
+			line-height: 1em;
 		}
 	}
 
+	p {
+		font-size: .9em;
+	}
+
+	span {
+		display: inline-block;
+		background: lighten( $grey-light, 25% );
+		color: $grey;
+		padding: 4px 7px;
+		font-size: .9em;
+		margin-top: 4px;
+		white-space: nowrap;
+
+		&.ma {
+			background: $sky;
+			color: $black;
+		}
+
+		&.mi {
+			background: $blue;
+			color: white;
+		}
+
+		&.path {
+			background: $rose;
+			color: white;
+		}
+
+		&.pa {
+			background: $tan;
+			color: $black;
+		}
+
+		&.tl {
+			background: $foam;
+			color: white;
+		}
+	}
+}
+
+.area-listing {
 	@include respond-to( $bp-s ) {
 		display: flex;
 		flex-wrap: wrap;
