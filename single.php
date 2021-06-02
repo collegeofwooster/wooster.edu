@@ -36,7 +36,10 @@ get_header();
 				<?php
 				foreach ( $related_posts as $rpost ) {
 					?>
-					<div class="entry"><a href="<?php print get_the_permalink( $rpost->ID ) ?>"><?php print $rpost->post_title ?></a></div>
+					<div class="article">
+						<?php print get_the_post_thumbnail( $rpost->ID, 'thumbnail' ); ?>
+						<h4><a href="<?php print get_the_permalink( $rpost->ID ) ?>"><?php print $rpost->post_title ?></a></h4>
+					</div>
 					<?php
 				}
 				?>

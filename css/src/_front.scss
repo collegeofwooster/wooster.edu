@@ -409,34 +409,12 @@
 	}
 
 	.front-news {
-		padding-bottom: 40px;
+		.article {
+			background: white;
+		}
 
 		@include respond-to( $bp-m ) {
 			flex-basis: 35%;
-		}
-
-		.article {
-			@include clearfix;
-			background: white;
-			box-shadow: 0 0 30px rgba( $black, .2 );
-			padding: 10px;
-			margin-bottom: 10px;
-
-			img {
-				float: left;
-				max-width: 90px;
-				margin-right: 20px;
-			}
-
-			h4 {
-				font-size: 1.2em;
-				line-height: 1.2em;
-				margin-bottom: 10px;
-
-				a {
-					color: $black;
-				}
-			}
 		}
 	}
 
@@ -445,6 +423,7 @@
 			flex-basis: 60%;
 			margin-left: 5%;
 		}
+
 		/*
 		@include respond-to( $bp-m ) {
 			flex-basis: 60%;
@@ -573,6 +552,7 @@
 		}
 	}
 }
+
 
 
 .faculty-showcase {

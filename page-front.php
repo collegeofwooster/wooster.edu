@@ -93,7 +93,7 @@ get_header();
 	<div class="front-comms">
 		<div class="front-comms-inner">
 
-			<div class="front-news">
+			<div class="front-news articles list">
 				<h2>News</h2>
 				<?php
 				$post_query = new WP_Query( array( 'posts_per_page' => 3, 'post_type' => 'post' ) );
@@ -103,7 +103,6 @@ get_header();
 				<div class="article">
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 					<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-	 				<a href="<?php the_permalink() ?>">Read more &raquo;</a>
 				</div>
 					<?php
 				}
