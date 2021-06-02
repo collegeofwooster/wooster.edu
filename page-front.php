@@ -164,11 +164,21 @@ get_header();
 					<h2>Educators</h2>
 				</div>
 				<div class="faculty-slider-inner">
+					<?php
+					$person = get_posts( array(
+						'post_type' => 'people',
+						'people_cat' => 'faculty',
+						'orderby' => 'rand',
+						'order' => 'ASC',
+					) );
+					$person = $person[0];
+					// print_r( $person );
+					?>
 					<div class="faculty-slide">
-						<img src="<?php bloginfo( 'template_url' ); ?>/img/photo-staff.webp" />
-						<p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						<h4 class="name">John Doe</h4>
-						<p class="title">Remote and Robotic Initiatives</p>
+						<?php print get_the_post_thumbnail( $person->ID, 'thumbnail' ) ?>
+						<p class="description"><?php print $person->post_excerpt ?></p>
+						<h4 class="name"><?php print $person->post_title ?></h4>
+						<p class="title"><?php print get_cmb_value( 'person_title', $person->ID ) ?></p>
 					</div>
 				</div>
 				<div class="faculty-slider-nav">
