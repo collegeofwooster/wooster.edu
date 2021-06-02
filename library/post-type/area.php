@@ -486,7 +486,7 @@ function do_area_tab_content( $title, $key ) {
 				<hr>
 				<h3>Related Articles</h3>
 					<?php
-					print do_shortcode( '[articles cat="alumni-Profile" tag="' . $area_slug . '" /]' );
+					print do_shortcode( '[articles cat="alumni-profile" tag="' . $area_slug . '" /]' );
 				} ?>
 			</div>
 	<?php
