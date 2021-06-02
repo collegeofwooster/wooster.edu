@@ -624,6 +624,8 @@
 
 				img {
 					max-width: 120px;
+					border: 1px solid $grey;
+					box-shadow: 0 0 20px rgba( black, .2 );
 				}
 
 				.title {
