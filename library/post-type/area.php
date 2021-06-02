@@ -85,205 +85,6 @@ register_taxonomy( 'area_cat',
 
 
 
-function the_area_lists() {
-
-	$interests_col_1 = get_post_meta( get_the_ID(), $prefix . "interests_col_1", 1 );
-	$interests_col_2 = get_post_meta( get_the_ID(), $prefix . "interests_col_2", 1 );
-
-	if ( !empty( $interests_col_1 ) || !empty( $interests_col_2 ) ) {
-		?>
-	<div id="search-box" class="search-box group">
-		
-		<?php if ( is_page( 'beyond-ripon' ) ) { ?>
-		<h2>Where will you go?</h2>
-		<?php } else { ?>
-		<h2>What are you interested in?</h2>
-		<?php get_search_form(); ?>
-		<?php } ?>
-		
-		<?php if ( !empty( $interests_col_1	) ) { ?>
-		<div class="column">
-			<?php 
-			foreach ( $interests_col_1 as $cat ) {
-				list_interest_category( $cat );
-			}
-			?>
-		</div>
-		<?php } ?>
-		
-		<?php if ( !empty( $interests_col_2	) ) { ?>
-		<div class="column">
-			<?php 
-			foreach ( $interests_col_2 as $cat ) {
-				list_interest_category( $cat );
-			}
-			?>
-		</div>
-		<?php } ?>
-
-		<?php wp_reset_postdata(); ?>
-		
-	</div><!-- #content -->
-		<?php
-	}
-
-}
-
-
-
-function list_area_category() {
-
-	// select the areas of interest in the category
-	$areas = get_areas();
-
-	// count em
-	$area_count = count( $areas );
-
-	// determine what a quarter of the total records is so we can make columns
-	$quarter = ceil( $area_count / 2 );
-
-	// loop through the post results
-	$num = 1;
-	foreach ( $areas as $area ) {
-		$categories = wp_get_object_terms( $area->ID, 'area_cat' );
-		if ( !empty( $categories ) ) {
-			?><?php
-			$cats = array();
-			$classes = array();
-			foreach ( $categories as $cat ) {
-	 			switch ( $cat->slug ) {
-	 				case "major":
-	 					$cats[] = '<span class="ma">Major</span>';
-	 					$classes[] = 'ma';
-	 				break;
-	 				case "minor":
-	 					$cats[] = '<span class="mi">Minor</span>';
-	 					$classes[] = 'mi';
-	 				break;
-	 				case "pre-professional-advising":
-	 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
-	 					$classes[] = 'pa';
-	 				break;
-	 				case "teaching-licensure":
-	 					$cats[] = '<span class="tl">Teaching Licensure</span>';
-	 					$classes[] = 'tl';
-	 				break;
-	 				case "pathway":
-	 					$cats[] = '<span class="path">Pathway</span>';
-	 					$classes[] = 'path';
-	 				break;
-	 			}
-			}
-		}
-		?>
-		<div class="area <?php print implode( ' ', $classes ); ?>">
-			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a>
-			<p><?php print $area->post_excerpt; ?></p>
-			<?php print implode( ' ', $cats ); ?>
-		</div>
-		<?php
-	}
-	?>
-	<?php
-	
-	// reset the post data
-	wp_reset_postdata();
-
-}
-
-
-
-function get_area_cats( $area_id ) {
-	$categories = wp_get_object_terms( $area_id, 'area_cat' );
-	if ( !empty( $categories ) ) {
-		?><?php
-		$cats = array();
-		$classes = array();
-		foreach ( $categories as $cat ) {
- 			switch ( $cat->slug ) {
- 				case "major":
- 					$cats[] = '<span class="ma">Major</span>';
- 				break;
- 				case "minor":
- 					$cats[] = '<span class="mi">Minor</span>';
- 				break;
- 				case "pre-professional-advising":
- 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
- 				break;
- 				case "teaching-licensure":
- 					$cats[] = '<span class="tl">Teaching Licensure</span>';
- 				break;
- 				case "pathway":
- 					$cats[] = '<span class="path">Pathway</span>';
- 				break;
- 			}
-		}
-	}
-	return $cats;
-}
-
-
-
-function get_areas() {
-	global $wpdb;
-
-	// Count custom post type by custom taxonomy
-	$sql = "SELECT * FROM $wpdb->posts p
-	WHERE p.post_type = 'area'
-	AND ( p.post_status = 'publish' )
-	AND p.post_date < NOW() ORDER BY p.post_title;";
-
-	$rows = $wpdb->get_results( $sql );
-
-	return $rows;
-}
-
-
-
-function get_area_category( $category ) {
-	global $wpdb;
-
-	// Count custom post type by custom taxonomy
-	$sql = "SELECT * FROM $wpdb->posts p
-	JOIN $wpdb->term_relationships tr ON (p.ID = tr.object_id)
-	JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id AND tt.taxonomy = 'area_cat')
-	JOIN $wpdb->terms t ON (tt.term_id = t.term_id AND t.slug = '$category' )
-	WHERE p.post_type = 'area'
-	AND (p.post_status = 'publish')
-	AND p.post_date < NOW() ORDER BY p.post_title;";
-
-	$rows = $wpdb->get_results( $sql );
-
-	return $rows;
-}
-
-
-
-function do_area_tab_nav( $title, $key ) {
-	$content = get_cmb_value( "area_" . $key );
-	if ( !empty( $content ) ) { 
-	?>
-			<li class="area-<?php print $key; ?>"><?php print $title ?></li>
-	<?php
-	} 
-}
-
-
-
-function do_area_tab_content( $title, $key ) {
-	$content = get_cmb_value( "area_" . $key );
-	if ( !empty( $content ) ) { 
-	?>
-			<div class="tab-content area-<?php print $key; ?>">
-				<h2><?php print $title ?></h2>
-				<?php print apply_filters( 'the_content', $content ); ?>
-			</div>
-	<?php
-	} 
-}
-
-
-
 add_action( 'cmb2_admin_init', 'area_metaboxes' );
 /**
  * Define the metabox and field configurations.
@@ -471,7 +272,216 @@ function area_metaboxes() {
         )
     ) );
 
+}
 
+
+
+function the_area_lists() {
+
+	$interests_col_1 = get_post_meta( get_the_ID(), $prefix . "interests_col_1", 1 );
+	$interests_col_2 = get_post_meta( get_the_ID(), $prefix . "interests_col_2", 1 );
+
+	if ( !empty( $interests_col_1 ) || !empty( $interests_col_2 ) ) {
+		?>
+	<div id="search-box" class="search-box group">
+		
+		<?php if ( is_page( 'beyond-ripon' ) ) { ?>
+		<h2>Where will you go?</h2>
+		<?php } else { ?>
+		<h2>What are you interested in?</h2>
+		<?php get_search_form(); ?>
+		<?php } ?>
+		
+		<?php if ( !empty( $interests_col_1	) ) { ?>
+		<div class="column">
+			<?php 
+			foreach ( $interests_col_1 as $cat ) {
+				list_interest_category( $cat );
+			}
+			?>
+		</div>
+		<?php } ?>
+		
+		<?php if ( !empty( $interests_col_2	) ) { ?>
+		<div class="column">
+			<?php 
+			foreach ( $interests_col_2 as $cat ) {
+				list_interest_category( $cat );
+			}
+			?>
+		</div>
+		<?php } ?>
+
+		<?php wp_reset_postdata(); ?>
+		
+	</div><!-- #content -->
+		<?php
+	}
+
+}
+
+
+
+function list_area_category() {
+
+	// select the areas of interest in the category
+	$areas = get_areas();
+
+	// count em
+	$area_count = count( $areas );
+
+	// determine what a quarter of the total records is so we can make columns
+	$quarter = ceil( $area_count / 2 );
+
+	// loop through the post results
+	$num = 1;
+	foreach ( $areas as $area ) {
+		$categories = wp_get_object_terms( $area->ID, 'area_cat' );
+		if ( !empty( $categories ) ) {
+			?><?php
+			$cats = array();
+			$classes = array();
+			foreach ( $categories as $cat ) {
+	 			switch ( $cat->slug ) {
+	 				case "major":
+	 					$cats[] = '<span class="ma">Major</span>';
+	 					$classes[] = 'ma';
+	 				break;
+	 				case "minor":
+	 					$cats[] = '<span class="mi">Minor</span>';
+	 					$classes[] = 'mi';
+	 				break;
+	 				case "pre-professional-advising":
+	 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
+	 					$classes[] = 'pa';
+	 				break;
+	 				case "teaching-licensure":
+	 					$cats[] = '<span class="tl">Teaching Licensure</span>';
+	 					$classes[] = 'tl';
+	 				break;
+	 				case "pathway":
+	 					$cats[] = '<span class="path">Pathway</span>';
+	 					$classes[] = 'path';
+	 				break;
+	 			}
+			}
+		}
+		?>
+		<div class="area <?php print implode( ' ', $classes ); ?>">
+			<a href="/area/<?php print $area->post_name ?>"><h3><?php print $area->post_title; ?></h3></a>
+			<p><?php print $area->post_excerpt; ?></p>
+			<?php print implode( ' ', $cats ); ?>
+		</div>
+		<?php
+	}
+	?>
+	<?php
+	
+	// reset the post data
+	wp_reset_postdata();
+
+}
+
+
+
+function get_area_cats( $area_id ) {
+	$categories = wp_get_object_terms( $area_id, 'area_cat' );
+	if ( !empty( $categories ) ) {
+		?><?php
+		$cats = array();
+		$classes = array();
+		foreach ( $categories as $cat ) {
+ 			switch ( $cat->slug ) {
+ 				case "major":
+ 					$cats[] = '<span class="ma">Major</span>';
+ 				break;
+ 				case "minor":
+ 					$cats[] = '<span class="mi">Minor</span>';
+ 				break;
+ 				case "pre-professional-advising":
+ 					$cats[] = '<span class="pa">Pre-Professional Advising</span>';
+ 				break;
+ 				case "teaching-licensure":
+ 					$cats[] = '<span class="tl">Teaching Licensure</span>';
+ 				break;
+ 				case "pathway":
+ 					$cats[] = '<span class="path">Pathway</span>';
+ 				break;
+ 			}
+		}
+	}
+	return $cats;
+}
+
+
+
+function get_areas() {
+	global $wpdb;
+
+	// Count custom post type by custom taxonomy
+	$sql = "SELECT * FROM $wpdb->posts p
+	WHERE p.post_type = 'area'
+	AND ( p.post_status = 'publish' )
+	AND p.post_date < NOW() ORDER BY p.post_title;";
+
+	$rows = $wpdb->get_results( $sql );
+
+	return $rows;
+}
+
+
+
+function get_area_category( $category ) {
+	global $wpdb;
+
+	// Count custom post type by custom taxonomy
+	$sql = "SELECT * FROM $wpdb->posts p
+	JOIN $wpdb->term_relationships tr ON (p.ID = tr.object_id)
+	JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id AND tt.taxonomy = 'area_cat')
+	JOIN $wpdb->terms t ON (tt.term_id = t.term_id AND t.slug = '$category' )
+	WHERE p.post_type = 'area'
+	AND (p.post_status = 'publish')
+	AND p.post_date < NOW() ORDER BY p.post_title;";
+
+	$rows = $wpdb->get_results( $sql );
+
+	return $rows;
+}
+
+
+
+function do_area_tab_nav( $title, $key ) {
+	$content = get_cmb_value( "area_" . $key );
+	if ( !empty( $content ) ) { 
+	?>
+			<li class="area-<?php print $key; ?>"><?php print $title ?></li>
+	<?php
+	} 
+}
+
+
+
+function do_area_tab_content( $title, $key ) {
+	$content = get_cmb_value( "area_" . $key );
+	if ( !empty( $content ) ) {
+		global $post;
+		$area_slug = $post->post_name;
+	?>
+			<div class="tab-content area-<?php print $key; ?>">
+				<h2><?php print $title ?></h2>
+				<?php print apply_filters( 'the_content', $content ); ?>
+
+				<?php 
+				if ( $key == 'independent_study' ) {
+					?>
+				<hr>
+				<h3>Related Articles</h3>
+					<?php
+					print do_shortcode( '[articles cat="independent-study" tag="' . $area_slug . '" /]' );
+				} ?>
+			</div>
+	<?php
+	} 
 }
 
 

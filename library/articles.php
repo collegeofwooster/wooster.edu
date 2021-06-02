@@ -7,6 +7,8 @@ function articles_shortcode( $atts ) {
 		'style' => "card",
 		'tags' => '',
 		'cats' => '',
+		'cat' => '',
+		'tag' => '',
 		'posts_per_page' => 4
 	), $atts );
 
@@ -26,12 +28,12 @@ function articles_shortcode( $atts ) {
 	}
 
 	// 'cat' takes slug
-	if ( !empty($a['cat']) ) {
+	if ( !empty( $a['cat'] ) ) {
 		$args['category_name'] = $a['cat'];
 	}
 
 	// 'cats' takes id
-	if ( !empty($a['cats']) ) {
+	if ( !empty( $a['cats'] ) ) {
 		$cats = explode( ',', $a['cats'] );
 		$args['category__in'] = $cats;
 	}
