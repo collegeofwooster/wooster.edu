@@ -11,46 +11,74 @@ jQuery(document).ready(function($){
 			var term = $( ".connected-learning-search-term" ).val();
 
 			$.ajax( "/wp-json/wooster/v1/connections/?filter_term=" + encodeURIComponent( term ) ).done(function( data ) {
-				// set areas results
+
+				// clear existing area results (except the 'all' option)
 				$( ".result-box.areas li:not(.all)" ).remove();
+
+				// set up an empty result variable
 				var areas_results = '';
+
+				// loop through the area of study results
 				$.each( data.areas , function( area_key, area_val ){
-					areas_results += '<li><a href="'+ area_val['permalink'] + '">' + area_val['post_title'] + '</a>"';
+
+					// set a result
+					areas_results += '<li><a href="'+ area_val.permalink + '">' + area_val.post_title + '</a></li>"';
+
 				});
+
+				// set the areas of study results.
 				$( ".result-box.areas ul" ).prepend( areas_results );
 
-				// set areas results
-				/*
-				$( ".result-box.pathways li:not(.all)" ).remove();
-				var pathways_results = '';
-				$.each( data.pathways , function( pathway_key, pathway_val ){
-					pathways_results += '<li><a href="'+ pathway_val['permalink'] + '">' + pathway_val['post_title'] + '</a>"';
-				});
-				$( ".result-box.pathways ul" ).prepend( pathways_results );
-				*/
+				// if we have experiential learning results
+				if ( data.experiential[0] ) {
 
-				// set experiential learning result
-				$( ".result-box.experiential li a" ).html( data.experiential[0]['post_title'] ).attr( 'href', data.experiential[0]['permalink'] );
-				console.log( data.experiential );
-				if ( data.experiential[0]['thumbnail'] != 'false' ) {
-					$( ".result-box.experiential" ).css( 'background-image', 'url('+data.experiential[0]['thumbnail']+')' );
+					// set the experiential learning item's title and href
+					$( ".result-box.experiential li a" ).html( data.experiential[0]['post_title'] ).attr( 'href', data.experiential[0]['permalink'] );
+
+					// if we have an experiential learning post thumbnail
+					if ( data.experiential[0]['thumbnail'] != 'false' ) {
+
+						// set the background-image
+						$( ".result-box.experiential" ).css( 'background-image', 'url('+data.experiential[0]['thumbnail']+')' );
+
+					}
 				}
 
-				// set independent study result
-				$( ".result-box.independent li a" ).html( data.independent[0]['post_title'] ).attr( 'href', data.independent[0]['permalink'] );
-				if ( data.independent[0]['thumbnail'] != 'false' ) {
-					$( ".result-box.independent" ).css( 'background-image', 'url('+data.independent[0]['thumbnail']+')' );
+				// if we have independent study results
+				if ( data.experiential[0] ) {
+
+					// set the independent study item's title and href
+					$( ".result-box.independent li a" ).html( data.independent[0]['post_title'] ).attr( 'href', data.independent[0]['permalink'] );
+
+					// if we have an independent study post thumbnail
+					if ( data.independent[0]['thumbnail'] != 'false' ) {
+
+						// set the background-image
+						$( ".result-box.independent" ).css( 'background-image', 'url('+data.independent[0]['thumbnail']+')' );
+
+					}
+
 				}
-				
+
 				// set news result
 				if ( data.news[0] ) {
+
+					// set the title and href of the news item
 					$( ".result-bar.news li a" ).html( data.news[0]['post_title'] ).attr( 'href', data.news[0]['permalink'] );
+
 				}
 				
 				// set profile result
-				$( ".result-bar.profile li a" ).html( data.profile[0]['post_title'] ).attr( 'href', data.profile[0]['permalink'] );
+				if ( data.alumni[0] ) {
 
+					// set the alumni profile title and href
+					$( ".result-bar.profile li a" ).html( data.alumni[0]['post_title'] ).attr( 'href', data.alumni[0]['permalink'] );
+
+				}
+
+				// display all the results
 				$( ".connected-learning-results" ).slideDown( 500 );
+
 			});
 		});
 
