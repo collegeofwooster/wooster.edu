@@ -479,6 +479,15 @@ function do_area_tab_content( $title, $key ) {
 					<?php
 					print do_shortcode( '[articles cat="independent-study" tag="' . $area_slug . '" /]' );
 				} ?>
+
+				<?php 
+				if ( $key == 'alumni' ) {
+					?>
+				<hr>
+				<h3>Related Articles</h3>
+					<?php
+					print do_shortcode( '[articles cat="alumni-Profile" tag="' . $area_slug . '" /]' );
+				} ?>
 			</div>
 	<?php
 	} 
