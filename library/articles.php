@@ -14,15 +14,21 @@ function articles_shortcode( $atts ) {
 		'posts_per_page' => $a['posts_per_page']
 	);
 
+	// 'tag' takes slug
 	if ( !empty( $a['tag'] ) ) {
 		$args['tag'] = $a['tag'];
 	}
 
+	// 'tags' takes ids
 	if ( !empty( $a['tags'] ) ) {
 		$tags = explode( ',', $a['tags'] );
 		$args['tag__in'] = $tags;
 	}
 
+	// 'cat' takes slug
+	
+
+	// 'cats' takes id
 	if ( !empty($a['cats']) ) {
 		$cats = explode( ',', $a['cats'] );
 		$args['category__in'] = $cats;
