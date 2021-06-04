@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
 				$.each( data.areas , function( area_key, area_val ){
 
 					// set a result
-					areas_results += '<li><a href="'+ area_val.permalink + '">' + area_val.post_title + '</a></li>"';
+					areas_results += '<li><a href="'+ area_val.permalink + '">' + area_val.post_title + '</a></li>';
 
 				});
 

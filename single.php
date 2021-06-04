@@ -27,7 +27,8 @@ get_header();
 			$cat_list = wp_get_post_categories( $post->ID );
 			$related_posts = get_posts( array(
 				'post_type' => 'post',
-				'cat__in' => $cat_list
+				'cat__in' => $cat_list,
+				'posts_per_page' => 3
 			) );
 			if ( !empty( $cat_list ) ) {
 				?>
