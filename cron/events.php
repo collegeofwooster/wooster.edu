@@ -8,7 +8,9 @@ include( '../../../../wp-load.php' );
 global $wpdb;
 
 // pull events feed
-$events = json_decode( file_get_contents( 'https://25livepub.collegenet.com/calendars/web-calendar-of-events.json' ) );
+$events_raw = file_get_contents( 'https://25livepub.collegenet.com/calendars/web-calendar-of-events.json' );
+
+$events = json_decode( $events_raw );
 
 // if we have events
 if ( !empty( $events ) ) {
@@ -16,7 +18,7 @@ if ( !empty( $events ) ) {
 	// start looping through them
 	foreach ( $events as $event ) {
 
-		// uncomment to dump first result and die for testing
+		// uncomment to dump first result and die for testing (prevents a full loop through all records)
 		print_r( $event ); die;
 
 	    // get a previous post if it exists.
