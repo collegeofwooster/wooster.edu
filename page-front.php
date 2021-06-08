@@ -93,7 +93,7 @@ get_header();
 	<div class="front-comms">
 		<div class="front-comms-inner">
 
-			<div class="front-news articles list">
+			<div class="front-news article-list">
 				<h2>News</h2>
 				<?php
 				$post_query = new WP_Query( array( 'posts_per_page' => 3, 'post_type' => 'post' ) );
