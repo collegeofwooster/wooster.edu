@@ -12,11 +12,11 @@ the_showcase();
 
 ?>
 
-<div class="content-wide" role="main">
-	<div class="quarter sidebar">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?>no sidebar selected<?php endif; ?>
+<div class="three-column" role="main">
+	<div class="sidebar">
+		<?php wp_nav_menu( array( 'menu' => get_cmb_value( 'page_sidebar_menu' ) ) ); ?>
 	</div>
-	<div class="half">
+	<div class="middle-column">
 	<?php 
 	
 	if ( have_posts() ) :
@@ -27,8 +27,8 @@ the_showcase();
 
 	?>
 	</div>
-	<div class="quarter sidebar-right">
-		<?php the_sidebar_right(); ?>
+	<div class="aside">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?>no sidebar selected<?php endif; ?>
 	</div>
 </div><!-- #content -->
 

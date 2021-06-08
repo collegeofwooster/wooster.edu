@@ -55,31 +55,50 @@ function the_page_header( $title_override = '', $background_override = '' ) {
 
 
 // eventually move this to the new 'research guide' cpt
-add_action( 'cmb2_admin_init', 'page_header_metabox' );
-function page_header_metabox() {
+add_action( 'cmb2_admin_init', 'page_settings_metabox', 1 );
+function page_settings_metabox() {
 
     // accordion metabox
-    $page_header_metabox = new_cmb2_box( array(
+    $page_settings_metabox = new_cmb2_box( array(
         'id' => 'page_header_metabox',
-        'title' => 'Page Header',
+        'title' => 'Page Settings',
         'desc' => 'Select the librarian for this study guide.',
         'object_types' => array( 'page', 'people', 'area' ), // post type
         'context' => 'normal',
         'priority' => 'high',
     ) );
-    $page_header_metabox->add_field( array(
+    $page_settings_metabox->add_field( array(
         'name' => 'Title',
         'id'   => CMB_PREFIX . 'page_header_title',
         'desc' => 'Enter a title that overrides the page title above if set.',
         'type' => 'text'
     ) );
-    $page_header_metabox->add_field( array(
+    $page_settings_metabox->add_field( array(
         'name' => 'Background',
         'id' => CMB_PREFIX . 'page_header_background',
         'type' => 'file',
         'desc' => 'Upload a background photo that will override the default image used for the section in which this page/content is.'
     ) );
 
+    $page_settings_metabox->add_field( array(
+        'name' => 'Menu',
+        'id'   => CMB_PREFIX . 'page_sidebar_menu',
+        'type' => 'select',
+        'options' => get_all_menus()
+    ) );
+
 }
 
 
+
+// get all wp menus in an array.
+function get_all_menus(){
+    $menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) ); 
+
+    $generated = array( '' => '- select a menu -' );
+    foreach ( $menus as $menu ) {
+        $generated[$menu->slug] = $menu->name;
+    }
+
+    return $generated;
+}

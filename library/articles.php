@@ -43,7 +43,7 @@ function articles_shortcode( $atts ) {
 	// Check that we have query results.
 	if ( $query->have_posts() ) {
 
-		$return = '<div class="article-cards">';
+		$return = '<div class="' . ( $a['style'] == 'list' ? 'article-list' : 'article-cards' ) . '">';
 	  
 	    // Start looping over the query results.
 	    while ( $query->have_posts() ) {
@@ -54,7 +54,7 @@ function articles_shortcode( $atts ) {
 	        $return .= '</a></div>';
 	        $return .= '<div class="entry-inner">';
 		    $return .= '<h4><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h4>';
-		    $return .= wpautop( get_the_excerpt() );
+		    $return .= '<div class="excerpt">' . wpautop( get_the_excerpt() ) . '</div>';
 		    $return .= '</div></div>';
 	    }
 

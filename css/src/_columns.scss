@@ -59,44 +59,6 @@
 		}
 		*/
 
-		.nav-menu {
-			border-top: 2px solid $grey-light;
-			border-bottom: 2px solid $grey-light;
-
-			li {
-				a {
-					display: block;
-					color: $grey;
-					font-size: 14px;
-					line-height: 18px;
-					text-decoration: none;
-					padding: 5px 20px;
-					border-bottom: 1px solid $grey-light;
-					@include font;
-
-					@include respond-to( $bp-m ) {
-						padding: 10px 12px;
-					}
-
-					&:hover {
-						color: $blue;
-					}
-				}
-
-				.sub-menu {
-					display: none;
-
-					&.open {
-						display: block;
-						padding-left: 20px;
-
-						li a {
-							@include font;
-						}
-					}
-				}
-			}
-		}
 	}
 
 	.right-column {
@@ -231,3 +193,80 @@
 		padding-top: 20px;
 	}
 }
+
+
+.three-column {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		display: flex;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 20px 30px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 30px 40px;
+	}
+
+	.sidebar {
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 25%;
+			padding-top: 20px;
+		}
+
+		@include respond-to( 1220px ) {
+			flex-basis: 20%;
+		}
+	}
+	
+	.middle-column {
+		padding: 20px 0;
+
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 50%;
+			padding: 0 20px;
+		}
+
+		@include respond-to( 1024px ) {
+			padding: 0 30px;
+		}
+
+		@include respond-to( 1220px ) {
+			padding: 0 35px;
+		}
+	}
+
+	.aside {
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 25%;
+			padding-top: 20px;
+		}
+
+		.widget {
+			padding-bottom: 20px;
+
+			.widget-title {
+				padding-bottom: 10px;
+			}
+
+			.menu {
+				border-top: 1px solid rgba( black, .3 );
+
+				li a {
+					display: block;
+					background: $gold;
+					color: black;
+					padding: 7px 12px;
+					border-bottom: 1px solid rgba( black, .3 );
+				}
+			}
+		}
+	}
+
+}
+

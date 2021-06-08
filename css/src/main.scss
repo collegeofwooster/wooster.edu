@@ -30,7 +30,8 @@ $bp-xxxl: 1680px;
 
 
 // import layout components
-@import "header", "page-header", "showcase", "content", "columns", "front", "photo-tiles", "footer", "emergency", "people", "accordion", "articles", "search";
+@import "header", "page-header", "showcase", "content", "columns", "sidebar", "front", "photo-tiles", "footer", "emergency", 
+	"people", "accordion", "articles", "search";
 
 
 // include styles for custom post types

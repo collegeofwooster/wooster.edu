@@ -78,6 +78,6 @@ function phototiles_metabox() {
     ) );
 
 }
-add_filter( 'cmb2_admin_init', 'phototiles_metabox' );
+add_filter( 'cmb2_admin_init', 'phototiles_metabox', 30 );
 
 

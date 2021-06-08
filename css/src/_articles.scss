@@ -45,8 +45,8 @@
 }
 
 
-.articles.list {
-	.article {
+.article-list {
+	.entry {
 		@include clearfix;
 		padding: 20px;
 		box-shadow: 0 0 10px rgba( black, .3 );
@@ -54,6 +54,7 @@
 
 		img {
 			float: left;
+			width: 25%;
 			max-width: 90px;
 			margin-right: 20px;
 		}
@@ -67,6 +68,10 @@
 			a {
 				color: $black;
 			}
+		}
+
+		.excerpt {
+			display: none;
 		}
 	}
 }
