@@ -100,7 +100,7 @@ get_header();
 				while ( $post_query->have_posts() ) {
 					$post_query->the_post();
 					?>
-				<div class="article">
+				<div class="entry">
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 					<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
 				</div>
