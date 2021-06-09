@@ -106,7 +106,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 				<div class="alum-buttons">
 					<!--<button class="alum-back">&laquo; Alumni Home</button>-->
 					<?php if ( $have_filters ) { ?><button class="alum-reset">Reset Search</button><?php } ?>
-					<button class="alum-add-story">Add My Story</button>
+					<button class="alum-add-story">Add My Note</button>
 				</div>
 				<?php if ( !empty( $current_yr ) ) { ?>
 				<div class="class-information group">
@@ -124,7 +124,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 				</div>
 				<?php } ?>
 				<div class="alum-add-story-form">
-					<h5>Add My Story</h5>
+					<h5>Add My Note</h5>
 					<?php print do_shortcode( '[gravityform id="2" title="false" description="false" /]' ); ?>
 				</div>
 				<div class="alum-filter">
