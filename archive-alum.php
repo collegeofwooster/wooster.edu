@@ -189,7 +189,6 @@ if ( $query_yr || $query_cat || $query_search ) {
 					</div>
 					<div class="info group">
 						<h5><a href="#alum-<?php the_ID(); ?>" class="open-alum-link"><?php print substr( get_the_title(), 0, 50 ); print ( strlen( get_the_title() ) > 50 ? '...' : '' ); ?></a></h5>
-						<?php if ( has_cmb_value( 'alum_submitter' ) ) { ?><div class="quiet">Submitted by: <?php show_cmb_value( 'alum_submitter' ) ?></div><?php } ?>
 						<?php if ( get_cmb_value( 'alum_year' ) > 0 ) { ?><div class="alum-year"><?php show_cmb_value( 'alum_year' ) ?></div><?php } ?>
 						<div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div>
 					</div>
@@ -212,7 +211,6 @@ if ( $query_yr || $query_cat || $query_search ) {
 						<div class="alum-category alum-category-<?php show_cmb_value( 'alum_category' ) ?>"><?php print get_alum_category_name( get_cmb_value( 'alum_category' ) ); ?></div>
 						<div class="details-content">
 							<p><?php the_content(); ?></p>
-							<?php if ( has_cmb_value( 'alum_submitter' ) ) { ?><p class="quiet">Submitted by: <?php show_cmb_value( 'alum_submitter' ) ?></p><?php } ?>
 						</div>
 					</div>
 				</div>
