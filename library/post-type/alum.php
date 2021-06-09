@@ -5,7 +5,6 @@
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 
-
 // let's create the function for the custom type
 function alum_post_type() { 
 	// creating (registering) the custom type 
@@ -49,8 +48,7 @@ function alum_post_type() {
 add_action( 'init', 'alum_post_type');
 
 
-global $states, $years;
-
+global $states;
 $states = array(
     '0' =>'State',
     'AL'=>'Alabama',
@@ -113,6 +111,7 @@ $states = array(
 
 
 // set up an array of years from 1940 to current
+global $years;
 $years = array();
 $years[0] = '- none -';
 $n = 1950;
@@ -122,13 +121,25 @@ while ( $n < ( date( 'Y' ) + 1 ) ) {
 }
 
 
+// let's set up the alum categories array so we don't have to 
+// define them in multiple places.
+global $alum_categories;
+$alum_categories = array(
+    'achievements' => 'Professional Achievements',
+    'births-and-family' => 'Births and Family',
+    'in-memoriam' => 'In Memoriam',
+    'weddings-marriages' => 'Weddings and Marriages',
+    'encounters' => 'Wooster Encounters',
+    'moving' => 'Moving/Relocation',
+    'personal' => 'Personal Updates'
+);
+
 
 // the alumni metaboxes
 add_action( 'cmb2_admin_init', 'alum_metaboxes' );
 function alum_metaboxes() {
 
-
-    global $states, $years;
+    global $states, $years, $alum_categories;
 
     // area of interest information
     $alum_box = new_cmb2_box( array(
@@ -175,12 +186,7 @@ function alum_metaboxes() {
         'name' => 'Type of Update',
         'id'   => CMB_PREFIX . 'alum_category',
         'type' => 'select',
-        'options' => array(
-            'class-letter' => 'Class Letter',
-            'obituary' => 'Obituary',
-            'news' => 'News',
-            'sightings' => 'Sightings'
-        ),
+        'options' => $alum_categories,
         'default' => 'personal'
     ) );
     $alum_box->add_field( array(
@@ -196,179 +202,19 @@ function alum_metaboxes() {
         'type' => 'text',
     ) );
 
-
-
-
-    // year information
-    $year_box = new_cmb2_box( array(
-        'id' => 'year_info',
-        'title' => 'Class Year Details',
-        'object_types' => array( 'yr' ), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-    ) );
-    $year_box->add_field( array(
-        'name' => 'President',
-        'id'   => CMB_PREFIX . 'year_president',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Graduation Date',
-        'id'   => CMB_PREFIX . 'year_grad_date',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Graduating Seniors',
-        'id'   => CMB_PREFIX . 'year_grad_seniors',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Commencement Theme',
-        'id'   => CMB_PREFIX . 'year_commencement_theme',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Commencement Speakers',
-        'id'   => CMB_PREFIX . 'year_commencement_speakers',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Honorary Degree Recipient(s)',
-        'id'   => CMB_PREFIX . 'year_honorary_degrees',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Medal of Merit Recipient(s)',
-        'id'   => CMB_PREFIX . 'year_medal',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (1)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (1)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (2)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_2',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (2)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_2',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (3)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_3',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (3)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_3',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (4)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_4',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (4)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_4',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Former Class Agent',
-        'id'   => CMB_PREFIX . 'year_agent_former_name',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Has Memory Book',
-        'id' => CMB_PREFIX . 'year_memory',
-        'type' => 'checkbox'
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Has Green List',
-        'id' => CMB_PREFIX . 'year_green',
-        'type' => 'checkbox'
-    ) );
-    /*
-    $year_box->add_field( array(
-        'name' => 'Reunion Memory Book PDF (50th)',
-        'id' => CMB_PREFIX . 'year_memory_50',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Reunion Memory Book PDF (40th)',
-        'id' => CMB_PREFIX . 'year_memory_40',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Reunion Memory Book PDF (35th)',
-        'id' => CMB_PREFIX . 'year_memory_35',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Reunion Memory Book PDF (25th)',
-        'id' => CMB_PREFIX . 'year_memory_25',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Reunion Memory Book PDF (10th)',
-        'id' => CMB_PREFIX . 'year_memory_10',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Reunion Photo',
-        'id' => CMB_PREFIX . 'year_photo_reunion',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'image/jpeg',
-        ),
-        'preview_size' => 'small',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Archived Class Letters PDF (10th)',
-        'id' => CMB_PREFIX . 'year_letters',
-        'type' => 'file',
-        'query_args' => array(
-            'type' => 'application/pdf',
-        ),
-        'preview_size' => 'small',
-    ) );
-    */
-    $year_box->add_field( array(
-        'name' => 'Facebook Page',
-        'id'   => CMB_PREFIX . 'year_facebook',
-        'type' => 'text',
-    ) );
-
 }
 
+
+// a little function to get show the category images for the alumni posts
+function show_alum_category_image( $category ) {
+    print '<img src="' . get_bloginfo( 'template_url' ) . '/img/alum-' . $category . '.webp">';
+}
+
+
+// function to get the alumni category name
+function get_alum_category_name( $category ) {
+    // grab the alum_categories global and return the name based on given key
+    global $alum_categories;
+    return $alum_categories[$category];
+}
 

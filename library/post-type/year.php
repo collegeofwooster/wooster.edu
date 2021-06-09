@@ -70,89 +70,29 @@ function year_metaboxes() {
         'type' => 'text',
     ) );
     $year_box->add_field( array(
+        'name' => 'President Email',
+        'id'   => CMB_PREFIX . 'year_president_email',
+        'type' => 'text',
+    ) );
+    $year_box->add_field( array(
+        'name' => 'Class Secretary',
+        'id'   => CMB_PREFIX . 'year_secretary',
+        'type' => 'text',
+    ) );
+    $year_box->add_field( array(
+        'name' => 'Class Secretary Email',
+        'id'   => CMB_PREFIX . 'year_secretary_email',
+        'type' => 'text',
+    ) );
+    $year_box->add_field( array(
         'name' => 'Graduation Date',
         'id'   => CMB_PREFIX . 'year_grad_date',
-        'type' => 'text',
+        'type' => 'text_date',
     ) );
     $year_box->add_field( array(
         'name' => 'Graduating Seniors',
         'id'   => CMB_PREFIX . 'year_grad_seniors',
         'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Commencement Theme',
-        'id'   => CMB_PREFIX . 'year_commencement_theme',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Commencement Speakers',
-        'id'   => CMB_PREFIX . 'year_commencement_speakers',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Honorary Degree Recipient(s)',
-        'id'   => CMB_PREFIX . 'year_honorary_degrees',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Medal of Merit Recipient(s)',
-        'id'   => CMB_PREFIX . 'year_medal',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (1)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (1)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (2)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_2',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (2)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_2',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (3)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_3',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (3)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_3',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent (4)',
-        'id'   => CMB_PREFIX . 'year_agent_current_name_4',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Current Class Agent Email (4)',
-        'id'   => CMB_PREFIX . 'year_agent_current_email_4',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Former Class Agent',
-        'id'   => CMB_PREFIX . 'year_agent_former_name',
-        'type' => 'text',
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Has Memory Book',
-        'id' => CMB_PREFIX . 'year_memory',
-        'type' => 'checkbox'
-    ) );
-    $year_box->add_field( array(
-        'name' => 'Has Green List',
-        'id' => CMB_PREFIX . 'year_green',
-        'type' => 'checkbox'
     ) );
     $year_box->add_field( array(
         'name' => 'Facebook Page',
