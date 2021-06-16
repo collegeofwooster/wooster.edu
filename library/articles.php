@@ -72,3 +72,10 @@ function articles_shortcode( $atts ) {
 }
 add_shortcode( 'articles', 'articles_shortcode' );
 
+
+// limit the number of words in the excerpt.
+function custom_excerpt_length( $length ) {
+	return 24;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
