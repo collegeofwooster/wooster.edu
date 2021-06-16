@@ -63,6 +63,7 @@
 
 	.right-column {
 		padding: 20px;
+		@extend .content-style;
 
 		@include respond-to( $bp-m ) {
 			padding: 10px 20px 50px 34%;
@@ -224,6 +225,7 @@
 	
 	.middle-column {
 		padding: 20px 0;
+		@extend .content-style;
 
 		@include respond-to( 768px ) {
 			flex: 1;
