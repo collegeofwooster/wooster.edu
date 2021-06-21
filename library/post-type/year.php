@@ -54,7 +54,6 @@ add_action( 'init', 'yr_post_type');
 add_action( 'cmb2_admin_init', 'year_metaboxes' );
 function year_metaboxes() {
 
-
     // year information
     $year_box = new_cmb2_box( array(
         'id' => 'year_info',
@@ -74,12 +73,12 @@ function year_metaboxes() {
         'id'   => CMB_PREFIX . 'year_president_email',
         'type' => 'text',
     ) );
-    $year_box->add_field( array(
+    $year_box->add_field( array( // comma separated
         'name' => 'Class Secretary',
         'id'   => CMB_PREFIX . 'year_secretary',
         'type' => 'text',
     ) );
-    $year_box->add_field( array(
+    $year_box->add_field( array( // comma separated
         'name' => 'Class Secretary Email',
         'id'   => CMB_PREFIX . 'year_secretary_email',
         'type' => 'text',

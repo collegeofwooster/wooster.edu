@@ -14,7 +14,8 @@ register_nav_menus( array(
 	'main-menu' => 'Main Menu',
     'main-menu-quick-links' => 'Main Menu - Quick Links',
     'header-buttons' => 'Header Buttons',
-    'footer-links' => 'Footer Links'
+    'footer-links' => 'Footer Links',
+    'research-guides' => 'Research Guides'
 ) );
 
 
@@ -71,4 +72,19 @@ function pagination( $prev = '&laquo;', $next = '&raquo;' ) {
 function is_cli() {
     if ( php_sapi_name() == "cli" ) return true;
     return false;
+}
+
+
+
+// a simple function to output a nav menu as a select list
+function quick_nav_menu( $theme_location, $first_item ) {
+    $menu_items = wp_get_nav_menu_items( $theme_location );
+    if ( !empty( $menu_items ) ) {  
+        print "<select class='quick-nav'>";
+        if ( !empty( $first_item ) ) print "<option value='none'>" . $first_item . "</option>";
+        foreach ( $menu_items as $item ) {
+            print "<option value='" . $item->url . "'>" . $item->title . "</option>";
+        }
+        print "</select>";
+    }
 }

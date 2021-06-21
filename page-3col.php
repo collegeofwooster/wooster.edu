@@ -14,7 +14,7 @@ the_showcase();
 
 <div class="three-column" role="main">
 	<div class="sidebar">
-		<?php wp_nav_menu( array( 'menu' => get_cmb_value( 'page_sidebar_menu' ) ) ); ?>
+		<?php the_sidebar_menu(); ?>
 	</div>
 	<div class="middle-column">
 	<?php 

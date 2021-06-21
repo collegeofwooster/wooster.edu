@@ -8,32 +8,32 @@
 .two-column {
 	position: relative;
 
+	@include respond-to( $bp-m ) {
+		display: flex;
+	}
+
 	.sidebar {
 		border-bottom: 1px solid rgba( $grey, .2 );
 		padding: 20px;
 
 		@include respond-to( $bp-m ) {
-			position: absolute;
-			left: 20px;
-			top: 100px;
-			width: 28%;
-			border-bottom: 0;
-			padding: 0;
+			flex: 1;
+			flex-basis: 28%;
+			padding: 20px;
 		}
 
 		@include respond-to( $bp-l ) {
-			left: 30px;
-			top: 100px;
+			flex-basis: 25%;
+			padding: 30px;
 		}
 
 		@include respond-to( $bp-xl ) {
-			width: 24%;
+			flex-basis: 24%;
+			padding: 40px;
 		}
 
 		@include respond-to( $bp-xxl ) {
-			left: 40px;
-			top: 100px;
-			width: 22%;
+			flex-basis: 22%;
 		}
 
 		.toggle-sidebar-menu {
@@ -52,13 +52,6 @@
 			}
 		}
 
-		/*
-		&.scrolled {
-			position: fixed;
-			z-index: 400;
-		}
-		*/
-
 	}
 
 	.right-column {
@@ -66,28 +59,26 @@
 		@extend .content-style;
 
 		@include respond-to( $bp-m ) {
-			padding: 10px 20px 50px 34%;
+			flex: 1;
+			flex-basis: 72%;
+			padding: 20px 20px 20px 0;
 		}
 
 		@include respond-to( $bp-l ) {
-			padding: 20px 40px 50px 34%;
+			flex-basis: 75%;
+			padding: 30px 30px 30px 0;
 		}
 
 		@include respond-to( $bp-xl ) {
-			padding: 30px 40px 70px 29%;
+			flex-basis: 76%;
+			padding: 40px 40px 40px 0;
 		}
 
 		@include respond-to( $bp-xxl ) {
-			padding: 30px 40px 70px 27%;
+			flex-basis: 78%;
 		}
 	}
 }
-
-
-.two-column {
-	min-height: 900px;
-}
-
 
 .post-columns {
 	padding: 20px;

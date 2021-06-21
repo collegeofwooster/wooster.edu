@@ -54,6 +54,13 @@ function the_page_header( $title_override = '', $background_override = '' ) {
 
 
 
+// little function to output the sidebar menu selected in the page settings box.
+function the_sidebar_menu() {
+	wp_nav_menu( array( 'menu' => get_cmb_value( 'page_sidebar_menu' ) ) );
+}
+
+
+
 // eventually move this to the new 'research guide' cpt
 add_action( 'cmb2_admin_init', 'page_settings_metabox', 1 );
 function page_settings_metabox() {
