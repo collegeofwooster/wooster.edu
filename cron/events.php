@@ -19,7 +19,7 @@ if ( !empty( $events ) ) {
 	foreach ( $events as $event ) {
 
 		// uncomment to dump first result and die for testing (prevents a full loop through all records)
-		print_r( $event ); die;
+		//print_r( $event ); die;
 
 	    // get a previous post if it exists.
 	    $previous_post = $wpdb->get_results( "SELECT * FROM `woo_postmeta` WHERE `meta_key`='_p_event_external_id' AND `meta_value`='" . $event->eventID . "' LIMIT 1;" );
@@ -86,6 +86,48 @@ if ( !empty( $events ) ) {
 
 			// store the organization
 			if ( $event_cf->fieldID == 17192 ) update_post_meta( $post_id, '_p_event_organization', $event_cf->value );
+
+			// store the organization
+			if ( $event_cf->fieldID == 17289 ) {
+
+				// split out multiple categories by comma
+				$event_cats = explode( ',', $event_cf->value );
+
+				// loop through the categories
+				foreach ( $event_cats as $event_cat ) {
+
+					$tag_name = str_replace( 'Audience - ', '', $event_cat );
+
+					// check if our term exists.
+					$cat_info = term_exists( $tag_name, 'event_cat' );
+
+					// if the term exists
+					if ( $cat_info ) {
+
+						// add our new post to that category
+						if ( wp_set_post_terms( $post_id, $cat_info['term_id'], 'event_cat', 1 ) ) {
+							echo "Added event to category: " . $tag_name . "\n";
+						}
+
+					} else {
+
+						// create the category (returns either new category ID or old one)
+						$cat_info = wp_insert_term( $tag_name, 'event_cat' );
+
+						// if that worked
+						if ( $cat_info ) {
+							echo "Added event category: " . $tag_name . "\n";
+						}
+
+						// add our new post to that category
+						if ( wp_set_post_terms( $post_id, $cat_info['term_id'], 'event_cat', 1 ) ) {
+							echo "Added event to category: " . $tag_name . "\n";
+						}
+
+					}
+
+				}
+			}
 
 		}
 
