@@ -20,9 +20,6 @@ footer {
 	}
 
 	.footer-inner {
-		max-width: 1220px;
-		margin: 0 auto;
-
 		@include respond-to( $bp-m ) {
 			display: flex;
 		}
