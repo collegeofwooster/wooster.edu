@@ -27,12 +27,12 @@ function the_accordions() {
 		<div class="accordions">
 			<?php
 			foreach ( $accordions as $key => $accordion ) {
-
+                
 				// only output this accordion if we have a title and content
 				if ( !empty( $accordion["title"] ) && !empty( $accordion['content'] ) ) {
 
 					// put this accordion into our accordion function so we aren't duplicating code
-					do_accordion( $accordion['title'], $accordion['content'], $accordion['color'], $accordion['open'] );
+					do_accordion( $accordion['title'], $accordion['content'], $accordion['color'], ( $accordion['open'] == 'on' ? 1 : 0 ) );
 
 				}
 
