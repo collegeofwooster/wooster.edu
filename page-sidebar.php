@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Page w/ Sidebar
+Template Name: Page (2-Column)
 */
 
 get_header();
@@ -22,8 +22,8 @@ the_showcase();
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post(); 
 			?>
-		<h1 class="post-title"><?php the_title(); ?></h1>
 		<?php the_content(); ?>
+		<?php the_accordions(); ?>
 			<?php
 		endwhile;
 	endif;
