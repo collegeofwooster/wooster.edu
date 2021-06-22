@@ -157,26 +157,13 @@ add_filter( 'cmb2_admin_init', 'event_metaboxes' );
 
 
 
-// add capabilities
-function add_event_caps() {
-
-    // gets the author role
-    $role = get_role( 'administrator' );
-
-    // This only works, because it accesses the class instance.
-    // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'read_event' );
-    $role->add_cap( 'edit_event' );
-    $role->add_cap( 'delete_event' );
-    $role->add_cap( 'edit_events' );
-    $role->add_cap( 'edit_others_events' );
-    $role->add_cap( 'publish_events' );
-    $role->add_cap( 'read_private_events' );
-    $role->add_cap( 'edit_private_events' );
-    $role->add_cap( 'edit_published_events' );
-
+// add acceptable query vars so they don't get filtered by WP
+function add_event_query_vars_filter( $vars ){
+	$vars[] = "mo";
+	$vars[] = "yr";
+	return $vars;
 }
-add_action( 'admin_init', 'add_event_caps');
+add_filter( 'query_vars', 'add_event_query_vars_filter' );
 
 
 

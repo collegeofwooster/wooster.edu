@@ -3,25 +3,24 @@
  * The template for displaying Archive pages
  */
 
-get_header(); 
+get_header();
 
-if ( isset( $_REQUEST['event_category'] ) && $_REQUEST['event_category']!=0 ) {
-	$category_info = get_term_by( 'id', $_REQUEST['event_category'], 'category' );
+if ( isset( $_GET['event_category'] ) && $_GET['event_category']!=0 ) {
+	print $_GET['event_category'];
+	$category_info = get_term_by( 'id', $_GET['event_category'], 'event_cat' );
 	$page_title = $category_info->name;
 } else {
 	$page_title = "Events Calendar";
 }
 
-?>
-	<?php the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-header.webp" ); ?>
-	
-	<div id="content" class="wrap content-wide" role="main">
-		<div class="events-content">
-			<!--<?php print do_shortcode( '[snippet slug="events-calendar-download"]' ); ?>-->
-		</div>
+// output the page header
+the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-header.webp" );
 
+?>
+	
+	<div class="content-wide">
 		<h3>Search All Events</h3>
-		<form role="search" method="get" id="searchform" class="searchform" action="/" _lpchecked="1">
+		<form role="search" method="get" id="searchform" class="searchform" action="/events" _lpchecked="1">
 			<input type="text" value="<?php print ( isset( $_REQUEST['s'] ) ? strip_tags( $_REQUEST['s'] ) : '' ) ?>" name="s" id="s" placeholder="Search">
 			<input type="hidden" value="event" name="post_type">
 			<input type="submit" id="searchsubmit" value="Search Events" class="btn-arrow">
@@ -55,14 +54,14 @@ if ( isset( $_REQUEST['event_category'] ) && $_REQUEST['event_category']!=0 ) {
 			<?php 
 
 			// get URL parameters and default to current month.
-			$month = ( isset( $_REQUEST['mo'] ) ? $_REQUEST['mo'] : date( "n" ) );
-			$year = ( isset( $_REQUEST['yr'] ) ? $_REQUEST['yr'] : date( "Y" ) );
+			$month = ( isset( $_GET['mo'] ) ? $_GET['mo'] : date( "n" ) );
+			$year = ( isset( $_GET['yr'] ) ? $_GET['yr'] : date( "Y" ) );
 
 			// output month
 			show_month_events( $month, $year );
 		}
 		?>
-	</div><!-- #content -->
+	</div>
 
 <?php
 

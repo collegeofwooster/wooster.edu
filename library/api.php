@@ -1,6 +1,7 @@
 <?php
 
 
+// add acceptable query vars so they don't get filtered by WP
 function add_query_vars_filter( $vars ){
 	$vars[] = "filter_term";
 	return $vars;
@@ -93,3 +94,15 @@ add_action( 'rest_api_init', function () {
 } );
 
 
+// a simple function to parse the query string of the URL
+function parse_query_string() {
+
+	// separate the parts of the URL
+	$url_parts = explode( "?", $_SERVER['REQUEST_URI'] );
+
+	// parse the query string part into an array.
+	parse_str( $url_parts[1], $request );
+
+	// return it
+	return $request;
+}
