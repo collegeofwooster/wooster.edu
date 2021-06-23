@@ -58,20 +58,20 @@
 			</div>
 
 			<div class="my-wooster">
-				<a href="#">My Wooster</a>
+				<a href="#">Inside Wooster</a>
 			</div>
 
-			<div class="quick-links">
+			<div class="quick-links helpful">
 				<h4>Helpful Links</h4>
-				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-quick-links' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-helpful' ) ); ?>
 			</div>
 
-			<div class="quick-links">
+			<div class="quick-links info-for">
 				<h4>Info For</h4>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-info-for' ) ); ?>
 			</div>
 
-			<div class="quick-links">
+			<div class="quick-links locations">
 				<h4>Locations</h4>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-locations' ) ); ?>
 			</div>

@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', 'p_scripts' );
 // register a couple nav menus
 register_nav_menus( array(
 	'main-menu' => 'Main Menu',
-    'main-menu-quick-links' => 'Main Menu - Quick Links',
+    'main-menu-helpful' => 'Main Menu - Helpful Links',
     'main-menu-locations' => 'Main Menu - Locations',
     'main-menu-info-for' => 'Main Menu - Info For',
     'header-buttons' => 'Header Buttons',
