@@ -66,6 +66,16 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-quick-links' ) ); ?>
 			</div>
 
+			<div class="quick-links">
+				<h4>Info For</h4>
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-info-for' ) ); ?>
+			</div>
+
+			<div class="quick-links">
+				<h4>Locations</h4>
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu-locations' ) ); ?>
+			</div>
+
 			<div class="guides">
 				<h4>Guides</h4>
 				<div class="guides-inner">

@@ -13,6 +13,8 @@ add_action( 'wp_enqueue_scripts', 'p_scripts' );
 register_nav_menus( array(
 	'main-menu' => 'Main Menu',
     'main-menu-quick-links' => 'Main Menu - Quick Links',
+    'main-menu-locations' => 'Main Menu - Locations',
+    'main-menu-info-for' => 'Main Menu - Info For',
     'header-buttons' => 'Header Buttons',
     'footer-links' => 'Footer Links',
     'research-guides' => 'Research Guides'
