@@ -193,6 +193,17 @@ header {
 		@include respond-to( $bp-l ) {
 			padding: 0 50px 50px 140px;
 		}
+
+		// hide scrollbar for chrome, safari and opera
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		// hide scrollbar for ie, edge and firefox
+		& {
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+		}
 	}
 
 	nav {
