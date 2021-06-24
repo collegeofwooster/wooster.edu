@@ -17,21 +17,24 @@ $admin_email = get_option( 'admin_email' );
 
 	<footer class="footer">
 		<div class="footer-inner">
+			<div class="wrap">
 
-			<div class="column first">
-				<img src="<?php bloginfo( 'template_url' ); ?>/img/logo-dark.webp" />
+				<div class="column first">
+					<img src="<?php bloginfo( 'template_url' ); ?>/img/logo-dark.webp" />
 
-				<?php print get_snippet( 'footer-left' ); ?>
-			</div>
+					<?php print get_snippet( 'footer-left' ); ?>
+				</div>
 
-			<div class="column">
-				<h4>Wooster Traditions</h4>
-				<img src="<?php bloginfo( 'template_url' ); ?>/img/footer-feed.webp">
-			</div>
+				<div class="column">
+					<h4>Wooster Traditions</h4>
+					<img src="<?php bloginfo( 'template_url' ); ?>/img/footer-feed.webp">
+				</div>
 
-			<div class="column">
-				<h4>Quick Links</h4>
-				<?php wp_nav_menu( array( 'theme_location' => 'footer-links' ) ); ?>
+				<div class="column">
+					<h4>Quick Links</h4>
+					<?php wp_nav_menu( array( 'theme_location' => 'footer-links' ) ); ?>
+				</div>
+
 			</div>
 
 		</div>

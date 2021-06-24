@@ -20,12 +20,14 @@ footer {
 	}
 
 	.footer-inner {
-		@include respond-to( $bp-m ) {
-			display: flex;
-		}
-
 		h4 {
 			padding-bottom: 8px;
+		}
+
+		.wrap {
+			@include respond-to( $bp-m ) {
+				display: flex;
+			}			
 		}
 
 		.column {
