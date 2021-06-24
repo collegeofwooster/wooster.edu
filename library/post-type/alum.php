@@ -114,7 +114,7 @@ $states = array(
 global $years;
 $years = array();
 $years[0] = '- none -';
-$n = 1950;
+$n = 1942;
 while ( $n < ( date( 'Y' ) + 1 ) ) {
     $years[$n] = $n;
     $n++;
