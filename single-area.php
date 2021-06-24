@@ -120,7 +120,7 @@ $courses = get_cmb_value( "person_courses" );
 						        <div class="entry">
 						        	<?php the_post_thumbnail(); ?>
 						        	<div class="entry-inner">
-							        	<h4><?php the_title(); ?></h4>
+							        	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 							        	<?php the_excerpt(); ?>
 							        </div>
 						        </div>
