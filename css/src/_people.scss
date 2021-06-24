@@ -104,6 +104,11 @@
 .bio {
 	.sidebar {
 		box-shadow: 0 0 20px rgba( black, .2 );
+		padding: 20px;
+
+		@include respond-to( $bp-m ) {
+			margin-right: 30px;
+		}
 
 		img {
 			width: 100%;
@@ -112,7 +117,7 @@
 
 		.person-info {
 			@include respond-to( 1024px ) {
-				padding: 20px;
+				padding: 20px 0;
 			}
 
 			h5 {
