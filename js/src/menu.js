@@ -35,5 +35,28 @@ jQuery(document).ready(function($){
     	}
     });
 
+
+    // handle sidebar menu toggling
+    var left_menu = $('.sidebar .ul.menu');
+    left_menu.find( 'a' ).click(function(){
+        var parent_li = $( this ).parent( 'li' );
+        var submenu = $( this ).next( 'ul' );
+        if ( !submenu.is( ':visible' ) && parent_li.hasClass( 'menu-item-has-children' ) ) {
+            event.preventDefault();
+            parent_li.addClass( 'open' );
+            submenu.show();
+        }
+    });
+
+    // auto open a menu if it or one of its children is the current page
+	left_menu.find( 'li' ).each(function(){
+		var item = $(this);
+		if ( item.hasClass( 'current_page_parent' ) || item.hasClass( 'current-menu-item' ) || item.hasClass( 'current-menu-ancestor' ) ) {
+			item.addClass( 'open' );
+			item.find( 'ul.sub-menu' ).addClass( 'open' );
+		}
+	});
+
+
 });
 

@@ -27,6 +27,10 @@
 				}
 			}
 
+			&.current_page_item > a {
+				color: $foam;
+			}
+
 			.sub-menu {
 				display: none;
 
