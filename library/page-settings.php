@@ -2,7 +2,7 @@
 
 
 // the output function to display the header on-page.
-function the_page_header( $title_override = '', $background_override = '' ) {
+function the_page_header( $title_override = '', $background_override = '', $color_override = '' ) {
 	global $post;
 	
 	// get featured image.
@@ -11,11 +11,17 @@ function the_page_header( $title_override = '', $background_override = '' ) {
 	// override background if specified
  	if ( !empty( $background_override ) ) $page_header_background = $background_override;
 
-	// get the page header background
-	$page_header_title = get_cmb_value( 'page_header_title' );
+    // get the page header background
+    $page_header_title = get_cmb_value( 'page_header_title' );
 
-	// override title if specified
-	if ( !empty( $title_override ) ) $page_header_title = $title_override;
+    // override title if specified
+    if ( !empty( $title_override ) ) $page_header_title = $title_override;
+
+    // get the page header background
+    $page_header_color = get_cmb_value( 'page_header_color' );
+
+    // override title if specified
+    if ( !empty( $color_override ) ) $page_header_color = $color_override;
 
 
     // get page ancestors
@@ -48,7 +54,7 @@ function the_page_header( $title_override = '', $background_override = '' ) {
 	// if we have both a background and a title, output the thing.
 	if ( !empty( $page_header_background ) && !empty( $page_header_title ) ) {
 		?>
-	<div class="page-header" style="background-image: url(<?php print $page_header_background ; ?>);">
+	<div class="page-header<?php print $page_header_color ?>" style="background-image: url(<?php print $page_header_background ; ?>);">
 		<div class="page-header-overlay"></div>
         <div class="wrap">
     		<div class="breadcrumbs">

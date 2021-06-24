@@ -14,11 +14,12 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 // let's remove all width and height attributes from image tags before they even hit the browser.
-function remove_img_attr ( $html ) {
-    return preg_replace('/(width|height)="\d+"\s/', "", $html);
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+function remove_width_attribute( $html ) {
+    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+    return $html;
 }
-add_filter( 'post_thumbnail_html', 'remove_img_attr' );
-
 
 
 // function to resize images
