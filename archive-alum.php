@@ -97,10 +97,9 @@ if ( $query_yr || $query_cat || $query_search ) {
 	
 ?>
 
-	<section id="primary" class="content-area wrap group" role="main">
+	<div class="content-wide">
+		<div class="wrap">
 
-		<div class="content-wide">
-			
 			<div class="alum-info">
 				<h1 class="page-title alum-title">Class Notes<?php print ( $current_yr != 0 ? '<span class="class-title"> &raquo; Class of ' . $current_yr : '</span>' ); ?></h1>
 				<div class="alum-buttons">
@@ -233,7 +232,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 
 		</div>
 
-	</section><!-- #primary -->
+	</div>
 
 <?php
 
