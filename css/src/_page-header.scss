@@ -3,8 +3,46 @@
 .page-header {
 	background: url(../img/bg-page-header.webp) center center no-repeat;
 	background-size: cover;
-	min-height: 250px;
+	padding: 100px 20px 20px;
 	position: relative;
+
+	@include respond-to( $bp-m ) {
+		padding: 170px 30px 50px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 200px 40px 60px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 220px 50px 70px;
+	}
+
+	@include respond-to( $bp-xxl ) {
+		padding: 260px 60px 80px;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-gold.webp) right center no-repeat;
+		background-size: cover;
+		width: 75%;
+		height: 25px;
+		bottom: 0;
+		left: -100px;
+		z-index: 99;
+	    transform: scaleX(-1);
+	    filter: FlipH;
+
+		@include respond-to( $bp-m ) {
+			height: 30px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			height: 35px;
+		}
+	}
 
 	.page-header-overlay {
 		position: absolute;
@@ -12,54 +50,46 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		z-index: 0;
 		background-color: rgba( black, .3 );
 	}
 
 	.breadcrumbs {
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		text-shadow: 0 0 10px rgba( black, .6 );
+		position: relative;
+		z-index: 1;
+		color: rgba( white, .7 );
+		font-size: .8em;
+	}
+
+	a {
 		color: white;
-		font-size: .85em;
-		text-transform: uppercase;
-		text-align: left;
+		text-decoration: none;
+		margin: 0 5px;
 
-		@include respond-to( 1024px ) {
-			left: 30px;
-			bottom: 30px;
+		&:hover {
+			border-bottom: 1px dotted rgba( white, .5 );
+		}
+	}
+
+	.page-title {
+		@include font-title;
+		font-size: 2em;
+		line-height: 1.4em;
+		text-transform: initial;
+		color: white;
+		text-shadow: 0 0 30px rgba( black, .5 );
+
+		@include respond-to( $bp-l ) {
+			font-size: 2.4em;
 		}
 
-		@include respond-to( 1220px ) {
-			left: 40px;
-			bottom: 40px;
+		@include respond-to( $bp-xl ) {
+			font-size: 3.2em;
 		}
 
-		a {
-			color: white;
-			text-decoration: none;
-			margin: 0 5px;
-
-			&:hover {
-				border-bottom: 1px dotted rgba( white, .5 );
-			}
+		@include respond-to( $bp-xl ) {
+			font-size: 3.6em;
 		}
-
-		.page-title {
-			@include font-title-bold;
-			font-size: 2em;
-			line-height: 1.4em;
-			text-transform: initial;
-
-			@include respond-to( 1024px ) {
-				font-size: 2.4em;
-			}
-
-			@include respond-to( 1220px ) {
-				font-size: 3.2em;
-			}
-		}
-
 	}
 }
 

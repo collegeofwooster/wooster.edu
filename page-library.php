@@ -53,5 +53,7 @@ the_page_header();
 </div>
 <?php
 
+the_phototiles();
+
 get_footer();
 

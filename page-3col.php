@@ -13,23 +13,25 @@ the_showcase();
 ?>
 
 <div class="three-column" role="main">
-	<div class="sidebar">
-		<?php the_sidebar_menu(); ?>
-	</div>
-	<div class="middle-column">
-	<?php 
-	
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post();
-			the_content();
-			the_accordions();
-		endwhile;
-	endif;
+	<div class="wrap">
+		<div class="sidebar">
+			<?php the_sidebar_menu(); ?>
+		</div>
+		<div class="middle-column">
+		<?php 
+		
+		if ( have_posts() ) :
+			while ( have_posts() ) : the_post();
+				the_content();
+				the_accordions();
+			endwhile;
+		endif;
 
-	?>
-	</div>
-	<div class="aside">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?>no sidebar selected<?php endif; ?>
+		?>
+		</div>
+		<div class="aside">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-generic') ) : ?>no sidebar selected<?php endif; ?>
+		</div>
 	</div>
 </div><!-- #content -->
 

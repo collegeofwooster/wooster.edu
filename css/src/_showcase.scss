@@ -99,14 +99,6 @@
 			background: rgba( $black, .3 );
 			pointer-events: none;
 		}
-		
-		.wrap {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-		}
 
 		.slide-content {
 			position: absolute;
@@ -120,8 +112,8 @@
 
 			@include respond-to( $bp-m ) {
 				top: 30%;
-				margin-top: -100px;
 				left: 70px;
+				margin-top: -100px;
 				margin-left: 0;
 				margin-right: 0;
 			}
@@ -129,24 +121,28 @@
 			@include respond-to( $bp-l ) {
 				top: 55%;
 				left: 90px;
+				right: 90px;
 				max-width: 60%;
 			}
 
 			@include respond-to( $bp-xl ) {
 				left: 140px;
+				right: 140px;
 				max-width: 670px;
 			}
 
 			@include respond-to( $bp-xxl ) {
+				top: auto;
+				bottom: 120px;
 				max-width: 750px;
 			}
 			
 			h1 {
-				@include font-title-bold;
+				@include font-title;
 				color: white;
 				text-shadow: 0 0 15px rgba( $black, .3 );
 				padding: 0;
-				transition: font-size 400ms ease-in-out, line-height 400ms ease-in-out;
+				margin-bottom: 20px;
 
 				font-size: 20px;
 				line-height: 25px;
@@ -165,34 +161,21 @@
 					font-size: 50px;
 					line-height: 60px;
 				}
+
+				@include respond-to( $bp-xl ) {
+					font-size: 60px;
+					line-height: 70px;
+				}
+
+				@include respond-to( $bp-xxl ) {
+					font-size: 70px;
+					line-height: 80px;
+				}
 			}
 
 			p {
 				color: white;
-				text-shadow: 0 0 15px rgba( $black, .3 );
-			}
-		}
-			
-		h1 {
-			@include font-bold;
-			color: white;
-			transition: font-size 400ms ease-in-out, line-height 400ms ease-in-out;
-			margin-bottom: 15px;
-		
-			font-size: 30px;
-			line-height: 40px;
-
-			@include respond-to( 768px ) {
-				font-size: 50px;
-				line-height: 70px;
-				text-align: left;
-				margin-bottom: 25px;
-			}
-
-			@include respond-to( 1024px ) {
-				font-size: 70px;
-				line-height: 90px;
-				margin-bottom: 35px;
+				text-shadow: 0 0 15px rgba( $black, .4 );
 			}
 		}
 

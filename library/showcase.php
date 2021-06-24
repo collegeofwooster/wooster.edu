@@ -9,7 +9,7 @@ function the_showcase() {
 
 	if ( !empty( $slides ) ) {
 		?>
-		<div class="showcase">
+		<div class="showcase<?php print ( !is_front_page() ? ' interior' : '' ) ?>">
 		<?php
 		$count = 0;
 		foreach ( $slides as $key => $slide ) {
@@ -26,8 +26,8 @@ function the_showcase() {
 				
 				<?php if ( !empty( $content ) ) { ?>
 				<div class="showcase-overlay"></div>
-				<div class="wrap">
-					<div class="slide-content">
+				<div class="slide-content">
+					<div class="wrap">
 					<?php 
 					if ( !empty( $content ) ) {
 						print apply_filters( 'the_content', $content );

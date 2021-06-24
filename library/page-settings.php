@@ -6,50 +6,61 @@ function the_page_header( $title_override = '', $background_override = '' ) {
 	global $post;
 	
 	// get featured image.
-	$featured_image_url = ( has_cmb_value( 'page_header_background' ) ? get_cmb_value( 'page_header_background' ) : get_the_post_thumbnail_url( null, 'full' ) );
+	$page_header_background = get_cmb_value( 'page_header_background' );
  	
-	if ( !empty( $background_override ) ) {
-		$featured_image_url = $background_override;
-	}
+	// override background if specified
+ 	if ( !empty( $background_override ) ) $page_header_background = $background_override;
 
-	// get page ancestors
-	$ancestors = get_post_ancestors( get_the_ID() );
+	// get the page header background
+	$page_header_title = get_cmb_value( 'page_header_title' );
 
-	// get ancestor info
-	$crumbs = array();
-	if ( !empty( $ancestors ) ) {
-		foreach ( $ancestors as $anc ) {
-			$crumbs[] = get_page( $anc );
-		}
-	}
-
-	// reverse the order of the ancestors in the crumbs
-	$crumbs = array_reverse( $crumbs );
+	// override title if specified
+	if ( !empty( $title_override ) ) $page_header_title = $title_override;
 
 
-	// if the ancestor array isn't empty, compile crumb code
-	if ( !empty( $crumbs ) ) {
+    // get page ancestors
+    $ancestors = get_post_ancestors( get_the_ID() );
 
-		// empty string to start from
-		$crumb_code = '';
+    // get ancestor info
+    $crumbs = array();
+    if ( !empty( $ancestors ) ) {
+        foreach ( $ancestors as $anc ) {
+            $crumbs[] = get_page( $anc );
+        }
+    }
 
-		// loop through the crumbs
-		foreach ( $crumbs as $crumb ) {
-			$crumb_code .= "<a href='" . get_permalink( $crumb->ID ) . "'>" . $crumb->post_title . "</a> &raquo; ";
-		}
-	}
-	?>
-	<div class="page-header"<?php print ( !empty( $featured_image_url ) ? ' style="background-image: url(' . $featured_image_url . ')"' : '' ); ?>>
+    // reverse the order of the ancestors in the crumbs
+    $crumbs = array_reverse( $crumbs );
+
+    // if the ancestor array isn't empty, compile crumb code
+    if ( !empty( $crumbs ) ) {
+
+        // empty string to start from
+        $crumb_code = '';
+
+        // loop through the crumbs
+        foreach ( $crumbs as $crumb ) {
+            $crumb_code .= "<a href='" . get_permalink( $crumb->ID ) . "'>" . $crumb->post_title . "</a> &raquo; ";
+        }
+    }
+
+
+	// if we have both a background and a title, output the thing.
+	if ( !empty( $page_header_background ) && !empty( $page_header_title ) ) {
+		?>
+	<div class="page-header" style="background-image: url(<?php print $page_header_background ; ?>);">
 		<div class="page-header-overlay"></div>
-		<div class="breadcrumbs">
-			<div class="crumbs">
-				<?php print_r( $crumb_code ); ?>
-				<!--<a href="/academics">Academics</a> &raquo; <a href="/areas-of-study">Areas of Study</a> &raquo; -->
-			</div>
-			<h1 class="page-title"><?php print ( !empty( $title_override ) ? $title_override : get_the_title() ); ?></h1>
-		</div>
+        <div class="wrap">
+    		<div class="breadcrumbs">
+    			<div class="crumbs">
+    				<?php print $crumb_code; ?>
+    			</div>
+    			<h1 class="page-title"><?php print $page_header_title; ?></h1>
+    		</div>
+        </div>
 	</div>
-	<?php
+		<?php
+	}
 }
 
 

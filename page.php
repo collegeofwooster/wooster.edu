@@ -13,6 +13,7 @@ the_showcase();
 ?>
 
 <div class="content-wide" role="main">
+	<div class="wrap">
 	<?php 
 	
 	if ( have_posts() ) :
@@ -23,9 +24,12 @@ the_showcase();
 	endif;
 
 	?>
+	</div>
 </div><!-- #content -->
 
 <?php
+
+the_phototiles();
 
 get_footer();
 
