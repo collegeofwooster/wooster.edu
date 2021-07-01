@@ -5,8 +5,9 @@
 
 get_header();
 
+$request = parse_query_string();
+
 if ( isset( $_GET['event_category'] ) && $_GET['event_category']!=0 ) {
-	print $_GET['event_category'];
 	$category_info = get_term_by( 'id', $_GET['event_category'], 'event_cat' );
 	$page_title = $category_info->name;
 } else {
@@ -51,14 +52,16 @@ the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-heade
 			<h3>Browse Events</h3>
 			<p><strong>Filter by Event Type:</strong> <?php filter_by_event_type(); ?></p>
 			<br>
-			<?php 
+			<?php
 
-			// get URL parameters and default to current month.
-			$month = ( isset( $_GET['mo'] ) ? $_GET['mo'] : date( "n" ) );
-			$year = ( isset( $_GET['yr'] ) ? $_GET['yr'] : date( "Y" ) );
+			$moyr = explode( '-', ( !empty( $request['moyr'] ) ? $request['moyr'] : date( "n" ) . '-' . date( "Y" ) ) );
+			list( $month, $year ) = $moyr;
+
+			// get the category
+			$category = ( isset( $request['event_category'] ) ? $request['event_category'] : 0 );
 
 			// output month
-			show_month_events( $month, $year );
+			show_month_events( $month, $year, $category );
 		}
 		?>
 	</div>

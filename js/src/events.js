@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 	});
 
 	$( 'a.month-nav' ).click(function(){
-		location.href = $.query.set( "mo", $(this).data('month') ).set( "yr", $(this).data('year') );
+		location.href = $.query.set( "moyr", $(this).data('month') + '-' + $(this).data('year') );
 	});
 
 });
