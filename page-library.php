@@ -17,15 +17,15 @@ the_page_header();
 		<div class="right-column library">
 
 			<div class="library-search">
+
+				<div class="consort">
+					<h4>CONSORT Catalog:</h4>
+					<?php print get_snippet( 'library-consort', 0 ); ?>
+				</div>
 		
 				<div class="summon">
 					<h4>Summon:</h4>
 					<?php print get_snippet( 'library-summon', 0 ) ?>
-				</div>
-
-				<div class="consort">
-					<h4>Catalog:</h4>
-					<?php print get_snippet( 'library-consort', 0 ); ?>
 				</div>
 
 				<div class="journals">
