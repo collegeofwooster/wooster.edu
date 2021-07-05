@@ -31,6 +31,7 @@ the_page_header();
 				<div class="databases">
 					<h4>Databases:</h4>
 					<?php quick_nav_menu( 'library-databases', 'Select a Database' ); ?>
+					<?php print get_snippet( 'library-databases', 0 ) ?>
 				</div>
 
 				<div class="guides">
