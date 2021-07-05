@@ -18,7 +18,7 @@
 			color: rgba( $grey, .7 );
 		}
 
-		form, .guides select { 
+		form, .guides select, .databases select { 
 			border: 2px solid rgba( $grey-light, .7 );
 			margin: 8px 0;
 			background: white;
@@ -55,7 +55,7 @@
 			padding: 20px 0;
 		}
 
-		.summon, .consort, .journals {
+		.summon, .consort, .databases {
 			border-bottom: 1px solid rgba( black, .1 );
 		}
 
@@ -90,7 +90,7 @@
 			}
 		}
 
-		.journals {
+		.databases {
 			select {
 				width: 100%;
 				@include respond-to( $bp-s ) { width: 30%; }
@@ -109,7 +109,7 @@
 			}
 		}
 
-		.guides select {
+		.guides select, .databases select {
 			width: 100%;
 		}
 

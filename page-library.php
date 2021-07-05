@@ -28,14 +28,14 @@ the_page_header();
 					<?php print get_snippet( 'library-summon', 0 ) ?>
 				</div>
 
-				<div class="journals">
-					<h4>Journals:</h4>
-					<?php print get_snippet( 'library-journals', 0 ) ?>
+				<div class="databases">
+					<h4>Databases:</h4>
+					<?php quick_nav_menu( 'library-databases', 'Select a Database' ); ?>
 				</div>
 
 				<div class="guides">
 					<h4>Research Guides:</h4>
-					<?php quick_nav_menu( 'research-guides', 'Select a Research Guide' ); ?>
+					<?php quick_nav_menu( 'library-guides', 'Select a Research Guide' ); ?>
 				</div>
 
 			</div>

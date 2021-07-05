@@ -17,7 +17,8 @@ register_nav_menus( array(
     'main-menu-info-for' => 'Main Menu - Info For',
     'header-buttons' => 'Header Buttons',
     'footer-links' => 'Footer Links',
-    'research-guides' => 'Research Guides'
+    'library-guides' => 'Library - Research Guides',
+    'library-databases' => 'Library - Databases'
 ) );
 
 
@@ -80,7 +81,17 @@ function is_cli() {
 
 // a simple function to output a nav menu as a select list
 function quick_nav_menu( $theme_location, $first_item ) {
-    $menu_items = wp_get_nav_menu_items( $theme_location );
+
+    // get all locations
+    $locations = get_nav_menu_locations();
+ 
+    // get object id by location
+    $object = wp_get_nav_menu_object( $locations[$theme_location] );
+ 
+    // get menu items by menu name
+    $menu_items = wp_get_nav_menu_items( $object->name );
+ 
+    // if we have items, loop through them
     if ( !empty( $menu_items ) ) {  
         print "<select class='quick-nav'>";
         if ( !empty( $first_item ) ) print "<option value='none'>" . $first_item . "</option>";
