@@ -87,7 +87,7 @@ function page_settings_metabox() {
         'id' => 'page_header_metabox',
         'title' => 'Page Settings',
         'desc' => 'Select the librarian for this study guide.',
-        'object_types' => array( 'page', 'people', 'area' ), // post type
+        'object_types' => array( 'page', 'people', 'area', 'org' ), // post type
         'context' => 'normal',
         'priority' => 'high',
     ) );

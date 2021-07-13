@@ -1,11 +1,6 @@
 <?php
 
 
-// Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'flush_rewrite_rules' );
-
-
-
 // let's create the function for the custom type
 function People_post_type() { 
 	// creating (registering) the custom type 

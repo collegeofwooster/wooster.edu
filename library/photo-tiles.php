@@ -46,7 +46,7 @@ function phototiles_metabox() {
         'id' => 'phototiles_metabox',
         'title' => 'Photo Tiles',
         'desc' => 'A 4-column component with background images for each of 4 columns, colors, and text displaying for each.',
-        'object_types' => array( 'page' ), // post type
+        'object_types' => array( 'page', 'org' ), // post type
         'context' => 'normal',
         'priority' => 'high'
     ) );

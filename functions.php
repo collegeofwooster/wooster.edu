@@ -36,7 +36,12 @@ function require_multi( $files ) {
 require_multi( 'core', 'api', 'metabox', 'page-settings', 'showcase', 'featured-article', 'photo-tiles', 'accordion', 'button', 'emergency', 'images', 'articles', 'box' );
 
 
-require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year' );
+// flush rewrite rules for custom post types when we switch themes
+add_action( 'after_switch_theme', 'flush_rewrite_rules' );
+
+
+// load post types
+require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year', 'post-type/org' );
 
 
 // require composer autoload

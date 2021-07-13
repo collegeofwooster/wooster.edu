@@ -1,10 +1,6 @@
 <?php
 
 
-// Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'flush_rewrite_rules' );
-
-
 
 // let's create the function for the custom type
 function yr_post_type() { 
