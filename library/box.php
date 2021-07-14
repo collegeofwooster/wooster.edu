@@ -10,7 +10,7 @@ function box( $atts, $content = null ) {
 
 	$box = '<div class="box ' . $color . '">';
 	$box .= '<div class="box-title">' . $title . '</div>';
-	$box .= '<div class="box-content">' . $content . '</div>';
+	$box .= '<div class="box-content">' . apply_filters( 'the_content', $content ) . '</div>';
 	$box .= '</div>';
 
 	return $box;
