@@ -204,7 +204,7 @@ get_header();
 			</div>
 
 			<div class="front-admissions-tour">
-				<?php print get_snippet( 'home-tour', 0 ); ?>
+				<?php print get_snippet( 'home-tour', 1 ); ?>
 			</div>
 
 		</div>
