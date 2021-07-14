@@ -2,7 +2,7 @@
 
 get_header();
 
-the_page_header();
+the_page_header( null, '/wp-content/themes/wooster/img/bg-page-header-org.webp', 'rose' );
 
 ?>
 

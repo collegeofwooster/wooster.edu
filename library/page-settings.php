@@ -54,7 +54,7 @@ function the_page_header( $title_override = '', $background_override = '', $colo
 	// if we have both a background and a title, output the thing.
 	if ( !empty( $page_header_background ) && !empty( $page_header_title ) ) {
 		?>
-	<div class="page-header<?php print $page_header_color ?>" style="background-image: url(<?php print $page_header_background ; ?>);">
+	<div class="page-header <?php print $page_header_color ?>" style="background-image: url(<?php print $page_header_background ; ?>);">
 		<div class="page-header-overlay"></div>
         <div class="wrap">
     		<div class="breadcrumbs">

@@ -44,6 +44,36 @@
 		}
 	}
 
+	&.foam:after {
+		background: url(../img/accent-tartan-hor-foam.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.black:after {
+		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
+		background-size: contain;
+	}
+
+	&.blue:after {
+		background: url(../img/accent-tartan-hor-blue.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.tan:after {
+		background: url(../img/accent-tartan-hor-tan.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.sky:after {
+		background: url(../img/accent-tartan-hor-sky.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.rose:after {
+		background: url(../img/accent-tartan-hor-rose.webp) right center no-repeat;
+		background-size: contain;
+	}
+
 	.page-header-overlay {
 		position: absolute;
 		top: 0;
