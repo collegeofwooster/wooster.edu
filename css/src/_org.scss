@@ -12,16 +12,12 @@
 		@include respond-to( $bp-m ) {
 			flex: 1;
 			flex-basis: 33.3333%;
-			flex-grow: 1;	
+			flex-grow: 0;	
 			padding: 0 20px 20px 0;
 		}
 
 		@include respond-to( $bp-l ) {
 			flex-basis: 25%;
-		}
-
-		@include respond-to( $bp-xl ) {
-			flex-basis: 20%;
 		}
 	}
 }
