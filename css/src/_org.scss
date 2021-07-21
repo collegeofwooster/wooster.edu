@@ -4,7 +4,6 @@
 	@include respond-to( $bp-m ) {
 		display: flex;  
 		flex-wrap: wrap;
-		flex-direction: column;
 	}
 
 	.org-category {
