@@ -1,0 +1,12 @@
+
+
+.org-listing {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	.org-category {
+		flex: 1;
+		flex-basis: 33.3333%;
+	}
+}

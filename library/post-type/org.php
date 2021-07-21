@@ -80,3 +80,10 @@ register_taxonomy( 'org_cat',
 );
 
 
+
+function get_org_categories() {
+	$terms = get_terms( 'org_cat' );
+	return $terms;
+}
+
+
