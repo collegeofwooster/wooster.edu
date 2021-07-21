@@ -19,16 +19,19 @@ $org_cats = get_org_categories();
 				foreach ( $org_cats as $org_cat ) {
 					?>
 				<div class="org-category">
-			 	<h4><?php print $org_cat->name; ?></h4>
-				<ul class="org-list">
-				<?php
-				query_posts( 'post_type=org&org_cat=' . $org_cat->slug );
-				while ( have_posts() ) : the_post();
-					print '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
-				endwhile;
+				 	<h4><?php print $org_cat->name; ?></h4>
+					<ul class="org-list">
+					<?php
+					query_posts( 'post_type=org&org_cat=' . $org_cat->slug );
+					while ( have_posts() ) : the_post();
+						print '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+					endwhile;
+					?>
+					</ul>
+				</div>
+					<?php 
+				} 
 				?>
-				</ul>
-				<?php } ?>
 			</div>
 
 		</div>

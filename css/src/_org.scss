@@ -1,12 +1,21 @@
 
 
 .org-listing {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+	@include respond-to( $bp-m ) {
+		display: flex;  
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
 
 	.org-category {
-		flex: 1;
-		flex-basis: 33.3333%;
+		padding: 20px 0;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 33.3333%;
+			flex-grow: 1;	
+			padding: 0 20px 20px 0;
+		}		
 	}
 }
+
