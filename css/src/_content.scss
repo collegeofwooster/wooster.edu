@@ -11,6 +11,15 @@ section.content {
 
 
 .content-style {
+	em {
+		font-style: italic;
+	}
+
+	em strong, strong em, em b, b em {
+		@include font-bold;
+		font-style: italic;
+	}
+
 	ol, ul {
 		padding: 5px 0 5px 35px;
 
