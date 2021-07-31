@@ -99,7 +99,7 @@ get_header();
 			<div class="front-news article-list">
 				<h2>News</h2>
 				<?php
-				$post_query = new WP_Query( array( 'posts_per_page' => 3, 'post_type' => 'post' ) );
+				$post_query = new WP_Query( array( 'posts_per_page' => 3, 'post_type' => 'post', 'cat' => '-1105,-1106,-1066' ) );
 				while ( $post_query->have_posts() ) {
 					$post_query->the_post();
 					?>
