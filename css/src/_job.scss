@@ -2,10 +2,11 @@
 
 .job-filter {
 	@include clearfix;
-	padding: 0 20px 20px;
+	padding: 20px 0;
+	border-bottom: 2px solid rgba( $grey-light, .2 );
 
 	@include respond-to( $bp-xl ) {
-		padding: 20px 40px;
+		padding: 30px 0;
 	}
 
 	.job-search {
@@ -35,48 +36,21 @@
 
 .job-list {
 	.entry-job {
+		@include clearfix;
+		border-bottom: 2px solid rgba( $grey-light, .2 );
+		padding: 20px 0;
+
+		@include respond-to( $bp-xl ) {
+			padding: 40px 0;
+		}
+
 		.job-title {
-			position: relative;
 			padding: 0;
-			background: rgba( $grey, .2 );
-			overflow: hidden;
 
 			h3 {
 				@include font-title-bold;
-				color: white;
-				padding: 20px;
 				font-size: 1.3em;
-				text-transform: uppercase;
-				display: inline-block;
-				position: relative;
-				z-index: 0;
-
-				a {
-					color: white;
-				}
-
-				&::after {
-					content: '';
-					position: absolute;
-					z-index: -1;
-					left: -30px;
-					top: 0;
-					width: 120%;
-					height: 100%;
-					background: $grey;
-					transform: skew( -35deg );
-				}
-
-				@include respond-to( $bp-xl ) {
-					padding: 20px 60px 20px 40px;
-					position: relative;
-
-					&::after {
-						width: 110%;
-					}
-				}
 			}
-
 		}
 
 		.accordion-content {
@@ -86,11 +60,6 @@
 
 		.job-excerpt {
 			display: block;
-			padding: 20px;
-
-			@include respond-to( $bp-xl ) {
-				padding: 20px 20px 30px 40px;
-			}
 
 			.job-info {
 				@include respond-to ( $bp-m ) {
