@@ -20,13 +20,13 @@
 				font-size: 15px;
 				line-height: 20px;
 				text-decoration: none;
-				padding: 5px 15px;
+				padding: 5px 0;
 				border-bottom: 1px solid rgba( $grey-light, .2 );
 				@include font;
 				cursor: pointer;
 
 				@include respond-to( $bp-m ) {
-					padding: 10px 12px;
+					padding: 10px 0;
 				}
 
 				&:hover {

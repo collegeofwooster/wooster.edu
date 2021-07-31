@@ -12,12 +12,12 @@
 				font-size: 15px;
 				line-height: 20px;
 				text-decoration: none;
-				padding: 5px 15px;
+				padding: 5px 0;
 				border-bottom: 1px solid rgba( $grey-light, .2 );
 				@include font;
 
 				@include respond-to( $bp-m ) {
-					padding: 10px 12px;
+					padding: 10px 0;
 				}
 
 				&:hover {
@@ -42,7 +42,7 @@
 
 			&.open .sub-menu {
 				display: block;
-				padding: 5px 5px 15px 30px;
+				padding: 5px 5px 15px 25px;
 				border-bottom: 1px solid rgba( $grey-light, .2 );
 			}
 		}
