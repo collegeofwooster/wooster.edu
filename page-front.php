@@ -111,7 +111,7 @@ get_header();
 				}
 				wp_reset_query();
 				?>
-				<a href="/news">See more news &raquo;</a>
+				<p style="padding-top: 0;"><a href="/news">See more news &raquo;</a></p>
 			</div>
 
 			<div class="front-events">
@@ -126,7 +126,7 @@ get_header();
 					<div class="front-events-list">
 						<?php 
 						// get the upcoming events
-						$upcoming = get_upcoming_events( 2 );
+						$upcoming = get_upcoming_events( 4 );
 
 						// if we have upcoming events
 						if ( !empty( $upcoming ) ) {
@@ -137,8 +137,8 @@ get_header();
 						<div class="event">
 							<div class="date"><?php print date( 'M', $event->_p_event_start ); ?> <span><?php print date( 'j', $event->_p_event_start ); ?></span> <?php print date( 'Y', $event->_p_event_start ); ?></div>
 							<div class="info">
-								<h4><?php print $event->post_title ?></h4>
-								<p class="time"><?php print date( 'g:i a e', $event->_p_event_start ); ?></p>
+								<h4><a href="<?php print get_permalink( $event->ID ); ?>"><?php print $event->post_title ?></a></h4>
+								<p class="time"><?php print date( 'g:i a', $event->_p_event_start ); ?></p>
 							</div>
 						</div>
 								<?php
@@ -147,11 +147,14 @@ get_header();
 						}
 						?>
 					</div>
+					<!--
 					<div class="events-nav">
 						<a class="prev">&larr;</a>
 						<a class="next">&rarr;</a>
 					</div>
+					-->
 				</div>
+				<p><a href="/events">See more events &raquo;</a></p>
 			</div>
 
 		</div>

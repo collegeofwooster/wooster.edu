@@ -65,5 +65,14 @@
 	&.black {
 		background-color: $black;
 	}
+
+	&.right {
+		margin-bottom: 20px;
+
+		@include respond-to( $bp-m ) {
+			margin: 0 0 15px 15px;
+			float: right
+		}
+	}
 }
 

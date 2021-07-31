@@ -14,7 +14,7 @@ function the_emergency_bar() {
     if ( !empty( $emergency_text ) ) {
         ?>
     <div class="emergency-bar-container <?php print $emergency_color; ?> <?php print md5( $emergency_text ); ?>">
-        <a class="close">X</a>
+        <?php if ( !stristr( $emergency_text, 'COVID' ) ) { ?><a class="close">X</a><?php } ?>
         <?php if ( !empty( $emergency_link ) ) { ?><a href="<?php print $emergency_link ?>"><?php } ?>
         <div class="emergency-bar-text">
             <?php print do_shortcode( $emergency_text ) ?>
