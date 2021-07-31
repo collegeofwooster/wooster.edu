@@ -27,6 +27,7 @@
 
 			&.current_page_item > a {
 				color: $foam;
+				@include font-bold;
 			}
 
 			.sub-menu {
