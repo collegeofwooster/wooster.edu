@@ -17,8 +17,8 @@ function the_showcase() {
 
 				// store the content, link, image, and title (if applicable)
 				$content = ( isset( $slide["content"] ) ? $slide["content"] : '' );
-				$link = ( isset( $slide["link"] ) ? $slide["link"] : '' );
-				$image = $slide['image'];
+				$link = strip_test_domains( ( isset( $slide["link"] ) ? $slide["link"] : '' ) );
+				$image = strip_test_domains( $slide['image'] );
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
 
 				?>

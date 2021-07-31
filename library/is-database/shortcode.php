@@ -37,6 +37,7 @@ function is_search_shortcode() {
 	}
 
 	</script>
+	<h3>Search the I.S. Database</h3>
 	<div id="is-search-div" class="is-search">
 		<div>Student Last: <br><input id="is-search-name" type="text" onkeypress="checkEnter(event, this)"></div>
 		<div>Year: <br><input id="is-search-year" type="text" onkeypress="checkEnter(event, this)"></div>
