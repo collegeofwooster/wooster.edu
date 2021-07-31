@@ -68,7 +68,7 @@ the_page_header( 'Wooster Careers', get_bloginfo('template_url') . "/img/bg-head
 							<div class="job-info">
 								<?php 
 
-								$job_categories = get_terms( 'job_cat' );
+								$job_categories = get_the_terms( get_the_ID(), 'job_cat' );
 								if ( !empty( $job_categories ) ) {
 									$job_cats = array();
 									foreach ( $job_categories as $job_cat ) {
