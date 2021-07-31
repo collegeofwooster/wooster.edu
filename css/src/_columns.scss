@@ -321,16 +321,16 @@
 		.widget-title {
 			padding-bottom: 10px;
 		}
+	}
 
-		.menu li a {
-			@include font-bold;
-			display: block;
-			color: black;
-			background: $gold;
-			padding: 13px 15px;
-			font-size: .9em;
-			margin-bottom: 10px;
-		}
+	.menu li a {
+		@include font-bold;
+		display: block;
+		color: black;
+		background: $gold;
+		padding: 13px 15px;
+		font-size: .9em;
+		margin-bottom: 10px;
 	}
 }
 
