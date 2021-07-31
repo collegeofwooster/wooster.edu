@@ -113,7 +113,7 @@ $courses = get_cmb_value( "person_courses" );
 						<?php
 						$args = array(
 						    'tag' => get_cmb_value( 'area_post_tag' ),
-						    'posts_per_page' => 3
+						    'posts_per_page' => 4
 						);
 						$query = new WP_Query( $args );
 
