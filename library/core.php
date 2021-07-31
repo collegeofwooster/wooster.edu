@@ -107,3 +107,16 @@ function quick_nav_menu( $theme_location, $first_item ) {
         print "</select>";
     }
 }
+
+
+
+// the_content filter to remove test/staging URLs before outputting content
+add_action( 'the_content', 'strip_test_domains' );
+function strip_test_domains( $content ) {
+    $content = str_replace( 'https://wooster.jpederson.com', '', $content );
+    $content = str_replace( 'http://test.wooster.test', '', $content );
+    return $content;
+}
+
+
+
