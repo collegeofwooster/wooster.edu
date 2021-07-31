@@ -94,7 +94,7 @@ $courses = get_cmb_value( "person_courses" );
 					</div>
 					<?php } ?>
 					<?php the_content(); ?>
-					<hr />
+					<hr class="space" />
 
 					<?php if ( has_cmb_value( 'area_faculty_list' ) ) { ?>
 					<h2>Faculty</h2>
@@ -102,7 +102,7 @@ $courses = get_cmb_value( "person_courses" );
 						<?php print do_shortcode( '[people category="' . get_cmb_value( 'area_faculty_list' ) . '" /]' ); ?>
 					</div>
 
-					<hr />
+					<hr class="space" />
 					<?php } ?>
 
 					<?php if ( !empty( get_cmb_value( 'area_post_tag' ) ) ) { ?>

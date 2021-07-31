@@ -60,6 +60,10 @@ section.content {
 		@include respond-to( $bp-l ) {
 			margin: 30px 0;
 		}
+
+		&.space {
+			border-bottom: none;
+		}
 	}
 
 	.postmeta {
