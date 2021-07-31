@@ -187,10 +187,12 @@ get_header();
 						<p class="title"><?php print get_cmb_value( 'person_title', $person->ID ) ?></p>
 					</div>
 				</div>
+				<!--
 				<div class="faculty-slider-nav">
 					<a class="prev">&larr;</a>
 					<a class="next">&rarr;</a>
 				</div>
+				-->
 			</div>
 
 			<div class="faculty-link">
