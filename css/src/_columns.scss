@@ -1,0 +1,338 @@
+
+
+.content {
+	position: relative;
+}
+
+
+.two-column {
+	position: relative;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 30px 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 40px 50px;
+	}
+
+	@include respond-to( $bp-xxl ) {
+		padding: 50px 60px;
+	}
+
+	.wrap {
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+	}
+
+	.sidebar {
+		padding: 20px;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 28%;
+			padding: 20px 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 25%;
+			padding: 30px 30px 30px 0;
+		}
+
+		@include respond-to( $bp-xl ) {
+			flex-basis: 24%;
+			padding: 40px 40px 40px 0;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			flex-basis: 22%;
+		}
+
+		.toggle-sidebar-menu {
+			@include respond-to( $bp-m ) {
+				display: none;
+			}
+		}
+
+		.menu-title {
+			display: none;
+			font-size: 22px;
+			padding: 10px 0;
+
+			@include respond-to( $bp-m ) {
+				padding: 10px 10px 10px 0;
+			}
+		}
+
+	}
+
+	.right-column {
+		padding: 20px;
+		@extend .content-style;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 72%;
+			padding: 10px 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 75%;
+			padding: 20px 30px 30px 0;
+		}
+
+		@include respond-to( $bp-xl ) {
+			flex-basis: 76%;
+			padding: 20px 40px 40px 0;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			flex-basis: 78%;
+		}
+	}
+
+	.left-column {
+		padding: 20px;
+		@extend .content-style;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 70%;
+			padding: 10px 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			padding: 10px 30px 30px 0;
+		}
+
+		@include respond-to( $bp-xl ) {
+			padding: 10px 40px 40px 0;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			flex-basis: 74%;
+		}
+	}
+
+	.aside {
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 30%;
+			padding: 10px 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			padding: 20px 30px 30px 0;
+		}
+
+		@include respond-to( $bp-xl ) {
+			padding: 30px 40px 40px 0;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			flex-basis: 26%;
+		}
+
+		.toggle-sidebar-menu {
+			@include respond-to( $bp-m ) {
+				display: none;
+			}
+		}
+	}
+}
+
+.post-columns {
+	padding: 20px;
+		
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 30px 40px;
+	}
+
+	@include respond-to( $bp-xxl ) {
+		padding: 40px 60px;
+	}
+
+	.post-columns-inner {
+		.wrap {
+			@include respond-to( $bp-m ) {
+				display: flex;
+			}	
+
+			.main-content {
+				@extend .content-style;
+
+				@include respond-to( $bp-m ) {
+					flex: 1;
+					flex-basis: 65%;
+					margin-right: 5%;
+				}
+
+				h1 {
+					@include font-title;
+					line-height: 1.2em;
+					border-bottom: 1px solid rgba( $grey, .3 );
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+				}
+
+				.wp-post-image:nth-child(2) {
+					border: 1px solid $grey;
+					box-shadow: 0 0 20px rgba( black, .2 );
+					margin: 10px 0;
+					
+					@include respond-to( $bp-m ) {
+						max-width: 50%;
+						float: right;
+						margin: 20px 0 20px 20px;
+					}
+				}
+			}
+
+			.ead-document {
+				border: 1px solid $grey;
+				box-shadow: 0 0 20px rgba( black, .2 );
+				margin: 20px 0;
+
+				@include respond-to( $bp-l ) {
+					margin: 30px 0;
+				}
+			}
+
+			.aside {
+				h3 {
+					color: black;
+					padding: 20px 0 10px;
+				}
+
+				.wp-post-image {
+					border: 1px solid $grey-light;
+					box-shadow: 0 0 20px rgba( black, .2 );
+				}
+
+				@include respond-to( $bp-m ) {
+					flex: 1;
+					flex-basis: 30%;
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.one-column {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 30px 50px;
+	}
+}
+
+
+.quarter.sidebar-right {
+	@extend .content-style;
+	
+	@include respond-to( $bp-m ) {
+		padding-top: 20px;
+	}
+}
+
+
+.three-column {
+	padding: 20px;
+
+	@include respond-to( $bp-l ) {
+		padding: 20px 30px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 30px 40px;
+	}
+
+	@include respond-to( $bp-xxl ) {
+		padding: 50px 60px;
+	}
+
+	.wrap {
+		@include respond-to( 768px ) {
+			display: flex;
+		}
+	}
+
+	.sidebar {
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 25%;
+			padding-top: 20px;
+		}
+
+		@include respond-to( 1220px ) {
+			padding-top: 40px;
+			flex-basis: 20%;
+		}
+	}
+	
+	.middle-column {
+		padding: 20px 0;
+		@extend .content-style;
+
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 50%;
+			padding: 20px;
+		}
+
+		@include respond-to( 1024px ) {
+			padding: 20px 30px;
+		}
+
+		@include respond-to( 1220px ) {
+			padding: 20px 35px;
+		}
+	}
+
+	.aside {
+		@include respond-to( 768px ) {
+			flex: 1;
+			flex-basis: 25%;
+			padding-top: 20px;
+		}
+	}
+}
+
+
+.aside {
+	.widget {
+		padding-bottom: 20px;
+
+		.widget-title {
+			padding-bottom: 10px;
+		}
+
+		.menu li a {
+			@include font-bold;
+			display: block;
+			color: black;
+			background: $gold;
+			padding: 10px 15px;
+			font-size: .9em;
+			margin-bottom: 4px;
+			border-top: 1px solid rgba( black, .3 );
+			border-bottom: 1px solid rgba( black, .3 );
+		}
+	}
+}
+

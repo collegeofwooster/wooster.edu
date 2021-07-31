@@ -1,0 +1,84 @@
+
+
+.accordion {
+	margin: 6px 0;
+
+	@include respond-to( $bp-m ) {
+		box-shadow: 0 0 20px rgba( black, .2 );
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin: 20px 0;
+	}
+
+	.accordion-handle {
+		background: $grey-light;
+		padding: 20px 20px 20px 40px;
+		position: relative;
+		@include font-title-bold;
+		font-size: 1.5em;
+		color: white;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 25px;
+			background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+			background-size: cover;
+		}
+
+		&.rose {
+			background: $rose;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+
+		&.red {
+			background: $red;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+
+		&.tan {
+			background: $tan;
+			color: $black;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+
+		&.foam {
+			background: $foam;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+
+		&.blue {
+			background: $blue;
+			&:before { background-image: url(../img/accent-tartan-vert-tan.webp); }
+		}
+
+		&.gold {
+			background: $gold;
+			color: $black;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+
+		&.sky {
+			background: $sky;
+			color: $black;
+			&:before { background-image: url(../img/accent-tartan-vert-black.webp); }
+		}
+	}
+
+	.accordion-content {
+		padding: 10px 10px 10px 40px;
+		display: none;
+
+		@extend .content-style;
+	}
+
+	&.open .accordion-content {
+		display: block;
+	}
+}
+

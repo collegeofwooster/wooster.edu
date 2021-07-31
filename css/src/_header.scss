@@ -1,0 +1,478 @@
+
+
+header {
+	box-shadow: 0 0 20px rgba( $black, .2 );
+	position: fixed;
+	height: 71px;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+	background: white;
+	overflow: hidden;
+	min-width: 350px;
+
+	@include respond-to( $bp-m ) {
+		height: 100px;
+	}
+
+	.logo {
+		max-width: 279px;
+
+		@include respond-to( $bp-m ) {
+			max-width: 380px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			max-width: 380px;
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	.menu-show {
+		position: absolute;
+		right: 17px;
+		bottom: 50%;
+		width: 36px;
+		height: 36px;
+		margin-bottom: -18px;
+		border: 0;
+		padding: 0;
+		background: white;
+		color: transparent;
+		background: url(../img/icon-menu.webp) center center no-repeat;
+		background-size: contain;
+		overflow: hidden;
+
+		@include respond-to( $bp-m ) {
+			right: 30px;
+		}
+	}
+
+	.header-buttons {
+		display: none;
+		position: absolute;
+		left: 37%;
+		right: 80px;
+		top: 50%;
+		margin-top: -25px;
+		text-align: center;
+		//background: rgba( black, .2 );
+
+		@include respond-to( $bp-l ) {
+			display: block;
+			left: 420px;
+			right: 120px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			display: block;
+			left: 400px;
+			right: 330px;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			left: 460px;
+			right: 375px;
+		}
+
+		ul {
+			display: flex;
+
+			li {
+				flex: auto;
+
+				a {
+					display: block;
+					padding: 15px 5px;
+					font-size: 14px;
+					line-height: 20px;
+					color: $grey;
+					text-decoration: none;
+					text-transform: uppercase;
+					width: 100%;
+					transition: 400ms color ease-in-out;
+					background-color: transparent;
+					text-align: center;
+					cursor: pointer;
+
+					&:hover {
+						color: $black;
+					}
+
+					@include respond-to( $bp-l ) {
+						font-size: 17px;
+					}
+				}
+			}
+		}
+	}
+
+	.language, #google_translate_element {
+		display: none;
+
+		@include respond-to( $bp-xl ) {
+			display: block;
+			position: absolute;
+			right: 90px;
+			top: 50%;
+			color: $grey;
+			text-transform: uppercase;
+			margin-top: -22px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				right: 9px;
+				top: 9px;
+				width: 25px;
+				height: 25px;
+				color: black;
+				background: url(../img/icon-globe.webp) center center no-repeat;
+				background-size: contain;
+				pointer-events: none;
+			}
+
+			.goog-te-combo {
+				text-transform: uppercase;
+				@include font;
+				font-size: 16px;
+				line-height: 20px;
+				border: 1px solid rgba( black, .5 );
+				border-radius: 30px;
+				padding: 8px 35px 7px 15px;
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			    cursor: pointer;
+
+    			&::-ms-expand {
+					display: none;
+				}
+			}
+		}
+
+		@include respond-to( $bp-xxl ) {
+			right: 120px;
+		}
+
+		.goog-logo-link {
+		    display:none !important;
+		} 
+		    
+		.goog-te-gadget{
+		    color: transparent !important;
+		}
+	}
+}
+
+
+.menu-overlay {
+	background: $tan;
+	position: fixed;
+	top: 71px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1001;
+	display: none;
+	min-width: 350px;
+
+	@include respond-to( $bp-m ) {
+		top: 100px;
+	}
+
+	.close {
+		position: absolute;
+		right: 0;
+		top: -71px;
+		height: 71px;
+		width: 71px;
+		text-align: center;
+		color: transparent;
+		background: $tan url(../img/icon-menu-close.png) center center no-repeat;
+		cursor: pointer;
+
+		@include respond-to( $bp-m ) {
+			height: 100px;
+			width: 100px;
+			top: -100px;
+		}
+	}
+
+	.columns {
+		padding: 40px 20px 20px 40px;
+		max-height: 100%;
+		overflow: auto;
+
+		@include respond-to( $bp-m ) {
+			position: absolute;
+			top: 100px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: 0 30px 30px 100px;
+
+			.column:first-child {
+				float: left;
+				width: 40%;
+			}
+
+			.column:nth-child( 2 ) {
+				float: left;
+				width: 60%;
+			}
+		}
+
+		@include respond-to( $bp-l ) {
+			padding: 0 50px 50px 140px;
+		}
+
+		// hide scrollbar for chrome, safari and opera
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		// hide scrollbar for ie, edge and firefox
+		& {
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+		}
+	}
+
+	nav {
+		@include font-title-bold;
+		margin-bottom: 20px;
+
+		ul {
+			li {
+				a {
+					font-size: 1.8em;
+					line-height: 1.4em;
+					color: black;
+
+					@include respond-to( $bp-l ) {
+						font-size: 2em;
+						line-height: 1.5em;
+					}
+
+					@include respond-to( $bp-xl ) {
+						font-size: 2.2em;
+						line-height: 1.6em;
+					}
+
+					&:hover {
+						text-decoration: none;
+						opacity: .8;
+					}
+				}
+
+				ul.sub-menu {
+					display: none;
+					padding: 0 0 10px 25px;
+
+					li a {
+						font-size: 1.2em;
+						@include font-title;
+					}
+				}
+			}
+		}
+	}
+
+	.search-form {
+		h3 {
+			color: black;
+		}
+
+		form {
+			padding: 10px 0;
+		}
+
+		input[type=text] {
+			width: 260px;
+			padding: 9px 15px;
+			border: 0;
+			width: 70%;
+			float: left;
+		}
+
+		input[type=submit] {
+			background: $blue;
+			padding: 11px 15px 10px;
+			width: 28%;
+			margin-left: 1%;
+			float: left;
+		}
+
+		.search-filter {
+			@include clearfix;
+			padding: 5px 0;
+
+			label {
+				margin: 0 20px 0 0;
+			}
+		}
+	}
+
+	.my-wooster {
+		padding: 20px 0;
+
+		a {
+			@extend .btn;
+			background: $blue;
+		}
+	}
+
+	.quick-links {
+		padding: 5px 0;
+
+		h4 {
+			@include font;
+			text-transform: uppercase;
+			font-size: .8em;
+			margin-bottom: 5px;
+		}
+
+		ul li {
+			display: inline;
+
+			a {
+				@extend .btn;
+				background: $foam;
+				font-size: .8em;
+				padding: 6px 9px 5px;
+				margin: 0 4px 8px 0;
+			}
+		}
+
+		&.helpful ul li a {
+			background: $gold;
+			color: black;
+		}
+
+		&.locations ul li a {
+			background: $blue;
+		}
+	}
+
+	.guides {
+		padding-top: 30px;
+
+		h4 {
+			@include font;
+			text-transform: uppercase;
+			font-size: .8em;
+			margin-bottom: 10px;
+		}
+
+		.guides-inner {
+			@include respond-to( $bp-m ) {
+				display: flex;
+				margin-right: -3%;
+			}
+
+			.guide {
+				display: block;
+				padding: 120px 20px 20px 20px;
+				background: url(../bg-header.webp) center center no-repeat;
+				background-size: cover;
+				color: white;
+				text-shadow: 0 0 10px rgba( black, .4 );
+				margin-bottom: 10px;
+
+				@include respond-to( $bp-m ) {
+					flex: 1;
+					flex-basis: 47%;
+					margin-right: 3%;
+					padding: 140px 20px 20px 20px;
+					margin-bottom: 0;
+				}
+
+				@include respond-to( $bp-xl ) {
+					padding: 200px 30px 30px 30px;
+				}
+			}
+		}
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-vert-tan-dark.png) center center no-repeat;
+		background-size: contain;
+		width: 25px;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 99;
+
+		@include respond-to( $bp-m ) {
+			left: 30px;
+			width: 35px;
+			background-size: cover;
+		}
+
+		@include respond-to( $bp-l ) {
+			left: 40px;
+			width: 45px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			left: 54px;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
+		background-size: cover;
+		width: 75%;
+		height: 25px;
+		left: 0;
+		top: 0;
+		z-index: 100;
+
+		@include respond-to( $bp-m ) {
+			height: 35px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			height: 45px;
+		}
+	}
+}
+
+
+.admin-bar {
+	header {
+		position: fixed;
+		top: 46px;
+
+		@include respond-to( 783px ) {
+			position: fixed;
+			top: 32px;
+		}
+	}
+
+	.menu-overlay {
+		top: 117px;
+
+		@include respond-to( $bp-m ) {
+			top: 146px;
+		}
+
+		@include respond-to( 783px ) {
+			top: 132px;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) { 
+	#wpadminbar {
+		position: fixed;
+	}
+}

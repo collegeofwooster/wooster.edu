@@ -1,0 +1,52 @@
+
+
+.front-statistics {
+	background: url(../img/bg-statistics.webp) center center no-repeat;
+	background-size: cover;
+	color: white;
+	padding: 20px;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 100px 10%;
+	}
+
+	.front-statistics-inner {
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+		.stat {
+			text-align: center;
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
+			}
+
+			img {
+				max-width: 100px;
+			}
+
+			h4 {
+				@include font-title-bold;
+				font-size: 4em;
+				line-height: 1.2em;
+				text-shadow: 0 0 20px rgba( $black, .4 );
+			}
+
+			p {
+				padding: 0;
+				text-transform: uppercase;
+				text-shadow: 0 0 20px rgba( $black, .4 );
+			}
+		}
+	}
+}
+

@@ -1,0 +1,43 @@
+
+
+// set colors
+$gold: #FFC712;
+$red: #AF0000;
+$tan: #E6E0D9;
+$blue: #215C80;
+$sky: #B2CEDD;
+$foam: #369896;
+$rose: #E5665C;
+
+
+$grey: #666666;
+$grey-light: #999999;
+$grey-dark: #444444;
+$black: #000000;
+
+
+// breakpoints
+$bp-s: 600px;
+$bp-m: 768px;
+$bp-l: 1024px;
+$bp-xl: 1220px;
+$bp-xxl: 1440px;
+$bp-xxxl: 1680px;
+
+
+// import all the things
+@import "mixins", "fonts", "reset", "button", "base", "grid", "form";
+
+
+// import layout components
+@import "header", "page-header", "showcase", "content", "columns", "sidebar", "front", "photo-tiles", "footer", "emergency", 
+	"people", "accordion", "articles", "search", "library", "box", "statistics";
+
+
+// include styles for custom post types
+@import "area", "event", "alum", "org", "fund", "job";
+
+
+// import lightbox styles
+@import "magnific";
+

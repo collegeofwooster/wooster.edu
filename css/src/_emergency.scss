@@ -1,0 +1,90 @@
+
+
+.emergency-bar-container {
+	background: $grey;
+	padding: 14px 20px;
+	color: white;
+	@include clearfix;
+	display: none;
+	position: relative;
+	z-index: 200;
+	text-align: center;
+	font-size: 1.1em;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.show {
+		display: block;
+	}
+
+	.close {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		margin-top: -8px;
+		cursor: pointer;
+		transform: scale( 1.4, 1.0 );
+	}
+
+	&.red {
+		background: $red;
+		color: white;
+
+		a {
+			color: white;
+		}
+	}
+
+	&.gold {
+		background: $gold;
+		color: $black;
+
+		a {
+			color: $black;
+		}
+	}
+
+	&.sky {
+		background: $sky;
+		color: black;
+
+		a {
+			color: black;
+		}
+	}
+
+	&.blue {
+		background: $blue;
+		color: white;
+
+		a {
+			color: white;
+		}
+	}
+
+	&.foam {
+		background: $foam;
+		color: white;
+
+		a {
+			color: white;
+		}
+	}
+
+	&.tan {
+		background: $tan;
+		color: $black;
+
+		a {
+			color: $black;
+		}
+	}
+}
+

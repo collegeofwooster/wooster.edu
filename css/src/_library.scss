@@ -1,0 +1,141 @@
+
+
+.library {
+	
+	.library-search {
+		background: rgba( $grey-light, .2 );
+		padding: 0 20px;
+		margin-bottom: 20px;
+
+		@include respond-to( $bp-l ) {
+			padding: 10px 30px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			font-size: 0.9em;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 10px 20px;
+
+			& > div {
+				flex: 1;
+				flex-basis: 50%;
+				padding: 20px 10px !important;
+			}
+		}
+
+		h4 {
+			text-transform: uppercase;
+			@include font-bold;
+			font-size: 1em;
+			color: rgba( $grey, .7 );
+		}
+
+		form, .guides select, .databases select { 
+			border: 2px solid rgba( $grey-light, .7 );
+			margin: 8px 0;
+			background: white;
+		}
+
+		input[type=text], select {
+			border: none;
+			padding: 10px 15px;
+			font-size: 1em;
+			line-height: 1em;
+			border-bottom: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+
+			@include respond-to( $bp-s ) {
+				border-bottom: 0;
+			}
+		}
+
+		input:focus, select:focus {
+			outline: none;
+			background: #eee;
+		}
+
+		select {
+			padding: 9px 15px;
+		}
+
+		input[type=submit] {
+			font-size: 1em;
+			padding: 12px 15px;
+		}
+
+		& > div {
+			padding: 20px 0;
+		}
+
+		.summon, .consort, .databases {
+			border-bottom: 1px solid rgba( black, .1 );
+		}
+
+		.summon {
+			input[type=text] {
+				width: 70%;
+				@include respond-to( $bp-l ) { width: 80%; }
+			}
+
+			input[type=submit] {
+				width: 30%;
+				@include respond-to( $bp-l ) { width: 20%; }
+			}
+		}
+
+		.consort {
+			select {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 20%; }
+			}
+
+			input[type=text] {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 30%; }
+				@include respond-to( $bp-l ) { width: 40%; }
+			}
+
+			input[type=submit] {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 30%; }
+				@include respond-to( $bp-l ) { width: 20%; }
+			}
+		}
+
+		.databases {
+			select {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 30%; }
+			}
+
+			input[type=text] {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 40%; }
+				@include respond-to( $bp-l ) { width: 50%; }
+			}
+
+			input[type=submit] {
+				width: 100%;
+				@include respond-to( $bp-s ) { width: 30%; }
+				@include respond-to( $bp-l ) { width: 20%; }
+			}
+		}
+
+		.guides select, .databases select {
+			width: 100%;
+		}
+
+		.small-links {
+			padding: 0;
+			font-size: .9em;
+
+			a {
+				color: $grey;
+				padding: 0 5px;
+			}
+		}
+	}
+
+}
+

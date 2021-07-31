@@ -1,0 +1,24 @@
+
+
+.org-listing {
+	@include respond-to( $bp-m ) {
+		display: flex;  
+		flex-wrap: wrap;
+	}
+
+	.org-category {
+		padding: 20px 0;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 33.3333%;
+			flex-grow: 0;	
+			padding: 0 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 25%;
+		}
+	}
+}
+

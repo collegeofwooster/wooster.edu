@@ -1,0 +1,44 @@
+
+
+.box {
+	border: 1px solid $gold;
+	margin: 20px 0;
+
+	&.foam {
+		border: 1px solid $foam;
+		.box-title { background: $foam; color: white; }
+	}
+
+	&.rose {
+		border: 1px solid $rose;
+		.box-title { background: $rose; color: white; }
+	}
+
+	&.red {
+		border: 1px solid $red;
+		.box-title { background: $red; color: white; }
+	}
+
+	&.tan {
+		border: 1px solid $tan;
+		.box-title { background: $tan; }
+	}
+
+	&.blue {
+		border: 1px solid $blue;
+		.box-title { background: $blue; color: white; }
+	}
+
+	.box-title {
+		@include font-bold;
+		background: $gold;
+		color: black;
+		padding: 10px 20px;
+	}
+
+	.box-content {
+		padding: 20px;
+		line-height: 1.4em;
+	}
+}
+

@@ -1,0 +1,125 @@
+
+
+.page-header {
+	background: url(../img/bg-page-header.webp) center center no-repeat;
+	background-size: cover;
+	padding: 100px 20px 30px;
+	position: relative;
+
+	@include respond-to( $bp-m ) {
+		padding: 170px 30px 50px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 200px 40px 60px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 220px 50px 70px;
+	}
+
+	@include respond-to( $bp-xxl ) {
+		padding: 260px 60px 80px;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-gold.webp) right center no-repeat;
+		background-size: cover;
+		width: 75%;
+		height: 25px;
+		bottom: 0;
+		left: -100px;
+		z-index: 99;
+	    transform: scaleX(-1);
+	    filter: FlipH;
+
+		@include respond-to( $bp-m ) {
+			height: 30px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			height: 35px;
+		}
+	}
+
+	&.foam:after {
+		background: url(../img/accent-tartan-hor-foam.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.black:after {
+		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
+		background-size: contain;
+	}
+
+	&.blue:after {
+		background: url(../img/accent-tartan-hor-blue.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.tan:after {
+		background: url(../img/accent-tartan-hor-tan.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.sky:after {
+		background: url(../img/accent-tartan-hor-sky.webp) right center no-repeat;
+		background-size: cover;
+	}
+
+	&.rose:after {
+		background: url(../img/accent-tartan-hor-rose.webp) right center no-repeat;
+		background-size: contain;
+	}
+
+	.page-header-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background-color: rgba( black, .3 );
+	}
+
+	.breadcrumbs {
+		position: relative;
+		z-index: 1;
+		color: rgba( white, .7 );
+		font-size: .8em;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+		margin: 0 5px;
+
+		&:hover {
+			border-bottom: 1px dotted rgba( white, .5 );
+		}
+	}
+
+	.page-title {
+		@include font-title;
+		font-size: 2em;
+		line-height: 1.4em;
+		text-transform: initial;
+		color: white;
+		text-shadow: 0 0 30px rgba( black, .5 );
+
+		@include respond-to( $bp-l ) {
+			font-size: 2.4em;
+		}
+
+		@include respond-to( $bp-xl ) {
+			font-size: 3.2em;
+		}
+
+		@include respond-to( $bp-xl ) {
+			font-size: 3.6em;
+		}
+	}
+}
+

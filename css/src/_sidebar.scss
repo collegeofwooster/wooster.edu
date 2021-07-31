@@ -1,0 +1,65 @@
+
+.sidebar {
+
+	.menu {
+		border-top: 2px solid $grey-light;
+		border-bottom: 2px solid $grey-light;
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			a {
+				display: block;
+				color: $grey;
+				font-size: 15px;
+				line-height: 20px;
+				text-decoration: none;
+				padding: 5px 15px;
+				border-bottom: 1px solid $grey-light;
+				@include font;
+
+				@include respond-to( $bp-m ) {
+					padding: 10px 12px;
+				}
+
+				&:hover {
+					color: $blue;
+				}
+			}
+
+			&.current_page_item > a {
+				color: $foam;
+			}
+
+			.sub-menu {
+				display: none;
+
+				&.open {
+					display: block;
+					padding-left: 20px;
+
+					li a {
+						@include font;
+					}
+				}
+			}
+		}
+	}
+
+	.action-nav {
+		margin-top: 20px;
+
+		li a {
+			@include font-bold;
+			display: block;
+			color: white;
+			background: $rose;
+			padding: 10px 15px;
+			font-size: .9em;
+			margin-bottom: 4px;
+			border-top: 1px solid rgba( black, .3 );
+			border-bottom: 1px solid rgba( black, .3 );
+		}
+	}
+
+}

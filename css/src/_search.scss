@@ -1,0 +1,179 @@
+
+
+.search-list {
+	.searchform {
+		label {
+			display: block;
+			padding: 3px 0;
+
+			@include respond-to( 768px ) {
+				display: inline-block;
+				padding: 0;
+				margin: 0 5px;
+			}
+		}
+
+		input[type=text] {
+			@include respond-to( $bp-m ) {
+				width: 40%;
+			}
+		}
+
+		input[type=submit] {
+			margin: 5px 0 0;
+
+			@include respond-to( 768px ) {
+				margin: 0 0 0 10px;
+			}
+		}
+
+		.search-filter {
+			padding: 10px 0 0 ;
+		}
+	}
+
+	.entries {
+		margin: 20px 0 0 0;
+
+		@include respond-to( 1024px ) {
+			display: flex;
+			flex-wrap: wrap;
+			margin-right: -3%;
+		}
+	}
+
+	.entry {
+		border: 3px solid rgba( $grey-light, .4 );
+		padding: 20px;
+		margin-bottom: 20px;
+		position: relative;
+
+		@include respond-to( 1024px ) {
+			flex: 1;
+			flex-basis: 47%;
+			margin: 0 3% 3% 0;
+		}
+
+		@include respond-to( 1220px ) {
+			flex-basis: 30.3333%;
+			margin: 0 3% 3% 0;
+		}
+
+		@include respond-to( 1440px ) {
+			flex-basis: 22%;
+			margin: 0 3% 3% 0;
+		}
+
+		h3 {
+			line-height: 1.4em;
+
+			a {
+				color: black;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: rgba( $grey-light, .4 );
+			padding: 6px 12px;
+			font-size: .8em;
+			line-height: 1em;
+			opacity: .8;
+		}
+
+		&.post:before {
+			content: 'ARTICLE';
+		}
+
+		&.page:before {
+			content: 'PAGE';
+		}
+
+		&.event:before {
+			content: 'EVENT';
+		}
+
+		&.people:before {
+			content: 'PERSON';
+		}
+
+		&.area:before {
+			content: 'AREA';
+		}
+	}
+
+	.post-category {
+		display: inline-block;
+		background: rgba( $grey-light, .4 );
+		padding: 5px 8px;
+		font-size: .9em;
+	}
+}
+
+
+.pagination {
+	padding: 10px 50px 30px;
+	text-align: center;
+	@include font-title;
+
+	.page-numbers {
+		display: inline-block;
+		padding: 6px 10px 8px;
+		text-decoration: none;
+		background: $rose;
+		color: white;
+		font-size: 1.4em;
+		line-height: 1em;
+
+		&.current {
+			background: rgba( $grey-light, .4 );
+			color: $grey;
+		}
+	}
+}
+
+
+.is-search {
+	padding-bottom: 20px;
+
+	@include respond-to( $bp-s ) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@include respond-to( $bp-l ) {
+		flex-wrap: nowrap;
+	}
+
+	div {
+		padding: 6px 0;
+
+		@include respond-to( $bp-s ) {
+			flex: 1;
+			flex-basis: 33.3333%;
+			padding: 6px;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: auto;
+		}
+
+		input[type=text], select, input[type=button] {
+			width: 100%;
+		}
+
+		&.button-container {
+			@include respond-to( $bp-s ) {
+				padding-top: 22px;
+			}
+
+			@include respond-to( $bp-l ) {
+				padding-top: 25px;
+			}
+		}
+	}
+}
+
+

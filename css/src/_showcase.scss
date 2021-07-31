@@ -1,0 +1,232 @@
+
+
+.showcase {
+	@include clearfix;
+	position: relative;
+	overflow: hidden;
+	transition: height 300ms ease-in-out;
+	background: #eee;
+	z-index: 0;
+	height: 400px;
+
+	@include respond-to( 768px ) {
+		height: 500px;
+	}
+
+	@include respond-to( 1024px ) {
+		height: 650px;
+	}
+
+	@include respond-to( 1220px ) {
+		height: 800px;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-vert-tan.webp) center center no-repeat;
+		background-size: cover;
+		width: 25px;
+		height: 100%;
+		left: 20px;
+		top: 0;
+		z-index: 100;
+
+		@include respond-to( $bp-m ) {
+			left: 30px;
+			width: 35px;
+		}
+
+		@include respond-to( $bp-l ) {
+			left: 40px;
+			width: 45px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			left: 54px;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
+		background-size: cover;
+		width: 75%;
+		height: 25px;
+		left: 0;
+		top: 0;
+		z-index: 99;
+
+		@include respond-to( $bp-m ) {
+			height: 35px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			height: 45px;
+		}
+	}
+	
+	.slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		transition: opacity 400ms ease-in-out, padding 400ms ease-in-out;
+		height: 100%;
+		background: center center no-repeat;
+		background-size: cover;
+		z-index: 5;
+		padding: 30px 70px;
+
+		@include respond-to( $bp-l ) {
+			padding-top: 50px;
+		}
+
+		&.visible {
+			opacity: 1;
+			z-index: 6;
+		}
+
+		.showcase-overlay {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 25;
+			background: rgba( $black, .3 );
+			pointer-events: none;
+		}
+
+		.slide-content {
+			position: relative;
+			color: white;
+			pointer-events: none;
+			max-width: 550px;
+			z-index: 50;
+			margin-top: 20px;
+
+			@include respond-to( $bp-m ) {
+				position: absolute;
+				top: 30%;
+				left: 70px;
+				margin-top: -100px;
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			@include respond-to( $bp-l ) {
+				top: 55%;
+				left: 90px;
+				right: 90px;
+				max-width: 60%;
+			}
+
+			@include respond-to( $bp-xl ) {
+				left: 140px;
+				right: 140px;
+				max-width: 670px;
+			}
+
+			@include respond-to( $bp-xxl ) {
+				top: auto;
+				bottom: 120px;
+				max-width: 750px;
+			}
+			
+			h1 {
+				@include font-title;
+				color: white;
+				text-shadow: 0 0 15px rgba( $black, .3 );
+				padding: 0;
+				margin-bottom: 20px;
+
+				font-size: 20px;
+				line-height: 25px;
+
+				@include respond-to( 500px ) {
+					font-size: 30px;
+					line-height: 40px;
+				}
+
+				@include respond-to( 768px ) {
+					font-size: 40px;
+					line-height: 50px;
+				}
+
+				@include respond-to( 1024px ) {
+					font-size: 50px;
+					line-height: 60px;
+				}
+
+				@include respond-to( $bp-xl ) {
+					font-size: 60px;
+					line-height: 70px;
+				}
+
+				@include respond-to( $bp-xxl ) {
+					font-size: 70px;
+					line-height: 80px;
+				}
+			}
+
+			p {
+				color: white;
+				text-shadow: 0 0 15px rgba( $black, .4 );
+			}
+		}
+
+	}
+
+	.showcase-nav {
+		position: absolute;
+		bottom: 40px;
+		left: 80px;
+		right: 80px;
+		z-index: 101;
+		text-align: center;
+
+		@include respond-to( $bp-l ) {
+			right: 35%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			bottom: 50px;
+			left: 130px;
+			right: auto;
+		}
+
+		a {
+			display: inline-block;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			text-indent: -300px;
+			overflow: hidden;
+			opacity: .7;
+			color: black;
+			z-index: 1001;
+			margin: 0 20px;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&.previous {
+				left: 0;
+				background: transparent url(../img/slider-arrow-left.webp) right center no-repeat;
+				background-size: contain;
+			}
+
+			&.next {
+				right: 0;
+				background: transparent url(../img/slider-arrow-right.webp) left center no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+

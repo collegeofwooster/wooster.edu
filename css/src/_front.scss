@@ -1,0 +1,792 @@
+
+.front-showcase-overlay {
+	/*
+	@include respond-to( 500px ) {
+		margin: -100px 50px 20px;
+	}
+	*/
+
+	@include respond-to( $bp-l ) {
+		margin: -440px 0 0 0;
+		float: right;
+		position: relative;
+		max-width: 33%;
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin-top: -500px;
+	}
+}
+
+
+.featured-article {
+	position: relative;
+	background: white;
+	display: flex;
+	box-shadow: 0 0 25px rgba( black, .2 );
+
+	@include respond-to( $bp-m ) {
+		margin-bottom: 20px;
+	}
+
+	@include respond-to( $bp-l ) {
+		background: rgba( white, .8 );
+		margin-bottom: 30px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin-bottom: 50px;
+	}
+
+	.featured-article-image {
+		position: relative;
+		width: 35%;
+		padding: 20px;
+
+		@include respond-to( 500px ) {
+			width: 140px;
+		}
+
+		@include respond-to( $bp-l ) {
+			width: 25%;
+			padding-right: 0;
+
+			img {
+				margin-left: -40px;
+			}
+		}
+	}
+
+	.featured-article-content {
+		width: 65%;
+		padding: 20px 20px 20px 0;
+
+		@include respond-to( $bp-l ) {
+			margin-left: -20px;
+		}
+	}
+
+	h4 {
+		@include font;
+		font-size: .85em;
+		line-height: 1.4em;
+		text-transform: uppercase;
+		letter-spacing: .5px;
+	}
+
+	h3 {
+		font-size: 1.2em;
+		line-height: 1.4em;
+
+		@include respond-to( $bp-xl ) {
+			font-size: 1.4em;
+			padding: 5px 0;
+		}
+
+		a  {
+			color: $black;
+		}
+	}
+
+	.btn {
+		font-size: 1em;
+		padding: 6px 9px;
+		margin: 5px 0;
+	}
+}
+
+
+
+.front-notice {
+	background: $gold;
+	color: black;
+	padding: 20px;
+	font-size: 1.2em;
+
+	@include respond-to( $bp-m ) {
+		box-shadow: 0 0 25px rgba( black, .2 );
+	}
+
+	@include respond-to( $bp-l ) {
+		box-shadow: none;
+		background: url(../img/bg-front-alert.webp) top left no-repeat;
+		padding: 30px 40px;
+	}
+
+	p {
+		@include font-bold;
+		padding: 5px 0;
+	}
+}
+
+
+
+.connected-learning {
+	@include clearfix;
+	background: $tan;
+	padding: 40px 20px;
+	margin: 0 auto;
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	.connected-learning-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+	}
+
+	.connected-learning-header {
+		margin-bottom: 20px;
+		vertical-align: baseline;
+
+		@include respond-to( $bp-m ) {
+			margin-bottom: 40px;
+			display: flex;
+
+			.connected-learning-logo {
+				flex-basis: 50%;
+			}
+
+			.connected-learning-search {
+				flex-basis: 50%;
+
+				h2 {
+					color: $black;
+				}
+
+				@include respond-to( $bp-m ) {
+					padding-top: 15px;
+				}
+
+				@include respond-to( $bp-l ) {
+					padding-top: 35px;
+				}
+
+				label {
+					display: none;
+				}
+
+				input[type=text] {
+					display: inline-block;
+					width: 50%;
+					font-size: 1.1em;
+				}
+
+				input[type=submit] {
+					background: $blue;
+				}
+			}
+		}
+	}
+
+	.connected-learning-results {
+		display: none;
+
+		.result-box {
+			background: url(../img/photo-large.webp) center center no-repeat;
+			background-size: cover;
+			position: relative;
+
+			&:after {
+				content: "";
+				display: block;
+				padding-bottom: 100%;
+				background: rgba( black, .3 );
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 25px;
+				background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+				background-size: cover;
+			}
+
+			&.areas {
+				background: url(../img/photo-large.webp) center center no-repeat;
+				background-size: cover;
+
+				&:before {
+					background-image: url(../img/accent-tartan-vert-sky.webp);
+				}
+			}
+
+			&.independent {
+				background: url(../img/photo-large-independent.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-blue.webp);
+				}
+			}
+
+			&.experiential {
+				background: url(../img/photo-large-experiential.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-foam.webp);
+				}
+			}
+
+			&.pathways {
+				background: url(../img/photo-large-pathway.webp) center center no-repeat;
+				background-size: cover;
+				
+				&:before {
+					background-image: url(../img/accent-tartan-vert-rose.webp);
+				}
+			}
+
+			@include respond-to( $bp-m ) {
+				float: left;
+				width: 50%;
+			}
+
+			@include respond-to( $bp-l ) {
+				width: 30%;
+				margin-right: 5%;
+				margin-bottom: 40px;
+
+				&:nth-child(3) {
+					margin-right: 0;
+				}
+			}
+
+			@include respond-to( $bp-xl ) {
+				margin-bottom: 50px;
+			}
+
+			h3 {
+				position: absolute;
+				top: 40px;
+				left: 0;
+				right: 0;
+				background: rgba( white, .4 );
+				color: $black;
+				padding: 10px 30px;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 1.1em;
+			}
+
+			ul {
+				position: absolute;
+				top: 140px;
+				left: 50px;
+				right: 50px;
+
+				li {
+					text-align: center;
+
+					a {
+						@include font-bold;
+						color: white;
+						line-height: 1.5em;
+					}
+				}
+			}
+		}
+
+		.bars {
+			display: block;
+
+			@include respond-to( $bp-m ) {
+				float: left;
+				width: 65%;
+			}
+		}
+
+		.result-bar {
+			background: $black;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&.profile {
+				background: $gold;
+				margin-top: 50px;
+
+				.content a {
+					color: $black;
+				}
+				
+				.image:before {
+					background: url(../img/accent-tartan-vert-gold.webp) center center no-repeat;
+					background-size: cover;
+				}
+			}
+
+			.title {
+				flex: 1;
+				flex-grow: 0;
+				flex-basis: 30%;
+
+				h3 {
+					background: rgba( white, .9 );
+					color: $black;
+					padding: 8px 20px;
+					text-transform: uppercase;
+
+					@include respond-to( 500px ) {
+						flex: 1;
+						flex-basis: 30%;
+						text-align: center;
+					}
+				}
+			}
+
+			.content {
+				padding: 0 25px;
+
+				@include respond-to( 500px ) {
+					flex: 1;
+					flex-grow: 1;
+				}
+
+				a {
+					@include font-bold;
+					color: white;
+					line-height: 1.5em;
+				}
+			}
+
+			.image {
+				display: none;
+
+				@include respond-to( 500px ) {
+					display: block;
+					position: relative;
+					flex: 1;
+					flex-basis: 158px;
+					flex-grow: 0;
+					height: 158px;
+					background: url(../img/photo-large-experiential.webp);
+					background-size: cover;
+
+					&:before {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						width: 25px;
+						background: url(../img/accent-tartan-vert-black.webp) center center no-repeat;
+						background-size: cover;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.front-comms {
+	padding: 40px 20px;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.front-comms-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+	}
+
+	.front-news {
+		.article {
+			background: white;
+		}
+
+		@include respond-to( $bp-m ) {
+			flex-basis: 35%;
+		}
+	}
+
+	.front-events {
+		@include respond-to( $bp-m ) {
+			flex-basis: 60%;
+			margin-left: 5%;
+		}
+
+		/*
+		@include respond-to( $bp-m ) {
+			flex-basis: 60%;
+			margin-left: 5%;
+		}
+
+		.events-tabs {
+			@include clearfix;
+
+			li {
+				float: left;
+
+				&.active h2 {
+					display: inline-block;
+					background: white;
+					padding: 10px 40px;
+					font-size: 50px;
+					line-height: 50px;
+					margin-top: 0;
+					color: $black;
+				}
+
+				h2 {
+					display: none;
+					background: $tan;
+					padding: 10px 40px;
+					color: rgba( $black, .4 );
+					font-size: 30px;
+					line-height: 40px;
+					margin-top: 10px;
+				}
+			}
+		}
+		*/
+
+		.front-events-inner {
+			box-shadow: 0 0 30px rgba( $black, .2 );
+			padding: 20px;
+			background: white;
+
+			@include respond-to( $bp-l ) {
+				padding: 50px 30px 39px 30px;
+			}
+		}
+
+		.front-events-list {
+			@include respond-to( $bp-l ) {
+				display: flex;
+			}
+		}
+
+		.event {
+			display: flex;
+			padding: 10px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 48%;
+				margin-right: 4%;
+
+				&:nth-child(1) {
+					margin-right: 0;
+				}
+			}
+
+			.date {
+				color: $rose;
+				@include font-title;
+				font-size: 2em;
+				line-height: .9em;
+				text-align: center;
+				margin-right: 10px;
+
+				span {
+					display: block;
+					@include font-title-bold;
+					font-size: 2.75em;
+					line-height: .7em;
+					margin-top: -8px;
+				}
+			}
+
+			.info {
+				h4 {
+					line-height: 1.3em;
+					padding: 0;
+				}
+
+				.time {
+					text-transform: uppercase;
+					color: $grey-light;
+					padding: 0;
+				}
+			}
+
+		}
+	}
+
+	.events-nav {
+		margin-top: 30px;
+		border-top: 3px solid $tan;
+		padding-top: 40px;
+
+		a {
+			display: inline-block;
+			border: 3px solid $tan;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			line-height: 55px;
+			font-size: 50px;
+			color: rgba( $black, .4 );
+			cursor: pointer;
+			margin-right: 10px;
+			transition: all 400ms ease-in-out;
+
+			&.next {
+				border-color: $black;
+				color: $black;
+			}
+
+			&:hover {
+				text-decoration: none;
+				color: $black;
+				border-color: $black;
+			}
+		}
+	}
+}
+
+
+
+.faculty-showcase {
+	padding: 20px;
+	background: $tan;
+	position: relative;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-sky.webp) center right no-repeat;
+		background-size: cover;
+		width: 60%;
+		height: 40px;
+		left: -100px;
+		top: -20px;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.faculty-showcase-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+
+		@include respond-to( $bp-l ) {
+			display: flex;
+		}
+
+		.faculty-slider {
+			text-align: center;
+			padding: 50px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 50%;
+			}
+
+			.faculty-slider-header {
+				color: $black;
+
+				p {
+					padding: 0;
+					text-transform: uppercase;
+				}
+
+				h2 {
+					line-height: 1.2em;
+					padding: 0 0 20px 0;
+				}
+			}
+
+			.faculty-slide {
+				color: $black;
+
+				img {
+					max-width: 120px;
+					border: 1px solid $grey;
+					box-shadow: 0 0 20px rgba( black, .2 );
+				}
+
+				.title {
+					font-size: .8em;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.faculty-link {
+			text-align: center;
+			padding: 50px 0;
+			
+			@include respond-to( $bp-l ) {
+				flex-basis: 50%;
+			}
+
+			& > img {
+				display: block;
+				margin: 0 auto;
+				
+				@include respond-to( 400px ) {
+					max-width: 350px;
+				}
+			}
+
+			.btn {
+				position: relative;
+				top: -70px;
+
+				@include respond-to( 500px ) {
+					left: -60px;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+.front-admissions {
+	padding: 40px 20px;
+	position: relative;
+	overflow: hidden;
+
+	@include respond-to( $bp-m ) {
+		padding: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		padding: 40px;
+	}
+
+	@include respond-to( $bp-xl ) {
+		padding: 80px 10%;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-hor-rose.webp) center left no-repeat;
+		background-size: cover;
+		width: 60%;
+		height: 40px;
+		right: -100px;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: url(../img/accent-tartan-vert-tan.webp) center right no-repeat;
+		background-size: cover;
+		width: 40px;
+		height: 100%;
+		right: 80px;
+		top: 0;
+		z-index: 1;
+	}
+
+	h2 {
+		color: $black;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.front-admissions-inner {
+		max-width: 1220px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 100;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+		.front-admissions-events {
+			padding-bottom: 40px;
+			
+			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
+				padding-right: 20px;
+			}
+
+
+			@include respond-to( $bp-l ) {
+				padding-right: 30px;
+			}
+
+			.event {
+				border-top: 3px solid $tan;
+				padding: 20px 0;
+
+				&.first {
+					border-top: none;
+				}
+
+				p {
+					padding: 0;
+				}
+
+				.btn {
+					float: right;
+				}
+			}
+		}
+
+		.front-admissions-tour {
+			background: $gold;
+			padding: 20px;
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 50%;
+			}
+
+			@include respond-to( $bp-l ) {
+				background: url(../img/bg-front-alert.webp) top left no-repeat;
+				padding: 30px;
+			}
+		}
+	}
+}
+
+
+.front-mosaic {
+	background: $black;
+	
+}
+
+

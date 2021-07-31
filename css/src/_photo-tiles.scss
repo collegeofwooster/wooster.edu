@@ -1,0 +1,61 @@
+
+
+.phototiles {
+	@include clearfix;
+
+	@include respond-to( 550px ) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.phototile {
+		color: white;
+		text-shadow: 0 0 20px rgba( black, .7 );
+		position: relative;
+		text-align: center;
+		background-position: center center;
+		background-size: cover;
+		height: 250px;
+		position: relative;
+
+		@include respond-to( 500px ) {
+			flex: 1;
+			flex-basis: 50%;
+			height: 300px;
+		}
+
+		@include respond-to( $bp-m ) {
+			height: 300px;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 33.3333%;
+			height: 350px;
+		}
+
+		@include respond-to( $bp-xl ) {
+			height: 400px;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			height: 450px;
+		}
+
+		@include respond-to( $bp-xxxl ) {
+			height: 500px;
+		}
+
+		a {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			&.lightbox-iframe {
+				background: url(../img/icon-play.webp) center center no-repeat;
+			}
+		}
+	}
+}
+
