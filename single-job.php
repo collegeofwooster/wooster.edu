@@ -46,7 +46,7 @@ get_header();
 
 						// if we have a link, show that
 						if ( has_cmb_value( 'job_apply_link' ) ) { ?>
-							<div class="apply-link"><?php print do_shortcode( '[button url="' . get_cmb_value( 'job_apply_link' ) . '" class="' . get_cmb_value( 'job_color' ) . '" target="_blank"]Learn More[/button]' ); ?></div>
+							<div class="apply-link"><?php print do_shortcode( '[button url="' . get_cmb_value( 'job_apply_link' ) . '" class="rose" target="_blank"]Apply[/button]' ); ?></div>
 							<?php
 						} else if ( has_cmb_value( 'job_contact_name' ) ) { // if there's no link, show contact information  ?>
 							<h5>Apply</h5>
