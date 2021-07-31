@@ -22,12 +22,13 @@
 			padding: 20px;
 
 			h4 {
-				@include font-title;
-				font-size: 1.2em;
+				@include font-title-bold;
+				font-size: 1.15em;
 				line-height: 1.3em;
 
 				a {
-					color: $grey;
+					color: $blue;
+					transition: opacity 400ms ease-in-out;
 
 					&:hover {
 						opacity: .8;
@@ -36,7 +37,7 @@
 			}
 
 			p {
-				font-size: .85em;
+				font-size: .8em;
 			}
 		}
 

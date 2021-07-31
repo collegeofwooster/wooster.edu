@@ -125,7 +125,7 @@ $courses = get_cmb_value( "person_courses" );
 						    while ( $query->have_posts() ) {
 						        $query->the_post(); ?>
 						        <div class="entry">
-						        	<?php the_post_thumbnail(); ?>
+						        	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 						        	<div class="entry-inner">
 							        	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 							        	<?php the_excerpt(); ?>
