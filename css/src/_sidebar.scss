@@ -2,8 +2,8 @@
 .sidebar {
 
 	.menu {
-		border-top: 2px solid $grey-light;
-		border-bottom: 2px solid $grey-light;
+		border-top: 2px solid rgba( $grey-light, .4 );
+		border-bottom: 2px solid rgba( $grey-light, .4 );
 		list-style-type: none;
 		padding: 0;
 
@@ -15,7 +15,7 @@
 				line-height: 20px;
 				text-decoration: none;
 				padding: 5px 15px;
-				border-bottom: 1px solid $grey-light;
+				border-bottom: 1px solid rgba( $grey-light, .3 );
 				@include font;
 
 				@include respond-to( $bp-m ) {
@@ -34,14 +34,18 @@
 			.sub-menu {
 				display: none;
 
-				&.open {
-					display: block;
-					padding-left: 20px;
-
-					li a {
-						@include font;
-					}
+				li a {
+					@include font;
+					padding: 6px 0;
+					border-bottom: none;
 				}
+
+			}
+
+			&.open .sub-menu {
+				display: block;
+				padding: 5px 5px 15px 30px;
+				border-bottom: 1px solid rgba( $grey-light, .3 );
 			}
 		}
 	}
