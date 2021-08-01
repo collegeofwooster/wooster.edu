@@ -8,8 +8,10 @@ get_header(); ?>
 
 	<div class="content-wide" role="main">
 		<div class="wrap">
-			<h1>Not Found</h1>
-			<p>We couldn't find a page at the URL you requested. Navigate using the menu, or search using the form below.</p>
+			<?php
+			$page = get_posts( 17245 );
+			print apply_filters( 'the_content', $page->post_content );
+			?>
 			<p class="search-form"><?php print get_search_form(); ?></p>
 		</div>
 	</div>
