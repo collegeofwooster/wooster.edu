@@ -9,7 +9,7 @@ require('../../../../../wp-config.php');
 $server = _IS_SERVER;
 $user = _IS_USER;
 $pass = _IS_PASS;
-$db = _IS_DB;
+$db = _IS_DB;  
 $name = preg_replace('/[^A-Za-z0-9\-]/', '', $_REQUEST['n']);
 $year = preg_replace('/[^0-9]/', '', $_REQUEST['y']);
 $title = str_replace('%20', ' ', $_REQUEST['t']);
