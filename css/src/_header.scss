@@ -43,7 +43,7 @@ header {
 		padding: 0;
 		background: white;
 		color: transparent;
-		background: url(../img/icon-menu.webp) center center no-repeat;
+		background: url(../img/icon-menu.png) center center no-repeat;
 		background-size: contain;
 		overflow: hidden;
 
@@ -131,7 +131,7 @@ header {
 				width: 25px;
 				height: 25px;
 				color: black;
-				background: url(../img/icon-globe.webp) center center no-repeat;
+				background: url(../img/icon-globe.png) center center no-repeat;
 				background-size: contain;
 				pointer-events: none;
 			}
@@ -377,7 +377,7 @@ header {
 			.guide {
 				display: block;
 				padding: 120px 20px 20px 20px;
-				background: url(../bg-header.webp) center center no-repeat;
+				background: url(../bg-header.png) center center no-repeat;
 				background-size: cover;
 				color: white;
 				text-shadow: 0 0 10px rgba( black, .4 );
@@ -428,7 +428,7 @@ header {
 	&:after {
 		position: absolute;
 		content: '';
-		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
+		background: url(../img/accent-tartan-hor-black.png) right center no-repeat;
 		background-size: cover;
 		width: 75%;
 		height: 25px;
