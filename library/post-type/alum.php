@@ -198,11 +198,6 @@ function alum_metaboxes() {
         'id'   => CMB_PREFIX . 'alum_submitter',
         'type' => 'text',
     ) );
-    $alum_box->add_field( array(
-        'name' => 'Submitter Email',
-        'id'   => CMB_PREFIX . 'alum_submitter_email',
-        'type' => 'text',
-    ) );
 
 }
 
