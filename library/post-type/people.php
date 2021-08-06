@@ -308,7 +308,7 @@ function people_shortcode( $atts ) {
 
 	// set some query vars
 	$vars = array( 
-		"posts_per_page" => 200,
+		"posts_per_page" => -1,
 		"post_type" => 'people',
 		"orderby" => 'meta_value',
 		"meta_key" => '_p_person_lname',
