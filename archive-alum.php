@@ -111,6 +111,8 @@ if ( $query_yr || $query_cat || $query_search ) {
 	<div class="content-wide">
 		<div class="wrap">
 
+			<?php print get_snippet( 'class-notes-intro', 1 ); ?>
+
 			<div class="alum-info">
 				<h1 class="page-title alum-title"><?php print ( $current_yr != 0 ? 'Class of ' . $current_yr : '' ); ?></h1>
 				<div class="alum-buttons">
