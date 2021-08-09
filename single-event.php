@@ -40,6 +40,11 @@ get_header();
 							print "<p><strong>Duration:</strong> " . duration( get_cmb_value( 'event_start' ), get_cmb_value( 'event_end' ) ) . "</p>";
 						}
 
+						// display the event duration.
+						if ( has_cmb_value( 'event_location_text' ) ) {
+							print "<p><strong>Location:</strong><br>" . get_cmb_value( 'event_location_text' ) . "</p>";
+						}
+
 						?>
 					</div>
 				</div>
