@@ -209,7 +209,8 @@ function get_day_events( $m, $d, $y ) {
 			)
 		),
 		'post_type' => 'event',
-		'orderby' => 'name',
+		'orderby' => 'meta_value_num',
+		'meta_key' => '_p_event_start',
 		'posts_per_page' => 100
 	);
 
