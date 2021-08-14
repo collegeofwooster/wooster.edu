@@ -70,5 +70,5 @@ file_put_contents( '../../../uploads/directory/directory.json', json_encode( $re
 
 
 // store the directory table (html) in its own file so we can pull it in using a shortcode in WP.
-file_put_contents( '../../../uploads/directory/directory.html', json_encode( $directory_table );
+file_put_contents( '../../../uploads/directory/directory.html', $directory_table );
 
