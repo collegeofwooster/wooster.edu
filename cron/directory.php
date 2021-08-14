@@ -35,14 +35,23 @@ $results_final = array();
 // execute the query
 $result = odbc_exec( $dbhandle, $query );
 
+// begin the directory table string
+$directory_table = '<table cellpadding=0 cellspacing=0 border=0 class="employee-directory">';
+
 // begin looping thru the results
 while ( $row = odbc_fetch_array( $result ) ) {
 
     // store each record in the final results array.
     $results_final[] = $row;
 
+    print_r( $row );
+    // $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $position . "</td><td nowrap=\"nowrap\">" . $office . '<br />' . $phone1 . $phone2 . "<br /><a href=\"mailto:" . $email . "\">" . $email . "</a></td></tr>");
+
 }
+
+$directory_table .= "</table>";
 
 
 // dump the results
 file_put_contents( '../../../uploads/directory/directory.json', json_encode( $results_final ) );
+
