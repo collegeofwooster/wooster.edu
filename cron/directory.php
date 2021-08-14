@@ -41,17 +41,34 @@ $directory_table = '<table cellpadding=0 cellspacing=0 border=0 class="employee-
 // begin looping thru the results
 while ( $row = odbc_fetch_array( $result ) ) {
 
+    // separate the position from the office
+    $temp = explode( ' (', $row['POSITION'] );
+
+    // put the position back into the original result array.
+    $row['POSITION'] = $temp[0];
+
+    // strip the end parenthesis from the office and store it back into the original result array values
+    $row['OFFICE'] = str_replace( ')', '', $temp[1] );
+
+    if($username == 'sbolton'){
+        $row['EMAIL'] = 'president@wooster.edu';
+    }
+
     // store each record in the final results array.
     $results_final[] = $row;
 
-    print_r( $row );
-    // $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $position . "</td><td nowrap=\"nowrap\">" . $office . '<br />' . $phone1 . $phone2 . "<br /><a href=\"mailto:" . $email . "\">" . $email . "</a></td></tr>");
+    // print_r( $row );
+    $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $row['POSITION'] . "</td><td nowrap=\"nowrap\">" . $row['OFFICE'] . '<br />' . $row['PHONE1'] . ' ext #' . $ext['EXT'] . "<br /><a href=\"mailto:" . $row['EMAIL'] . "\">" . $row['EMAIL'] . "</a></td></tr>");
 
 }
 
 $directory_table .= "</table>";
 
 
-// dump the results
+// store the json results in its own file in the uploads folder.
 file_put_contents( '../../../uploads/directory/directory.json', json_encode( $results_final ) );
+
+
+// store the directory table (html) in its own file so we can pull it in using a shortcode in WP.
+file_put_contents( '../../../uploads/directory/directory.html', json_encode( $directory_table );
 
