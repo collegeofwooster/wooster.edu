@@ -2,8 +2,8 @@
 
 
 // turn on errors so we can troubleshoot
-ini_set('display_errors', true);
-ini_set('error_reporting', E_ALL ^ E_NOTICE );
+// ini_set('display_errors', true);
+// ini_set('error_reporting', E_ALL ^ E_NOTICE );
 
 
 // load wordpress so we have access to the wp-config definitions (which hold the credentials for the employee database)
@@ -45,4 +45,4 @@ while ( $row = odbc_fetch_array( $result ) ) {
 
 
 // dump the results
-print_r( $results_final );
+print( json_encode( $results_final ) );
