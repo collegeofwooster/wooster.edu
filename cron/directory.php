@@ -45,4 +45,4 @@ while ( $row = odbc_fetch_array( $result ) ) {
 
 
 // dump the results
-print( json_encode( $results_final ) );
+file_put_contents( '../../../uploads/directory/directory.json', json_encode( $results_final ) );
