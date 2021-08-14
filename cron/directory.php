@@ -2,12 +2,12 @@
 
 
 // turn on errors so we can troubleshoot
-// ini_set('display_errors', true);
+ini_set( 'display_errors', false );
 // ini_set('error_reporting', E_ALL ^ E_NOTICE );
 
 
 // load wordpress so we have access to the wp-config definitions (which hold the credentials for the employee database)
-// include( '../../../../wp-load.php' );
+include( '../../../../wp-load.php' );
 
 
 // connection info
