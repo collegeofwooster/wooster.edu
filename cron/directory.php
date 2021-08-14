@@ -38,6 +38,9 @@ $result = odbc_exec( $dbhandle, $query );
 // begin the directory table string
 $directory_table = '<table cellpadding=0 cellspacing=0 border=0 class="employee-directory">';
 
+// add a header row to the directory table.
+$directory_table .= '<thead><tr><th>Name</th><th>Title</th><th>Office</th><th>Phone</th><th>Email</th></tr></thead>';
+
 // begin looping thru the results
 while ( $row = odbc_fetch_array( $result ) ) {
 
