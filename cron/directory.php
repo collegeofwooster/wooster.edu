@@ -39,7 +39,7 @@ $result = odbc_exec( $dbhandle, $query );
 $directory_table = '<table cellpadding=0 cellspacing=0 border=0 class="employee-directory dataTable display">';
 
 // add a header row to the directory table.
-$directory_table .= '<thead><tr><th>Name</th><th>Title</th><th>Office</th><th>Phone</th><th>Email</th></tr></thead>';
+$directory_table .= '<thead><tr><th>Name</th><th>Title</th><th>Contact Information</th></tr></thead>';
 
 // begin looping thru the results
 while ( $row = odbc_fetch_array( $result ) ) {
@@ -61,7 +61,7 @@ while ( $row = odbc_fetch_array( $result ) ) {
     $results_final[] = $row;
 
     // print_r( $row );
-    $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $row['POSITION'] . "</td><td nowrap=\"nowrap\">" . $row['OFFICE'] . '<br />' . $row['PHONE1'] . ' ext #' . $ext['EXT'] . "<br /><a href=\"mailto:" . $row['EMAIL'] . "\">" . $row['EMAIL'] . "</a></td></tr>";
+    $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $row['POSITION'] . "</td><td nowrap=\"nowrap\">" . ( !empty( $row['OFFICE'] ) ? $row['OFFICE'] . '<br />' : '' ) . ( !empty( $row['PHONE1'] ) ? $row['PHONE1'] . ' ext #' . $ext['EXT'] . "<br />" : '' ) . "<a href=\"mailto:" . $row['EMAIL'] . "\">" . $row['EMAIL'] . "</a></td></tr>";
 
 }
 
