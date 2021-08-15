@@ -53,7 +53,7 @@ while ( $row = odbc_fetch_array( $result ) ) {
     // strip the end parenthesis from the office and store it back into the original result array values
     $row['OFFICE'] = str_replace( ')', '', $temp[1] );
 
-    if($username == 'sbolton'){
+    if ( $username == 'sbolton' ){
         $row['EMAIL'] = 'president@wooster.edu';
     }
 
