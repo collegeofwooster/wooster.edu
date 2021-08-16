@@ -307,6 +307,14 @@ function area_metaboxes() {
         	'textarea_rows' => 6
         )
     ) );
+    $area_box->add_field( array(
+        'name' => 'Faculty Emeriti',
+        'id' => $prefix . 'area_faculty_emeriti',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
 
 }
 

@@ -78,6 +78,7 @@ $courses = get_cmb_value( "person_courses" );
 					<?php do_area_tab_nav( "Ensembles", "ensembles" ) ?>
 					<?php do_area_tab_nav( "Productions/Events", "productions" ) ?>
 					<?php do_area_tab_nav( "Student Projects", "student_projects" ) ?>
+					<?php do_area_tab_nav( "Faculty Emeriti", "faculty_emeriti" ) ?>
 				</ul>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
@@ -167,6 +168,7 @@ $courses = get_cmb_value( "person_courses" );
 				<?php do_area_tab_content( "Ensembles", "ensembles" ) ?>
 				<?php do_area_tab_content( "Productions/Events", "productions" ) ?>
 				<?php do_area_tab_content( "Student Projects", "student_projects" ) ?>
+				<?php do_area_tab_content( "Faculty Emeriti", "faculty_emeriti" ) ?>
 
 			<?php
 			endwhile;
