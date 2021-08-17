@@ -120,3 +120,7 @@ function strip_test_domains( $content ) {
 
 
 
+// enable shortcodes in sidebar widgets
+add_filter( 'widget_text', 'do_shortcode' );
+
+
