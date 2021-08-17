@@ -24,7 +24,7 @@ function wooster_api_connections( $data ) {
 		//'s' => $request['filter_term'],
 		//'search_prod_title' => $request['filter_term'],
 		'posts_per_page' => 5,
-		'tag' => $request['filter_term'],
+		'tag' => str_replace( ' ', '-', $request['filter_term'] ),
 		'orderby' => 'title',
 		'order' => 'ASC',
 	));
