@@ -103,7 +103,7 @@ if ( $query_yr || $query_cat || $query_search ) {
     			<div class="crumbs">
     				<a href="/alumni">Alumni</a> &raquo; 
     			</div>
-    			<h1 class="page-title">Class Notes and Memorial Directory</h1>
+    			<h1 class="page-title">Class Notes</h1>
     		</div>
         </div>
 	</div>
