@@ -11,10 +11,8 @@ jQuery(document).ready(function($){
 	$( '.lightbox-iframe, .lightbox-video, .video' ).magnificPopup({ 'type': 'iframe' });
 	$( '.lightbox' ).magnificPopup({ 'type': 'image' });
 
-	// add fitvids on anything in the content area (after 5 seconds)
-	setTimeout(function(){
-		$( '.content' ).fitVids();
-	},5000);
+	// add fitvids on anything in the content area
+	$( '.content' ).fitVids();
 
 });
 
