@@ -71,10 +71,11 @@ strong {
 }
 
 a {
-	color: $blue;
+	color: rgba( $foam, .8 );
 	text-decoration: none;
 
 	&:hover {
+		color: $foam;
 		text-decoration: underline;
 	}
 }
