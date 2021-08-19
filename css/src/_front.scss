@@ -64,6 +64,10 @@
 		@include respond-to( $bp-l ) {
 			margin-left: -20px;
 		}
+
+		.btn {
+			color: white;
+		}
 	}
 
 	h4 {
