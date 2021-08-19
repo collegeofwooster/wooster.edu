@@ -13,6 +13,7 @@ jQuery(document).ready(function($){
 
 	// add fitvids on anything in the content area.
 	$( '.content' ).fitVids();
+	$( '.left-column' ).fitVids();
 
 });
 
