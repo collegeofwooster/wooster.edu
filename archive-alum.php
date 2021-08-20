@@ -5,7 +5,7 @@
 
 get_header(); 
 
-$base_url = '/classnotes';
+$base_url = '/classnotes/';
 
 global $alum_categories;
 
