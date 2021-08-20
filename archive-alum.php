@@ -170,7 +170,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 
 			$wp_query->query_vars["orderby"] = 'modified';
 			$wp_query->query_vars["order"] = 'DESC';
-			$wp_query->query_vars["posts_per_page"] = 12;
+			$wp_query->query_vars["posts_per_page"] = 100;
 
 			if ( !empty( $meta_query ) ) {
 				$wp_query->query_vars['meta_query'] = $meta_query;
