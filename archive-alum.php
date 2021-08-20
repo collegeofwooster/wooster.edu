@@ -240,7 +240,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 			</div>
 
 			<div class="group pagination">
-				<?php echo paginate_links(); ?>
+				<?php pagination(); ?>
 			</div>
 
 		</div>
