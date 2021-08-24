@@ -80,7 +80,11 @@
 		}
 
 		&.calendar-day:hover {
-			background: $grey-light;
+			background: rgba( $grey-light, .1 );
+		}
+
+		&.current {
+			background: rgba( $grey-light, .2 );
 		}
 
 		.day-number {
