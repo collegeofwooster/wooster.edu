@@ -262,7 +262,9 @@ function get_month_events( $m, $y, $category='' ) {
 			),
 		),
 		'post_type' => 'event',
-		'orderby' => 'name',
+		'orderby' => 'meta_value_num',
+		'meta_key' => '_p_event_start',
+		'order' => 'ASC',
 		'posts_per_page' => 100
 	);
 
@@ -440,6 +442,7 @@ function show_month_events( $month, $year ) {
 	$days_in_month = date('t',mktime(0,0,0,$month,1,$year));
 	$current_date = new DateTime("now", new DateTimeZone('America/New_York') );
 	$current_day = $current_date->format('j');
+	$current_month = $current_date->format('n');
 	$days_in_this_week = 1;
 	$day_counter = 0;
 	$dates_array = array();
@@ -471,7 +474,7 @@ function show_month_events( $month, $year ) {
 		}
 
 		// start building out the day.
-		$calendar .= '<td class="calendar-day' . ( $current_day == $list_day ? ' current' : '' ) . '">';
+		$calendar .= '<td class="calendar-day' . ( $current_day == $list_day && $current_month == $month ? ' current' : '' ) . '">';
 
 		// add in the day number 
 		$calendar.= '<div class="day-number">' . ( !empty( $day_events ) ? "<strong>" : '' ) . $list_day . ( !empty( $day_events ) ? "</strong>" : '' ) . '</div>';
