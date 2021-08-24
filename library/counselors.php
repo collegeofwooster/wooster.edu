@@ -16,6 +16,6 @@ $('.counselor-search').submit(function(){
    EOT;
    return $counselors;
 }
-add_shortcode( 'counselors-map', 'counselors_shortcode' );
+// add_shortcode( 'counselors-map', 'counselors_shortcode' );
 
 
