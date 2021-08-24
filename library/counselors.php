@@ -2,7 +2,7 @@
 
 
 function counselors_shortcode() {
-	$counselors = <<<EOT
+	$counselors = <<<EOD
 <script>
 $('.counselor-search').submit(function(){
 	var zipcode = $('#zip-search').val();
@@ -13,9 +13,8 @@ $('.counselor-search').submit(function(){
 <div>
 	<p>High School Zip Code: <form class="counselor-search"><input class="zip-search" type="text"><input type="button" value="Search"></form></p>
 </div>
-   EOT;
-   return $counselors;
+EOD;
+	return $counselors;
 }
-// add_shortcode( 'counselors-map', 'counselors_shortcode' );
-
+add_shortcode( 'counselors-map', 'counselors_shortcode' );
 
