@@ -15,24 +15,15 @@
 
 			console.log( zipcode );
 
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
-				if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-					if ( xmlhttp.responseText != "error" ) {
-						window.location.assign( xmlhttp.responseText );
-					} else {
-						alert( "Invalid ZIP" );
-					}
-				}
-			}
-			xmlhttp.open( "GET", "./adm-zip-query.php?q=" + zipcode, true );
-			xmlhttp.send();
+			var result = $.get( "./adm-zip-query.php?q=" + zipcode );
+			
+			console.log( result );
 		}
 		</script>
 	</head>
    <body>
    <div>
-      <p>High School Zip Code: <input id="zip-search" type="text"><input id="search-submit" type="button" value="Search" onclick="zip_search()" style="margin-left: 10px;"></p>
+      <p>High School Zip Code: <input id="zip-search" type="text"><input id="search-submit" type="button" value="Search" onclick="zip_search()"></p>
    </div>
    <div id="mapwrapper"><span id="map-tip"></span>
    	<div id="map_base">

@@ -2,7 +2,18 @@
 
 
 function counselors_shortcode() {
-	return '<iframe src="' . get_bloginfo('template_url') . '/library/counselors/index.php" class="counselor-map"></iframe>';
+	return <<<EOT
+<script>
+$('.counselor-search').submit(function(){
+	var zipcode = $('#zip-search').val();
+	var result = $.get( "./adm-zip-query.php?q=" + zipcode );
+	console.log( result );
+});
+</script>
+<div>
+	<p>High School Zip Code: <form class="counselor-search"><input class="zip-search" type="text"><input type="button" value="Search"></form></p>
+</div>
+   EOT;
 }
 add_shortcode( 'counselors-map', 'counselors_shortcode' );
 
