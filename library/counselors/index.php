@@ -10,20 +10,10 @@
       <script src="./pin-config.js?ver=080519" type="text/javascript"></script>
       <script src="./map-interact.js?ver=080519" type="text/javascript"></script>
       <script>
-		function checkEnter(e, textarea){
-			var code = ( e.keyCode ? e.keyCode : e.which );
-			if ( code == 13 ) {
-				zip_search();
-			}
-		}
-
 		function zip_search() {
-			var zipcode = document.getElementById('zip-search').value;
+			var zipcode = $('#zip-search').val();
 
-			if ( zipcode.length != 5 ) {
-				alert( "Invalid ZIP" );
-				return;
-			}
+			console.log( zipcode );
 
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
@@ -35,14 +25,14 @@
 					}
 				}
 			}
-			xmlhttp.open( "GET", "adm-zip-query.php?q=" + zipcode, true );
+			xmlhttp.open( "GET", "./adm-zip-query.php?q=" + zipcode, true );
 			xmlhttp.send();
 		}
 		</script>
 	</head>
    <body>
    <div>
-      <p>High School Zip Code: <input id="zip-search" type="text" onkeypress="checkEnter(event, this)"><input id="search-submit" type="button" value="Search" onclick="zip_search()" style="margin-left: 10px;"></p>
+      <p>High School Zip Code: <input id="zip-search" type="text"><input id="search-submit" type="button" value="Search" onclick="zip_search()" style="margin-left: 10px;"></p>
    </div>
    <div id="mapwrapper"><span id="map-tip"></span>
    	<div id="map_base">
