@@ -13,7 +13,7 @@ jQuery( document ).ready( function( $ ) {
 });
 </script>
 <div>
-	<p>High School Zip Code: <form class="counselor-search"><input class="zip-search" type="text"><input type="button" value="Search"></form></p>
+	<p>High School Zip Code: <form class="counselor-search" action="#"><input class="zip-search" type="text"><input type="button" value="Search"></form></p>
 </div>
 EOD;
 	return $counselors;
