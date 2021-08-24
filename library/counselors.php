@@ -4,10 +4,12 @@
 function counselors_shortcode() {
 	$counselors = <<<EOD
 <script>
-$('.counselor-search').submit(function(){
-	var zipcode = $('#zip-search').val();
-	var result = $.get( "./adm-zip-query.php?q=" + zipcode );
-	console.log( result );
+jQuery( document ).ready( function( $ ) {
+	$('.counselor-search').submit(function(){
+		var zipcode = $('#zip-search').val();
+		var result = $.get( "./adm-zip-query.php?q=" + zipcode );
+		console.log( result );
+	});
 });
 </script>
 <div>
