@@ -6,7 +6,7 @@ function counselors_shortcode() {
 <script>
 jQuery( document ).ready( function( $ ) {
 	$('.counselor-search').submit(function(){
-		var zipcode = $('#zip-search').val();
+		var zipcode = $('.zip-search').val();
 		var result = $.get( "./adm-zip-query.php?q=" + zipcode );
 		console.log( result );
 	});
