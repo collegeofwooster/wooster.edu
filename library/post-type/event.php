@@ -234,11 +234,14 @@ function get_month_events( $m, $y, $category='' ) {
 	$args = array(
 		'meta_query' => array(
 			'relation' => 'AND',
+			/*
+			// this will prevent the selection of all events prior to the current day.
 			array(
 				'key' => '_p_event_start',
 				'value' => $timestamp_today,
 				'compare' => '>='
 			),
+			*/
 			array(
 				'key' => '_p_event_start',
 				'value' => $timestamp_start,
