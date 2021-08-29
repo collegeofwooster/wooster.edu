@@ -10,19 +10,18 @@ $server = _IS_SERVER;
 $user = _IS_USER;
 $pass = _IS_PASS;
 $db = _IS_DB;
-$port = _IS_PORT;
-$zipsearch = preg_replace('/[^A-Za-z0-9\-]/', '', $_REQUEST['zip']);
+$zipsearch = preg_replace( '/[^A-Za-z0-9\-]/', '', $_REQUEST['zip'] );
 
 
 // connect
-$dbhandle = odbc_connect( "Driver={ODBC Driver 17 for SQL Server};SERVER=$server;DATABASE=$db;PORT=$port", $user, $pass )
+$dbhandle = odbc_connect( "Driver={ODBC Driver 17 for SQL Server};SERVER=$server;DATABASE=$db;PORT=1433", $user, $pass )
 	or die( "Could not connect to $server" );
 
 
 // query
 $query = "SELECT username, staff_name, geomarket, zip ";
 $query .= "FROM x_adm_staff_assign_zip ";
-$query .= "WHERE zip = '$zipsearch' ";
+$query .= "WHERE zip = '$zipsearch';";
 
 
 // execute

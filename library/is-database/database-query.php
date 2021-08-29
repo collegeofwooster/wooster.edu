@@ -68,7 +68,7 @@ $result = odbc_exec($dbhandle, $query);
 
 echo("<table id=\"is-table\"><tr><th>Student</th><th>Year</th><th>I.S. Title</th><th nowrap=\"nowrap\">Major 1</th><th nowrap=\"nowrap\">Major 2</th><th>Advisor</th></tr><span id=\"errortext\">");
 
-if(odbc_num_rows($result) == 0){
+if( odbc_num_rows( $result ) == 0 ) {
 	echo("\n<tr><td colspan=\"6\" valign=\"center\" align=\"center\">No results</td></tr>");
 }
 
