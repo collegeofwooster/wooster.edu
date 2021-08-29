@@ -1,7 +1,7 @@
 <?php 
 
-ini_set('display_errors', true);
-ini_set('error_reporting', E_ALL ^ E_NOTICE );
+// ini_set('display_errors', true);
+// ini_set('error_reporting', E_ALL ^ E_NOTICE );
 
 // include core wp functionality
 require('../../../../../wp-config.php');
@@ -12,6 +12,7 @@ $pass = _IS_PASS;
 $db = _IS_DB;
 $zipsearch = preg_replace( '/[^A-Za-z0-9\-]/', '', $_REQUEST['zip'] );
 
+print $zipsearch; die;
 
 // connect
 $dbhandle = odbc_connect( "Driver={ODBC Driver 17 for SQL Server};SERVER=$server;DATABASE=$db;PORT=1433", $user, $pass )
