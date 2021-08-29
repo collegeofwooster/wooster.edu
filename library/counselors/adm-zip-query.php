@@ -32,8 +32,8 @@ $result = odbc_exec( $dbhandle, $query );
 // odbc_result_all($result);
 if ( odbc_num_rows( $result ) == 0 ) {
 	echo( "error" );
-	print odbc_error( $result );
-	print odbc_errormsg( $result );
+	print odbc_error( $dbhandle );
+	print odbc_errormsg( $dbhandle );
 } else {
 	while ( odbc_fetch_row( $result ) ) {
 		$zip = odbc_result( $result, username );
