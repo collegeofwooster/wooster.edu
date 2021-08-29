@@ -11,7 +11,7 @@ $user = _IS_USER;
 $pass = _IS_PASS;
 $db = _IS_DB;
 $port = _IS_PORT;
-$zipsearch = preg_replace('/[^A-Za-z0-9\-]/', '', $_REQUEST['q']);
+$zipsearch = preg_replace('/[^A-Za-z0-9\-]/', '', $_REQUEST['zip']);
 
 
 // connect
@@ -32,8 +32,8 @@ $result = odbc_exec( $dbhandle, $query );
 // odbc_result_all($result);
 if ( odbc_num_rows( $result ) == 0 ) {
 	echo( "error" );
-	print odbc_error();
-	print odbc_errormsg();
+	print odbc_error( $result );
+	print odbc_errormsg( $result );
 } else {
 	while ( odbc_fetch_row( $result ) ) {
 		$zip = odbc_result( $result, username );
