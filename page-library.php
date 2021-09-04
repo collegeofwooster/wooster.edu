@@ -49,6 +49,7 @@ the_page_header();
 			while ( have_posts() ) : 
 				the_post(); 
 				the_content();
+				the_boxes();
 				the_accordions();
 			endwhile; 
 			?>
