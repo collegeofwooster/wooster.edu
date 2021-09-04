@@ -25,13 +25,19 @@ get_header();
 				<div class="aside">
 				<?php
 				
+				// get the categories for this post
 				$cat_list = wp_get_post_categories( $post->ID );
+
+				// implode them into a string to be included in the related posts list
+				$cats = implode( ',', $cat_list );
+
+				// select related posts
 				$related_posts = get_posts( array(
 					'post_type' => 'post',
-					'cat__in' => $cat_list,
+					'category' => $cats,
 					'posts_per_page' => 3
 				) );
-				if ( !empty( $cat_list ) ) {
+				if ( !empty( $related_posts ) ) {
 					?>
 					<h3>Related Posts</h3>
 					<div class="article-list">
