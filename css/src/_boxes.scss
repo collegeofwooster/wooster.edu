@@ -1,0 +1,88 @@
+
+
+.boxes {
+
+	@include respond-to( $bp-s ) {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 20px 0;
+		margin-right: -5%;
+	}
+
+	.abox {
+		position: relative;
+		background-image: url(../img/box-stripes.png);
+		background-position: center center;
+		background-size: cover;
+		padding: 30px;
+
+		@include respond-to( $bp-s ) {
+			flex: 1;
+			flex-basis: 45%;
+			margin-right: 5%;
+			margin-bottom: 5%;
+			flex-grow: 0;
+		}
+
+		&.linked {
+			cursor: pointer;
+		}
+
+		&.red {
+			background-color: $red;
+			color: white;
+		}
+
+		&.gold {
+			background-color: $gold;
+			color: black;
+		}
+
+		&.rose {
+			background-color: $rose;
+			color: white;
+		}
+
+		&.sky {
+			background-color: $sky;
+			color: black;
+		}
+
+		&.blue {
+			background-color: $blue;
+			color: white;
+		}
+
+		&.foam {
+			background-color: $foam;
+			color: white;
+		}
+
+		&.tan {
+			background-color: $tan;
+			color: black;
+		}
+
+		&.grey-dark {
+			background-color: $grey-dark;
+			color: white;
+		}
+
+		&.grey-light {
+			background-color: $grey-light;
+			color: black;
+		}
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -20px;
+			content: ' ';
+			background: url(../img/box-karat.png) center center no-repeat;
+			width: 40px;
+			height: 20px;
+		}
+	}
+}
+
