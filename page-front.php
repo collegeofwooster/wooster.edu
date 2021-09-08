@@ -104,7 +104,8 @@ get_header();
 					'post_type' => 'post', 
 					'cat' => '-1105,-1106,-1066', 
 					'orderby' => 'date', 
-					'order' => 'DESC' 
+					'order' => 'DESC',
+					'ignore_sticky_posts' => 1,
 				) );
 				while ( $post_query->have_posts() ) {
 					$post_query->the_post();
