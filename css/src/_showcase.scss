@@ -80,6 +80,20 @@
 		z-index: 5;
 		padding: 30px 70px;
 
+		video {
+		    position: absolute;
+		    left: 50%; /* % of surrounding element */
+		    top: 50%;
+		    -webkit-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
+			min-width: 100%; 
+			min-height: 100%; 
+			width: auto; 
+			height: auto;
+			z-index: 5; 
+			overflow: hidden;
+  		}
+
 		@include respond-to( $bp-l ) {
 			padding-top: 50px;
 		}
@@ -119,9 +133,9 @@
 
 			@include respond-to( $bp-l ) {
 				top: 55%;
-				left: 90px;
+				left: 110px;
 				right: 90px;
-				max-width: 60%;
+				max-width: 55%;
 			}
 
 			@include respond-to( $bp-xl ) {

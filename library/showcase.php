@@ -22,8 +22,13 @@ function the_showcase() {
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
 
 				?>
-			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>" style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
+			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>"<?php if ( !stristr( $image, '.webm' ) ) { ?> style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php } ?><?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
 				
+				<?php if ( stristr( $image, '.webm' ) ) { ?>
+				<video class="slide-video" autoplay muted loop>
+					<source src="<?php print $image; ?>" type="video/webm">
+				</video>
+				<?php } ?>
 				<?php if ( !empty( $content ) ) { ?>
 				<div class="showcase-overlay"></div>
 				<div class="slide-content">
