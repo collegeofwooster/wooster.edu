@@ -1,9 +1,9 @@
 <?php
 
 
-// turn on errors so we can troubleshoot
+// turn off errors
 ini_set( 'display_errors', false );
-// ini_set('error_reporting', E_ALL ^ E_NOTICE );
+error_reporting( 0 );
 
 
 // load wordpress so we have access to the wp-config definitions (which hold the credentials for the employee database)
