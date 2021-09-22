@@ -17,6 +17,7 @@ get_header();
 				<div class="main-content">
 					<h1><?php the_title(); ?></h1>
 					<?php 
+					the_post_showcase();
 					the_post_thumbnail( 'full' );
 					the_content();
 					?>

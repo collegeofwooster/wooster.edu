@@ -46,8 +46,8 @@ the_page_header();
 
 			<div class="entry-content">
 			<?php
-			while ( have_posts() ) : 
-				the_post(); 
+			while ( have_posts() ) : the_post(); 
+				the_post_showcase();
 				the_content();
 				the_boxes();
 				the_accordions();
