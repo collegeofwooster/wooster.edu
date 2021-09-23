@@ -26,6 +26,8 @@ $query = "SELECT username, staff_name, geomarket, zip FROM x_adm_staff_assign_zi
 // execute
 $result = odbc_exec( $dbhandle, $query );
 
+print_r( $result );
+
 
 // odbc_result_all($result);
 if ( odbc_num_rows( $result ) == 0 ) {
