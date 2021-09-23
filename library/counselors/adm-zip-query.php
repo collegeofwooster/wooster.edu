@@ -4,7 +4,7 @@
 // ini_set('error_reporting', E_ALL ^ E_NOTICE );
 
 // include core wp functionality
-require('../../../../../wp-config.php');
+include( "../../../../../wp-load.php" );
 
 $server = _IS_SERVER;
 $user = _IS_USER;
