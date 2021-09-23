@@ -2,7 +2,7 @@
 
 
 // include wp core.
-require( '../../../../wp-load.php' );
+include( '../../../../wp-load.php' );
 
 // let's get $wpdb ready to use
 global $wpdb;

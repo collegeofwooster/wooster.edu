@@ -7,7 +7,7 @@ error_reporting( 0 );
 
 
 // load wordpress so we have access to the wp-config definitions (which hold the credentials for the employee database)
-require( '../../../../wp-load.php' );
+include( '../../../../wp-load.php' );
 
 
 // connection info
