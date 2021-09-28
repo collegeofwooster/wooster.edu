@@ -12,6 +12,7 @@ $pass = _IS_PASS;
 $db = _IS_DB;
 $zipsearch = preg_replace( '/[^A-Za-z0-9\-]/', '', $_REQUEST['zip'] );
 
+// a quick dump of zipcode to make sure we're getting that parameter effectively
 // print $zipsearch; die;
 
 // connect

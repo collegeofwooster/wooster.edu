@@ -211,7 +211,7 @@ function get_day_events( $m, $d, $y ) {
 		'post_type' => 'event',
 		'orderby' => 'meta_value_num',
 		'meta_key' => '_p_event_start',
-		'posts_per_page' => 100
+		'posts_per_page' => -1
 	);
 
 	$event_query = new WP_Query( $args );
@@ -265,7 +265,7 @@ function get_month_events( $m, $y, $category='' ) {
 		'orderby' => 'meta_value_num',
 		'meta_key' => '_p_event_start',
 		'order' => 'ASC',
-		'posts_per_page' => 100
+		'posts_per_page' => -1
 	);
 
 	if ( isset( $_GET['event_category'] ) ) {
