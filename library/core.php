@@ -8,7 +8,6 @@ function p_scripts() {
 add_action( 'wp_enqueue_scripts', 'p_scripts' );
 
 
-
 // register a couple nav menus
 register_nav_menus( array(
 	'main-menu' => 'Main Menu',
@@ -26,7 +25,6 @@ register_nav_menus( array(
 ) );
 
 
-
 // register a generic sidebar.
 register_sidebar( array(
 	'id' => 'sidebar-generic',
@@ -38,14 +36,12 @@ register_sidebar( array(
 ) );
 
 
-
 // enable webp uploads in the media library
 function webp_upload_mimes($existing_mimes) {
     $existing_mimes['webp'] = 'image/webp';
     return $existing_mimes;
 }
 add_filter('mime_types', 'webp_upload_mimes');
-
 
 
 // pagination
@@ -76,13 +72,11 @@ function pagination( $prev = '&laquo;', $next = '&raquo;' ) {
 }
 
 
-
 // small boolean function to check if we're in cli or fpm
 function is_cli() {
     if ( php_sapi_name() == "cli" ) return true;
     return false;
 }
-
 
 
 // a simple function to output a nav menu as a select list
@@ -109,7 +103,6 @@ function quick_nav_menu( $theme_location, $first_item ) {
 }
 
 
-
 // the_content filter to remove test/staging URLs before outputting content
 add_action( 'the_content', 'strip_test_domains' );
 function strip_test_domains( $content ) {
@@ -119,8 +112,20 @@ function strip_test_domains( $content ) {
 }
 
 
-
 // enable shortcodes in sidebar widgets
 add_filter( 'widget_text', 'do_shortcode' );
 
+
+// a simple function to parse the query string of the URL
+function parse_query_string() {
+
+    // separate the parts of the URL
+    $url_parts = explode( "?", $_SERVER['REQUEST_URI'] );
+
+    // parse the query string part into an array.
+    parse_str( $url_parts[1], $request );
+
+    // return it
+    return $request;
+}
 

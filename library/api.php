@@ -9,7 +9,7 @@ function add_query_vars_filter( $vars ){
 add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
-function wooster_api_connections( $data ) {
+function api_connected_learning( $data ) {
 
 	// dump the request parameters
 	$url_parts = explode( "?", $_SERVER['REQUEST_URI'] );
@@ -89,20 +89,7 @@ function wooster_api_connections( $data ) {
 add_action( 'rest_api_init', function () {
 	register_rest_route( 'wooster/v1', '/connections/', array(
 		'methods' => 'GET',
-		'callback' => 'wooster_api_connections'
+		'callback' => 'api_connected_learning'
 	) );
 } );
 
-
-// a simple function to parse the query string of the URL
-function parse_query_string() {
-
-	// separate the parts of the URL
-	$url_parts = explode( "?", $_SERVER['REQUEST_URI'] );
-
-	// parse the query string part into an array.
-	parse_str( $url_parts[1], $request );
-
-	// return it
-	return $request;
-}
