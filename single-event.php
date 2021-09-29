@@ -46,6 +46,27 @@ get_header();
 						}
 
 						?>
+						<br>
+						<script type="text/javascript">(function () {
+						if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+						if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+							var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+							s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+							s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+							var h = d[g]('body')[0];h.appendChild(s); }})();
+						</script>
+
+						<!-- 3. Place event data -->
+						<span class="addtocalendar atc-style-blue">
+							<var class="atc_event">
+								<var class="atc_date_start"><?php print date( 'Y-m-d g:i', $start ) ?>:00</var>
+								<var class="atc_date_end"><?php print date( 'Y-m-d g:i', $end ) ?>:00</var>
+								<var class="atc_timezone">America/New_York</var>
+								<var class="atc_title"><?php the_title() ?></var>
+								<var class="atc_description"><?php the_content(); ?></var>
+								<var class="atc_location"><?php show_cmb_value( 'event_location_text' ) ?></var>
+							</var>
+						</span>
 					</div>
 				</div>
 			</div>
