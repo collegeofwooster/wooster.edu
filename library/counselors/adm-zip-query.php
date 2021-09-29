@@ -27,18 +27,19 @@ $query = "SELECT username, staff_name, geomarket, zip FROM x_adm_staff_assign_zi
 // execute
 $result = odbc_exec( $dbhandle, $query );
 
-print_r( $result );
+
+// print all results
+odbc_result_all( $result );
 
 
-// odbc_result_all($result);
 if ( odbc_num_rows( $result ) == 0 ) {
 	echo( "error" );
 	print odbc_error( $dbhandle );
 	print odbc_errormsg( $dbhandle );
 } else {
 	while ( odbc_fetch_row( $result ) ) {
-		$zip = odbc_result( $result, username );
-		$url = "https://wooster.edu/bio/" . $zip;
+		$username = odbc_result( $result, 'username' );
+		$url = "https://wooster.edu/bio/" . $username;
 		echo( $url );
 	}
 }
