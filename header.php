@@ -40,15 +40,6 @@ gtag('js', new Date());
 gtag('config', 'UA-3048189-35');
 </script>
 
-<!-- Global Site Tag --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8XL67SSQ4K"></script>
-<script> 
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);} 
-gtag('js', new Date()); 
-gtag('config', 'G-8XL67SSQ4K');
-</script>
-
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
