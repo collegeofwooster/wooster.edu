@@ -19,14 +19,15 @@ function the_showcase() {
 				$content = ( isset( $slide["content"] ) ? $slide["content"] : '' );
 				$link = strip_test_domains( ( isset( $slide["link"] ) ? $slide["link"] : '' ) );
 				$image = strip_test_domains( $slide['image'] );
+				$video = strip_test_domains( $slide['video'] );
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
 
 				?>
-			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>"<?php if ( !stristr( $image, '.webm' ) ) { ?> style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php } ?><?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
+			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>" style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
 				
-				<?php if ( stristr( $image, '.webm' ) ) { ?>
+				<?php if ( stristr( $video, '.webm' ) ) { ?>
 				<video class="slide-video" autoplay muted loop>
-					<source src="<?php print $image; ?>" type="video/webm">
+					<source src="<?php print $video; ?>" type="video/webm">
 				</video>
 				<?php } ?>
 				<?php if ( !empty( $content ) ) { ?>
@@ -103,8 +104,17 @@ function showcase_metabox( $meta_boxes ) {
     ) );
 
     $showcase_metabox->add_group_field( $showcase_metabox_group, array(
-        'name' => 'Image/Video',
+        'name' => 'Image',
         'id'   => 'image',
+        'desc'   => 'Upload a preview image to load into the video tag (or display on mobile instead of the video).',
+        'type' => 'file',
+        'preview_size' => array( 200, 100 )
+    ) );
+
+    $showcase_metabox->add_group_field( $showcase_metabox_group, array(
+        'name' => 'Video',
+        'id'   => 'video',
+        'desc' => 'Upload a .webm video file to use on large screens.',
         'type' => 'file',
         'preview_size' => array( 200, 100 )
     ) );
