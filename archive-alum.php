@@ -127,8 +127,11 @@ if ( $query_yr || $query_cat || $query_search ) {
 						if ( !empty( $year_info['president'] ) ) { ?>
 							<p><strong>President:</strong><br>
 							<?php 
+							$pres_count = 1;
 							foreach ( $year_info['president'] as $pres_key=>$pres_name ) {
+								print ( $pres_count > 1 ? ', ' : '' );
 								print '<a href="mailto:' . $year_info['president_email'][$pres_key] . '">' . $pres_name . '</a>';
+								$pres_count++;
 							}
 							?>
 							</p>
@@ -137,8 +140,11 @@ if ( $query_yr || $query_cat || $query_search ) {
 						if ( !empty( $year_info['secretary'] ) ) { ?>
 							<p><strong>Secretary:</strong><br>
 							<?php 
+							$sec_count = 1;
 							foreach ( $year_info['secretary'] as $sec_key=>$sec_name ) {
+								print ( $sec_count > 1 ? ', ' : '' );
 								print '<a href="mailto:' . $year_info['secretary_email'][$sec_key] . '">' . $sec_name . '</a>';
+								$sec_count++;
 							}
 							?>
 							</p>
