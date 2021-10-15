@@ -31,7 +31,7 @@ the_page_header( null, '/wp-content/uploads/2021/07/skykauke.jpg' );
 					<?php if ( has_cmb_value( "person_website" ) ) { ?><p>Website: <a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Visit Website</a></p><?php } ?>
 					<?php if ( has_cmb_value( "person_cv" ) ) { ?><p>CV/Resume: <a href='<?php show_cmb_value( "person_cv" ) ?>' target='_blank'>Download</a></p><?php } ?>
 					<?php if ( has_term( 'faculty', 'people_cat' ) ) { ?>
-					<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>" class="btn red-dark">Ask a Question</a></p>
+					<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>&recipient=<?php show_cmb_value( 'person_email' ); ?>" class="btn red-dark">Ask a Question</a></p>
 					<?php } ?>
 				</div>
 			</div>
