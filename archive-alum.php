@@ -25,10 +25,10 @@ if ( $current_yr > 0 ) {
 		the_post();
 		global $post;
 		$year_info = array();
-		$year_info['president'] = get_cmb_value( 'year_president' );
-		$year_info['president_email'] = get_cmb_value( 'year_president_email' );
-		$year_info['secretary'] = get_cmb_value( 'year_secretary' );
-		$year_info['secretary_email'] = get_cmb_value( 'year_secretary_email' );
+		$year_info['president'] = explode( ',', get_cmb_value( 'year_president' ) );
+		$year_info['president_email'] = explode( ',', get_cmb_value( 'year_president_email' ) );
+		$year_info['secretary'] = explode( ',', get_cmb_value( 'year_secretary' ) );
+		$year_info['secretary_emails'] = explode( ',', get_cmb_value( 'year_secretary_email' ) );
 		$year_info['grad_date'] = get_cmb_value( 'year_grad_date' );
 		$year_info['grad_seniors'] = get_cmb_value( 'year_grad_seniors' );		
 		$year_info['facebook'] = get_cmb_value( 'year_facebook' );
@@ -123,8 +123,28 @@ if ( $query_yr || $query_cat || $query_search ) {
 				<?php if ( !empty( $current_yr ) ) { ?>
 				<div class="class-information group">
 					<div class="third">
-						<?php if ( !empty( $year_info['president'] ) ) { ?><p><strong>President:</strong><br><?php print ( $year_info['president_email'] ? '<a href="mailto:' . $year_info['president_email'] . '">' : '' ) ?><?php print $year_info['president'] ?><?php print ( $year_info['president_email'] ? '</a>' : '' ) ?></p><?php } ?>
-						<?php if ( !empty( $year_info['secretary'] ) ) { ?><p><strong>Secretary:</strong><br><?php print ( $year_info['secretary_email'] ? '<a href="mailto:' . $year_info['secretary_email'] . '">' : '' ) ?><?php print $year_info['secretary'] ?><?php print ( $year_info['secretary_email'] ? '</a>' : '' ) ?></p><?php } ?>
+						<?php 
+						if ( !empty( $year_info['president'] ) ) { ?>
+							<p><strong>President:</strong><br>
+							<?php 
+							foreach ( $year_info['president'] as $pres_key=>$pres_name ) {
+								print '<a href="mailto:' . $year_info['president_email'][$pres_key] . '">' . $pres_name . '</a>';
+							}
+							?>
+							</p>
+						<?php 
+						}
+						if ( !empty( $year_info['secretary'] ) ) { ?>
+							<p><strong>Secretary:</strong><br>
+							<?php 
+							foreach ( $year_info['secretary'] as $sec_key=>$sec_name ) {
+								print '<a href="mailto:' . $year_info['secretary_email'][$sec_key] . '">' . $sec_name . '</a>';
+							}
+							?>
+							</p>
+						<?php 
+						} 
+						?>
 					</div>
 					<div class="third">
 						<?php if ( !empty( $year_info['grad_date'] ) ) { ?><p><strong>Graduation Date:</strong><br><?php print $year_info['grad_date'] ?></p><?php } ?>
