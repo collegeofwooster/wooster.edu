@@ -25,10 +25,12 @@ if ( $current_yr > 0 ) {
 		the_post();
 		global $post;
 		$year_info = array();
-		$year_info['president'] = explode( ',', get_cmb_value( 'year_president' ) );
+		$pres = get_cmb_value( 'year_president' );
+		$year_info['president'] = ( !empty( $pres ) ? explode( ',', $pres ) : '' );
 		$year_info['president_email'] = explode( ',', get_cmb_value( 'year_president_email' ) );
-		$year_info['secretary'] = explode( ',', get_cmb_value( 'year_secretary' ) );
-		$year_info['secretary_emails'] = explode( ',', get_cmb_value( 'year_secretary_email' ) );
+		$sec = get_cmb_value( 'year_secretary' );
+		$year_info['secretary'] = ( !empty( $sec ) ? explode( ',', $sec ) : '' );
+		$year_info['secretary_email'] = explode( ',', get_cmb_value( 'year_secretary_email' ) );
 		$year_info['grad_date'] = get_cmb_value( 'year_grad_date' );
 		$year_info['grad_seniors'] = get_cmb_value( 'year_grad_seniors' );		
 		$year_info['facebook'] = get_cmb_value( 'year_facebook' );
