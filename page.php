@@ -25,10 +25,6 @@ the_showcase();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-			if ( comments_open() ) {
-				comment_form();
-			}
 			
 			the_boxes();
 			the_accordions();
