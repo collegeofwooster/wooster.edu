@@ -28,13 +28,10 @@ the_showcase();
 				the_post_showcase();
 				the_content(); 
 
+				print "<hr />";
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-
-				if ( comments_open() ) {
-					comment_form();
-				}
 
 				the_boxes();
 				the_accordions();
