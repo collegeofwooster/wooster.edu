@@ -27,6 +27,15 @@ the_showcase();
 			while ( have_posts() ) : the_post(); 
 				the_post_showcase();
 				the_content(); 
+
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+				if ( comments_open() ) {
+					comment_form();
+				}
+
 				the_boxes();
 				the_accordions();
 			endwhile;

@@ -27,6 +27,10 @@ get_header();
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
+
+					if ( comments_open() ) {
+						comment_form();
+					}
 					?>
 				</div>
 				<div class="aside">

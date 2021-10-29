@@ -66,8 +66,10 @@ function pagination( $prev = '&laquo;', $next = '&raquo;' ) {
     );
 
     if ( !empty($wp_query->query_vars['s']) ) $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
-
-    echo paginate_links( $pagination );
+    
+    if ( $total > 1 ) {
+        echo paginate_links( $pagination );
+    }
 
 }
 
