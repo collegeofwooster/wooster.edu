@@ -41,7 +41,7 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 
 // load post types
-require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year', 'post-type/org', 'post-type/fund', 'post-type/job' );
+require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year', 'post-type/fund', 'post-type/job' );
 
 
 // require composer autoload
