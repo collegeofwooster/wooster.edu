@@ -527,6 +527,64 @@ function show_month_events( $month, $year ) {
 
 
 
+// show month events
+function show_events_print( $month, $year ) {
+
+	$event_list_url = "/events";
+
+	// let's make an empty calendar
+	$calendar = '';
+
+	// get the events for the month.
+	$events = get_month_events( $month, $year );
+
+	// show next and previous month links.
+	$prev = get_previous_month( $month, $year );
+	$prev_ts = mktime( 0, 0, 0, $prev['month'], 1, $prev['year'] );
+	$next = get_next_month( $month, $year );
+	$next_ts = mktime( 0, 0, 0, $next['month'], 1, $next['year'] );
+
+	// days and weeks vars now ...
+	$running_day = date('w',mktime(0,0,0,$month,1,$year));
+	$days_in_month = date('t',mktime(0,0,0,$month,1,$year));
+	$current_date = new DateTime("now", new DateTimeZone('America/New_York') );
+	$current_day = $current_date->format('j');
+	$current_month = $current_date->format('n');
+	$days_in_this_week = 1;
+	$day_counter = 0;
+	$dates_array = array();
+
+	// row for week one
+	$calendar .= '<div class="calendar-print">';
+
+	// keep going with days....
+	for ( $list_day = 1; $list_day <= $days_in_month; $list_day++ ) {
+
+		// let's check the start and end of the day
+		$day_start = mktime( 0, 0, 0, $month, $list_day, $year );
+		$day_end = mktime( 23, 59, 59, $month, $list_day, $year );
+
+		// loop through all the events and list them for this day.
+		$day_events = '';
+		foreach ( $events as $event ) {
+			if ( ( $event->_p_event_start > $day_start && $event->_p_event_start < $day_end ) || 
+				 ( $event->_p_event_end > $day_start && $event->_p_event_end < $day_end ) || 
+				 ( $event->_p_event_start < $day_start && $event->_p_event_end > $day_end ) ) {
+				$day_events .= "<div class='event'><div class='event-title'><a href=\"" . ( !empty( $event->_p_event_website ) ? $event->_p_event_website : get_permalink( $event->ID ) ) . "\">" . $event->post_title . "</a></div><div class='event-time'>" . date( "n/j g:i a", $event->_p_event_start ) . " - " . date( "g:i a", $event->_p_event_end ) . "</div><div class='event-description'>" . $event->post_excerpt . "</div></div>";
+			}
+		}
+	}
+
+	// finish calendar code.
+	$calendar .= "</div>";
+
+	/* all done, return result */
+	print $calendar;
+
+}
+
+
+
 // get a list of event categories in an array
 function get_event_categories() {
     $args = array(

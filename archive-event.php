@@ -65,6 +65,9 @@ the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-heade
 			show_month_events( $month, $year, $category );
 		}
 		?>
+		<div class="events-print">
+			<?php show_events_print( $month, $year, $category ); ?>
+		</div>
 	</div>
 
 <?php
