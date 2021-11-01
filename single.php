@@ -25,7 +25,7 @@ get_header();
 					<hr />
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( in_category( 'comments-enabled', get_the_ID() ) :
+					if ( in_category( 'comments-enabled', get_the_ID() ) ) :
 						comments_template();
 					endif;
 					?>
