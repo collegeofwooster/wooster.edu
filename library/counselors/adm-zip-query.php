@@ -21,7 +21,7 @@ $dbhandle = odbc_connect( "Driver={ODBC Driver 17 for SQL Server};SERVER=$server
 
 
 // query
-$query = "SELECT * FROM x_adm_staff_assign_zip WHERE zip = '$zipsearch';";
+$query = "SELECT DISTINCT zip, username, staff_name, geomarket FROM x_adm_staff_assign_zip WHERE zip = '$zipsearch';";
 
 
 // execute
