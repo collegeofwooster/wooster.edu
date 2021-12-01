@@ -28,21 +28,15 @@ $query = "SELECT DISTINCT zip, username, staff_name, geomarket FROM x_adm_staff_
 $result = odbc_exec( $dbhandle, $query );
 
 
-// print all results
-odbc_result_all( $result );
+// if we have results
+$return_obj = array();
 
-
-if ( odbc_num_rows( $result ) == 0 ) {
-	echo( "error" );
-	print odbc_error( $dbhandle );
-	print odbc_errormsg( $dbhandle );
-} else {
-	while ( odbc_fetch_row( $result ) ) {
-		$username = odbc_result( $result, 'username' );
-		$url = "https://wooster.edu/bio/" . $username;
-		echo( $url );
-	}
+if ( odbc_num_rows( $result ) > 0 ) {
+	$return_obj[] = odbc_fetch_row( $result );
 }
+
+// print the object as a json string
+print json_encode( $return_obj );
 
 
 // close the connection
