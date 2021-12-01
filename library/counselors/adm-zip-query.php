@@ -32,7 +32,7 @@ $result = odbc_exec( $dbhandle, $query );
 $return_obj = array();
 
 if ( odbc_num_rows( $result ) > 0 ) {
-	$return_obj[] = odbc_fetch_row( $result );
+	$return_obj[] = odbc_fetch_object( $result );
 }
 
 // print the object as a json string
