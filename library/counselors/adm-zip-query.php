@@ -28,12 +28,15 @@ $query = "SELECT DISTINCT zip, username, staff_name, geomarket FROM x_adm_staff_
 $result = odbc_exec( $dbhandle, $query );
 
 
-// if we have results
-$return_obj = array();
+// empty object just in case we don't have results.
+$return_obj = '';
 
+
+// if we have results
 if ( odbc_num_rows( $result ) > 0 ) {
-	$return_obj[] = odbc_fetch_object( $result );
+	$return_obj = odbc_fetch_object( $result );
 }
+
 
 // print the object as a json string
 print json_encode( $return_obj );
