@@ -20,7 +20,7 @@ function forceDownload(url, fileName){
 
 
 // onload
-jQuery(document).ready(function($){
+jQuery( document ).ready( function( $ ) {
 
     // button click handler for download option - if that parameter is set.
 	$( "a.btn[download]" ).on( 'click', function( event ){

@@ -1,22 +1,13 @@
 <?php
 
 
-function counselors_shortcode() {
+function counselor_search_shortcode() {
 	$counselors = <<<EOD
-<script>
-jQuery( document ).ready( function( $ ) {
-	$('.counselor-search').submit(function(){
-		var zipcode = $('.zip-search').val();
-		var result = $.get( "/wp-content/themes/wooster/library/counselors/adm-zip-query.php?q=" + zipcode );
-		console.log( result );
-	});
-});
-</script>
-<div>
-	<p>High School Zip Code: <form class="counselor-search" action="#"><input class="zip-search" type="text"><input type="button" value="Search"></form></p>
+<div class="counselor-search-container">
+	<p>ZIP Code: <form class="counselor-search-form" action="/admission/counselors/"><input class="zip-search" type="text"><input type="submit" value="Search"></form></p>
 </div>
 EOD;
 	return $counselors;
 }
-add_shortcode( 'counselors-map', 'counselors_shortcode' );
+add_shortcode( 'counselor-search', 'counselor_search_shortcode' );
 
