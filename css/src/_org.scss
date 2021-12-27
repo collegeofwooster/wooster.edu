@@ -1,9 +1,13 @@
 
 
 .org-listing {
-	border: 1px solid $grey-light;
 
-	.org {
+	@include respond-to( $bp-m ) {
+		display: flex;  
+		flex-wrap: wrap;
+	}
+
+	.org-category {
 		padding: 10px 5px;
 		border-bottom: 1px solid $grey-light;
 
@@ -15,8 +19,15 @@
 			background: lighten( $grey-light, 35% );
 		}
 
-		@include respond-to( 768px ) {
-			padding: 15px 25px;
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 33.3333%;
+			flex-grow: 0;	
+			padding: 0 20px 20px 0;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 25%;
 		}
 	}
 }
