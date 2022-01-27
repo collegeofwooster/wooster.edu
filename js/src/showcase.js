@@ -124,9 +124,10 @@ jQuery(document).ready(function($){
 
 		if ( $(this).data('href') ) {
 			var link = $(this).data('href');
-			console.log( link );
+			var cl = $(this).attr( 'class' );
+			console.log( cl );
 
-			if ( link.match( /youtube.com/g ) || link.match( /youtu.be/g ) || link.match( /vimeo.com/g ) ) {
+			if ( link.match( /youtube.com/g ) || link.match( /youtu.be/g ) || link.match( /vimeo.com/g ) || cl.match( /iframe/g ) ) {
 				$.magnificPopup.open({
 					items: {
 						src: link

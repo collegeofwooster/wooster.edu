@@ -21,9 +21,10 @@ function the_showcase() {
 				$image = strip_test_domains( $slide['image'] );
 				$video = strip_test_domains( $slide['video'] );
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
+				$class = ( isset( $slide['class'] ) ? $slide['class'] : '' );
 
 				?>
-			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?>" style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
+			<div class="slide<?php print ( $key==0 ? ' visible' : '' ); ?><?php print ( !empty( $class ) ? ' ' . $class : '' ) ?>" style="background-image: url(<?php print $image; ?>);<?php print ( !empty( $link ) ? 'cursor: pointer;' : '' ) ?>"<?php print ( !empty( $link ) ? ' data-href="' . $link . '"' : '' ) ?>>
 				
 				<?php if ( stristr( $video, '.webm' ) ) { ?>
 				<video class="slide-video" autoplay muted loop>
@@ -136,6 +137,12 @@ function showcase_metabox( $meta_boxes ) {
     $showcase_metabox->add_group_field( $showcase_metabox_group, array(
         'name' => 'Link',
         'id'   => 'link',
+        'type' => 'text',
+    ) );
+
+    $showcase_metabox->add_group_field( $showcase_metabox_group, array(
+        'name' => 'Class',
+        'id'   => 'class',
         'type' => 'text',
     ) );
 
