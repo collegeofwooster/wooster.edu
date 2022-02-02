@@ -50,6 +50,10 @@ j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNo
 </script>
 <!-- End Google Tag Manager -->
 
+<!-- facebook tracking code -->
+<meta name="facebook-domain-verification" content="g3lhfalbuajlht5b5p3d7gp3ic1djl" />
+<!-- /facebook tracking code -->
+
 </head>
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
