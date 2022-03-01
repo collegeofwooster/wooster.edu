@@ -306,7 +306,6 @@ function people_shortcode( $atts ) {
 		'style' => 'grid',
 	), $atts ));
 
-
 	// set some query vars
 	$vars = array( 
 		"posts_per_page" => -1,
@@ -333,7 +332,9 @@ function people_shortcode( $atts ) {
 
     $people_content = '<section class="people">';
 
-	$people_content .= '<div class="people-search"><input type="text" name="people-search-term" id="s" placeholder="Search Name, Academic Department, or Title"></div>';
+	if ( $style !== 'lightbox' ) {
+		$people_content .= '<div class="people-search"><input type="text" name="people-search-term" id="s" placeholder="Search Name, Academic Department, or Title"></div>';
+	}
 
 	if ( $p->have_posts() ) : 
 
