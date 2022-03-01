@@ -16,5 +16,24 @@ jQuery(document).ready(function($){
 		});
 	}
 
+
+	// handle lightbox bio people style.
+	$('.person-bio-link').click( function(){
+
+		var person_div_sel = '#'+$(this).attr( 'rel' );
+		var popup_content = $( person_div_sel ).html();
+		console.log( popup_content );
+
+		// open a magnific popup with the bio
+		$.magnificPopup.open({
+			items: {
+				src: popup_content
+			},
+			type: 'inline'
+		});
+
+	});
+
+
 });
 

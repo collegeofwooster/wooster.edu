@@ -303,6 +303,7 @@ function people_shortcode( $atts ) {
 	// set default params and override with those in shortcode
 	extract( shortcode_atts( array(
 		'category' => '',
+		'style' => 'grid',
 	), $atts ));
 
 
@@ -341,14 +342,39 @@ function people_shortcode( $atts ) {
 		// Start the Loop.
 		while ( $p->have_posts() ) : $p->the_post();
 
-			$people_content .='<div class="person-entry visible">' . 
-				'<a href="' . get_the_permalink() . '">' . get_the_post_thumbnail() . '</a>' .
-				'<div class="info">
-					<h4><a href="' . get_the_permalink() . '">' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</a></h4>
-					<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>
-					<p class="person-email"><a href="mailto:' . get_cmb_value( "person_email" ) . '">' . get_cmb_value( "person_email" ) . '</a></p>
+			if ( $style == 'lightbox' ) {
+
+				$people_content .='<div class="person-entry visible">' . 
+					'<a class="person-bio-link" rel="person-' . get_the_ID() . '">' . get_the_post_thumbnail() . '</a>' .
+					'<div class="info">
+						<h4><a class="person-bio-link" rel="person-' . get_the_ID() . '">' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</a></h4>
+						<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>
+					</div>
 				</div>
-			</div>';
+				<div class="hidden" id="person-' . get_the_ID() . '">
+					<div class="person-bio-lightbox">
+						<div class="bio-left">
+							<img src="' . get_the_post_thumbnail_url() . '" class="bio-photo" />
+						</div>
+						<div class="bio-right">' . 
+							'<h3>' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</h3>' .
+							'<p class="bio-person-title"><strong>' . get_cmb_value( 'person_title' ) . '</strong></p>' .
+							apply_filters( 'the_content', get_the_excerpt() ) . '</div>
+					</div>
+				</div>';
+
+			} else {
+
+				$people_content .='<div class="person-entry visible">' . 
+					'<a href="' . get_the_permalink() . '">' . get_the_post_thumbnail() . '</a>' .
+					'<div class="info">
+						<h4><a href="' . get_the_permalink() . '">' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</a></h4>
+						<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>
+						<p class="person-email"><a href="mailto:' . get_cmb_value( "person_email" ) . '">' . get_cmb_value( "person_email" ) . '</a></p>
+					</div>
+				</div>';
+
+			}
 
 		endwhile;
 
