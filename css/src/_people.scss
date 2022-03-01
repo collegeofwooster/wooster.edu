@@ -46,6 +46,10 @@
 		display: none;
 		box-shadow: 0 0 20px rgba( black, .2 );
 
+		a {
+			cursor: pointer;
+		}
+
 		&.visible {
 			display: block;
 		}
