@@ -130,6 +130,42 @@ function list_people_category( $category ) {
 }
 
 
+function get_person_categories( $person_id = '' ) {
+
+	// if the person id is empty, set it from the post info
+	if ( empty( $person_id ) ) $person_id = get_the_ID();
+
+	// return the people cats
+	return wp_get_post_terms( $person_id, 'people_cat' );
+
+}
+
+
+// takes a person ID and category slug, and returns boolean of whether or not the person is in that people_cat
+function is_person_in_category( $person_id = '', $person_category ) {
+	
+	// set the person id if it's empty
+	if ( empty( $person_id ) ) $person_id = get_the_ID();
+
+	// get the person's categories
+	$person_categories = get_person_categories( $person_id );
+
+	// if we have categories
+	if ( !empty( $person_categories ) ) {
+
+		// loop through the cats
+		foreach ( $person_categories as $person_cat ) {
+
+			// return true if their category matches the one we fed in
+			if ( $person_cat->slug == $person_category ) return true;
+
+		}
+	}
+
+	// if nothing has matched or the categories are empty, return false
+	return false;
+}
+
 
 function do_people_tab_nav( $title, $key ) {
 	$content = get_cmb_value( "people_" . $key );

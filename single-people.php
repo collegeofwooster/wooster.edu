@@ -8,7 +8,10 @@ get_header();
 $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
-$crumb_code = '<a href="/faculty">Faculty</a> &raquo; ';
+if ( is_person_in_category( null, 'faculty' ) ) {
+	$crumb_code = '<a href="/faculty">Faculty</a> &raquo; ';
+}
+
 $page_header_title = get_cmb_value( 'page_header_title' );
 
 ?>
@@ -17,9 +20,11 @@ $page_header_title = get_cmb_value( 'page_header_title' );
 		<div class="page-header-overlay"></div>
         <div class="wrap">
     		<div class="breadcrumbs">
+    			<?php if ( !empty( $crumb_code ) ) { ?>
     			<div class="crumbs">
     				<?php print $crumb_code; ?>
     			</div>
+    			<?php } ?>
     			<h1 class="page-title"><?php print $page_header_title; ?></h1>
     		</div>
         </div>
