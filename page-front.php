@@ -102,7 +102,7 @@ get_header();
 				$post_query = new WP_Query( array( 
 					'posts_per_page' => 3, 
 					'post_type' => 'post', 
-					'cat' => '-1105,-1106,-1066,-644,-945,-690,-1292', 
+					'cat' => '-1105,-1106,-1066,-644,-945,-690,-1292,-1328', 
 					'orderby' => 'date', 
 					'order' => 'DESC',
 					'ignore_sticky_posts' => 1,
