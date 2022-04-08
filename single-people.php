@@ -8,9 +8,22 @@ get_header();
 $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 
-the_page_header( null, '/wp-content/uploads/2021/07/skykauke.jpg' );
+$crumb_code = '<a href="/faculty">Faculty</a> &raquo; ';
+$page_header_title = get_cmb_value( 'page_header_title' );
 
 ?>
+
+	<div class="page-header yellow" style="background-image: url(/wp-content/uploads/2021/07/skykauke.jpg);">
+		<div class="page-header-overlay"></div>
+        <div class="wrap">
+    		<div class="breadcrumbs">
+    			<div class="crumbs">
+    				<?php print $crumb_code; ?>
+    			</div>
+    			<h1 class="page-title"><?php print $page_header_title; ?></h1>
+    		</div>
+        </div>
+	</div>
 
 	<div class="two-column bio">
 		<div class="wrap">
