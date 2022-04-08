@@ -107,14 +107,19 @@ $courses = get_cmb_value( "person_courses" );
 					<hr class="space" />
 					<?php } ?>
 
-					<?php if ( !empty( get_cmb_value( 'area_post_tag' ) ) ) { ?>
+					<?php 
+					$area_tag = get_cmb_value( 'area_post_tag' );
+					$tag_info = get_term_by( 'slug', $area_tag, 'post_tag' );
+					if ( !empty( $area_tag ) ) { 
+
+						?>
 					<div class="area-news">
-						<h2>Latest News</h2>
+						<h2>Latest <?php print $tag_info->name ?> News</h2>
 
 						<div class="article-cards">						  
 						<?php
 						$args = array(
-						    'tag' => get_cmb_value( 'area_post_tag' ),
+						    'tag' => $area_tag,
 						    'posts_per_page' => 4
 						);
 						$query = new WP_Query( $args );
@@ -143,6 +148,7 @@ $courses = get_cmb_value( "person_courses" );
 						  
 						?>
 						</div>
+						<a href="/tag/<?php print $area_tag; ?>" class="btn gold">More <?php print $tag_info->name ?> Articles</a>
 					</div>
 					<?php } ?>
 

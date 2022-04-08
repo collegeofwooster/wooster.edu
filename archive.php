@@ -22,6 +22,11 @@ elseif ( is_category() ) :
 	$page_title = "Category:" . $category->name;
 	$page_subtitle = ( !empty( $category->category_description ) ? $category->category_description : '&nbsp;' );
 
+elseif ( is_tag() ) :
+	$tag_info = get_queried_object();
+	$page_title = "<span>Tag:</span> " . $tag_info->name;
+	$page_subtitle = ( !empty( $tag_info->description ) ? $tag_info->description : '&nbsp;' );
+
 else :
 	$page_title = 'Archives';
 
