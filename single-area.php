@@ -79,6 +79,7 @@ $courses = get_cmb_value( "person_courses" );
 					<?php do_area_tab_nav( "Productions/Events", "productions" ) ?>
 					<?php do_area_tab_nav( "Student Projects", "student_projects" ) ?>
 					<?php do_area_tab_nav( "Faculty Emeriti", "faculty_emeriti" ) ?>
+					<?php do_area_tab_nav( "Annual Report", "annual_report" ) ?>
 					<?php do_area_tab_nav( "CAEP Annual Reporting Measures", "caep" ) ?>
 				</ul>
 
@@ -176,6 +177,7 @@ $courses = get_cmb_value( "person_courses" );
 				<?php do_area_tab_content( "Productions/Events", "productions" ) ?>
 				<?php do_area_tab_content( "Student Projects", "student_projects" ) ?>
 				<?php do_area_tab_content( "Faculty Emeriti", "faculty_emeriti" ) ?>
+				<?php do_area_tab_content( "Annual Report", "annual_report" ) ?>
 				<?php do_area_tab_content( "CAEP Annual Reporting Measures", "caep" ) ?>
 
 			<?php

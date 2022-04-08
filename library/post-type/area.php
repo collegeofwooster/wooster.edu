@@ -316,6 +316,14 @@ function area_metaboxes() {
         )
     ) );
     $area_box->add_field( array(
+        'name' => 'Annual Report',
+        'id' => $prefix . 'area_annual_report',
+        'type' => 'wysiwyg',
+        'options' => array (
+        	'textarea_rows' => 6
+        )
+    ) );
+    $area_box->add_field( array(
         'name' => 'CAEP Annual Reporting Measures',
         'id' => $prefix . 'area_caep',
         'type' => 'wysiwyg',
