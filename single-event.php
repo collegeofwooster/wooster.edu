@@ -21,7 +21,7 @@ get_header();
 					</div>
 					<div class="event-info">
 						<?php 
-						// display credit union name
+						// display times/dates
 						if ( has_cmb_value( 'event_start' ) && has_cmb_value( 'event_end' ) ) {
 							$start = get_cmb_value( 'event_start' );
 							$end = get_cmb_value( 'event_end' );
