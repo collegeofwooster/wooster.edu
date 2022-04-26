@@ -121,6 +121,7 @@ $courses = get_cmb_value( "person_courses" );
 						<?php
 						$args = array(
 						    'tag' => $area_tag,
+						    'category__not_in' => 793,
 						    'posts_per_page' => 4
 						);
 						$query = new WP_Query( $args );
