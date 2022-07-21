@@ -21,7 +21,7 @@ get_header();
 					the_post_thumbnail( 'full' );
 					the_content();
 					?>
-					<p class="quiet">Posted in <?php print get_the_category_list( ', ' ) ?>.</p>
+					<p class="quiet">Posted in <?php print get_the_category_list( ', ' ) ?> on <?php the_date( 'F j, Y' ); ?>.</p>
 					<hr />
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
