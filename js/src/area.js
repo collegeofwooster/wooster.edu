@@ -1,5 +1,20 @@
 
 
+// Read a page's GET URL variables and return them as an associative array.
+var getUrlVars = function() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+
+
 // area controls
 jQuery(document).ready(function($){
 
@@ -82,6 +97,22 @@ jQuery(document).ready(function($){
 			}
 
 		});
+
+
+		// get the query vars
+		var query_vars = getUrlVars();
+
+		// onload switch tabs
+		if ( typeof( query_vars['tab'] ) !== 'undefined' ) {
+
+			// hide visible content divs
+			$( '.area .tab-content:visible' ).removeClass( 'active' );
+
+			// get content div based on that class
+			$( '.area .tab-content.area-'+query_vars['tab'] ).addClass( 'active' );
+			
+		}
+
 
 		// set faculty photo height equal to width.
 		set_photo_height();
