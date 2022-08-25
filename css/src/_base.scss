@@ -4,7 +4,7 @@ body {
 	@include font;
 	margin: 0;
 	color: $grey-dark;
-	background: lighten( $grey-light, 35% );
+	background: white;
 
 	font-size: 14px;
 	line-height: 100%;
@@ -46,6 +46,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
+	line-height: 1.2em;
 }
 
 h4 {
@@ -71,11 +72,11 @@ strong {
 }
 
 a {
-	color: rgba( $foam, .8 );
+	color: rgba( $blue, .8 );
 	text-decoration: none;
 
 	&:hover {
-		color: $foam;
+		color: $blue;
 		text-decoration: underline;
 	}
 }

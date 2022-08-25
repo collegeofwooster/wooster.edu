@@ -61,7 +61,7 @@ while ( $row = odbc_fetch_array( $result ) ) {
     $results_final[] = $row;
 
     // print_r( $row );
-    $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $row['POSITION'] . "</td><td nowrap=\"nowrap\">" . ( !empty( $row['OFFICE'] ) ? $row['OFFICE'] . '<br />' : '' ) . ( !empty( $row['PHONE1'] ) ? $row['PHONE1'] . ' ext #' . $ext['EXT'] . "<br />" : '' ) . "<a href=\"mailto:" . $row['EMAIL'] . "\">" . $row['EMAIL'] . "</a></td></tr>";
+    $directory_table .= '<tr><td>' . $row['NAME'] . "</td><td>" . $row['POSITION'] . "</td><td nowrap=\"nowrap\">" . ( !empty( $row['OFFICE'] ) ? $row['OFFICE'] . '<br />' : '' ) . ( !empty( $row['PHONE1'] ) ? $row['PHONE1'] . ( !empty( $ext['EXT'] ) ? ' ext #' . $ext['EXT'] . "<br />" : "" ) : '' ) . "<a href=\"mailto:" . $row['EMAIL'] . "\">" . $row['EMAIL'] . "</a></td></tr>";
 
 }
 

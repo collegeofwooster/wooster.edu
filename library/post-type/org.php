@@ -80,10 +80,63 @@ register_taxonomy( 'org_cat',
 );
 
 
-
+// get a list of the orgs categories
 function get_org_categories() {
 	$terms = get_terms( 'org_cat' );
 	return $terms;
 }
 
+
+// the 'orgs' shortcode
+function orgs_shortcode( $atts ) {
+
+	// set default params and override with those in shortcode
+	extract( shortcode_atts( array(
+		'category' => '',
+		'show_title' => true
+	), $atts ));
+
+	$args = array(
+		'post_type' => 'org',
+		'org_cat' => $category,
+		'orderby' => 'title',
+		'order' => 'ASC',
+		'posts_per_page' => '-1'
+	);
+	$query = new WP_Query( $args );
+
+	// get the category info so we have the title
+	$cat_info = get_term_by( 'slug', $category, 'org_cat' );
+
+	// if there are orgs
+	if ( $query->have_posts() ) {
+
+		// start the org listing
+		$orgs_list = '';
+
+		// add org category title
+		if ( $show_title ) {
+			$orgs_list .= '<h3>' . $cat_info->name . '</h3>';
+		}
+
+		// open the list tag
+		$orgs_list .= '<ul class="org-list">';
+
+		// loop through the results
+		while ( $query->have_posts() ) : $query->the_post();
+
+			// add to the list
+			$orgs_list .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+
+		endwhile;
+
+		// stop the org listing
+		$orgs_list .= '</ul>';
+	}
+
+	// send the orgs list back to display
+	return $orgs_list;
+
+}
+add_shortcode( 'orgs', 'orgs_shortcode' );
 
