@@ -87,7 +87,7 @@ if ( !empty( $events ) ) {
 			// store the organization
 			if ( $event_cf->fieldID == 17192 ) update_post_meta( $post_id, '_p_event_organization', $event_cf->value );
 
-			// store the organization
+			// store the category
 			if ( $event_cf->fieldID == 17289 ) {
 
 				// split out multiple categories by comma
