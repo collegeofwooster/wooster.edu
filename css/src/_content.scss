@@ -100,6 +100,35 @@ section.content {
 			}
 		}
 	}
+
+	.alignleft {
+		float: left;
+		margin: 20px 20px 20px 0;
+	}
+
+	.alignright {
+		float: right;
+		margin: 20px 0 20px 20px;
+	}
+
+	.aligncenter {
+		display: block;
+		margin: 15px auto;
+	}
+
+	img {
+		&.aligncenter, &.alignright, &.alignleft {
+			border: 1px solid #aaa;
+			box-shadow: 0 0 20px rgba( #666, .4 );
+		}
+	}
+
+	.wp-caption-text {
+		font-size: .9em;
+		opacity: .6;
+		padding: 5px 0 0;
+	}
+
 }
 
 
