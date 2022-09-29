@@ -32,7 +32,7 @@ the_page_header();
 				</div>
 
 				<div class="databases">
-					<h4>Databases:</h4>
+					<h4>Databases for Articles:</h4>
 					<?php quick_nav_menu( 'library-databases', 'Select a Database' ); ?>
 					<?php print get_snippet( 'library-databases', 0 ) ?>
 				</div>

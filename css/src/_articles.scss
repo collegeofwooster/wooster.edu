@@ -62,37 +62,39 @@
 		}
 	}
 
-	.filter {
-		@include respond-to( $bp-m ) {
-			flex: 1;
-			flex-basis: 45%;
-			margin: 0 5% 5% 0;
-		}
+}
 
-		@include respond-to( $bp-l ) {
-			flex: 1;
-			flex-basis: 30.3333%;
-			margin: 0 3% 3% 0;
-		}
 
-		h3 {
-			text-transform: uppercase;
-			color: black;
-			padding: 5px 0;
-			font-size: 1.2em;
-		}
+.article-filter {
+	@include respond-to( $bp-m ) {
+		flex: 1;
+		flex-basis: 45%;
+		margin: 0 5% 5% 0;
+	}
 
-		.browse-by-category {
-			padding: 0 0 15px 0;
+	@include respond-to( $bp-l ) {
+		flex: 1;
+		flex-basis: 30.3333%;
+		margin: 0 3% 3% 0;
+	}
 
-			select {
-				max-width: 220px;
-			}
-		}
+	h3 {
+		text-transform: uppercase;
+		color: black;
+		padding: 5px 0;
+		font-size: 1.2em;
+	}
 
-		.promos {
-			margin-top: 25px;
+	.browse-by-category {
+		padding: 0 0 15px 0;
+
+		select {
+			max-width: 220px;
 		}
+	}
+
+	.promos {
+		margin-top: 25px;
 	}
 }
 
