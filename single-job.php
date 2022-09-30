@@ -71,10 +71,20 @@ get_header();
 						print "<p><strong>Education/Experience Required:</strong></p>";
 						print apply_filters( 'the_content', get_cmb_value( 'job_education' ) ) . "<br>";
 					}
+					
+					if ( has_cmb_value( 'job_instructions' ) ) { 
+						print "<p><strong>Application Instructions:</strong></p>";
+						print apply_filters( 'the_content', get_cmb_value( 'job_instructions' ) ) . "<br>";
+					}
 
 					if ( has_cmb_value( 'job_comments' ) ) { 
 						print "<p><strong>Additional Comments:</strong></p>";
 						print apply_filters( 'the_content', get_cmb_value( 'job_comments' ) ) . "<br>";
+					}
+					
+					if ( has_cmb_value( 'job_eeo_statement' ) ) { 
+						print "<p><strong>Equal Opportunity Employment Statement:</strong></p>";
+						print apply_filters( 'the_content', get_cmb_value( 'job_eeo_statement' ) ) . "<br>";
 					}
 
 					?>
