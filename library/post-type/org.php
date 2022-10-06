@@ -90,6 +90,9 @@ function get_org_categories() {
 // the 'orgs' shortcode
 function orgs_shortcode( $atts ) {
 
+	// remove wpautop
+	remove_filter( 'the_content', 'wpautop' );
+
 	// set default params and override with those in shortcode
 	extract( shortcode_atts( array(
 		'category' => '',
@@ -133,6 +136,12 @@ function orgs_shortcode( $atts ) {
 		// stop the org listing
 		$orgs_list .= '</ul>';
 	}
+
+	// apply filters first
+	$orgs_list = apply_filters( 'the_content', $orgs_list );
+
+	// add back wpautop
+	add_filter( 'the_content', 'wpautop' );
 
 	// send the orgs list back to display
 	return $orgs_list;
