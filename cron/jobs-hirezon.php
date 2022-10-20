@@ -25,7 +25,7 @@ if ( !empty( $jobs->channel->item ) ) {
 	foreach ( $jobs->channel->item as $job ) {
 
 		// uncomment to dump first result and die for testing (prevents a full loop through all records)
-		// print_r( $job->guid ); die;
+		// print_r( $job ); die;
 
 		// if it's not a student job.
 		if ( $job->category != 'Student' ) {
