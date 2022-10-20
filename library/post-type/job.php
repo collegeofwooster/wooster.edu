@@ -167,6 +167,12 @@ function job_metaboxes( $meta_boxes ) {
         'date_format' => "Y-m-d"
     ) );
 
+    $job_metabox->add_field( array(
+        'name' => 'External Job ID',
+        'id'   => CMB_PREFIX . 'job_external_id',
+        'type' => 'text_small'
+    ) );
+
 }
 add_filter( 'cmb2_admin_init', 'job_metaboxes' );
 
