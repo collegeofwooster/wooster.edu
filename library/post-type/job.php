@@ -110,6 +110,20 @@ function job_metaboxes( $meta_boxes ) {
     ) );
 
     $job_metabox->add_field( array(
+        'name' => 'Application Instructions',
+        'id'   => CMB_PREFIX . 'job_instructions',
+        'type' => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 7 )
+    ) );
+
+    $job_metabox->add_field( array(
+        'name' => 'Equal Employment Opportunity Statement',
+        'id'   => CMB_PREFIX . 'job_eeo_statement',
+        'type' => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 7 )
+    ) );
+
+    $job_metabox->add_field( array(
         'name' => 'Comments',
         'id'   => CMB_PREFIX . 'job_comments',
         'type' => 'wysiwyg',
