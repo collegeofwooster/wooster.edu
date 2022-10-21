@@ -28,7 +28,7 @@ if ( !empty( $jobs->channel->item ) ) {
 		// print_r( $job ); die;
 
 		// if it's not a student job.
-		if ( $job->category != 'Student' ) {
+		if ( $job->category != 'Student' && $job->category != 'Internal' ) {
 
 		    // get a previous post if it exists.
 		    $previous_post = $wpdb->get_results( "SELECT * FROM `woo_postmeta` WHERE `meta_key`='_p_job_external_id' AND `meta_value`='" . $job->guid . "' LIMIT 1;" );
