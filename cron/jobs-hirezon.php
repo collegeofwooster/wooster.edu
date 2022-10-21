@@ -75,9 +75,6 @@ if ( !empty( $jobs->channel->item ) ) {
 
 			}
 
-			// if we're in a browser, add <pre> tags
-			if ( !is_cli() ) print "</pre>";
-
 			// set update some event details to postmeta (they'll be added if they don't exist)
 			update_post_meta( $post_id, '_p_job_expires', date( 'Y-m-d', strtotime( $job->endDate ) ) );
 			update_post_meta( $post_id, '_p_job_apply_email', 'info@interviewexchange.com' );
@@ -110,6 +107,9 @@ if ( !empty( $jobs->channel->item ) ) {
 				}
 
 			}
+
+			// if we're in a browser, add <pre> tags
+			if ( !is_cli() ) print "</pre>";
 
 		}
 
