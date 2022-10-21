@@ -37,12 +37,14 @@ get_header();
 							print "<p>" . implode( ', ', $job_cats ) . "</p>";
 						}
 
+						/*
 						// display job expiration date
 						if ( has_cmb_value( 'job_expires' ) ) { ?>
 							<h5>Closing:</h5>
 							<p><?php print date( "n/j/Y", strtotime( get_cmb_value( 'job_expires' ) ) ) ?></p>
 							<?php
 						}
+						*/
 
 						// if we have a link, show that
 						if ( has_cmb_value( 'job_apply_link' ) ) { ?>
