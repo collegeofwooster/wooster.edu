@@ -5,8 +5,6 @@
 
 	@include respond-to( 768px ) {
 		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 
 	&.right {
@@ -25,6 +23,10 @@
 			flex: 1;
 			flex-basis: 20%;
 			margin-right: 3%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			flex-basis: 15%;
 		}
 
 		img {
@@ -66,6 +68,10 @@
 		@include respond-to( 768px ) {
 			flex: 1;
 			flex-basis: 80%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			flex-basis: 85%;
 		}
 	}
 }
