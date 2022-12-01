@@ -33,7 +33,7 @@ function require_multi( $files ) {
 
 
 // include utility functions
-require_multi( 'core', 'api', 'metabox', 'page-settings', 'showcase', 'featured-article', 'photo-tiles', 'accordion', 'button', 'emergency', 'images', 'articles', 'box', 'boxes', 'statistics', 'is-database/shortcode', 'directory', 'counselors', 'post-showcase' );
+require_multi( 'core', 'api', 'metabox', 'page-settings', 'showcase', 'featured-article', 'photo-tiles', 'accordion', 'button', 'emergency', 'images', 'articles', 'box', 'boxes', 'statistics', 'is-database/shortcode', 'directory', 'counselors', 'post-showcase', 'quote' );
 
 
 // flush rewrite rules for custom post types when we switch themes
