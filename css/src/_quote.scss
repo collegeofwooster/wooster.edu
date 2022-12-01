@@ -23,7 +23,7 @@
 	.quote-photo {
 		@include respond-to( 768px ) {
 			flex: 1;
-			flex-basis: 140px;
+			flex-basis: 20%;
 			margin-right: 3%;
 		}
 
@@ -65,7 +65,7 @@
 
 		@include respond-to( 768px ) {
 			flex: 1;
-			flex-basis: 67%;
+			flex-basis: 80%;
 		}
 	}
 }
