@@ -5,6 +5,8 @@
 
 	@include respond-to( 768px ) {
 		display: flex;
+		align-items: top;
+		justify-content: top;
 	}
 
 	&.right {
@@ -23,6 +25,7 @@
 			flex: 1;
 			flex-basis: 20%;
 			margin-right: 3%;
+			padding-top: 20px;
 		}
 
 		@include respond-to( $bp-xl ) {
