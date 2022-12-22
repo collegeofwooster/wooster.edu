@@ -21,9 +21,9 @@ query_posts( $args );
 
 get_header(); 
 
-the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-news.webp' );
+the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-news.jpg' );
 
-?>
+?> 
 
 	<div class="content-wide" role="main">
 		<div class="wrap">
