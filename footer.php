@@ -45,5 +45,10 @@ $admin_email = get_option( 'admin_email' );
 </div><!-- #container -->
 
 <?php wp_footer(); ?>
+
+<!-- hubspot -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23526806.js"></script>
+<!-- /hubspot -->
+
 </body>
 </html>
