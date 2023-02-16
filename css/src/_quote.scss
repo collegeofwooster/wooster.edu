@@ -61,7 +61,7 @@
 		.quote-attribution {
 			@include font-bold;
 			padding: 20px 30px;
-			color: none;
+			display: none;
 
 			&:before {
 				content: '- ';
