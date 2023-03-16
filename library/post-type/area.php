@@ -420,10 +420,14 @@ function list_area_category() {
 	 					$classes[] = 'tl';
 	 				break;
 	 				case "pathway":
-	 					$cats[] = '<span class="path">Pathway</span>';
-	 					$classes[] = 'path';
-	 				break;
-	 			}
+						$cats[] = '<span class="path">Pathway</span>';
+						$classes[] = 'path';
+					break;
+					case "dual":
+						$cats[] = '<span class="dual">Dual Degree Program</span>';
+						$classes[] = 'dual';
+					break;
+			   }
 			}
 		}
 		?>
@@ -465,9 +469,12 @@ function get_area_cats( $area_id ) {
  					$cats[] = '<span class="tl">Teaching Licensure</span>';
  				break;
  				case "pathway":
- 					$cats[] = '<span class="path">Pathway</span>';
- 				break;
- 			}
+					$cats[] = '<span class="path">Pathway</span>';
+				break;
+				case "dual":
+					$cats[] = '<span class="dual">Dual Degree Program</span>';
+				break;
+		   }
 		}
 	}
 	return $cats;
