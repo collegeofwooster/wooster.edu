@@ -20,7 +20,7 @@ the_page_header();
 			<div class="academics">
 			
 				<div class="area-filter">
-					<select><option value="all">-- All Areas --</option><option value="ma">Major</option><option value="mi">Minor</option><option value="pa">Pre-Professional Advising</option><option value="tl">Teaching Licensure</option><option value="path">Pathway</option></select>
+					<select><option value="all">-- All Areas --</option><option value="ma">Major</option><option value="mi">Minor</option><option value="pa">Pre-Professional Advising</option><option value="tl">Teaching Licensure</option><option value="path">Pathway</option><option value="dual">Dual Degree Program</option></select>
 				</div>
 				<hr />
 				<div class="area-listing">
