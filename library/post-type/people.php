@@ -142,7 +142,7 @@ function get_person_categories( $person_id = '' ) {
 
 
 // takes a person ID and category slug, and returns boolean of whether or not the person is in that people_cat
-function is_person_in_category( $person_id = '', $person_category ) {
+function is_person_in_category( $person_id = '', $person_category=0 ) {
 	
 	// set the person id if it's empty
 	if ( empty( $person_id ) ) $person_id = get_the_ID();

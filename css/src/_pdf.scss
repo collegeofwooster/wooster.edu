@@ -1,0 +1,13 @@
+
+
+.pdf-frame {
+    padding: 20px 0;
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        @include respond-to( $bp-m ) { height: 500px; }
+        @include respond-to( $bp-l ) { height: 700px; }
+    }
+}
+

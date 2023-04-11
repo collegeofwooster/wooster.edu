@@ -41,7 +41,11 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 
 // load post types
-require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year', 'post-type/fund', 'post-type/job', 'post-type/org' );
+require_multi( 'post-type/people', 'post-type/area', 'post-type/event', 'post-type/alum', 'post-type/year', /* 'post-type/fund', */ 'post-type/job', 'post-type/org' );
+
+
+// load shortcodes
+require_multi( 'shortcode/pdf' );
 
 
 // require composer autoload

@@ -13,7 +13,7 @@ global $wp_query;
 // set the args based on current query
 $args = $wp_query->query_vars;
 $args['posts_per_page'] = 16;
-$args['cat'] = '-1105,-1106,-1066,-644,-945,-690,-1292,-1328,-1364,-1419';
+$args['cat'] = '-1105,-1106,-1066,-644,-945,-690,-1292,-1328,-1364,-1419,-1474';
 
 // rerun the query
 query_posts( $args );
