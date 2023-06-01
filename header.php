@@ -31,15 +31,6 @@
 <meta name="msapplication-TileColor" content="#ffc712">
 <meta name="theme-color" content="#ffc712">
 
-<!-- old Google Site Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3048189-35"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-3048189-35');
-</script>
-
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
