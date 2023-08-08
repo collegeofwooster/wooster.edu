@@ -169,8 +169,8 @@
 		display: inline-block;
 		background: lighten( $grey-light, 25% );
 		color: $grey;
-		padding: 4px 7px;
-		font-size: .9em;
+		padding: 6px 12px;
+		font-size: .8em;
 		margin-top: 4px;
 		white-space: nowrap;
 
@@ -194,9 +194,14 @@
 			color: $black;
 		}
 
-		&.tl, &.dual {
+		&.tl {
 			background: $foam;
 			color: white;
+		}
+
+		&.dual {
+			background: $gold;
+			color: $black;
 		}
 	}
 }
