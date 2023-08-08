@@ -5,7 +5,7 @@
 function directory_shortcode() {
 
 	// get the table code 
-	$directory_table_code = file_get_contents( "https://wooster.edu/wp-content/uploads/directory/directory.html" );
+	$directory_table_code = file_get_contents( "https://api.wooster.edu/directory/index.php" );
 
 	// return it
 	return $directory_table_code;
