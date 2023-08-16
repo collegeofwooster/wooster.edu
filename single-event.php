@@ -59,8 +59,8 @@ get_header();
 						<!-- 3. Place event data -->
 						<span class="addtocalendar atc-style-blue">
 							<var class="atc_event">
-								<var class="atc_date_start"><?php print date( 'Y-m-d g:i', $start ) ?>:00</var>
-								<var class="atc_date_end"><?php print date( 'Y-m-d g:i', $end ) ?>:00</var>
+								<var class="atc_date_start"><?php print date( 'Y-m-d H:i', $start ) ?>:00</var>
+								<var class="atc_date_end"><?php print date( 'Y-m-d H:i', $end ) ?>:00</var>
 								<var class="atc_timezone">America/New_York</var>
 								<var class="atc_title"><?php the_title() ?></var>
 								<var class="atc_description"><?php the_content(); ?></var>
