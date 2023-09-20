@@ -133,7 +133,7 @@ get_header();
 					<div class="front-events-list">
 						<?php 
 						// get the upcoming events
-						$upcoming = get_upcoming_events( 4 );
+						$upcoming = get_upcoming_events( 4, 'homepage-featured' );
 
 						// if we have upcoming events
 						if ( !empty( $upcoming ) ) {
