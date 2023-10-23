@@ -120,20 +120,26 @@
 		}
 
 		.slide-content {
-			position: relative;
+			position: absolute;
+			bottom: 20%;
+			left: 70px;
+			right: 40px;
 			color: white;
 			pointer-events: none;
-			max-width: 550px;
 			z-index: 50;
-			margin-top: 20px;
+
+			.wrap {
+				min-width: auto;
+			}
 
 			@include respond-to( $bp-m ) {
 				position: absolute;
-				top: 30%;
-				left: 70px;
+				bottom: 70px;
+				left: 90px;
 				margin-top: -100px;
 				margin-left: 0;
 				margin-right: 0;
+				max-width: 550px;
 			}
 
 			@include respond-to( $bp-l ) {
@@ -201,7 +207,7 @@
 
 	.showcase-nav {
 		position: absolute;
-		bottom: 40px;
+		bottom: 20px;
 		left: 80px;
 		right: 80px;
 		z-index: 101;
@@ -220,8 +226,8 @@
 		a {
 			display: inline-block;
 			cursor: pointer;
-			width: 50px;
-			height: 50px;
+			width: 40px;
+			height: 40px;
 			text-indent: -300px;
 			overflow: hidden;
 			opacity: .7;
