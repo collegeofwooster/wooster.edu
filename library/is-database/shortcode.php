@@ -32,7 +32,7 @@ function is_search_shortcode() {
 				$('tr:nth-child(odd)').addClass("odd");
 			}
 		}
-		xmlhttp.open("GET","/wp-content/themes/wooster/library/is-database/database-query.php?n=" + name + "&y=" + year + "&t=" +istitle + "&m=" + major + "&a=" + advisor,true);
+		xmlhttp.open("GET","https://api.wooster.edu/is-search/?n=" + name + "&y=" + year + "&t=" +istitle + "&m=" + major + "&a=" + advisor,true);
 		xmlhttp.send();
 	}
 
