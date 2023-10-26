@@ -1,0 +1,182 @@
+
+
+.agenda-timezone {
+	padding: 15px 0;
+}
+
+.agenda-container {
+	&.slim {
+		margin-top: -30px;
+	}
+}
+	
+.agenda-day-header {
+	background: $gold;
+	color: $black;
+	padding: 20px 30px;
+	
+	@include respond-to( $bp-m ) { margin: 0; padding: 20px 40px; }
+	@include respond-to( $bp-l ) { margin: 0; padding: 20px 50px; }
+	@include respond-to( $bp-xl ) { margin: 0; padding: 20px 60px; }
+
+	.content-wide &, .accordion-content & {
+		margin: 20px -30px 0;
+		@include respond-to( $bp-m ) { margin: 20px -40px 0; }
+		@include respond-to( $bp-l ) { margin: 25px -50px 0; }
+		@include respond-to( $bp-xl ) { margin: 25px -60px 0; }
+	}	
+}
+
+.agenda {
+	background: rgba( $grey-light, .2 );
+	padding: 10px 30px;
+	@include respond-to( $bp-m ) { margin: 0; padding: 20px 40px; }
+	@include respond-to( $bp-l ) { margin: 0; padding: 20px 50px; }
+	@include respond-to( $bp-xl ) { margin: 0; padding: 20px 60px; }
+
+	.content-wide &, .accordion-content & {
+		margin: 0 -30px 20px;
+		@include respond-to( $bp-m ) { margin: 0 -40px 30px; }
+		@include respond-to( $bp-l ) { margin: 0 -50px 35px; }
+		@include respond-to( $bp-xl ) { margin: 0 -60px 35px; }
+	}
+	
+	.agenda-item {
+		display: flex;
+		flex-wrap: wrap;
+		border-bottom: 1px solid rgba( $grey-light, .4 );
+		padding: 15px 0;
+		margin-bottom: 10px;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		div {
+			flex: 1;
+		}
+
+		&.agenda-heading {
+			display: none;
+			padding: 8px 0;
+
+			.time, .location, .content {
+				@include font-bold;
+				font-size: .8em;
+				text-transform: uppercase;
+				opacity: .5;
+				padding-bottom: 0;
+			}
+		}
+		
+
+		.time, .location {
+			flex-basis: 50%;
+			line-height: 1.5em;
+			padding-bottom: 10px;
+			padding-right: 10px;
+		}
+
+		.location {
+			p {
+				padding: 0;
+			}
+		}
+
+		.content {
+			flex-basis: 100%;
+			line-height: 1.5em;
+
+			p {
+				padding: 0 0 15px;
+			}
+
+			.people {
+				padding: 10px 0;
+			}
+
+			.person {
+				display: flex;
+				align-items: center;
+				vertical-align: middle;
+				padding: 5px 0;
+
+				.person-thumbnail, .person-info {
+					flex: 1;
+				}
+
+				.person-thumbnail {
+					padding: 0 15px 0 0;
+					max-width: 90px;
+
+					img {
+						display: block;
+					}
+				}
+			}
+
+			.sponsors {
+
+				@include respond-to( 500px ) {
+					display: flex;
+				}
+				align-items: center;
+				vertical-align: middle;
+
+				.sponsor {
+					@include respond-to( 500px ) {
+						flex: 0;
+					}
+
+					flex-grow: 0;
+					text-align: center;
+					padding: 0 10px 0 0;
+
+					img {
+						max-width: 100px;
+						filter: grayscale(100%);
+						opacity: .6;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		@include respond-to( $bp-l ) {
+			&.agenda-heading {
+				display: flex;
+			}
+			
+			.time {
+				flex-basis: 30%;
+			}
+
+			.location {
+				flex-basis: 20%;
+				padding-right: 20px;
+			}
+
+			.content {
+				flex-basis: 50%;
+				padding-right: 20px;
+			}
+		}
+
+		@include respond-to( $bp-xl ) {
+			.time {
+				flex-basis: 20%;
+			}
+
+			.location {
+				flex-basis: 20%;
+				padding-right: 30px;
+			}
+
+			.content {
+				flex-basis: 60%;
+				padding-right: 30px;
+			}
+		}
+	}
+}
+
