@@ -205,7 +205,7 @@ function agenda_shortcode( $atts ) {
 	    // make sure we have agenda items
 	    if ( !empty( $agenda_items ) || have_rows( 'item', $agenda->ID ) ) {
 
-			$agenda_content .= '<div class="agenda-timezone">All times listed are <strong>' . ( $agenda_timezone == 'pt' ? 'Pacific' : 'Mountain' ) . '</strong>.</div>';
+			// $agenda_content .= '<div class="agenda-timezone">All times listed are <strong>' . ( $agenda_timezone == 'pt' ? 'Pacific' : 'Mountain' ) . '</strong>.</div>';
 
 		    // start generating the agenda code
 		    $agenda_content .= '<section class="agenda">';
