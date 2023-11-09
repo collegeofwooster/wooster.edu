@@ -31,7 +31,7 @@ the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-
 		    <div class="article-filter">
 		    	<h3>Browse by Category</h3>
 		    	<div class="browse-by-category">
-		    		<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419 ) ) ); ?>
+		    		<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419, 1952 ) ) ); ?>
 		    	</div>
 		    	<h3>Browse by Date</h3>
 		    	<div class="browse-by-date">
