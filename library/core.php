@@ -126,8 +126,12 @@ function parse_query_string() {
     // separate the parts of the URL
     $url_parts = explode( "?", $_SERVER['REQUEST_URI'] );
 
-    // parse the query string part into an array.
-    parse_str( $url_parts[1], $request );
+    if ( isset( $url_parts[1] ) ) {
+        // parse the query string part into an array.
+        parse_str( $url_parts[1], $request );
+    } else {
+        $request = array();
+    }
 
     // return it
     return $request;
