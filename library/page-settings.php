@@ -38,11 +38,11 @@ function the_page_header( $title_override = '', $background_override = '', $colo
     // reverse the order of the ancestors in the crumbs
     $crumbs = array_reverse( $crumbs );
 
+    // empty string to start from
+    $crumb_code = '';
+
     // if the ancestor array isn't empty, compile crumb code
     if ( !empty( $crumbs ) ) {
-
-        // empty string to start from
-        $crumb_code = '';
 
         // loop through the crumbs
         foreach ( $crumbs as $crumb ) {
