@@ -29,7 +29,7 @@ get_header();
 								print "<p>" . date( "F jS g:i a", $start ) . " -";
 								print date( "F jS g:i a", $end ) . "</p>";
 							} else {
-								print "<h4>" . date( "F jS", $start ) . "</h4>";
+								print "<h4>" . date( "F jS, Y", $start ) . "</h4>";
 								print "<p>" . date( "g:i a", $start );
 								print " - " . date( "g:i a", $end ) . "</p>";
 							}
