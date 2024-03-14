@@ -233,6 +233,8 @@ function agenda_shortcode( $atts ) {
 
 					// compile displayed datetime
 					$datetime = get_agenda_time( $time_start, $time_end );
+
+					// set the content for this agenda row
 					$agenda_content .='<div class="agenda-item">' . 
 						'<div class="time"><strong>' . $datetime . '</strong></div>' .
 						'<div class="location">' . get_sub_field( 'location' ) . '</div>' .
@@ -294,7 +296,7 @@ function get_agenda_time( $time_start, $time_end = '' ) {
 
 	// get start date and time as strings
 	$start_date = get_ap_month( date( 'n', $time_start ) ) . ' ' . date( 'j', $time_start );
-	$start_time = ( !stristr( date( 'g:ia', $time_start ), '12:00am' ) ? ': ' : '' ) . str_replace( ':00', '', str_replace( '12:00am', "", date( 'g:ia', $time_start ) ) );
+	$start_time = str_replace( ':00', '', str_replace( '12:00am', "", date( 'g:ia', $time_start ) ) );
 
 	if ( !empty( $time_end ) ) {
 		// get end date and time as strings
@@ -303,6 +305,6 @@ function get_agenda_time( $time_start, $time_end = '' ) {
 	}
 
 	// return a complete string, eliminating month and date from end time if it's the same as the start
-	return $start_date . ' ' . $start_time . ( !empty( $time_end ) ? ' - ' . ( $start_date != $end_date ? '<br>' . $end_date . ' : ' : ' ' ) . ' ' . $end_time : '' );
+	return $start_date . ( !empty( $start_time ) ? ': ' : '' ) . $start_time . ( !empty( $time_end ) ? ( !empty( $end_time ) || $start_date != $end_date ? ' - ' : '' ) . ( $start_date != $end_date ? '<br>' . $end_date . ' : ' : ' ' ) . ' ' . $end_time : '' );
 }
 
