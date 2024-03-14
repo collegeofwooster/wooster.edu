@@ -19,7 +19,7 @@ function the_showcase() {
 				$content = ( isset( $slide["content"] ) ? $slide["content"] : '' );
 				$link = strip_test_domains( ( isset( $slide["link"] ) ? $slide["link"] : '' ) );
 				$image = strip_test_domains( $slide['image'] );
-				$video = strip_test_domains( $slide['video'] );
+				if ( isset( $slide['video'] ) ) $video = strip_test_domains( $slide['video'] );
 				$title = ( isset( $slide['title'] ) ? $slide['title'] : '' );
 				$class = ( isset( $slide['class'] ) ? $slide['class'] : '' );
 
