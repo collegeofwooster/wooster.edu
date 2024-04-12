@@ -41,7 +41,9 @@
 	}
 
 	.photo {
-
+		img {
+			width: 100%;
+		}
 	}
 
 	.info {
@@ -439,4 +441,22 @@
 
 .alum-title {
 
+}
+
+
+.update-contact-floating-button {
+	position: fixed;
+	z-index: 3000;
+	bottom: 20px;
+	right: 20px;
+
+	@include respond-to( $bp-m ) {
+		bottom: 30px;
+		right: 30px;
+	}
+
+	@include respond-to( $bp-l ) {
+		bottom: 40px;
+		right: 40px;
+	}
 }

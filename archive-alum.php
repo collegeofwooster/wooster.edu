@@ -43,9 +43,16 @@ if ( $current_yr > 0 ) {
 }
 
 
-
+// we
 $have_filters = false;
 
+// empty queries
+$query_yr = array();
+$query_cat = array();
+$query_search = array();
+
+
+// if filtered to year
 if ( $current_yr != 0 ) {
 	$have_filters = true;
 	$query_yr = array(
@@ -54,6 +61,8 @@ if ( $current_yr != 0 ) {
 	);
 }
 
+
+// if filtered to category
 if ( $current_cat ) {
 	$have_filters = true;
 	$query_cat = array(
@@ -63,6 +72,7 @@ if ( $current_cat ) {
 }
 
 
+// if they searched
 if ( $current_search != '' ) {
 	$have_filters = true;
 	$query_search = array(
@@ -85,19 +95,18 @@ if ( $current_search != '' ) {
 	);
 }
 
-if ( $query_yr || $query_cat || $query_search ) {
 
-	$meta_query = array( 
-		'relation' => 'AND',
-		$query_yr,
-		$query_cat,
-		$query_search
-	);
+// add any filters we've set to the meta_query (empty if none)
+$meta_query = array( 
+	'relation' => 'AND',
+	$query_yr,
+	$query_cat,
+	$query_search
+);
 
-}
-
-	
 ?>
+	<!--<a href="https://wooster.edu/alumni/update/" class="update-contact-floating-button">Update Contact Information</a>-->
+
 	<div class="page-header" style="background-image: url(<?php bloginfo( 'template_url' ); ?>/img/bg-header-alumni.webp);">
 		<div class="page-header-overlay"></div>
         <div class="wrap">
@@ -230,7 +239,7 @@ if ( $query_yr || $query_cat || $query_search ) {
 					<div class="info group">
 						<h5><a href="#alum-<?php the_ID(); ?>" class="open-alum-link"><?php print substr( get_the_title(), 0, 50 ); print ( strlen( get_the_title() ) > 50 ? '...' : '' ); ?></a></h5>
 						<?php if ( get_cmb_value( 'alum_year' ) > 0 ) { ?><div class="alum-year"><?php show_cmb_value( 'alum_year' ) ?></div><?php } ?>
-						<div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div>
+						<?php if ( !empty( get_cmb_value( 'alum_city') ) && !empty( get_cmb_value( 'alum_state') ) ) { ?><div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div><?php } ?>
 					</div>
 					<div class="alum-category alum-category-<?php show_cmb_value( 'alum_category' ) ?>"><?php print get_alum_category_name( get_cmb_value( 'alum_category' ) ); ?></div>
 				</div>
@@ -247,22 +256,20 @@ if ( $query_yr || $query_cat || $query_search ) {
 							?>
 						</div>
 						<div class="alum-year"><strong>Class of <?php show_cmb_value( 'alum_year' ) ?></strong></div>
-						<div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div>
+						<?php if ( !empty( get_cmb_value( 'alum_city') ) && !empty( get_cmb_value( 'alum_state') ) ) { ?><div class="alum-location"><?php show_cmb_value( 'alum_city' ); ?>, <?php show_cmb_value( 'alum_state' ) ?></div><?php } ?>
 						<div class="alum-category alum-category-<?php show_cmb_value( 'alum_category' ) ?>"><?php print get_alum_category_name( get_cmb_value( 'alum_category' ) ); ?></div>
 						<div class="details-content">
-							<p><?php the_content(); ?></p>
+							<?php the_content(); ?>
 						</div>
 					</div>
 				</div>
 					<?php
 
 				endwhile;
-				?>
-				<?php
-			else : ?>
+			else : 
+			?>
 				<p>No results for that criteria. Try selecting fewer filters or changing your search term.</p>
-				<?php
-
+			<?php
 			endif;
 			?>
 			</div>

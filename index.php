@@ -28,19 +28,23 @@ the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-
 	<div class="content-wide" role="main">
 		<div class="wrap">
 
-		    <div class="article-filter">
-		    	<h3>Browse by Category</h3>
-		    	<div class="browse-by-category">
-		    		<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419, 1592, 1599 ) ) ); ?>
-		    	</div>
-		    	<h3>Browse by Date</h3>
-		    	<div class="browse-by-date">
-		    		<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
-						<option value=""><?php echo attribute_escape(__('Select Month')); ?></option>
-						<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
-					</select>
-		    	</div>
-		    </div>
+			<div class="article-filters">
+				<div class="article-filter">
+					<h3>Browse by Category</h3>
+					<div class="browse-by-category">
+						<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419, 1592, 1599 ) ) ); ?>
+					</div>
+				</div>
+				<div class="article-filter">
+					<h3>Browse by Date</h3>
+					<div class="browse-by-date">
+						<select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
+							<option value="">Select Month</option>
+							<?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+						</select>
+					</div>
+				</div>
+			</div>
 
 			<div class="article-cards blog-listing">
 			<?php 
