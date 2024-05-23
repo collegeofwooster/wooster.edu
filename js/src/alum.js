@@ -17,6 +17,10 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	$('.floating-button.add-story').on( 'click', function(){
+		$('.alum-add-story-form').toggle();
+	});
+
 	$('.alum-back').on( 'click', function(){
 		location.href = '/alumni/';
 	});

@@ -179,3 +179,19 @@ section.content {
 	display: none;
 }
 
+
+.floating-button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 80px;
+	z-index: 2000;
+
+	@include respond-to( $bp-m ) {
+		width: 140px;
+	}
+
+	@include respond-to( $bp-l ) {
+		width: 180px;
+	}
+}

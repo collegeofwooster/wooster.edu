@@ -173,7 +173,7 @@ $meta_query = array(
 				</div>
 				<?php } ?>
 				<div class="alum-add-story-form">
-					<h5>Add My Note</h5>
+					<h4>Add My Note</h4>
 					<?php print do_shortcode( '[gravityform id="2" title="false" description="false" /]' ); ?>
 				</div>
 				<div class="alum-filter">
