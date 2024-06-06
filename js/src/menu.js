@@ -65,6 +65,11 @@ jQuery(document).ready(function($){
 	});
 
 
+	// sidebar menu toggling
+	$('.sidebar-menu-toggle').on( 'click', function(){
+		$(this).toggleClass('open');
+		$('.sidebar-menu').toggle();
+	});
 
 });
 

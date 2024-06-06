@@ -73,7 +73,12 @@ function the_page_header( $title_override = '', $background_override = '', $colo
 
 // little function to output the sidebar menu selected in the page settings box.
 function the_sidebar_menu() {
-	wp_nav_menu( array( 'menu' => get_cmb_value( 'page_sidebar_menu' ) ) );
+    ?>
+    <div class="sidebar-menu-toggle">Section Menu</div>
+    <div class="sidebar-menu">
+        <?php wp_nav_menu( array( 'menu' => get_cmb_value( 'page_sidebar_menu' ) ) ); ?>
+    </div>
+    <?php
 }
 
 

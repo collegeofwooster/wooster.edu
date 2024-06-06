@@ -55,37 +55,39 @@ $courses = get_cmb_value( "person_courses" );
 			while ( have_posts() ) : the_post();
 				?>
 			<div class="sidebar tab-nav">
-				<ul class="menu">
-					<li class="area-overview">Overview</li>
-					<?php do_area_tab_nav( "Major", "major" ) ?>
-					<?php do_area_tab_nav( "Minor", "minor" ) ?>
-					<?php do_area_tab_nav( "Independent Study", "independent_study" ) ?>
-					<?php do_area_tab_nav( "Certifications", "certifications" ) ?>
-					<?php do_area_tab_nav( "Licensure", "licensure" ) ?>
-					<?php do_area_tab_nav( "Alumni", "alumni" ) ?>
-					<?php do_area_tab_nav( "Student Organizations", "student_organizations" ) ?>
-					<?php do_area_tab_nav( "Prizes & Scholarships", "scholarships" ) ?>
-					<?php do_area_tab_nav( "Lectures", "lectures" ) ?>
-					<?php do_area_tab_nav( "Seminar Series", "seminar_series" ) ?>
-					<?php do_area_tab_nav( "Lab Facilities", "lab_facilities" ) ?>
-					<?php do_area_tab_nav( "Clinics", "clinics" ) ?>
-					<?php do_area_tab_nav( "Fern Valley Field Station", "fern_valley" ) ?>
-					<?php do_area_tab_nav( "Requirements", "requirements" ) ?>
-					<?php do_area_tab_nav( "Title II", "title_ii" ) ?>
-					<?php do_area_tab_nav( "State Performance Report", "state_performance" ) ?>
-					<?php do_area_tab_nav( "Resources", "resources" ) ?>
-					<?php do_area_tab_nav( "Unique Opportunities", "unique_opportunities" ) ?>
-					<?php do_area_tab_nav( "Ensembles", "ensembles" ) ?>
-					<?php do_area_tab_nav( "Productions/Events", "productions" ) ?>
-					<?php do_area_tab_nav( "Student Projects", "student_projects" ) ?>
-					<?php do_area_tab_nav( "Faculty Emeriti", "faculty_emeriti" ) ?>
-					<?php do_area_tab_nav( "Annual Report", "annual_report" ) ?>
-					<?php do_area_tab_nav( "CAEP Annual Reporting Measures", "caep" ) ?>
-				</ul>
+				<div class="sidebar-menu-toggle">Area of Study Menu</div>
+				<div class="sidebar-menu">
+					<ul class="menu">
+						<li class="area-overview">Overview</li>
+						<?php do_area_tab_nav( "Major", "major" ) ?>
+						<?php do_area_tab_nav( "Minor", "minor" ) ?>
+						<?php do_area_tab_nav( "Independent Study", "independent_study" ) ?>
+						<?php do_area_tab_nav( "Certifications", "certifications" ) ?>
+						<?php do_area_tab_nav( "Licensure", "licensure" ) ?>
+						<?php do_area_tab_nav( "Alumni", "alumni" ) ?>
+						<?php do_area_tab_nav( "Student Organizations", "student_organizations" ) ?>
+						<?php do_area_tab_nav( "Prizes & Scholarships", "scholarships" ) ?>
+						<?php do_area_tab_nav( "Lectures", "lectures" ) ?>
+						<?php do_area_tab_nav( "Seminar Series", "seminar_series" ) ?>
+						<?php do_area_tab_nav( "Lab Facilities", "lab_facilities" ) ?>
+						<?php do_area_tab_nav( "Clinics", "clinics" ) ?>
+						<?php do_area_tab_nav( "Fern Valley Field Station", "fern_valley" ) ?>
+						<?php do_area_tab_nav( "Requirements", "requirements" ) ?>
+						<?php do_area_tab_nav( "Title II", "title_ii" ) ?>
+						<?php do_area_tab_nav( "State Performance Report", "state_performance" ) ?>
+						<?php do_area_tab_nav( "Resources", "resources" ) ?>
+						<?php do_area_tab_nav( "Unique Opportunities", "unique_opportunities" ) ?>
+						<?php do_area_tab_nav( "Ensembles", "ensembles" ) ?>
+						<?php do_area_tab_nav( "Productions/Events", "productions" ) ?>
+						<?php do_area_tab_nav( "Student Projects", "student_projects" ) ?>
+						<?php do_area_tab_nav( "Faculty Emeriti", "faculty_emeriti" ) ?>
+						<?php do_area_tab_nav( "Annual Report", "annual_report" ) ?>
+						<?php do_area_tab_nav( "CAEP Annual Reporting Measures", "caep" ) ?>
+					</ul>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
+				</div>
 			</div>
-			
 			<div class="right-column">
 
 				<div class="tab-content active area-overview">

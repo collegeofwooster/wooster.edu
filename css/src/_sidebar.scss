@@ -1,6 +1,46 @@
 
 .sidebar {
 
+	.sidebar-menu-toggle {
+		position: relative;
+		padding: 10px 0 8px;
+		border: 1px solid black;
+		background: #eeeeee;
+		color: $grey;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin-bottom: 5px;
+
+		&:after {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			color: rgba( $grey, .7 );
+			margin-top: -7px;
+			content: "\27A4";
+			transition: transform 200ms ease-in-out;
+			transform: rotate(90deg);
+		}
+
+		&.open:after {
+			transform: rotate(270deg);
+		}
+
+		@include respond-to( $bp-m ) {
+			display: none;
+		}
+	}
+
+	.sidebar-menu {
+		display: none;
+
+		@include respond-to( $bp-m ) {
+			display: block;
+		}
+	}
+
 	.menu {
 		list-style-type: none;
 		padding: 0;
