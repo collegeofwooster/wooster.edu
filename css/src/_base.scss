@@ -135,3 +135,6 @@ pre {
 	}
 }
 
+.clearfix, .group {
+	@include clearfix;
+}
