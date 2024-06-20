@@ -27,6 +27,10 @@ function the_accordions() {
 		<div class="accordions">
 			<?php
 			foreach ( $accordions as $key => $accordion ) {
+
+                if ( !isset( $accordion['open'] ) ) {
+                    $accordion['open'] = 'off';
+                }
                 
 				// only output this accordion if we have a title and content
 				if ( !empty( $accordion["title"] ) && !empty( $accordion['content'] ) ) {
