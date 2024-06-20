@@ -11,6 +11,8 @@ function quote_shortcode( $atts, $content = null ) {
 		'style' => 'left'
 	), $atts );
 
+	$return = '';
+
 	// if we have content and an attribution
 	if ( !empty( $a['by'] ) && !empty( $content ) ) {
 		
