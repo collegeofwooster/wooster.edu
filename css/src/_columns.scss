@@ -334,3 +334,74 @@
 	}
 }
 
+
+.flexcol {
+	padding: 40px 0;
+
+	.col {
+		border: 2px solid $foam;
+		margin-bottom: 3%;
+		box-shadow: 5px 5px 30px rgba( black, .1 );
+
+		.col-title {
+			background: $foam;
+			color: white;
+			padding: 15px 20px;
+			@include font-title-bold;
+			font-size: 1.2em;
+			line-height: 1.2em;
+		}
+
+		.col-content {
+			padding: 10px 20px;
+		}
+
+		&.gold {
+			border: 2px solid $gold;
+			
+			.col-title {
+				background: $gold;
+				color: black;
+			}
+		}
+
+		&.rose {
+			border: 2px solid $rose;
+			
+			.col-title {
+				background: $rose;
+				color: white;
+			}
+		}
+	}
+
+	@include respond-to( $bp-m ) {
+		display: flex;
+
+		&.two, &.three, &.four {
+			flex-wrap: wrap;
+		}
+
+		.col {
+			flex: 1;
+		}
+
+		&.two .col {
+			flex-basis: 47%;
+			margin-right: 3%;
+
+			&:nth-child(2), &:nth-child(4), &:nth-child(6), &:nth-child(8), &:nth-child(10), &:nth-child(12), &:last-child {
+				margin-right: 0;
+			}
+		}
+
+		&.three .col {
+			flex-basis: 30.3333%;
+			margin-right: 3%;
+
+			&:nth-child(3), &:nth-child(6), &:nth-child(9), &:nth-child(12), &:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
