@@ -23,7 +23,7 @@
 	position: relative;
 	background: white;
 	display: flex;
-	box-shadow: 0 0 25px rgba( black, .2 );
+	box-shadow: 0 0 30px rgba( $black, .2 );
 
 	@include respond-to( $bp-m ) {
 		margin-bottom: 20px;
@@ -431,50 +431,15 @@
 		}
 
 		@include respond-to( $bp-m ) {
-			flex-basis: 35%;
+			flex-basis: 47.5%;
 		}
 	}
 
 	.front-events {
 		@include respond-to( $bp-m ) {
-			flex-basis: 60%;
+			flex-basis: 47.5%;
 			margin-left: 5%;
 		}
-
-		/*
-		@include respond-to( $bp-m ) {
-			flex-basis: 60%;
-			margin-left: 5%;
-		}
-
-		.events-tabs {
-			@include clearfix;
-
-			li {
-				float: left;
-
-				&.active h2 {
-					display: inline-block;
-					background: white;
-					padding: 10px 40px;
-					font-size: 50px;
-					line-height: 50px;
-					margin-top: 0;
-					color: $black;
-				}
-
-				h2 {
-					display: none;
-					background: $tan;
-					padding: 10px 40px;
-					color: rgba( $black, .4 );
-					font-size: 30px;
-					line-height: 40px;
-					margin-top: 10px;
-				}
-			}
-		}
-		*/
 
 		.front-events-inner {
 			box-shadow: 0 0 30px rgba( $black, .2 );
@@ -482,49 +447,40 @@
 			background: white;
 
 			@include respond-to( $bp-l ) {
-				padding: 50px 30px 39px 30px;
+				padding: 30px;
 			}
 		}
 
 		.front-events-list {
-			@include respond-to( $bp-l ) {
-				display: flex;
-				flex-wrap: wrap;
-				margin-right: -2%;
-			}
-
 			.event {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				padding: 10px 0;
 				
-				@include respond-to( $bp-l ) {
-					flex-basis: 48%;
-					margin-right: 2%;
-					padding: 20px 0;
-				}
-
 				.date {
 					color: $rose;
 					@include font-title;
-					font-size: 1.8em;
+					font-size: 1.6em;
 					line-height: .9em;
 					text-align: center;
 					margin-right: 10px;
+					flex: 0 0 20%;
+					margin-right: 3%;
 
 					span {
 						display: block;
 						@include font-title-bold;
-						font-size: 2.65em;
+						font-size: 2.2em;
 						line-height: .7em;
-						margin-top: -8px;
-						margin-bottom: 8px;
+						margin-top: 2px;
+						margin-bottom: 4px;
 					}
 				}
 
 				.info {
 					padding: 0 5px;
+					flex: 0 0 77%;
 
 					h4 {
 						font-size: 1.2em;
@@ -537,8 +493,14 @@
 					}
 
 					.time {
+						@include font-title;
 						text-transform: uppercase;
 						color: $grey-light;
+						padding: 0;
+					}
+
+					.excerpt {
+						font-size: .8em;
 						padding: 0;
 					}
 				}

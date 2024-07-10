@@ -107,7 +107,7 @@
 	.entry {
 		@include clearfix;
 		padding: 20px;
-		box-shadow: 0 0 10px rgba( black, .3 );
+		box-shadow: 0 0 30px rgba( $black, .2 );
 		margin-bottom: 10px;
 
 		img {

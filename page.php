@@ -38,4 +38,3 @@ the_phototiles();
 
 get_footer();
 
-?>

@@ -21,78 +21,6 @@ get_header();
 	</div>
 
 
-	<div class="connected-learning">
-		<div class="connected-learning-inner">
-
-			<div class="connected-learning-header">
-				<div class="connected-learning-logo">
-					<img src="<?php bloginfo('template_url') ?>/img/logo-connected-learning.webp">
-				</div>
-				<div class="connected-learning-search">
-					<h2>What can I do at Woo?</h2>
-					<form class="connected-learning-search-form">
-						<input type="text" value="" name="s" class="connected-learning-search-term" placeholder="Search" title="Search your interest.">
-						<input type="submit" class="connected-learning-search-submit" value="Search">
-					</form>
-				</div>
-			</div>
-
-			<div class="connected-learning-results">
-				<div class="result-box areas">
-					<h3>Areas of<br> Study</h3>
-					<ul>
-						<li><a href="#">Biology</a></li>
-						<li><a href="#">Biochemistry & Molecular Biology</a></li>
-						<li class="all"><a href="/areas">All Areas of Study</a></li>
-					</ul>
-				</div>
-
-				<div class="result-box independent">
-					<h3>Independent<br> Study</h3>
-					<ul>
-						<li><a href="#">Anna James Explores Ecologically Relevant Cooling on Zebra Finch Chicks</a></li>
-					</ul>
-				</div>
-
-				<div class="result-box experiential">
-					<h3>Experiential<br> Learning</h3>
-					<ul>
-						<li><a href="#">Kayla Bertholf's Research Assistantship at Arnosti Molecular Genetics Lab</a></li>
-					</ul>
-				</div>
-
-				<?php print do_shortcode( '[snippet slug="connected-learning-pathways" /]' ); ?>
-
-				<div class="bars">
-
-					<div class="result-bar news">
-						<div class="title">
-							<h3>News</h3>
-						</div>
-						<div class="content">
-							<a href="#">Biology Alumna Honored for Clean Energy Work</a>
-						</div>
-						<div class="image"></div>
-					</div>
-
-					<div class="result-bar profile">
-						<div class="title">
-							<h3>Profiles</h3>
-						</div>
-						<div class="content">
-							<a href="#">Biology Alumna Honored for Clean Energy Work</a>
-						</div>
-						<div class="image"></div>
-					</div>
-					
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-
-
 	<div class="front-comms">
 		<div class="front-comms-inner">
 
@@ -123,12 +51,6 @@ get_header();
 
 			<div class="front-events">
 				<h2>Events</h2>
-				<!--
-				<ul class="events-tabs">
-					<li class="active"></li>
-					<li><h2>Academic Calendar</h2></li>
-				</ul>
-				-->
 				<div class="front-events-inner">
 					<div class="front-events-list">
 						<?php 
@@ -145,6 +67,7 @@ get_header();
 							<div class="date"><?php print date( 'M', $event->_p_event_start ); ?> <span><?php print date( 'j', $event->_p_event_start ); ?></span> <?php print date( 'Y', $event->_p_event_start ); ?></div>
 							<div class="info">
 								<h4><a href="<?php print get_permalink( $event->ID ); ?>"><?php print $event->post_title ?></a></h4>
+								<p class="excerpt"><?php print wp_trim_words( $event->post_content, 20 ) ?></p>
 								<p class="time"><?php print date( 'g:i a', $event->_p_event_start ); ?></p>
 							</div>
 						</div>
@@ -154,12 +77,6 @@ get_header();
 						}
 						?>
 					</div>
-					<!--
-					<div class="events-nav">
-						<a class="prev">&larr;</a>
-						<a class="next">&rarr;</a>
-					</div>
-					-->
 				</div>
 				<p><a href="/events">See more events &raquo;</a></p>
 			</div>
@@ -225,14 +142,9 @@ get_header();
 		</div>
 	</div>
 
-	<?php the_statistics(); ?>
+<?php 
 
-	<div class="front-mosaic">
-		<?php the_phototiles(); ?>
-	</div>
-
-<?php
+the_statistics();
 
 get_footer();
 
-?>

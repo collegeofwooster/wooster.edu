@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap');
 
 @mixin font {
 	font-family: "Roboto", sans-serif;
@@ -25,28 +25,28 @@
 }
 
 @mixin font-title {
-	font-family: "Zilla Slab", sans-serif;
+	font-family: "Roboto Slab", sans-serif;
 	font-weight: 300;
-	font-kerning: none;
+	font-optical-sizing: auto;
 }
 
 @mixin font-title-italic {
-	font-family: "Zilla Slab", sans-serif;
+	font-family: "Roboto Slab", sans-serif;
 	font-weight: 300;
 	font-style: italic;
-	font-kerning: none;
+	font-optical-sizing: auto;
 }
 
 @mixin font-title-bold {
-	font-family: "Zilla Slab", sans-serif;
+	font-family: "Roboto Slab", sans-serif;
 	font-weight: 600;
-	font-kerning: none;
+	font-optical-sizing: auto;
 }
 
 @mixin font-title-bold-italic {
-	font-family: "Zilla Slab", sans-serif;
+	font-family: "Roboto Slab", sans-serif;
 	font-weight: 600;
 	font-style: italic;
-	font-kerning: none;
+	font-optical-sizing: auto;
 }
 
