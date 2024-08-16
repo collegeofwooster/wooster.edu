@@ -46,6 +46,7 @@ header {
 		background: url(../img/icon-menu.png) center center no-repeat;
 		background-size: contain;
 		overflow: hidden;
+		box-shadow: none;
 
 		@include respond-to( $bp-m ) {
 			right: 30px;
@@ -122,6 +123,7 @@ header {
 			color: $grey;
 			text-transform: uppercase;
 			margin-top: -22px;
+			width: 220px;
 
 			&:before {
 				content: "";
@@ -159,12 +161,91 @@ header {
 		}
 
 		.goog-logo-link, .VIpgJd-ZVi9od-l4eHX-hSRGPd {
-		    display:none !important;
+		    display: none !important;
 		} 
 		    
 		.goog-te-gadget{
 		    color: transparent !important;
 		}
+	}
+
+	.mobile-ctas {
+		display: none;
+	}
+
+}
+
+.home .mobile-ctas {
+	display: block;
+	position: fixed;
+	z-index: 2000;
+	top: 71px;
+	left: 0;
+	width: 100%;
+	background: white;
+	border-top: 1px solid rgba( $grey, .2 );
+	border-bottom: 1px solid rgba( $grey, .2 );
+	box-shadow: 0 5px 10px rgba( $grey, .3 );
+	
+	@include respond-to( $bp-m ) {
+		top: 100px;
+	}
+	
+	@include respond-to( $bp-l ) {
+		display: none;
+	}
+	
+	div ul {
+		display: flex;
+		width: 100%;
+		
+		li {
+			display: none;
+			flex: 1 1 fit-content;
+
+			a {
+				display: block;
+				padding: 10px 15px;
+				text-align: center;
+				color: black;
+				text-transform: uppercase;
+				white-space: nowrap;
+				background: rgba( $grey, .1 );
+				transition: all 400ms ease-in-out;
+				border-left: 1px solid rgba( $grey, .3);
+
+				&:hover {
+					text-decoration: none;
+					background: white;
+				}
+			}
+
+			&:first-child a {
+				border-left: none;
+			}
+
+			&:first-child, &:nth-child(2) , &:nth-child(3) {
+				display: block;
+			}
+
+			@include respond-to ( 600px ) {
+				&:nth-child(4) , &:nth-child(5) {
+					display: block;
+				}	
+			}
+		}
+	}
+}
+
+.admin-bar .mobile-ctas {
+	top: 117px;
+
+	@include respond-to( $bp-m ) {
+		top: 145px;
+	}
+
+	@include respond-to( 783px ) {
+		top: 132px;
 	}
 }
 
@@ -471,7 +552,8 @@ header {
 	}
 }
 
-@media screen and (max-width: 600px) { 
+
+@media screen and ( max-width: 600px ) { 
 	#wpadminbar {
 		position: fixed;
 	}

@@ -7,6 +7,7 @@
 
 // general button styles
 .btn {
+	position: relative;
 	@include font;
 	opacity: 1;
 	border: 0;
@@ -19,29 +20,83 @@
 	text-decoration: none;
 	display: inline-block;
 	text-align: center;
-	background-color: $grey;
-	color: white;
 	-webkit-appearance: none;
 	border-radius: 0;
+	box-shadow: 4px 4px 15px rgba( black, .3 );
+
+	background-color: $grey;
+	color: white;
 
 	&:hover {
 		text-decoration: none;
 		opacity: .8;
+		border: none;
+	}
+
+	&.arrow {
+		background: transparent;
+		color: black;
+		box-shadow: none;
+		padding: 5px 30px 8px 0;
+		margin: 5px 6px 5px 0;
+		border-bottom: 3px solid black;
+		@include font-bold;
+
+		&:after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -14px;
+			width: 24px;
+			height: 24px;
+			background: url(../img/arrow-black.png);
+		}
 	}
 
 	&.gold {
 		background-color: $gold;
 		color: $black;
+
+		&.arrow {
+			background: transparent;
+			color: black;
+			border-bottom: 3px solid $gold;
+	
+			&:after {
+				background: url(../img/arrow-gold.png);
+			}
+		}
 	}
 
 	&.red {
 		background-color: $red;
 		color: white;
+
+		&.arrow {
+			background: transparent;
+			color: black;
+			border-bottom: 3px solid $red;
+	
+			&:after {
+				background: url(../img/arrow-red.png);
+			}
+		}
 	}
 
 	&.blue {
 		background-color: $blue;
 		color: white;
+
+		&.arrow {
+			background: transparent;
+			color: black;
+			border-bottom: 3px solid $blue;
+	
+			&:after {
+				background: url(../img/arrow-blue.png);
+			}
+		}
 	}
 
 	&.tan {
@@ -56,10 +111,32 @@
 
 	&.foam {
 		background-color: $foam;
+		color: white;
+
+		&.arrow {
+			background: transparent;
+			color: black;
+			border-bottom: 3px solid $foam;
+	
+			&:after {
+				background: url(../img/arrow-foam.png);
+			}
+		}
 	}
 
 	&.rose {
 		background-color: $rose;
+		color: white;
+
+		&.arrow {
+			background: transparent;
+			color: black;
+			border-bottom: 3px solid $rose;
+	
+			&:after {
+				background: url(../img/arrow-rose.png);
+			}
+		}
 	}
 
 	&.black {
@@ -71,7 +148,7 @@
 
 		@include respond-to( $bp-m ) {
 			margin: 0 0 15px 15px;
-			float: right
+			float: right;
 		}
 	}
 }

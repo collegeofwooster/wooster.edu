@@ -4,10 +4,10 @@
 $gold: #f7bf0a;
 $red: #af2735;
 $tan: #f7f2e6;
-$blue: #24629b;
-$sky: #9ccdfb;
-$foam: #58a8b5;
-$rose: #f18079;
+$blue: #306a8f;
+$sky: #bad2dc;
+$foam: #4ea4a4;
+$rose: #dc7568;
 
 
 $grey: #666666;
@@ -35,6 +35,10 @@ $bp-xxxl: 1680px;
 	"people", "accordion", "articles", "search", "library", "box", "boxes", 
 	"statistics", "counselors", "quote", "pdf", "agenda";
 
+
+@import "component/stats", "component/posts_feature", "component/two_column", 
+	"component/boxes", "component/content-feature", "component/cta",
+	"component/quick_links", "component/video", "component/image";
 
 // include styles for custom post types
 @import "area", "event", "alum", "org", "fund", "job";

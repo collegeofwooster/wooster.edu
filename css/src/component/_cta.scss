@@ -1,0 +1,137 @@
+
+
+.cta {
+    position: relative;
+    min-height: 400px;
+    padding: 100px 50px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    .cta-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba( black, .4 );
+        z-index: 0;
+    }
+
+    .cta-inner {
+        position: relative;
+        flex: 1;
+        z-index: 1;
+    }
+
+    @include respond-to( $bp-m ) {
+        min-height: 500px;
+    }
+
+    @include respond-to( $bp-l ) {
+        min-height: 600px;
+    }
+
+    @include respond-to( $bp-xl ) {
+        min-height: 700px;
+    }
+
+    h2 {
+        padding-bottom: 15px;
+        color: white;
+        text-shadow: 0 0 15px rgba( black, .4 );
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        background: url(../img/accent-tartan-hor-rose.webp) center center no-repeat;
+        background-size: cover;
+        width: 50%;
+        height: 30px;
+        left: 0;
+        top: 0;
+        z-index: 99;
+        pointer-events: none;
+        max-width: 1000px;
+
+        @include respond-to( $bp-m ) {
+            height: 40px;
+        }
+
+        @include respond-to( $bp-xl ) {
+            height: 50px;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        background: url(../img/accent-tartan-vert-tan.webp) top center no-repeat;
+        background-size: cover;
+        width: 30px;
+        height: 110%;
+        left: 10px;
+        bottom: 0;
+        z-index: 99;
+        pointer-events: none;
+        max-width: 1000px;
+
+        @include respond-to( $bp-m ) {
+            width: 40px;
+            left: 50px;
+        }
+
+        @include respond-to( $bp-xl ) {
+            width: 50px;
+            left: 100px;
+        }
+    }
+
+    .btn {
+        display: block;
+        margin-bottom: 10px;
+
+        @include respond-to( $bp-s ) {
+            display: inline-block;
+        }
+
+        @include respond-to( $bp-m ) {
+            margin-bottom: 0;
+        }
+
+        @include respond-to( $bp-l ) {
+            margin: 0 10px;
+        }
+    }
+}
+
+
+.cta-float {
+    position: fixed;
+    z-index: 3000;
+    bottom: -100px;
+    transition: all 500ms ease-in-out;
+    right: 0;
+    left: 0;
+    background: $gold;
+    padding: 10px 10px;
+    box-shadow: 0 0 20px rgba( black, .2 );
+    text-align: center;
+
+    @include respond-to( $bp-m ) {
+        padding: 15px 20px;
+    }
+
+    .btn {
+        margin: 0 5px;
+    }
+
+    &.visible {
+        bottom: 0;
+    }
+}
+

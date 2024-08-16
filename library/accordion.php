@@ -60,6 +60,7 @@ function accordion_metaboxes() {
         'id' => 'accordions',
         'title' => 'Accordions',
         'object_types' => array( 'page', 'events' ), // Post type
+		'show_on_cb' => 'cmb2_show_on_cb',
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left

@@ -1,0 +1,134 @@
+
+
+.two-column-container {
+    padding: 30px;
+
+    @include respond-to( $bp-m ) {
+        padding: 40px 30px;
+    }
+
+    @include respond-to( $bp-l ) {
+        padding: 50px 40px;
+    }
+
+    @include respond-to( $bp-xxxl ) {
+        padding: 60px 0;
+    }
+
+    @include respond-to( $bp-m ) {
+        .two-column-inner {
+            display: flex;
+        }
+
+        &.vcenter .two-column-inner {
+            align-items: center;
+        }
+
+        &.reverse .two-column-inner {
+            flex-direction: row-reverse;
+        }
+
+        .left, .right {
+            flex: 1 1 47%;
+        }
+
+        .left {
+            margin-right: 6%;
+        }
+
+        &.left .two-column-inner {
+            .left { 
+                flex: 1 1 70%;
+                margin: 0 4% 0 0;
+            }
+
+            .right { 
+                flex: 1 1 26%;
+                margin: 0;
+            }
+        }
+
+        &.right .two-column-inner {
+            .left { 
+                flex: 1 1 26%;
+                margin: 0 4% 0 0;
+            }
+
+            .right { 
+                flex: 1 1 70%;
+                margin: 0;
+            }
+        }
+    }
+
+    .two-column-inner {
+    
+        .left {
+            margin: 0 0 30px 0;
+
+            @include respond-to( $bp-m ) {
+                margin: 0 3% 0 0;
+            }
+        }
+
+        .right {
+
+        }
+
+        @include respond-to( $bp-xxxl ) {
+            .left {
+                flex: 0 0 47%;
+                margin: 0 3% 0 0;
+            }
+
+            .right {
+                flex: 0 0 47%;
+                margin: 0 0 0 3%;
+            }
+
+            .left & {
+                .left { 
+                    flex: 0 0 64%;
+                    margin: 0 3% 0 0;
+                }
+
+                .right { 
+                    flex: 0 0 30%;
+                    margin: 0 0 0 3%;
+                }
+            }
+
+            .right & {
+                .left { 
+                    flex: 0 0 30%;
+                    margin: 0 3% 0 0;
+                }
+
+                .right { 
+                    flex: 0 0 64%;
+                    margin: 0 0 0 3%;
+                }
+            }
+        }
+    }
+
+
+    // some legacy stuff for admissions events
+    .event {
+        border-bottom: 3px solid $tan;
+        padding: 20px 0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        p {
+            padding: 0;
+        }
+
+        .btn {
+            float: right;
+        }
+    }
+}
+

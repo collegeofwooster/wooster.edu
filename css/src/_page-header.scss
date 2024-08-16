@@ -28,7 +28,7 @@
 		background: url(../img/accent-tartan-hor-gold.webp) right center no-repeat;
 		background-size: cover;
 		width: 75%;
-		height: 25px;
+		height: 30px;
 		bottom: 0;
 		left: -100px;
 		z-index: 99;
@@ -36,11 +36,11 @@
 	    filter: FlipH;
 
 		@include respond-to( $bp-m ) {
-			height: 30px;
+			height: 35px;
 		}
 
 		@include respond-to( $bp-xl ) {
-			height: 35px;
+			height: 40px;
 		}
 	}
 
@@ -51,7 +51,7 @@
 
 	&.black:after {
 		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
-		background-size: contain;
+		background-size: cover;
 	}
 
 	&.blue:after {
@@ -71,7 +71,7 @@
 
 	&.rose:after {
 		background: url(../img/accent-tartan-hor-rose.webp) right center no-repeat;
-		background-size: contain;
+		background-size: cover;
 	}
 
 	.page-header-overlay {
@@ -84,41 +84,71 @@
 		background-color: rgba( black, .3 );
 	}
 
-	.breadcrumbs {
+	.wrap {
 		position: relative;
 		z-index: 1;
-		color: rgba( white, .7 );
-		font-size: .8em;
-	}
 
-	a {
-		color: white;
-		text-decoration: none;
-		margin: 0 5px;
-
-		&:hover {
-			border-bottom: 1px dotted rgba( white, .5 );
-		}
-	}
-
-	.page-title {
-		@include font-title;
-		font-size: 2em;
-		line-height: 1.4em;
-		text-transform: initial;
-		color: white;
-		text-shadow: 0 0 30px rgba( black, .5 );
-
-		@include respond-to( $bp-l ) {
-			font-size: 2.4em;
+		@include respond-to( $bp-m ) {
+			display: flex;
+			align-items: end;
 		}
 
-		@include respond-to( $bp-xl ) {
-			font-size: 3.2em;
+		.breadcrumbs {
+			color: rgba( white, .7 );
+			font-size: .8em;
+
+			@include respond-to( $bp-m ) {
+				flex: 1 1 50%;
+			}	
+
+			a {
+				color: white;
+				text-decoration: none;
+				margin-right: 10px;
+
+				&:hover {
+					border-bottom: 1px dotted rgba( white, .5 );
+				}
+			}
+
+			.page-title {
+				@include font-title;
+				font-size: 2em;
+				line-height: 1.4em;
+				text-transform: initial;
+				color: white;
+				text-shadow: 0 0 30px rgba( black, .5 );
+
+				@include respond-to( $bp-l ) {
+					font-size: 2.4em;
+				}
+
+				@include respond-to( $bp-xl ) {
+					font-size: 3.2em;
+				}
+
+				@include respond-to( $bp-xl ) {
+					font-size: 3.6em;
+				}
+			}
 		}
 
-		@include respond-to( $bp-xl ) {
-			font-size: 3.6em;
+		.header-cta {
+			padding-top: 10px;
+
+			.btn {
+				margin-right: 10px;
+			}
+
+			@include respond-to( $bp-m ) {
+				text-align: right;
+				flex: 1 1 50%;
+
+				.btn {
+					margin-right: 0;
+					margin-left: 10px;
+				}
+			}	
 		}
 	}
 }

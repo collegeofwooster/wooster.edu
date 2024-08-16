@@ -37,6 +37,7 @@ function boxes_metabox() {
         'title' => 'Boxes',
         'desc' => 'Responsive boxes with a color, title, copy, and a link.',
         'object_types' => array( 'page' ), // post type
+		'show_on_cb' => 'cmb2_show_on_cb',
         'context' => 'normal',
         'priority' => 'high'
     ) );

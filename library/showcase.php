@@ -1,6 +1,17 @@
 <?php
 
 
+// simple boolean to check if we have a showcase
+function has_showcase() {
+
+	// get slides, return true if we have some, else false.
+	$slides = get_post_meta( get_the_ID(), "showcase", 1 );
+	if ( !empty( $slides ) ) return true;
+	return false;
+	
+}
+
+
 // function to use on front-end templates to output the showcase.
 function the_showcase() {
 
@@ -64,10 +75,11 @@ function the_showcase() {
 		}
 		?>
 		</div>
+		<a href="#content-start" class="scroll-to-content"></a>
+		<a name="content-start"></a>
 		<?php
 	}
 }
-
 
 
 // simple boolean function to check if a url is for a video
@@ -81,7 +93,6 @@ function is_video_link( $link ) {
 }
 
 
-
 // add the showcase metabox
 function showcase_metabox( $meta_boxes ) {
 
@@ -89,6 +100,7 @@ function showcase_metabox( $meta_boxes ) {
         'id' => 'showcase_metabox',
         'title' => 'Showcase',
         'object_types' => array( 'page' ), // post type
+		'show_on_cb' => 'cmb2_show_on_cb',
         'context' => 'normal',
         'priority' => 'high',
     ) );
@@ -148,5 +160,4 @@ function showcase_metabox( $meta_boxes ) {
 
 }
 add_filter( 'cmb2_admin_init', 'showcase_metabox', 5 );
-
 

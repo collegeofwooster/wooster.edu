@@ -1,0 +1,100 @@
+
+
+.content-feature {
+    position: relative;
+
+    &.tan {
+        background: $tan;
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        background: url(../img/accent-tartan-hor-foam.webp) center center no-repeat;
+        background-size: cover;
+        width: 50%;
+        height: 30px;
+        right: 0;
+        top: 0;
+        z-index: 99;
+        pointer-events: none;
+        max-width: 700px;
+
+        @include respond-to( $bp-m ) {
+            height: 40px;
+        }
+
+        @include respond-to( $bp-xl ) {
+            height: 50px;
+        }
+    }
+
+    .wrap {
+        position: relative;
+        padding: 30px;
+        
+        @include respond-to( $bp-xxxl ) {
+            padding: 0;
+        }
+    }
+
+    .content-feature-inner {
+        blockquote * {
+            @include font-title-bold;
+            font-size: 1.2em;
+        }
+
+        @include respond-to( $bp-m ) {
+            max-width: 60%;
+            padding: 150px 75px;
+            
+            blockquote {
+                font-size: 1.4em;
+            }
+        }
+
+        @include respond-to( $bp-l ) {
+            max-width: 50%;
+            padding: 120px 75px 175px;
+            
+            blockquote {
+                font-size: 1.5em;
+            }
+        }
+
+        @include respond-to( $bp-xxl ) {
+            max-width: 50%;
+            padding: 120px 75px 175px 0;
+            
+            blockquote {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .content-feature-photo {
+        padding-top: 20px;
+
+        @include respond-to( $bp-m ) {
+            padding-top: 0;
+            position: absolute;
+            bottom: -50px;
+            right: 50px;
+            width: 35%;
+            z-index: 200;
+        }
+
+        @include respond-to( $bp-l ) {
+            width: 45%;
+        }
+
+        @include respond-to( $bp-xl ) {
+            width: 43%;
+        }
+
+        @include respond-to( $bp-xxl ) {
+            right: 0;
+        }
+    }
+}
+

@@ -1,0 +1,153 @@
+
+
+.posts-feature {
+    padding: 30px;
+
+    @include respond-to( $bp-l ) {
+        padding: 60px 40px;
+    }
+
+    @include respond-to( $bp-xl ) {
+        padding: 100px 50px;
+    }
+
+    .wrap {
+        position: relative;
+    }
+
+    &.gold {
+        background: $gold;
+    }
+
+    .post {
+        margin-bottom: 20px;
+
+        &:nth-child( 3 ), &:nth-child( 4 ) {
+            display: none;
+        }
+
+        @include respond-to( $bp-m ) {
+            &:nth-child( 3 ), &:nth-child( 4 ) {
+                display: block;
+            }
+
+            &:hover {
+                .post-image {
+                    display: block;
+                }
+
+                .post-entry {
+                    .post-excerpt {
+                        display: none;
+                    }
+
+                    .post-buttons {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .post-entry {
+            background: $tan;
+            padding: 20px;
+            position: relative;
+            z-index: 100;
+
+            .post-thumb {
+                display: none;
+            }
+
+            @include respond-to( $bp-m ) {
+                width: 60%;
+                display: flex;
+
+                .post-thumb {
+                    display: block;
+                    flex: 0 0 100px;
+                    margin-right: 20px;
+                }
+
+                .post-content {
+                    flex: 1;
+                }
+            }
+
+            h4 {
+                font-size: 1.2em;
+
+                a {
+                    color: black;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .post-buttons {
+                display: none;
+                padding: 16px 0;
+                
+                @include respond-to( $bp-m ) {
+                    height: 80px;
+                }
+            }
+
+            &:hover {
+                background: white;
+            }
+        }
+
+        .post-image {
+            height: 350px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            @include respond-to( $bp-m ) {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 50;
+                width: 45%;
+                height: 110%;
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+        }
+        
+        .post-excerpt {
+            @include respond-to( $bp-m ) {
+                height: 80px;
+                overflow: hidden;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 80px;
+                    background: linear-gradient( transparent, #f7f2e6 );
+                }
+            }
+        }
+
+        @include respond-to( $bp-m ) {
+            &:first-child {
+                /*
+                .post-thumb {
+                    display: none;
+                }
+                */
+                .post-image {
+                    display: block;
+                }
+            }
+        }
+
+    }
+}
+

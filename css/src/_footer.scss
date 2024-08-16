@@ -27,7 +27,7 @@ footer {
 		.wrap {
 			@include respond-to( $bp-m ) {
 				display: flex;
-			}			
+			}
 		}
 
 		.column {

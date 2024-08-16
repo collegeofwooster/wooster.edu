@@ -27,13 +27,22 @@ $colors = array(
 // require multiple - a little helper function to require multiple files from the library directory in a one 
 function require_multi( $files ) {
     $files = func_get_args();
-    foreach ( $files as $file )
-        require_once 'library/' . $file . '.php';
+    foreach ( $files as $file ) {
+		if ( !empty( $file ) ) require_once 'library/' . $file . '.php';
+	}
 }
 
 
 // include utility functions
-require_multi( 'core', 'api', 'metabox', 'page-settings', 'showcase', 'featured-article', 'photo-tiles', 'accordion', 'button', 'emergency', 'images', 'articles', 'box', 'boxes', 'columns', 'statistics', 'is-database/shortcode', 'directory', 'counselors', 'post-showcase', 'quote' );
+require_multi( 'core', 'api', 'metabox', 'page-settings', 'showcase', 
+				'featured-article', 'photo-tiles', 'accordion', 'button', 
+				'emergency', 'images', 'articles', 'box', 'boxes', 'columns', 
+				'statistics', 'is-database/shortcode', 'directory', 'counselors', 
+				'post-showcase', 'quote' );
+
+
+// include components
+require_multi( 'component' );
 
 
 // flush rewrite rules for custom post types when we switch themes

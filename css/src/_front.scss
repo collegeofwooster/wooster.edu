@@ -7,31 +7,32 @@
 	*/
 
 	@include respond-to( $bp-l ) {
-		margin: -440px 0 0 0;
-		float: right;
-		position: relative;
-		max-width: 33%;
+		position: absolute;
+		z-index: 15;
+		width: 33%;
+		right: 4%;
+		bottom: 6%;
 	}
 
 	@include respond-to( $bp-xl ) {
-		margin-top: -530px;
+		width: 33%;
+		right: 6%;
 	}
 }
 
 
 .featured-article {
-	position: relative;
 	background: white;
 	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
 	box-shadow: 0 0 30px rgba( $black, .2 );
-
-	@include respond-to( $bp-m ) {
-		margin-bottom: 20px;
-	}
+	padding-right: 20px;
 
 	@include respond-to( $bp-l ) {
-		background: rgba( white, .8 );
+		background: rgba( white, .7 );
 		margin-bottom: 30px;
+		padding-right: 0;
 	}
 
 	@include respond-to( $bp-xl ) {
@@ -39,30 +40,31 @@
 	}
 
 	.featured-article-image {
-		position: relative;
-		width: 35%;
-		padding: 20px;
+		flex: 0 0 25%;
 
-		@include respond-to( 500px ) {
-			width: 140px;
+		img {
+			display: block;
+			border-radius: 50%;
 		}
-
+		
 		@include respond-to( $bp-l ) {
-			width: 25%;
-			padding-right: 0;
+			flex-basis: 35%;
+			margin-right: -5%;
 
 			img {
-				margin-left: -40px;
+				margin-right: -40px;
+				border-radius: 50%;
 			}
 		}
 	}
 
 	.featured-article-content {
-		width: 65%;
-		padding: 20px 20px 20px 0;
+		flex: 0 0 75%;
+		padding: 20px 20px 20px 20px;
 
 		@include respond-to( $bp-l ) {
-			margin-left: -20px;
+			flex-basis: 70%;
+			padding: 30px 35px;
 		}
 
 		.btn {
@@ -79,11 +81,11 @@
 	}
 
 	h3 {
-		font-size: 1.2em;
+		font-size: 1.1em;
 		line-height: 1.4em;
 
 		@include respond-to( $bp-xl ) {
-			font-size: 1.3em;
+			font-size: 1em;
 			line-height: 1.3em;
 			padding: 5px 0;
 		}
@@ -94,9 +96,7 @@
 	}
 
 	.btn {
-		font-size: 1em;
-		padding: 6px 9px;
-		margin: 5px 0;
+		margin: 5px 0 0;
 	}
 }
 
@@ -105,7 +105,7 @@
 .front-notice {
 	background: $gold;
 	color: black;
-	padding: 20px;
+	padding: 20px 20px 40px 20px;
 	font-size: 1.2em;
 
 	@include respond-to( $bp-m ) {
@@ -114,8 +114,7 @@
 
 	@include respond-to( $bp-l ) {
 		box-shadow: none;
-		background: url(../img/bg-front-alert.webp) top left no-repeat;
-		padding: 30px 40px;
+		padding: 30px 35px;
 	}
 
 	p {
@@ -396,6 +395,8 @@
 
 
 .front-comms {
+	background: $gold;
+
 	padding: 40px 20px;
 
 	@include respond-to( $bp-m ) {
@@ -426,7 +427,7 @@
 	}
 
 	.front-news {
-		.article {
+		.entry {
 			background: white;
 		}
 

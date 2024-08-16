@@ -11,7 +11,7 @@ function the_featured_article() {
 	?>
 	<div class="featured-article">
 		<div class="featured-article-image">
-			<?php print get_the_post_thumbnail( $article_id, 'post-thumbnail' ); ?>
+			<img src="<?php print get_the_post_thumbnail_url( $article_id, 'thumbnail' ); ?>" />
 		</div>
 		<div class="featured-article-content">
 			<h4>Featured</h4>

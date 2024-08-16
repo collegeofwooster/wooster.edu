@@ -1,257 +1,282 @@
 
 
-.showcase {
-	@include clearfix;
-	position: relative;
-	overflow: hidden;
-	transition: height 300ms ease-in-out;
-	background: #eee;
-	z-index: 0;
-	height: 400px;
+.showcase-cta {
+	display: none;
 
-	@include respond-to( 768px ) {
-		height: 500px;
+	@include respond-to( $bp-m ) {
+		display: block;
+		position: fixed;
+		z-index: 5000;
+		top: 120px;
+		right: 4%;
 	}
 
-	@include respond-to( 1024px ) {
-		height: 650px;
-	}
-
-	@include respond-to( 1220px ) {
-		height: 800px;
-	}
-
-	&:before {
-		position: absolute;
-		content: '';
-		background: url(../img/accent-tartan-vert-tan.webp) center center no-repeat;
-		background-size: cover;
-		width: 25px;
-		height: 100%;
-		left: 20px;
-		top: 0;
-		z-index: 100;
-
-		@include respond-to( $bp-m ) {
-			left: 30px;
-			width: 35px;
-		}
-
-		@include respond-to( $bp-l ) {
-			left: 40px;
-			width: 45px;
-		}
-
-		@include respond-to( $bp-xl ) {
-			left: 54px;
-		}
-	}
-
-	&:after {
-		position: absolute;
-		content: '';
-		background: url(../img/accent-tartan-hor-black.webp) right center no-repeat;
-		background-size: cover;
-		width: 75%;
-		height: 25px;
-		left: 0;
-		top: 0;
-		z-index: 99;
-
-		@include respond-to( $bp-m ) {
-			height: 35px;
-		}
-
-		@include respond-to( $bp-xl ) {
-			height: 45px;
-		}
-	}
-	
-	.slide {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		opacity: 0;
-		transition: opacity 400ms ease-in-out, padding 400ms ease-in-out;
-		height: 100%;
-		background: center center no-repeat;
-		background-size: cover;
-		z-index: 5;
-		padding: 30px 70px;
-
-		video {
-			display: none;
-
-			@include respond-to( 1025px ) {
-				display: block;
-			    position: absolute;
-			    left: 50%; /* % of surrounding element */
-			    top: 50%;
-			    -webkit-transform: translate(-50%, -50%);
-			    transform: translate(-50%, -50%);
-				min-width: 100%;
-				min-height: 100%;
-				width: auto; 
-				height: auto;
-				z-index: 5; 
-				overflow: hidden;
-			}
-	  	}
-
-		@include respond-to( $bp-l ) {
-			padding-top: 50px;
-		}
-
-		&.visible {
-			opacity: 1;
-			z-index: 6;
-		}
-
-		.showcase-overlay {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			z-index: 25;
-			background: rgba( $black, .3 );
-			pointer-events: none;
-		}
-
-		.slide-content {
-			position: absolute;
-			bottom: 20%;
-			left: 70px;
-			right: 40px;
-			color: white;
-			pointer-events: none;
-			z-index: 50;
-
-			.wrap {
-				min-width: auto;
-			}
-
-			@include respond-to( $bp-m ) {
-				position: absolute;
-				bottom: 70px;
-				left: 90px;
-				margin-top: -100px;
-				margin-left: 0;
-				margin-right: 0;
-				max-width: 550px;
-			}
-
-			@include respond-to( $bp-l ) {
-				top: 55%;
-				left: 110px;
-				right: 90px;
-				max-width: 55%;
-			}
-
-			@include respond-to( $bp-xl ) {
-				left: 140px;
-				right: 140px;
-				max-width: 670px;
-			}
-
-			@include respond-to( $bp-xxl ) {
-				top: auto;
-				bottom: 120px;
-				max-width: 750px;
-			}
-			
-			h1 {
-				@include font-title;
-				color: white;
-				text-shadow: 0 0 15px rgba( $black, .3 );
-				padding: 0;
-				margin-bottom: 20px;
-
-				font-size: 20px;
-				line-height: 25px;
-
-				@include respond-to( 500px ) {
-					font-size: 30px;
-					line-height: 40px;
-				}
-
-				@include respond-to( 768px ) {
-					font-size: 40px;
-					line-height: 50px;
-				}
-
-				@include respond-to( 1024px ) {
-					font-size: 50px;
-					line-height: 60px;
-				}
-
-				@include respond-to( $bp-xl ) {
-					font-size: 60px;
-					line-height: 70px;
-				}
-
-				@include respond-to( $bp-xxl ) {
-					font-size: 70px;
-					line-height: 80px;
-				}
-			}
-
-			p {
-				color: white;
-				text-shadow: 0 0 15px rgba( $black, .4 );
-			}
-		}
-
-	}
-
-	.showcase-nav {
-		position: absolute;
-		bottom: 20px;
-		left: 80px;
-		right: 80px;
-		z-index: 101;
-		text-align: center;
-
-		@include respond-to( $bp-l ) {
-			right: 35%;
-		}
-
-		@include respond-to( $bp-xl ) {
-			bottom: 50px;
-			left: 130px;
-			right: auto;
-		}
-
-		a {
-			display: inline-block;
-			cursor: pointer;
-			width: 40px;
-			height: 40px;
-			text-indent: -300px;
-			overflow: hidden;
-			opacity: .7;
-			color: black;
-			z-index: 1001;
-			margin: 0 20px;
-
-			&:hover {
-				opacity: 1;
-			}
-
-			&.previous {
-				left: 0;
-				background: transparent url(../img/slider-arrow-left.webp) right center no-repeat;
-				background-size: contain;
-			}
-
-			&.next {
-				right: 0;
-				background: transparent url(../img/slider-arrow-right.webp) left center no-repeat;
-				background-size: contain;
-			}
-		}
+	@include respond-to( $bp-xl ) {
+		top: 140px;
+		right: 6%;
 	}
 }
 
+
+.showcase-container {
+	position: relative;
+	z-index: 1;
+
+	.showcase {
+		@include clearfix;
+		position: relative;
+		transition: height 300ms ease-in-out;
+		background: #eee;
+		z-index: 2;
+		height: 400px;
+
+		@include respond-to( 768px ) {
+			height: 500px;
+		}
+
+		@include respond-to( 1024px ) {
+			height: 650px;
+		}
+
+		@include respond-to( 1220px ) {
+			height: 800px;
+		}
+
+		.slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			transition: opacity 400ms ease-in-out, padding 400ms ease-in-out;
+			height: 100%;
+			background: center center no-repeat;
+			background-size: cover;
+			z-index: 3;
+			padding: 30px 70px;
+			overflow: hidden;
+
+			&.has-link {
+				cursor: pointer;
+			}
+
+			video {
+				display: none;
+
+				@include respond-to( 1025px ) {
+					position: absolute;
+					z-index: 5; 
+					display: block;
+					left: 50%; /* % of surrounding element */
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+					min-width: 100%;
+					min-height: 100%;
+					width: auto; 
+					height: auto;
+					overflow: hidden;
+				}
+			}
+
+			@include respond-to( $bp-l ) {
+				padding-top: 50px;
+			}
+
+			&.visible {
+				opacity: 1;
+				z-index: 4;
+			}
+
+			.showcase-overlay {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 5;
+				background: rgba( $black, .5 );
+				pointer-events: none;
+			}
+
+			.slide-content {
+				position: absolute;
+				bottom: 25%;
+				left: 50px;
+				right: 50px;
+				color: white;
+				pointer-events: none;
+				z-index: 6;
+				text-align: center;
+
+				.wrap {
+					min-width: auto;
+				}
+
+				@include respond-to( $bp-m ) {
+					position: absolute;
+					bottom: 70px;
+					left: 90px;
+					right: 90px;
+					text-align: left;
+				}
+
+				@include respond-to( $bp-l ) {
+					top: auto;
+					bottom: 15%;
+					left: 5%;
+					right: 42%;
+				}
+
+				@include respond-to( $bp-xl ) {
+					left: 7%;
+				}
+
+				@include respond-to( $bp-xxl ) {
+					top: auto;
+					bottom: 120px;
+				}
+				
+				h1 {
+					@include font-title;
+					color: white;
+					text-shadow: 0 0 15px rgba( $black, .3 );
+					padding: 0;
+					margin-bottom: 20px;
+
+					font-size: 20px;
+					line-height: 25px;
+
+					@include respond-to( 500px ) {
+						font-size: 30px;
+						line-height: 40px;
+					}
+
+					@include respond-to( 768px ) {
+						font-size: 40px;
+						line-height: 50px;
+					}
+
+					@include respond-to( 1024px ) {
+						font-size: 50px;
+						line-height: 60px;
+					}
+
+					@include respond-to( $bp-xl ) {
+						font-size: 60px;
+						line-height: 70px;
+					}
+
+					@include respond-to( $bp-xxl ) {
+						font-size: 70px;
+						line-height: 80px;
+					}
+				}
+
+				p {
+					color: white;
+					text-shadow: 0 0 15px rgba( $black, .4 );
+				}
+			}
+
+		}
+
+		.showcase-nav {
+			position: absolute;
+			bottom: 40px;
+			left: 80px;
+			right: 80px;
+			z-index: 7;
+			text-align: center;
+
+			@include respond-to( $bp-l ) {
+				right: 35%;
+			}
+
+			@include respond-to( $bp-xl ) {
+				bottom: 50px;
+				left: 130px;
+				right: auto;
+			}
+
+			a {
+				display: inline-block;
+				cursor: pointer;
+				width: 40px;
+				height: 40px;
+				text-indent: -300px;
+				overflow: hidden;
+				opacity: .7;
+				color: black;
+				z-index: 1001;
+				margin: 0 20px;
+
+				&:hover {
+					opacity: 1;
+				}
+
+				&.previous {
+					left: 0;
+					background: transparent url(../img/slider-arrow-left.webp) right center no-repeat;
+					background-size: contain;
+				}
+
+				&.next {
+					right: 0;
+					background: transparent url(../img/slider-arrow-right.webp) left center no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+
+		.scroll-to-content {
+			position: absolute;
+			z-index: 200;
+			bottom: -30px;
+			left: 50%;
+			margin-left: -30px;
+			height: 60px;
+			width: 60px;
+			background: $gold;
+			border: 3px solid white;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 400ms ease-in-out;
+
+			&:hover {
+				background: lighten( $gold, 15% );
+			}
+			
+			&:after {
+				position: absolute;
+				content: '';
+				left: 50%;
+				top: 50%;
+				background: transparent url(../img/arrow-down.png) center center no-repeat;
+				background-size: contain;
+				width: 40px;
+				height: 40px;
+				margin-top: -20px;
+				margin-left: -20px;
+				transition: all 400ms ease-in-out;
+			}
+
+			@include respond-to( $bp-l ) {
+				border: 4px solid white;
+				height: 100px;
+				width: 100px;
+				bottom: -50px;
+				margin-left: -50px;
+
+				&:after {
+					width: 60px;
+					height: 60px;
+					margin-top: -30px;
+					margin-left: -30px;	
+				}
+			}
+		}
+	}
+
+}
 

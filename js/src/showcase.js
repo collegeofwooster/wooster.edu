@@ -144,5 +144,12 @@ jQuery(document).ready(function($){
 
 	});
 
+
+	$(document).ready(function(){
+		$("a.scroll-to-content").creep({
+			offset: -100
+		});
+	});
+
 });
 

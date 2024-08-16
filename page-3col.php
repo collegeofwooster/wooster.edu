@@ -42,6 +42,8 @@ the_showcase();
 
 <?php
 
+get_components();
+
 the_statistics();
 
 the_phototiles();

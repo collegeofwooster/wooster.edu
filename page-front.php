@@ -8,18 +8,18 @@ get_header();
 
 ?>
 
-	<?php the_showcase(); ?>
+	<div class="showcase-container">
+		<?php the_showcase(); ?>
+		<div class="front-showcase-overlay">
 
-	<div class="front-showcase-overlay">
+			<?php the_featured_article(); ?>
 
-		<?php the_featured_article(); ?>
+			<div class="front-notice">
+				<?php print do_shortcode( '[snippet slug="home-announce" /]') ?>
+			</div>
 
-		<div class="front-notice">
-			<?php print do_shortcode( '[snippet slug="home-announce" /]') ?>
 		</div>
-
 	</div>
-
 
 	<div class="front-comms">
 		<div class="front-comms-inner">

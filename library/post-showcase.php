@@ -65,6 +65,7 @@ function post_showcase_metabox( $meta_boxes ) {
         'id' => 'post_showcase_metabox',
         'title' => 'Post Showcase',
         'object_types' => array( 'page', 'post' ), // post type
+		'show_on_cb' => 'cmb2_show_on_cb',
         'context' => 'normal',
         'priority' => 'high',
     ) );

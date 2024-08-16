@@ -6,11 +6,21 @@ Template Name: Page (2-Column)
 
 get_header();
 
-the_page_header();
+get_components();
 
-the_showcase();
+if ( !have_components() ) {
 
-?>
+	the_page_header();
+
+	if ( has_showcase() ) { ?>
+		<div class="showcase-container">
+			<?php the_showcase(); ?>
+		</div>
+		<a name="content-start"></a>
+		<?php 
+	}
+
+	?>
 
 <div class="two-column">
 	<div class="wrap">
@@ -38,11 +48,12 @@ the_showcase();
 	</div>
 </div>
 
-<?php
+	<?php
 
-the_statistics();
+	the_statistics();
 
-the_phototiles();
+	the_phototiles();
+}
 
 get_footer();
 

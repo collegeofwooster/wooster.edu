@@ -43,6 +43,7 @@ function statistics_metaboxes() {
         'id' => 'statistics',
         'title' => 'Statistics',
         'object_types' => array( 'page' ), // Post type
+		'show_on_cb' => 'cmb2_show_on_cb',
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left

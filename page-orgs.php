@@ -8,7 +8,13 @@ get_header();
 
 the_page_header();
 
-the_showcase();
+if ( has_showcase() ) { ?>
+	<div class="showcase-container">
+		<?php the_showcase(); ?>
+	</div>
+	<a name="content-start"></a>
+	<?php 
+}
 
 ?>
 
