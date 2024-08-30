@@ -1,32 +1,33 @@
 
 
-.two-column, .content-wide {
+.two-column, .content-wide, .three-column {
 	.box {
-		border: 1px solid $gold;
+		border: 2px solid $gold;
 		margin: 20px 0;
+		box-shadow: 5px 5px 30px rgba( black, .1 );
 
 		&.foam {
-			border: 1px solid $foam;
+			border: 2px solid $foam;
 			.box-title { background: $foam; color: white; }
 		}
 
 		&.rose {
-			border: 1px solid $rose;
+			border: 2px solid $rose;
 			.box-title { background: $rose; color: white; }
 		}
 
 		&.red {
-			border: 1px solid $red;
+			border: 2px solid $red;
 			.box-title { background: $red; color: white; }
 		}
 
 		&.tan {
-			border: 1px solid $tan;
+			border: 2px solid $tan;
 			.box-title { background: $tan; }
 		}
 
 		&.blue {
-			border: 1px solid $blue;
+			border: 2px solid $blue;
 			.box-title { background: $blue; color: white; }
 		}
 
