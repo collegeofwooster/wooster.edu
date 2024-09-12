@@ -6,12 +6,12 @@ body {
 	color: $black;
 	background: white;
 
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 100%;
 	min-width: 350px;
 
-	@include respond-to( $bp-m ) {
-		font-size: 16px;
+	@include respond-to( $bp-l ) {
+		font-size: 17px;
 		line-height: 100%;
 	}
 

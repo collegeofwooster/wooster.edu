@@ -112,7 +112,7 @@
 			flex-basis: 18%;
 			margin-right: 2%;
 
-			.right-column & {
+			.right-column &, .right & {
 				flex-basis: 23%;
 			}
 		}
