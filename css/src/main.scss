@@ -38,7 +38,7 @@ $bp-xxxl: 1680px;
 
 @import "component/stats", "component/posts_feature", "component/two_column", 
 	"component/boxes", "component/content-feature", "component/cta",
-	"component/quick_links", "component/video", "component/image";
+	"component/quick_links", "component/video", "component/image", "component/photo-carousel";
 
 // include styles for custom post types
 @import "area", "event", "alum", "org", "fund", "job";

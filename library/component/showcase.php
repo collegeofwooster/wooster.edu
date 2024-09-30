@@ -53,7 +53,10 @@
                 </div>
             </div>
             <?php } else if ( !empty( $title ) ) { ?>
+            <div class="showcase-overlay"></div>
+            <div class="slide-content">
                 <h1 class="slide-title"><?php print $title; ?></h1>
+            </div>
             <?php } ?>
 
         </div>

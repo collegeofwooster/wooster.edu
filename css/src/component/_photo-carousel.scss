@@ -1,0 +1,97 @@
+
+
+.photo-carousel-container {
+	padding: 30px 50px;
+	@include respond-to( $bp-m ) { padding: 40px 90px; }
+	@include respond-to( $bp-l ) { padding: 50px 120px; }
+	@include respond-to( $bp-xl ) { padding: 60px 150px; }
+    position: relative;
+    background: black;
+
+    .photo-carousel {
+
+        .photo {
+            background: white;
+            box-shadow: 0 0 40px rgba( black, .4 );
+            display: none;
+
+            &.visible {
+                display: block;
+                max-width: 1440px;
+                margin: 0 auto;
+
+                @include respond-to( $bp-m ) {
+                    display: flex;
+                    align-items: stretch;
+                }
+
+                @include respond-to( $bp-xl) {
+                    align-items: center;
+                }
+            }
+
+            .image {
+                background: center center no-repeat;
+                background-size: cover;
+                aspect-ratio: 1 / 1;
+                
+                @include respond-to( $bp-m ) {
+                    flex: 1;
+                    flex-basis: 35%;
+                    aspect-ratio: auto;
+                }
+
+                @include respond-to( $bp-xl ) {
+                    aspect-ratio: 3.5 / 4;
+                }
+            }
+
+            .content {
+                padding: 20px;
+
+                @include respond-to( $bp-m ) {
+                    flex: 1;
+                    flex-basis: 65%;
+                    padding: 30px;
+                }
+
+                @include respond-to( $bp-l ) {
+                    padding: 40px;
+                }
+            }
+        }
+    }
+
+    .controls {
+
+        a {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 60px;
+            margin-top: -30px;
+            background: center center no-repeat;
+            background-size: contain;
+            color: transparent;
+
+            &.prev {
+                left: 3%;
+                background-image: url(../img/slider-arrow-left.webp);
+
+                @include respond-to( $bp-l ) {
+                    left: 5%;
+                }
+            }
+
+            &.next {
+                right: 3%;
+                background-image: url(../img/slider-arrow-right.webp);
+
+                @include respond-to( $bp-l ) {
+                    right: 5%;
+                }
+            }
+        }
+    }
+}
+
