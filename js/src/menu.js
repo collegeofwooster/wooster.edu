@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
 
     // handle sidebar menu toggling
     // handle sidebar menu toggling
-    var left_menu = $('.sidebar ul.menu');
+    var left_menu = $('.sidebar-menu ul.menu');
     left_menu.find( 'a' ).click(function(){
         var parent_li = $( this ).parent( 'li' );
         var submenu = $( this ).next( 'ul' );
