@@ -74,7 +74,7 @@
 
 				li a {
 					@include font;
-					padding: 6px 0;
+					padding: 4px 0;
 					border-bottom: none;
 				}
 
@@ -84,6 +84,7 @@
 				display: block;
 				padding: 5px 5px 15px 25px;
 				border-bottom: 1px solid rgba( $grey-light, .2 );
+				list-style-type: none !important;
 			}
 		}
 	}
