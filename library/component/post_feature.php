@@ -33,6 +33,7 @@ if ( !empty( $category ) ) {
         <?php
     }
     ?>
+            <div class="more-news"><a href="/news" class="btn arrow red">More News</a></div>
         </div>
     </div>
     <?php
