@@ -34,6 +34,7 @@
 
 	.sidebar-menu {
 		display: none;
+		padding-bottom: 15px;
 
 		@include respond-to( $bp-m ) {
 			display: block;
@@ -89,7 +90,7 @@
 		}
 	}
 	
-	.action-nav {
+	.action-nav, .menu.action {
 		margin-top: 20px;
 
 		li a {
@@ -99,6 +100,29 @@
 			display: block;
 			color: white;
 			background: $rose;
+			padding: 10px 15px;
+			line-height: 1.35em;
+			margin-bottom: 7px;
+			box-shadow: 3px 3px 20px rgba( black, .1 );
+			padding: 10px 15px;
+			transition: all 400ms ease-in-out;
+
+			&:hover {
+				opacity: .8;
+				text-decoration: none;
+			}
+		}
+	}
+	
+	.menu.gold {
+		margin-top: 20px;
+
+		li a {
+			@include font-bold;
+			text-align: left;
+			display: block;
+			color: black;
+			background: $gold;
 			padding: 10px 15px;
 			line-height: 1.35em;
 			margin-bottom: 7px;
