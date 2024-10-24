@@ -1,8 +1,10 @@
 <?php
 
-
 // include wp core.
 include( '../../../../wp-load.php' );
+
+/*
+
 
 // let's get $wpdb ready to use
 global $wpdb;
@@ -133,4 +135,8 @@ if ( !empty( $events ) ) {
 
 	}
 }
+
+*/
+
+event_cleanup();
 

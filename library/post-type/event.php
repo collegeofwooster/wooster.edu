@@ -845,14 +845,32 @@ function rss_event_sort( $query ) {
 add_filter( 'pre_get_posts', 'rss_event_sort' );
 
 
+
+add_filter( 'cron_schedules', 'add_5m_interval' );
+function add_5m_interval( $schedules ) { 
+    $schedules['five_minutes'] = array(
+        'interval' => 300,
+        'display'  => esc_html__( 'Every Five Minutes' ), );
+    return $schedules;
+}
+
+
 // register an action that does the actual import
 add_action( 'event_import', 'event_import' );
+add_action( 'event_cleanup', 'event_cleanup' );
 
 // if we don't have a schedule created
 if ( !wp_next_scheduled( 'event_import' ) ) {
 
-	// create the schedule
+	// import events every hour
 	wp_schedule_event( time(), 'hourly', 'event_import' );
+}
+
+// if we don't have a schedule created
+if ( !wp_next_scheduled( 'event_cleanup' ) ) {
+
+	// clean up old events on the same schedule.
+	wp_schedule_event( time(), 'five_minutes', 'event_cleanup' );
 }
 
 
@@ -938,7 +956,7 @@ function event_import() {
 				update_post_meta( $post_id, '_p_event_website', '' );
 				update_post_meta( $post_id, '_p_event_url_permalink', $event->permaLinkUrl );
 				update_post_meta( $post_id, '_p_event_url_action', $event->eventActionUrl );
-				update_post_meta( $post_id, '_p_event_url_signup', $event->signUpUrl );
+				if ( isset( $event->signUpUrl ) ) update_post_meta( $post_id, '_p_event_url_signup', $event->signUpUrl );
 
 				// loop through the custom fields from 25live
 				foreach ( $event->customFields as $event_cf ) {
@@ -985,16 +1003,53 @@ function event_import() {
 								if ( wp_set_post_terms( $post_id, $cat_info['term_id'], 'event_cat', 1 ) ) {
 									echo "Added event to category: " . $tag_name . "\n";
 								}
-
 							}
-
 						}
 					}
-
 				}
-
 			}
 		}
+	}
+}
+
+
+function event_cleanup() {
+
+	// get the retention setting from the database
+	$retention = get_field( 'event-retention', 'option' );
+
+	// select all events older than a hear ago
+	$timestamp_old = time() - ( 86400 * $retention );
+
+	$args = array(
+		'meta_query' => array(
+			'relation' => 'AND',
+			array(
+				'key' => '_p_event_start',
+				'value' => $timestamp_old,
+				'compare' => '<='
+			)
+		),
+		'post_type' => 'event',
+		'orderby' => 'meta_value_num',
+		'meta_key' => '_p_event_start',
+		'order' => 'ASC',
+		'posts_per_page' => 50
+	);
+
+	// get the posts
+	$to_delete = new WP_Query( $args );
+
+	// if we have posts.
+	if ( $to_delete->have_posts() ) {
+
+		// loop through them
+		while ( $to_delete->have_posts() ) : $to_delete->the_post();
+
+			// delete (forcing deletion from the database).
+			wp_delete_post( get_the_ID(), 1 );
+
+		endwhile;
 	}
 
 }
