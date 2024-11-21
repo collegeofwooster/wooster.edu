@@ -103,7 +103,7 @@ function page_settings_metabox() {
         'desc' => 'Select the librarian for this study guide.',
         'object_types' => array( 'page', 'people', 'area', 'org' ), // post type
 		'show_on_cb' => 'cmb2_show_on_cb',
-        'context' => 'normal',
+        'context' => 'after_title',
         'priority' => 'high',
     ) );
     $page_settings_metabox->add_field( array(

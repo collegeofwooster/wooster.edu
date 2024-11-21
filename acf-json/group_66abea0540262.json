@@ -156,7 +156,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row",
+            "button_label": "Add Component",
             "acfe_flexible_stylised_button": false,
             "acfe_flexible_hide_empty_message": false,
             "acfe_flexible_empty_message": "",
@@ -191,7 +191,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 5,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -207,5 +207,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1722544379
+    "modified": 1731006905
 }

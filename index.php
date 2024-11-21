@@ -23,7 +23,7 @@ get_header();
 
 the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-news.jpg' );
 
-?> 
+?>
 
 	<div class="content-wide" role="main">
 		<div class="wrap">
@@ -52,7 +52,7 @@ the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-
 
 				// Start the Loop.
 				$count = 0;
-				while ( have_posts() ) : the_post(); 
+				while ( have_posts() ) : the_post();
 			        $categories = get_the_category();
 			        $cat = $categories[0];
 		        	?>
