@@ -59,6 +59,17 @@ $courses = get_cmb_value( "person_courses" );
 				<div class="sidebar-menu">
 					<ul class="menu">
 						<li class="area-overview">Overview</li>
+						<?php
+						// new dynamic tabs
+						if( have_rows('tab') ):
+							// loop through the components
+							while ( have_rows('tab') ) : the_row();
+								// include the specific layout
+								$label = get_sub_field( 'label' );
+								print '<li class="area-' . sanitize_title( $label ) . '">' . $label . '</li>';
+							endwhile;
+						endif;
+						?>
 						<?php do_area_tab_nav( "Major", "major" ) ?>
 						<?php do_area_tab_nav( "Minor", "minor" ) ?>
 						<?php do_area_tab_nav( "Independent Study", "independent_study" ) ?>
@@ -92,71 +103,94 @@ $courses = get_cmb_value( "person_courses" );
 
 				<div class="tab-content active area-overview">
 					<h2>Overview</h2>
-
-					<?php if ( has_cmb_value( 'area_video' ) ) { ?>
-					<div class="area-video">
-						<?php print apply_filters( 'the_content', get_cmb_value( 'area_video' ) ); ?>
-					</div>
-					<?php } ?>
-					<?php the_content(); ?>
-					<hr class="space" />
-
-					<?php if ( has_cmb_value( 'area_faculty_list' ) ) { ?>
-					<h2>Faculty &amp; Staff</h2>
-					<div class="area-faculty">
-						<?php print do_shortcode( '[people category="' . get_cmb_value( 'area_faculty_list' ) . '" /]' ); ?>
-					</div>
-
-					<hr class="space" />
-					<?php } ?>
-
-					<?php 
-					$area_tag = get_cmb_value( 'area_post_tag' );
-					$tag_info = get_term_by( 'slug', $area_tag, 'post_tag' );
-					if ( !empty( $area_tag ) ) { 
-
-						?>
-					<div class="area-news">
-						<h2>Latest <?php print $tag_info->name ?> News</h2>
-
-						<div class="article-cards">						  
-						<?php
-						$args = array(
-						    'tag' => $area_tag,
-						    /*'category__not_in' => 793,*/
-						    'posts_per_page' => 4
-						);
-						$query = new WP_Query( $args );
-
-
-						// Check that we have query results.
-						if ( $query->have_posts() ) {
-						  
-						    // Start looping over the query results.
-						    while ( $query->have_posts() ) {
-						        $query->the_post(); ?>
-						        <div class="entry">
-						        	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-						        	<div class="entry-inner">
-							        	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-							        	<?php the_excerpt(); ?>
-							        </div>
-						        </div>
-						  		<?php
-						    }
-						  
-						}
-						  
-						// Restore original post data.
-						wp_reset_postdata();
-						  
-						?>
+					<div class="content-area">
+						<?php if ( has_cmb_value( 'area_video' ) ) { ?>
+						<div class="area-video">
+							<?php print apply_filters( 'the_content', get_cmb_value( 'area_video' ) ); ?>
 						</div>
-						<a href="/tag/<?php print $area_tag; ?>" class="btn gold">More <?php print $tag_info->name ?> Articles</a>
-					</div>
-					<?php } ?>
+						<?php } ?>
+						<?php the_content(); ?>
+						<hr class="space" />
 
+						<?php if ( has_cmb_value( 'area_faculty_list' ) ) { ?>
+						<h2>Faculty &amp; Staff</h2>
+						<div class="area-faculty">
+							<?php print do_shortcode( '[people category="' . get_cmb_value( 'area_faculty_list' ) . '" /]' ); ?>
+						</div>
+
+						<hr class="space" />
+						<?php } ?>
+
+						<?php 
+						$area_tag = get_cmb_value( 'area_post_tag' );
+						$tag_info = get_term_by( 'slug', $area_tag, 'post_tag' );
+						if ( !empty( $area_tag ) ) { 
+
+							?>
+						<div class="area-news">
+							<h2>Latest <?php print $tag_info->name ?> News</h2>
+
+							<div class="article-cards">						  
+							<?php
+							$args = array(
+								'tag' => $area_tag,
+								/*'category__not_in' => 793,*/
+								'posts_per_page' => 4
+							);
+							$query = new WP_Query( $args );
+
+
+							// Check that we have query results.
+							if ( $query->have_posts() ) {
+							
+								// Start looping over the query results.
+								while ( $query->have_posts() ) {
+									$query->the_post(); ?>
+									<div class="entry">
+										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+										<div class="entry-inner">
+											<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+											<?php the_excerpt(); ?>
+										</div>
+									</div>
+									<?php
+								}
+							
+							}
+							
+							// Restore original post data.
+							wp_reset_postdata();
+							
+							?>
+							</div>
+							<a href="/tag/<?php print $area_tag; ?>" class="btn gold">More <?php print $tag_info->name ?> Articles</a>
+						</div>
+						<?php } ?>
+
+					</div>
 				</div>
+				<?php
+				// new dynamic tabs
+				if( have_rows('tab') ):
+					// loop through the components
+					while ( have_rows('tab') ) : the_row();
+						// include the specific layout
+						$label = get_sub_field( 'label' );
+						?>
+					<div class="tab-content area-<?php print sanitize_title( $label ); ?>">
+						<h2><?php print $label ?></h2>
+						<?php 
+						if ( have_rows( 'basic_components' ) ) : 
+							while ( have_rows( 'basic_components' ) ) : the_row();
+								get_template_part( 'library/component/' . get_row_layout() );
+							endwhile;
+						endif; 
+						?>
+					</div>
+						<?php
+					endwhile;
+				endif;
+				?>
 
 				<?php do_area_tab_content( "Major", "major" ); ?>
 				<?php do_area_tab_content( "Minor", "minor" ); ?>
