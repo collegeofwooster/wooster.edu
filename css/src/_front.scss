@@ -115,6 +115,7 @@
 	@include respond-to( $bp-l ) {
 		box-shadow: none;
 		padding: 30px 35px;
+		background: rgba( $gold, .7 );
 	}
 
 	p {
