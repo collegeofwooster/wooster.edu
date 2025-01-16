@@ -224,10 +224,8 @@ $courses = get_cmb_value( "person_courses" );
 		endif;
 		 ?>
 			</div>
-			<div class="sidebar">
-				<div class="mobile-only">
-					<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
-				</div>
+			<div class="sidebar mobile-only">
+				<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
 			</div>
 		</div>
 	</div>
