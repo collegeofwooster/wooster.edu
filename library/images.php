@@ -21,6 +21,9 @@ function remove_width_attribute( $html ) {
     return $html;
 }
 
+// remove sizes=auto
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
+
 
 // function to resize images
 function p_image_resize( $url, $width, $height = null, $crop = null, $single = true ) {
@@ -117,4 +120,6 @@ function p_is_image( $img_path ) {
     return in_array( $info['extension'], $valid_extensions );
     
 }
+
+
 
