@@ -96,7 +96,9 @@ $courses = get_cmb_value( "person_courses" );
 						<?php do_area_tab_nav( "CAEP Annual Reporting Measures", "caep" ) ?>
 					</ul>
 
-					<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
+					<div class="no-mobile">
+						<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
+					</div>
 				</div>
 			</div>
 			<div class="right-column">
@@ -221,6 +223,11 @@ $courses = get_cmb_value( "person_courses" );
 			endwhile;
 		endif;
 		 ?>
+			</div>
+			<div class="sidebar">
+				<div class="mobile-only">
+					<?php wp_nav_menu( array( 'theme_location' => 'area-action-nav', 'menu_class' => 'action-nav' ) ); ?>
+				</div>
 			</div>
 		</div>
 	</div>

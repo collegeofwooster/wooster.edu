@@ -144,3 +144,20 @@ pre {
 .clearfix, .group {
 	@include clearfix;
 }
+
+.no-mobile {
+	display: none;
+
+	@include respond-to( $bp-m ) {
+		display: block;
+	}
+}
+
+.mobile-only {
+	display: block;
+
+	@include respond-to( $bp-m ) {
+		display: none;
+	}
+}
+
