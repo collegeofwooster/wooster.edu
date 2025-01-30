@@ -67,6 +67,30 @@ $page_header_title = get_cmb_value( 'page_header_title' );
 				<?php if ( get_cmb_value( 'person_affiliations' ) ) do_accordion( 'Professional Affiliations', get_cmb_value( 'person_affiliations' ), 'blue' ); ?>
 				<?php if ( get_cmb_value( 'person_awards' ) ) do_accordion( 'Awards', get_cmb_value( 'person_awards' ), 'blue' ); ?>
 				<?php if ( get_cmb_value( 'person_production_credits' ) ) do_accordion( 'Production Credits', get_cmb_value( 'person_production_credits' ), 'blue' ); ?>
+
+				<?php 
+				if ( have_rows( 'tab' ) ) :
+					while ( have_rows( 'tab' ) ) : the_row();
+						?>
+				<div class="accordion">
+					<div class="accordion-handle blue">
+						<?php print get_sub_field( 'label' ); ?>
+					</div>
+					<div class="accordion-content no-top-padding">
+						<?php
+						if ( have_rows( 'basic_components' ) ) : 
+							while ( have_rows( 'basic_components' ) ) : the_row();
+								get_template_part( 'library/component/' . get_row_layout() );
+							endwhile;
+						endif; 
+						?>
+					</div>
+				</div>
+						<?php
+					endwhile;
+				endif;
+				?>
+
 			</div>
 				<?php
 				endwhile;

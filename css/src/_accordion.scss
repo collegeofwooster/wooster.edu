@@ -77,6 +77,11 @@
 		@include respond-to( $bp-m ) {
 			padding: 15px 30px;
 		}
+
+		&.no-top-padding {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
 
 	&.open .accordion-content {
