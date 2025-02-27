@@ -44,6 +44,29 @@
 	.menu {
 		list-style-type: none !important;
 		padding: 0 !important;
+		
+		& > li {
+
+			&.menu-item-has-children {
+				position: relative;
+
+				&:after {
+					position: absolute;
+					right: 1px;
+					top: 10px;
+					content: '»';
+					transition: 300ms all ease-in-out;
+					transform: rotate(90deg);
+					pointer-events: none;
+					font-size: 1.4em;
+				}
+
+				&.open:after {
+					transform: rotate(-90deg);
+					right: 3px;
+				}
+			}
+		}
 
 		li {
 			a {
@@ -81,11 +104,17 @@
 
 			}
 
-			&.open .sub-menu {
-				display: block;
-				padding: 5px 5px 15px 25px;
-				border-bottom: 1px solid rgba( $grey-light, .2 );
-				list-style-type: none !important;
+			&.open {
+				a {
+
+				}
+
+				.sub-menu {
+					display: block;
+					padding: 5px 5px 15px 25px;
+					border-bottom: 1px solid rgba( $grey-light, .2 );
+					list-style-type: none !important;
+				}
 			}
 		}
 	}

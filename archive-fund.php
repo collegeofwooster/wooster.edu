@@ -31,7 +31,7 @@ the_page_header( 'Crowdfunding Campaigns', get_bloginfo('template_url') . '/img/
 				?>
 				<div class="fund">
 					
-					<div class="photo">
+					<div class="photo"> 
 						<a href="<?php the_permalink() ?>">
 						<?php 
 						if ( has_post_thumbnail() ) {
