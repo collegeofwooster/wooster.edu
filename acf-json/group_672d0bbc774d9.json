@@ -1,7 +1,28 @@
 {
     "key": "group_672d0bbc774d9",
-    "title": "Area Tabs",
+    "title": "Area Fields",
     "fields": [
+        {
+            "key": "field_67d328da2abc5",
+            "label": "Override Overview",
+            "name": "override_overview",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Do not show the default overview on the areas of study pages, and use the first tab below instead.",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
         {
             "key": "field_672d0bbb5a597",
             "label": "Tab",
@@ -167,5 +188,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1738253119
+    "modified": 1741891921
 }

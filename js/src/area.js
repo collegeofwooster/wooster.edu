@@ -54,6 +54,13 @@ jQuery(document).ready(function($){
 
 	});
 
+	// set the first tab-content div as active
+	var $first_tab_content = $( '.area .tab-content:first-child' );
+	if ( $first_tab_content.is(':hidden') ) {
+		$first_tab_content.addClass('active');
+	}
+
+
 
 	// if we're in the tab area
 	if ( $('.area').length > 0 ) {

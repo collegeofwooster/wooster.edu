@@ -30,7 +30,7 @@
 	padding-right: 20px;
 
 	@include respond-to( $bp-l ) {
-		background: rgba( white, .7 );
+		background: rgba( white, .85 );
 		margin-bottom: 30px;
 		padding-right: 0;
 	}
@@ -115,7 +115,7 @@
 	@include respond-to( $bp-l ) {
 		box-shadow: none;
 		padding: 30px 35px;
-		background: rgba( $gold, .7 );
+		background: rgba( $gold, .85 );
 	}
 
 	p {
