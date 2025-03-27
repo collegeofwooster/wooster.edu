@@ -1,0 +1,138 @@
+{
+    "key": "group_67e590c251b30",
+    "title": "Module: Posts",
+    "fields": [
+        {
+            "key": "field_67e590c2ddba0",
+            "label": "Categories",
+            "name": "categories",
+            "aria-label": "",
+            "type": "acfe_taxonomy_terms",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": [
+                "category"
+            ],
+            "allow_terms": "",
+            "allow_level": "",
+            "field_type": "select",
+            "default_value": [],
+            "return_format": "id",
+            "ui": 1,
+            "allow_null": 0,
+            "placeholder": "",
+            "multiple": 1,
+            "ajax": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "allow_in_bindings": 0,
+            "choices": [],
+            "search_placeholder": "",
+            "layout": "",
+            "toggle": 0,
+            "allow_custom": 0,
+            "other_choice": 0
+        },
+        {
+            "key": "field_67e590e6ddba1",
+            "label": "Tags",
+            "name": "tags",
+            "aria-label": "",
+            "type": "acfe_taxonomy_terms",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": [
+                "post_tag"
+            ],
+            "allow_terms": "",
+            "allow_level": "",
+            "field_type": "select",
+            "default_value": [],
+            "return_format": "id",
+            "ui": 1,
+            "allow_null": 0,
+            "placeholder": "",
+            "multiple": 1,
+            "ajax": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "allow_in_bindings": 0,
+            "choices": [],
+            "search_placeholder": "",
+            "layout": "",
+            "toggle": 0,
+            "allow_custom": 0,
+            "other_choice": 0
+        },
+        {
+            "key": "field_67e590fa018b5",
+            "label": "Posts per Page",
+            "name": "posts_per_page",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "4": "4",
+                "8": "8",
+                "12": "12",
+                "16": "16",
+                "20": "20"
+            },
+            "default_value": 4,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1743098139
+}

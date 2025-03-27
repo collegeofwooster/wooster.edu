@@ -1482,16 +1482,16 @@
                             },
                             "acfe_flexible_advanced": 0,
                             "layouts": {
-                                "layout_66abef3f6e5c1": {
-                                    "key": "layout_66abef3f6e5c1",
-                                    "name": "content",
-                                    "label": "Content Area",
+                                "layout_66abef92a5d88": {
+                                    "key": "layout_66abef92a5d88",
+                                    "name": "accordions",
+                                    "label": "Accordions",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abef52a5d83",
-                                            "label": "Module: Content",
-                                            "name": "module-content",
+                                            "key": "field_66abefa0a5d8b",
+                                            "label": "Module: Accordions",
+                                            "name": "module-accordions",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1503,7 +1503,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abdbe34c621"
+                                                "group_66abeaeccb492"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1527,16 +1527,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66b67e0fc2d14": {
-                                    "key": "layout_66b67e0fc2d14",
-                                    "name": "video",
-                                    "label": "Video",
+                                "layout_66abef70a5d84": {
+                                    "key": "layout_66abef70a5d84",
+                                    "name": "boxes",
+                                    "label": "Boxes",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66b67e14c2d16",
-                                            "label": "Module: Video",
-                                            "name": "module-video",
+                                            "key": "field_66abef74a5d87",
+                                            "label": "Module: Boxes",
+                                            "name": "module-boxes",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1548,7 +1548,52 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66b67dd1028cd"
+                                                "group_66abdc55b80e5"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0,
+                                            "acfe_seamless_style": 0,
+                                            "acfe_clone_modal": 0,
+                                            "acfe_clone_modal_close": 0,
+                                            "acfe_clone_modal_button": "",
+                                            "acfe_clone_modal_size": "large"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": "",
+                                    "acfe_flexible_render_template": false,
+                                    "acfe_flexible_render_style": false,
+                                    "acfe_flexible_render_script": false,
+                                    "acfe_flexible_thumbnail": false,
+                                    "acfe_flexible_settings": false,
+                                    "acfe_flexible_settings_size": "medium",
+                                    "acfe_flexible_modal_edit_size": false,
+                                    "acfe_flexible_category": false
+                                },
+                                "layout_66abef3f6e5c1": {
+                                    "key": "layout_66abef3f6e5c1",
+                                    "name": "content",
+                                    "label": "Content Area",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66abef52a5d83",
+                                            "label": "Module: Content",
+                                            "name": "module-content",
+                                            "aria-label": "",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_66abdbe34c621"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1617,16 +1662,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66abef70a5d84": {
-                                    "key": "layout_66abef70a5d84",
-                                    "name": "boxes",
-                                    "label": "Boxes",
+                                "layout_66afdf67cc0a7": {
+                                    "key": "layout_66afdf67cc0a7",
+                                    "name": "nav_menu",
+                                    "label": "Nav Menu",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abef74a5d87",
-                                            "label": "Module: Boxes",
-                                            "name": "module-boxes",
+                                            "key": "field_671a963b25aea",
+                                            "label": "Module: Nav Menu",
+                                            "name": "module-nav-menu",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1638,7 +1683,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abdc55b80e5"
+                                                "group_671a95d245628"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1662,16 +1707,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66abef92a5d88": {
-                                    "key": "layout_66abef92a5d88",
-                                    "name": "accordions",
-                                    "label": "Accordions",
+                                "layout_67e591e520c32": {
+                                    "key": "layout_67e591e520c32",
+                                    "name": "people",
+                                    "label": "People",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abefa0a5d8b",
-                                            "label": "Module: Accordions",
-                                            "name": "module-accordions",
+                                            "key": "field_67e591e920c35",
+                                            "label": "Module: People",
+                                            "name": "module-people",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1683,7 +1728,52 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abeaeccb492"
+                                                "group_67e58eee7ecba"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0,
+                                            "acfe_seamless_style": 0,
+                                            "acfe_clone_modal": 0,
+                                            "acfe_clone_modal_close": 0,
+                                            "acfe_clone_modal_button": "",
+                                            "acfe_clone_modal_size": "large"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": "",
+                                    "acfe_flexible_render_template": false,
+                                    "acfe_flexible_render_style": false,
+                                    "acfe_flexible_render_script": false,
+                                    "acfe_flexible_thumbnail": false,
+                                    "acfe_flexible_settings": false,
+                                    "acfe_flexible_settings_size": "medium",
+                                    "acfe_flexible_modal_edit_size": false,
+                                    "acfe_flexible_category": false
+                                },
+                                "layout_67e591bb20c2e": {
+                                    "key": "layout_67e591bb20c2e",
+                                    "name": "posts",
+                                    "label": "Posts",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e591c220c31",
+                                            "label": "Module: Posts",
+                                            "name": "module-posts",
+                                            "aria-label": "",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_67e590c251b30"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1752,16 +1842,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66afdf67cc0a7": {
-                                    "key": "layout_66afdf67cc0a7",
-                                    "name": "nav_menu",
-                                    "label": "Nav Menu",
+                                "layout_66b67e0fc2d14": {
+                                    "key": "layout_66b67e0fc2d14",
+                                    "name": "video",
+                                    "label": "Video",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_671a963b25aea",
-                                            "label": "Module: Nav Menu",
-                                            "name": "module-nav-menu",
+                                            "key": "field_66b67e14c2d16",
+                                            "label": "Module: Video",
+                                            "name": "module-video",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1773,7 +1863,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_671a95d245628"
+                                                "group_66b67dd1028cd"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1841,16 +1931,16 @@
                             },
                             "acfe_flexible_advanced": 0,
                             "layouts": {
-                                "layout_66abefea7cede": {
-                                    "key": "layout_66abefea7cede",
-                                    "name": "content",
-                                    "label": "Content Area",
+                                "layout_66abf04b71d5a": {
+                                    "key": "layout_66abf04b71d5a",
+                                    "name": "accordions",
+                                    "label": "Accordions",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abeff471d55",
-                                            "label": "Module: Content",
-                                            "name": "module-content",
+                                            "key": "field_66abf05371d5d",
+                                            "label": "Module: Accordions",
+                                            "name": "module-accordions",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1862,7 +1952,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abdbe34c621"
+                                                "group_66abeaeccb492"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1886,16 +1976,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66b67e3ac2d17": {
-                                    "key": "layout_66b67e3ac2d17",
-                                    "name": "video",
-                                    "label": "Video",
+                                "layout_66abf01971d56": {
+                                    "key": "layout_66abf01971d56",
+                                    "name": "boxes",
+                                    "label": "Boxes",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66b67e3ec2d1a",
-                                            "label": "Module: Video",
-                                            "name": "module-video",
+                                            "key": "field_66abf01d71d59",
+                                            "label": "Module: Boxes",
+                                            "name": "module-boxes",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1907,7 +1997,52 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66b67dd1028cd"
+                                                "group_66abdc55b80e5"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0,
+                                            "acfe_seamless_style": 0,
+                                            "acfe_clone_modal": 0,
+                                            "acfe_clone_modal_close": 0,
+                                            "acfe_clone_modal_button": "",
+                                            "acfe_clone_modal_size": "large"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": "",
+                                    "acfe_flexible_render_template": false,
+                                    "acfe_flexible_render_style": false,
+                                    "acfe_flexible_render_script": false,
+                                    "acfe_flexible_thumbnail": false,
+                                    "acfe_flexible_settings": false,
+                                    "acfe_flexible_settings_size": "medium",
+                                    "acfe_flexible_modal_edit_size": false,
+                                    "acfe_flexible_category": false
+                                },
+                                "layout_66abefea7cede": {
+                                    "key": "layout_66abefea7cede",
+                                    "name": "content",
+                                    "label": "Content Area",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66abeff471d55",
+                                            "label": "Module: Content",
+                                            "name": "module-content",
+                                            "aria-label": "",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_66abdbe34c621"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -1976,16 +2111,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66abf01971d56": {
-                                    "key": "layout_66abf01971d56",
-                                    "name": "boxes",
-                                    "label": "Boxes",
+                                "layout_66afdefccb1ac": {
+                                    "key": "layout_66afdefccb1ac",
+                                    "name": "nav_menu",
+                                    "label": "Nav Menu",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abf01d71d59",
-                                            "label": "Module: Boxes",
-                                            "name": "module-boxes",
+                                            "key": "field_671a965c25aeb",
+                                            "label": "Module: Nav Menu",
+                                            "name": "module-nav-menu",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -1997,7 +2132,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abdc55b80e5"
+                                                "group_671a95d245628"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -2021,16 +2156,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66abf04b71d5a": {
-                                    "key": "layout_66abf04b71d5a",
-                                    "name": "accordions",
-                                    "label": "Accordions",
+                                "layout_67e59258202c0": {
+                                    "key": "layout_67e59258202c0",
+                                    "name": "people",
+                                    "label": "People",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_66abf05371d5d",
-                                            "label": "Module: Accordions",
-                                            "name": "module-accordions",
+                                            "key": "field_67e5925c202c3",
+                                            "label": "Module: People",
+                                            "name": "module-people",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -2042,7 +2177,52 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_66abeaeccb492"
+                                                "group_67e58eee7ecba"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0,
+                                            "acfe_seamless_style": 0,
+                                            "acfe_clone_modal": 0,
+                                            "acfe_clone_modal_close": 0,
+                                            "acfe_clone_modal_button": "",
+                                            "acfe_clone_modal_size": "large"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": "",
+                                    "acfe_flexible_render_template": false,
+                                    "acfe_flexible_render_style": false,
+                                    "acfe_flexible_render_script": false,
+                                    "acfe_flexible_thumbnail": false,
+                                    "acfe_flexible_settings": false,
+                                    "acfe_flexible_settings_size": "medium",
+                                    "acfe_flexible_modal_edit_size": false,
+                                    "acfe_flexible_category": false
+                                },
+                                "layout_67e59233202bc": {
+                                    "key": "layout_67e59233202bc",
+                                    "name": "posts",
+                                    "label": "Posts",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e59238202bf",
+                                            "label": "Module: Posts",
+                                            "name": "module-posts",
+                                            "aria-label": "",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_67e590c251b30"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -2111,16 +2291,16 @@
                                     "acfe_flexible_modal_edit_size": false,
                                     "acfe_flexible_category": false
                                 },
-                                "layout_66afdefccb1ac": {
-                                    "key": "layout_66afdefccb1ac",
-                                    "name": "nav_menu",
-                                    "label": "Nav Menu",
+                                "layout_66b67e3ac2d17": {
+                                    "key": "layout_66b67e3ac2d17",
+                                    "name": "video",
+                                    "label": "Video",
                                     "display": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_671a965c25aeb",
-                                            "label": "Module: Nav Menu",
-                                            "name": "module-nav-menu",
+                                            "key": "field_66b67e3ec2d1a",
+                                            "label": "Module: Video",
+                                            "name": "module-video",
                                             "aria-label": "",
                                             "type": "clone",
                                             "instructions": "",
@@ -2132,7 +2312,7 @@
                                                 "id": ""
                                             },
                                             "clone": [
-                                                "group_671a95d245628"
+                                                "group_66b67dd1028cd"
                                             ],
                                             "display": "seamless",
                                             "layout": "block",
@@ -2420,5 +2600,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1729795696
+    "modified": 1743098534
 }
