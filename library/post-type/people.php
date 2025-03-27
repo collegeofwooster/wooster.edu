@@ -343,6 +343,7 @@ function people_shortcode( $atts ) {
 		'order' => 'ASC',
 		'orderby' => 'meta_value',
 		'meta_key' => '_p_person_lname',
+		'search' => 1
 	), $atts ));
 
 	// set some query vars
@@ -371,7 +372,7 @@ function people_shortcode( $atts ) {
 
     $people_content = '<section class="people">';
 
-	if ( $style !== 'lightbox' ) {
+	if ( $style !== 'lightbox' || !$search ) {
 		$people_content .= '<div class="people-search"><input type="text" name="people-search-term" id="s" placeholder="Search Name, Academic Department, or Title"></div>';
 	}
 
