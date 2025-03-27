@@ -372,7 +372,7 @@ function people_shortcode( $atts ) {
 
     $people_content = '<section class="people">';
 
-	if ( $style !== 'lightbox' || !$search ) {
+	if ( $style !== 'lightbox' && $search ) {
 		$people_content .= '<div class="people-search"><input type="text" name="people-search-term" id="s" placeholder="Search Name, Academic Department, or Title"></div>';
 	}
 
