@@ -2,7 +2,7 @@
 
 
 // let's create the function for the custom type
-function People_post_type() { 
+function people_post_type() { 
 	// creating (registering) the custom type 
 	register_post_type( 'people', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type

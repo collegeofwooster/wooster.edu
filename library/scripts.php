@@ -8,8 +8,6 @@ function p_scripts() {
 add_action( 'wp_enqueue_scripts', 'p_scripts' );
 
 
-
-
 // hooks your functions into the correct filters
 function btn_add_mce_button() {
 	// check user permissions
@@ -31,3 +29,4 @@ function btn_register_mce_button( $buttons ) {
 	//array_push( $buttons, 'btn_mce_button' );
 	return $buttons;
 }
+
