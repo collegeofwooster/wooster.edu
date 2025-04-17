@@ -13,7 +13,7 @@ global $wp_query;
 // set the args based on current query
 $args = $wp_query->query_vars;
 $args['posts_per_page'] = 16;
-$args['cat'] = '-1105,-1106,-1066,-644,-945,-690,-1292,-1328,-1364,-1419,-1474,-1587,-1592,-1599,-1610,-1644,-1645';
+$args['cat'] = '-1105,-1106,-1066,-644,-945,-690,-1292,-1328,-1364,-1419,-1474,-1587,-1592,-1599,-1610,-1644,-1645,-1648';
 
 // rerun the query
 query_posts( $args );
@@ -32,7 +32,7 @@ the_page_header( "Wooster News", get_bloginfo('template_url') . '/img/bg-header-
 				<div class="article-filter">
 					<h3>Browse by Category</h3>
 					<div class="browse-by-category">
-						<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419, 1592, 1599, 1610, 1644, 1645 ) ) ); ?>
+						<?php wp_dropdown_categories( array( 'show_option_all' => 'Select Category', 'value_field' => 'slug', 'class' => 'category-select', 'orderby' => 'name', 'exclude' => array( 1105, 1106, 1066, 644, 945, 690, 1292, 1328, 1364, 1419, 1592, 1599, 1610, 1644, 1645, 1648 ) ) ); ?>
 					</div>
 				</div>
 				<div class="article-filter">
