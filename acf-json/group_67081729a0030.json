@@ -213,7 +213,7 @@
             "name": "exclude",
             "aria-label": "",
             "type": "acfe_taxonomy_terms",
-            "instructions": "",
+            "instructions": "The categories you check here will be excluded from the homepage posts feature, the main news feed, and any category quick-nav dropdowns around the news area. Excluding categories lets you use the posts functionality to give updates about special events and other things you don't want displayed along side normal news articles on the site.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -229,7 +229,7 @@
             "field_type": "checkbox",
             "default_value": [],
             "return_format": "id",
-            "layout": "horizontal",
+            "layout": "vertical",
             "toggle": 0,
             "save_terms": 0,
             "load_terms": 0,
@@ -270,5 +270,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1746715031
+    "modified": 1746716742
 }
