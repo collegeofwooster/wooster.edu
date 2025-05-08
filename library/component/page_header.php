@@ -2,6 +2,8 @@
 
 $title = get_sub_field( 'title' );
 $photo = get_sub_field( 'photo' );
+$video = get_sub_field( 'video' );
+$video_ext = pathinfo( $video, PATHINFO_EXTENSION );
 $color = get_sub_field( 'color' );
 $cta = '';
 
@@ -21,6 +23,12 @@ endif;
 if ( !empty( $photo ) && !empty( $title ) ) {
     ?>
 <div class="page-header <?php print $color ?>" style="background-image: url(<?php print $photo; ?>);">
+    <?php if ( !empty( $video ) ) { ?>
+    <video class="page-header-video" autoplay muted loop>
+        <source src="<?php print $video; ?>" type="video/<?php print $video_ext ?>">
+    </video>
+    <?php } ?>
+
     <div class="page-header-overlay"></div>
     <div class="wrap">
         <div class="breadcrumbs">
