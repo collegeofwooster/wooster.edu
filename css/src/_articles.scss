@@ -4,6 +4,7 @@
 	padding-top: 20px;
 
 	@include respond-to( $bp-s ) {
+		@include clearfix;
 		display: flex;
 		margin-right: -2%;
 		flex-wrap: wrap;

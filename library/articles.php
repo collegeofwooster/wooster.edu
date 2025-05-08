@@ -84,8 +84,11 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 add_action( 'pre_get_posts', 'woo_pre_get_posts' );
 function woo_pre_get_posts( $query ){
 
+	// if it's the main query for posts
 	if ( $query->is_main_query() ) {
-		$args['posts_per_page'] = 16;
-		$args['category__not_in'] = get_field( 'exclude', 'option' );
+
+		// exclude the set of categories
+		$query->set( 'category__not_in', get_field( 'exclude', 'option' ) );
+		
 	}
 }
