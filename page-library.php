@@ -29,18 +29,18 @@ the_page_header();
 				--->
 		
 				<div class="summon">
-					<h4>Search:</h4>
+					<h4>PRIMO</h4>
 					<?php print get_snippet( 'library-summon', 0 ) ?>
 				</div>
 
 				<div class="databases">
-					<h4>Databases for Articles:</h4>
+					<h4>Databases for Articles</h4>
 					<?php quick_nav_menu( 'library-databases', 'Select a Database' ); ?>
 					<?php print get_snippet( 'library-databases', 0 ) ?>
 				</div>
 
 				<div class="guides">
-					<h4>Research Guides:</h4>
+					<h4>Research Guides</h4>
 					<?php quick_nav_menu( 'library-guides', 'Select a Research Guide' ); ?>
 				</div>
 
