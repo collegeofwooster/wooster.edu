@@ -21,13 +21,15 @@ the_page_header();
 
 			<div class="library-search">
 
+				<!---
 				<div class="consort">
 					<h4>CONSORT Catalog:</h4>
 					<?php print get_snippet( 'library-consort', 0 ); ?>
 				</div>
+				--->
 		
 				<div class="summon">
-					<h4>Summon:</h4>
+					<h4>Search:</h4>
 					<?php print get_snippet( 'library-summon', 0 ) ?>
 				</div>
 

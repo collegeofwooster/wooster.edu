@@ -21,6 +21,10 @@
 				flex: 1;
 				flex-basis: 50%;
 				padding: 20px 10px !important;
+
+				&.summon {
+					flex-basis: 100%;
+				}
 			}
 		}
 
@@ -59,9 +63,16 @@
 			padding: 9px 15px;
 		}
 
-		input[type=submit] {
-			font-size: 1em;
-			padding: 12px 15px;
+		input[type=submit], input[type=button] {
+			font-size: 1em !important;
+			line-height: 1em !important;
+			height: auto !important;
+			padding: 12px 15px !important;
+			background: $gold !important;
+			color: black !important;
+			border: 0 !important;
+			cursor: pointer !important;
+			float: right;
 		}
 
 		& > div {
@@ -78,7 +89,7 @@
 				@include respond-to( $bp-l ) { width: 80%; }
 			}
 
-			input[type=submit] {
+			input[type=submit], input[type=button] {
 				width: 30%;
 				@include respond-to( $bp-l ) { width: 20%; }
 			}
