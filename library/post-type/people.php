@@ -328,6 +328,12 @@ function person_metaboxes() {
             'textarea_rows' => 6
         )
     ) );
+	$person_box->add_field( array(
+        'name' => 'Sort',
+        'id' => $prefix . 'person_sort',
+        'type' => 'text_small'
+    ) );
+
 
 }
 
