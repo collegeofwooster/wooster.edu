@@ -29,7 +29,7 @@ the_page_header();
 				--->
 		
 				<div class="summon">
-					<h4>PRIMO</h4>
+					<h4 style="display:inline;">PRIMO Library Catalog</h4> <span class="quiet">search for articles, books, & more from Wooster & beyond</span>
 					<?php print get_snippet( 'library-summon', 0 ) ?>
 				</div>
 
