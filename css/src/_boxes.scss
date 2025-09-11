@@ -8,19 +8,6 @@
 			margin-right: -5%;
 		}
 
-		&.col3 {
-			@include respond-to( $bp-m ) {
-				.abox {
-					flex: 1 1 31.3333%;
-					margin-right: 2%;
-
-					&:nth-child(3), &:nth-child(6), &:nth-child(9), &:nth-child(12), &:nth-child(15), &:nth-child(18) {
-						margin-right: 0;
-					}
-				}
-			}
-		}
-
 		.abox {
 			position: relative;
 			background-image: url(../img/box-stripes.png);
