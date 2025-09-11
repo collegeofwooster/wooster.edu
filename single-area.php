@@ -8,7 +8,6 @@ get_header();
 $education = get_cmb_value( "person_education" );
 $courses = get_cmb_value( "person_courses" );
 $override_overview = get_field( 'override_overview' );
-print $override_overview;
 
 ?>
 	<div class="page-header area-header"<?php print ( has_cmb_value( 'page_header_background' ) ? ' style="background-image: url(' . get_cmb_value( 'page_header_background' ) . ')"' : ( !empty( $featured_image_url ) ? ' style="background-image: url(' . $featured_image_url . ')"' : '' ) ); ?>>
