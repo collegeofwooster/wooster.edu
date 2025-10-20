@@ -48,9 +48,9 @@ $page_header_title = get_cmb_value( 'page_header_title' );
 					<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
 					<?php if ( has_cmb_value( "person_website" ) ) { ?><p>Website: <a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Visit Website</a></p><?php } ?>
 					<?php if ( has_cmb_value( "person_cv" ) ) { ?><p>CV/Resume: <a href='<?php show_cmb_value( "person_cv" ) ?>' target='_blank'>Download</a></p><?php } ?>
-					<?php if ( has_term( 'faculty', 'people_cat' ) ) { ?>
+					<!--<?php if ( has_term( 'faculty', 'people_cat' ) ) { ?>
 					<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>&recipient=<?php show_cmb_value( 'person_email' ); ?>" class="btn red-dark">Ask a Question</a></p>
-					<?php } ?>
+					<?php } ?>-->
 				</div>
 			</div>
 			<div class="right-column">
