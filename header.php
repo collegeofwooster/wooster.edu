@@ -35,10 +35,6 @@ if ( !is_front_page() ) {
 <meta name="msapplication-TileColor" content="#ffc712">
 <meta name="theme-color" content="#ffc712">
 
-<!-- facebook tracking code -->
-<meta name="facebook-domain-verification" content="g3lhfalbuajlht5b5p3d7gp3ic1djl" />
-<!-- /facebook tracking code -->
-
 </head>
 <body <?php body_class(); ?>>
 
