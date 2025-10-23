@@ -20,8 +20,6 @@ $admin_email = get_option( 'admin_email' );
 			<div class="wrap">
 
 				<div class="column first">
-					<a href="/research"><img src="<?php bloginfo( 'template_url' ); ?>/img/logo-footer.png" /></a>
-
 					<?php print get_snippet( 'footer-left' ); ?>
 				</div>
 
