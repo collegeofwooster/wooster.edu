@@ -1,13 +1,18 @@
 <?php
 
 
+$photos = get_sub_field( 'photos' );
+
+
 if ( have_rows( 'photos' ) ) {
     ?>
     <div class="photo-carousel-container">
+        <?php if ( count( $photos ) > 1 ) { ?>
         <div class="controls">
             <a href="#" class="prev">Previous</a>
             <a href="#" class="next">Next</a>
         </div>
+        <?php } ?>
         <div class="photo-carousel">
         <?php 
         while ( have_rows( 'photos' ) ) : the_row();
