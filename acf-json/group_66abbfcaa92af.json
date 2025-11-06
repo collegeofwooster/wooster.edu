@@ -701,6 +701,32 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_690cfc293b64d",
+                            "label": "Background Color",
+                            "name": "color",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "black": "Black",
+                                "white": "White"
+                            },
+                            "default_value": "black",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "allow_in_bindings": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_66f564c3fd501",
                             "label": "Photos",
                             "name": "photos",
@@ -851,7 +877,8 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "tabs": "visual",
+                                    "allow_in_bindings": 1,
+                                    "tabs": "all",
                                     "toolbar": "basic",
                                     "media_upload": 0,
                                     "delay": 0,
@@ -2456,6 +2483,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
+    "display_title": "",
     "acfe_display_title": "",
     "acfe_autosync": [
         "json"
@@ -2463,5 +2491,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1746726752
+    "modified": 1762458969
 }

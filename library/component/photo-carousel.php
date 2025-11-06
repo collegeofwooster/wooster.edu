@@ -2,11 +2,12 @@
 
 
 $photos = get_sub_field( 'photos' );
+$color = get_sub_field( 'color' );
 
 
 if ( have_rows( 'photos' ) ) {
     ?>
-    <div class="photo-carousel-container">
+    <div class="photo-carousel-container <?php print $color; ?>">
         <?php if ( count( $photos ) > 1 ) { ?>
         <div class="controls">
             <a href="#" class="prev">Previous</a>

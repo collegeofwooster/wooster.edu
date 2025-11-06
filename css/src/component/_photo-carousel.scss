@@ -8,6 +8,10 @@
     position: relative;
     background: black;
 
+    &.white {
+        background: white;
+    }
+
     .photo-carousel {
 
         .photo {
@@ -48,6 +52,7 @@
 
             .content {
                 padding: 20px;
+                @extend .content-style;
 
                 @include respond-to( $bp-m ) {
                     flex: 1;
