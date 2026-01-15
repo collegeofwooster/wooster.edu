@@ -203,12 +203,13 @@ function person_metaboxes() {
     // area of interest information
     $person_box = new_cmb2_box( array(
         'id' => 'person_info',
-        'title' => 'Person Details',
+        'title' => 'Person Details (Legacy - Migrate to Tabs)',
         'object_types' => array( 'people' ), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
     ) );
+	/*
     $person_box->add_field( array(
         'name' => 'First Name',
         'id' => $prefix . 'person_fname',
@@ -250,6 +251,7 @@ function person_metaboxes() {
         'type' => 'text',
         'desc' => 'Include the Full URL (including "http(s)") to this People members website.'
     ) );
+	*/
     $person_box->add_field( array(
         'name' => 'CV/Resume',
         'id' => $prefix . 'person_cv',
@@ -333,7 +335,6 @@ function person_metaboxes() {
         'id' => $prefix . 'person_sort',
         'type' => 'text_small'
     ) );
-
 
 }
 
@@ -440,5 +441,4 @@ function people_shortcode( $atts ) {
 	return $people_content;
 }
 add_shortcode( 'people', 'people_shortcode' );
-
 

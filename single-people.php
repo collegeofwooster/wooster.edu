@@ -14,6 +14,15 @@ if ( is_person_in_category( null, 'faculty' ) ) {
 
 $page_header_title = get_cmb_value( 'page_header_title' );
 
+
+$person_title = get_field( '_p_person_title' );
+$person_pronouns = get_field( '_p_person_pronouns' );
+$person_email = get_field( '_p_person_email' );
+$person_phone = get_field( '_p_person_phone' );
+$person_cv = get_field( '_p_person_cv' );
+$person_office = get_field( '_p_person_office' );
+$person_website = get_field( '_p_person_website' );
+
 ?>
 
 	<div class="page-header yellow" style="background-image: url(/wp-content/uploads/2021/07/skykauke.jpg);">
@@ -41,13 +50,13 @@ $page_header_title = get_cmb_value( 'page_header_title' );
 				<?php the_post_thumbnail() ?>
 				<div class="person-info">
 					<h3><?php the_title(); ?></h3>
-					<?php if ( has_cmb_value( "person_pronouns" ) ) { ?><p class="pronouns">Pronouns: <?php print get_cmb_value( "person_pronouns" ); ?></p><?php } ?>
-					<h5 class="person-title"><?php print get_cmb_value( "person_title" ); ?></h5>
-					<p><a href="mailto:<?php print get_cmb_value( "person_email" ); ?>"><?php print get_cmb_value( "person_email" ); ?></a></p>
-					<?php if ( has_cmb_value( "person_phone" ) ) { ?><p>Phone: <?php print get_cmb_value( "person_phone" ); ?></p><?php } ?>
-					<?php if ( has_cmb_value( "person_office" ) ) { ?><p>Office: <?php print get_cmb_value( "person_office" ); ?></p><?php } ?>
-					<?php if ( has_cmb_value( "person_website" ) ) { ?><p>Website: <a href='<?php show_cmb_value( "person_website" ) ?>' target='_blank'>Visit Website</a></p><?php } ?>
-					<?php if ( has_cmb_value( "person_cv" ) ) { ?><p>CV/Resume: <a href='<?php show_cmb_value( "person_cv" ) ?>' target='_blank'>Download</a></p><?php } ?>
+					<?php if ( !empty( $person_pronouns ) ) { ?><p class="pronouns">Pronouns: <?php print $person_pronouns; ?></p><?php } ?>
+					<h5 class="person-title"><?php print $person_title; ?></h5>
+					<p><a href="mailto:<?php print $person_email; ?>"><?php print $person_email; ?></a></p>
+					<?php if ( !empty( $person_phone ) ) { ?><p>Phone: <?php print $person_phone; ?></p><?php } ?>
+					<?php if ( !empty( $person_office ) ) { ?><p>Office: <?php print $person_office; ?></p><?php } ?>
+					<?php if ( !empty( $person_website ) ) { ?><p>Website: <a href='<?php print $person_website ?>' target='_blank'>Visit Website</a></p><?php } ?>
+					<?php if ( !empty( $person_cv ) ) { ?><p>CV/Resume: <a href='<?php print $person_cv ?>' target='_blank'>Download</a></p><?php } ?>
 					<!--<?php if ( has_term( 'faculty', 'people_cat' ) ) { ?>
 					<p class="cv-link"><a href="/faculty/ask?username=<?php print $post->post_name; ?>&recipient=<?php show_cmb_value( 'person_email' ); ?>" class="btn red-dark">Ask a Question</a></p>
 					<?php } ?>-->
