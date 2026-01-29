@@ -85,7 +85,7 @@ add_action( 'pre_get_posts', 'woo_pre_get_posts' );
 function woo_pre_get_posts( $query ){
 
 	// if it's the main query for posts
-	if ( $query->is_main_query() ) {
+	if ( $query->is_main_query() && !is_admin() ) {
 
 		// exclude the set of categories
 		$query->set( 'category__not_in', get_field( 'exclude', 'option' ) );
