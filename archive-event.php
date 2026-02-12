@@ -22,9 +22,9 @@ the_page_header( $page_title, get_bloginfo('template_url') . "/img/bg-page-heade
 	<div class="content-wide">
 		<?php print do_shortcode( '[button url="/schedule" class="right gold"]Schedule an Event[/button]' ); ?>
 		<h3>Search All Events</h3>
-		<form role="search" method="get" id="searchform" class="searchform" action="/events" _lpchecked="1">
+		<form role="search" method="get" id="searchform" class="searchform" action="/events/" _lpchecked="1">
 			<input type="text" value="<?php print ( isset( $_REQUEST['s'] ) ? strip_tags( $_REQUEST['s'] ) : '' ) ?>" name="s" id="s" placeholder="Search">
-			<input type="hidden" value="event" name="post_type">
+			<input type="hidden" value="event" name="post_type[]">
 			<input type="submit" id="searchsubmit" value="Search Events" class="btn-arrow">
 		</form>
 		<hr>
