@@ -37,3 +37,35 @@
 	@include respond-to( $bp-xl ) { padding: 25px 50px; }
 }
 
+
+@mixin padding-tall {
+	padding: 30px 20px;
+	@include respond-to( $bp-m ) { padding: 30px; }
+	@include respond-to( $bp-l ) { padding: 40px; }
+	@include respond-to( $bp-xl ) { padding: 50px; }
+}
+
+
+@mixin padding-side {
+	padding: 0 20px;
+	@include respond-to( $bp-m ) { padding: 0 30px; }
+	@include respond-to( $bp-l ) { padding: 0 40px; }
+	@include respond-to( $bp-xl ) { padding: 0 50px; }
+}
+
+
+@mixin padding-no-top {
+	padding: 0 20px 20px 20px;
+	@include respond-to( $bp-m ) { padding: 0 30px 20px 30px; }
+	@include respond-to( $bp-l ) { padding: 0 40px 20px 40px; }
+	@include respond-to( $bp-xl ) { padding: 0 50px 25px 50px; }
+}
+
+
+@mixin padding-no-bottom {
+	padding: 20px 20px 0 20px;
+	@include respond-to( $bp-m ) { padding: 20px 30px 0; }
+	@include respond-to( $bp-l ) { padding: 20px 40px 0; }
+	@include respond-to( $bp-xl ) { padding: 25px 50px 0; }
+}
+

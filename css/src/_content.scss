@@ -144,6 +144,10 @@ section.content {
 	@extend .content-style;
 	@include padding;
 
+	&.tan {
+		background: $tan;
+	}
+
 	@include respond-to( $bp-xl ) {
 		padding-top: 40px;
 		padding-bottom: 60px;

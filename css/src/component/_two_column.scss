@@ -1,18 +1,26 @@
 
 
 .two-column-container {
-    padding: 30px;
+    @include padding;
 
-    @include respond-to( $bp-m ) {
-        padding: 40px 30px;
+    &.tan {
+        background: $tan;
     }
 
-    @include respond-to( $bp-l ) {
-        padding: 50px 40px;
+    &.pad-tall {
+        @include padding-tall;
     }
 
-    @include respond-to( $bp-xxxl ) {
-        padding: 60px 0;
+    &.pad-side {
+        @include padding-side;
+    }
+
+    &.pad-no-top {
+        @include padding-no-top;
+    }
+
+    &.pad-no-bottom {
+        @include padding-no-bottom;
     }
 
     @include respond-to( $bp-m ) {

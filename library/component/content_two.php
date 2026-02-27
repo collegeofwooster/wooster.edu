@@ -3,11 +3,13 @@
 $size = get_sub_field( 'size' );
 $reverse = get_sub_field( 'reverse' );
 $color = get_sub_field( 'color' );
+$padding = get_sub_field( 'padding' );
+if ( empty( $padding ) ) $padding='pad';
 $valign = get_sub_field( 'valign' );
 
 if ( have_rows( 'left_components' ) || have_rows( 'right_components' ) ):
     ?>
-    <div class="two-column-container <?php print $size; ?> <?php print $color; ?> <?php print $valign; ?>">
+    <div class="two-column-container <?php print $size; ?> <?php print $color; ?> <?php print $valign; ?> <?php print $padding ?>">
         <div class="wrap">
             <div class="two-column-inner">
             <?php if ( have_rows( 'left_components' ) ) { ?>
