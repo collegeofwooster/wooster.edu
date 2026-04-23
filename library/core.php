@@ -157,3 +157,16 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
     // Return menu post objects
     return $menu_items;
 }
+
+
+// Limit backend post access to only author and admins
+function limit_posts_to_author($query) {
+    // Check if we are in the admin area and it is the main query
+    if (is_admin() && $query->is_main_query() && !current_user_can('manage_options')) {
+        global $current_user;
+        $query->set('author', $current_user->ID);
+        $query->set('post_status', array("publish", "draft"));
+    }
+}
+add_action('pre_get_posts', 'limit_posts_to_author');
+
