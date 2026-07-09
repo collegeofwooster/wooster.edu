@@ -392,22 +392,37 @@ function people_shortcode( $atts ) {
 
 			if ( $style == 'lightbox' ) {
 
+				$person_title = get_field( '_p_person_title' );
+				$person_pronouns = get_field( '_p_person_pronouns' );
+				$person_email = get_field( '_p_person_email' );
+				$person_phone = get_field( '_p_person_phone' );
+				$person_cv = get_field( '_p_person_cv' );
+				$person_office = get_field( '_p_person_office' );
+				$person_website = get_field( '_p_person_website' );
+
 				$people_content .='<div class="person-entry visible">' . 
 					'<a class="person-bio-link" rel="person-' . get_the_ID() . '">' . get_the_post_thumbnail() . '</a>' .
 					'<div class="info">
 						<h4><a class="person-bio-link" rel="person-' . get_the_ID() . '">' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</a></h4>
-						<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>
-					</div>
+						<p class="person-title">' . get_cmb_value( "person_title" ) . '</p>' .
+					'</div>
 				</div>
 				<div class="hidden" id="person-' . get_the_ID() . '">
 					<div class="person-bio-lightbox">
 						<div class="bio-left">
-							<img src="' . get_the_post_thumbnail_url() . '" class="bio-photo" />
-						</div>
-						<div class="bio-right">' . 
-							'<h3>' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</h3>' .
+							<img src="' . get_the_post_thumbnail_url() . '" class="bio-photo" />' .
+							'<div class="bio-left-inner"><h3>' . get_cmb_value( "person_fname" ) . ' ' . get_cmb_value( "person_lname" ) . '</h3>' .
 							'<p class="bio-person-title"><strong>' . get_cmb_value( 'person_title' ) . '</strong></p>' .
-							apply_filters( 'the_content', get_the_excerpt() ) . '</div>
+							//'<div class="text-center bio-link"><a href="' . get_the_permalink() . '" class="btn gold">View Full Bio Page</a></div>' .
+							( !empty( $person_phone ) ? '<p class="bio-contact">Phone: ' . $person_phone . '</p>' : '' ) .
+							( !empty( $person_office ) ? '<p class="bio-contact">Office: ' . $person_office . '</p>' : '' ) .
+							( !empty( $person_website ) ? '<p class="bio-contact">Website: <a href="' . $person_website . '" target="_blank">Visit Website</a></p>' : '' ) .
+							( !empty( $person_cv ) ? '<p class="bio-contact">CV/Resume: <a href="' . $person_cv . '" target="_blank">Download</a></p>' : '' ) .
+							'<p class="bio-contact"><a href="mailto:' . $person_email . '">' . $person_email . '</a></p>' .
+						'</div></div>
+						<div class="bio-right">' . 
+							apply_filters( 'the_content', get_the_content() ) . 
+						'</div>
 					</div>
 				</div>';
 

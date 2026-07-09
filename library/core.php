@@ -163,7 +163,6 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
 function limit_posts_to_author($query) {
     // Check if we are in the admin area and it is the main query
     if (is_admin() && $query->is_main_query() && !current_user_can('manage_options') && $query->get('post_type')=='post') {
-        global $current_user;
         $query->set('post_status', array("publish", "draft"));
     }
 }
